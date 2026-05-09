@@ -1,0 +1,278 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-navy: #0a1f44;
+  --color-navy-deep: #06143a;
+  --color-gold: #b8924a;
+  --color-gold-hi: #d4b26a;
+  --color-cream: #f7f1e3;
+  --color-cream-2: #fbf7ec;
+  --color-ink: #1f2937;
+  --color-slate: #3d4654;
+  --color-slate-2: #4b5563;
+  --color-hairline: #dad2bb;
+}
+
+@layer base {
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
+  body {
+    @apply bg-white text-ink font-sans;
+    font-feature-settings: "ss01", "cv01";
+  }
+
+  ::selection {
+    background: var(--color-navy);
+    color: var(--color-cream);
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply font-serif text-navy;
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+
+  /* Tabular numerals on any number-bearing context (calendars, fees, dates) */
+  .nums,
+  time,
+  .tabular {
+    font-variant-numeric: tabular-nums;
+    font-feature-settings: "tnum";
+  }
+
+  /* Visible focus on every interactive element (WCAG 2.2 AA) */
+  :focus-visible {
+    outline: 2px solid var(--color-gold);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
+
+@layer components {
+  /* The signature gold rule used as a section eyebrow underline */
+  .gold-rule::before {
+    content: "";
+    display: inline-block;
+    width: 1.5rem;
+    height: 1px;
+    background: var(--color-gold);
+    margin-right: 0.75rem;
+    vertical-align: middle;
+  }
+
+  .hairline {
+    border-color: var(--color-hairline);
+  }
+
+  /* Editorial drop-cap for long-form blocks */
+  .dropcap::first-letter {
+    @apply font-serif text-navy;
+    font-size: 4.25rem;
+    line-height: 0.85;
+    float: left;
+    padding: 0.35rem 0.75rem 0 0;
+  }
+
+  /* Subtle film-grain noise — premium texture without imagery */
+  .noise {
+    position: relative;
+    isolation: isolate;
+  }
+  .noise::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.05;
+    mix-blend-mode: overlay;
+    z-index: 1;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.5 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+    background-size: 160px 160px;
+  }
+
+  /* Card lift on hover with a gold border accent */
+  .card-lift {
+    transition: transform 320ms cubic-bezier(0.22, 1, 0.36, 1),
+      box-shadow 320ms cubic-bezier(0.22, 1, 0.36, 1),
+      border-color 320ms cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .card-lift:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 30px 60px -30px rgba(10, 31, 68, 0.18),
+      0 12px 24px -16px rgba(10, 31, 68, 0.1);
+  }
+
+  /* Animated underline for editorial CTAs */
+  .link-underline {
+    background-image: linear-gradient(currentColor, currentColor);
+    background-size: 100% 1px;
+    background-repeat: no-repeat;
+    background-position: 0 100%;
+    padding-bottom: 0.15em;
+    transition: background-size 320ms cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .link-underline-out {
+    background-size: 0% 1px;
+  }
+  .link-underline-out:hover,
+  .link-underline-out:focus-visible {
+    background-size: 100% 1px;
+  }
+
+  /* The "live" status dot in the dispatch ticker */
+  .pulse-dot {
+    position: relative;
+    display: inline-block;
+    width: 0.5rem;
+    height: 0.5rem;
+    border-radius: 9999px;
+    background: var(--color-gold);
+  }
+  .pulse-dot::after {
+    content: "";
+    position: absolute;
+    inset: -4px;
+    border-radius: 9999px;
+    border: 1px solid var(--color-gold);
+    opacity: 0;
+    animation: pulse-ring 2.4s cubic-bezier(0.22, 1, 0.36, 1) infinite;
+  }
+
+  /* Marquee track */
+  .marquee {
+    --marquee-speed: 60s;
+    mask-image: linear-gradient(
+      to right,
+      transparent 0,
+      #000 6%,
+      #000 94%,
+      transparent 100%
+    );
+    -webkit-mask-image: linear-gradient(
+      to right,
+      transparent 0,
+      #000 6%,
+      #000 94%,
+      transparent 100%
+    );
+  }
+  .marquee-track {
+    animation: marquee-scroll var(--marquee-speed) linear infinite;
+  }
+}
+
+@layer utilities {
+  /* Kinetic line reveal for hero typography — used by the hero h1 */
+  .reveal-line {
+    overflow: hidden;
+    display: block;
+  }
+  .reveal-line > span {
+    display: inline-block;
+    transform: translateY(110%);
+    animation: rise 900ms cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  }
+  .reveal-line.delay-1 > span { animation-delay: 80ms; }
+  .reveal-line.delay-2 > span { animation-delay: 200ms; }
+  .reveal-line.delay-3 > span { animation-delay: 340ms; }
+  .reveal-line.delay-4 > span { animation-delay: 500ms; }
+
+  .draw-rule {
+    transform-origin: left center;
+    animation: draw-rule 900ms cubic-bezier(0.22, 1, 0.36, 1) 200ms both;
+  }
+
+  .fade-in-soft {
+    animation: fade-in 1200ms cubic-bezier(0.22, 1, 0.36, 1) 600ms both;
+  }
+}
+
+@keyframes rise {
+  0% {
+    transform: translateY(110%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes draw-rule {
+  0% {
+    transform: scaleX(0);
+  }
+  100% {
+    transform: scaleX(1);
+  }
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes pulse-ring {
+  0% {
+    transform: scale(0.6);
+    opacity: 0.9;
+  }
+  80% {
+    transform: scale(1.8);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1.8);
+    opacity: 0;
+  }
+}
+
+@keyframes marquee-scroll {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal-line > span,
+  .draw-rule,
+  .fade-in-soft,
+  .marquee-track,
+  .pulse-dot::after {
+    animation: none !important;
+  }
+  .reveal-line > span {
+    transform: translateY(0) !important;
+  }
+  .draw-rule {
+    transform: scaleX(1) !important;
+  }
+}
