@@ -185,10 +185,15 @@
 }
 
 @layer utilities {
-  /* Kinetic line reveal for hero typography — used by the hero h1 */
+  /* Kinetic line reveal for hero typography — used by the hero h1.
+   * overflow:clip with padding-bottom keeps italic descenders (p, g, y) from
+   * being cut by the reveal mask. clip is preferred over hidden because it
+   * doesn't establish a scroll container.
+   */
   .reveal-line {
-    overflow: hidden;
+    overflow: clip;
     display: block;
+    padding-bottom: 0.12em;
   }
   .reveal-line > span {
     display: inline-block;

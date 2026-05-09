@@ -39,28 +39,30 @@ export function HeroEditorial() {
 
       <DispatchTicker />
 
-      <div className="container relative pt-20 pb-24 md:pt-28 md:pb-32 lg:pt-36 lg:pb-40">
+      <div className="container relative pt-12 pb-14 md:pt-16 md:pb-20 lg:pt-20 lg:pb-24">
         <div className="max-w-4xl">
           <div className="flex items-center gap-4 fade-in-soft">
             <span aria-hidden="true" className="block h-px w-10 bg-gold draw-rule origin-left" />
             <span className="text-eyebrow uppercase text-cream/85">{t.hero.eyebrow}</span>
           </div>
 
-          <h1 className="mt-9 font-serif text-cream text-[2.75rem] sm:text-[4rem] lg:text-[5.5rem] xl:text-[6.5rem] leading-[1.02] tracking-[-0.02em]">
+          {/* leading-[1.08] gives the italic descenders (p, g) clearance from the
+              .reveal-line overflow:hidden box; without it the line is clipped. */}
+          <h1 className="mt-7 font-serif text-cream text-[2.5rem] sm:text-[3.5rem] lg:text-[4.75rem] xl:text-[5.5rem] leading-[1.08] tracking-[-0.02em]">
             <span className="reveal-line"><span>{t.hero.line1}</span></span>
-            <span className="reveal-line delay-1"><span className="text-gold-hi italic">{t.hero.line2}</span></span>
-            <span className="reveal-line delay-2"><span className="text-cream/85">{t.hero.line3}</span></span>
+            <span className="reveal-line delay-1"><span className="text-cream/85">{t.hero.line2}</span></span>
+            <span className="reveal-line delay-2"><span className="text-gold-hi italic">{t.hero.line3}</span></span>
           </h1>
 
-          <p className="mt-8 max-w-2xl text-body-lg lg:text-[1.25rem] text-cream/80 leading-[1.6] fade-in-soft">
+          <p className="mt-6 max-w-2xl text-body lg:text-body-lg text-cream/80 leading-[1.6] fade-in-soft">
             {t.hero.subline}
           </p>
 
-          <p className="mt-6 text-[0.78rem] uppercase tracking-[0.18em] text-gold-hi fade-in-soft">
+          <p className="mt-5 text-[0.78rem] uppercase tracking-[0.18em] text-gold-hi fade-in-soft">
             {t.hero.subjects}
           </p>
 
-          <div className="mt-12 flex flex-col sm:flex-row gap-3 sm:gap-5 items-start sm:items-center fade-in-soft">
+          <div className="mt-8 flex flex-col sm:flex-row gap-3 sm:gap-5 items-start sm:items-center fade-in-soft">
             <Button href="/apply" variant="on-dark">
               {t.cta.applyNext}
             </Button>
@@ -70,7 +72,7 @@ export function HeroEditorial() {
           </div>
         </div>
 
-        <div className="mt-24 lg:mt-40 pt-8 border-t border-cream/10 flex flex-col md:flex-row md:items-center justify-between gap-4 text-[0.78rem] uppercase tracking-[0.16em] text-cream/65 fade-in-soft">
+        <div className="mt-12 lg:mt-16 pt-6 border-t border-cream/10 flex flex-col md:flex-row md:items-center justify-between gap-4 text-[0.78rem] uppercase tracking-[0.16em] text-cream/65 fade-in-soft">
           <div className="flex items-center gap-3">
             <span className="pulse-dot" aria-hidden="true" />
             <span>{t.hero.statusReviewing}</span>
