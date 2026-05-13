@@ -296,20 +296,20 @@ const en: Dict = {
     ],
   },
   hero: {
-    eyebrow: "Curated Swiss wealth & banking · By application",
-    line1: "Swiss wealth",
-    line2: "and banking,",
-    line3: "made yours.",
+    eyebrow: "Curated Swiss executive experiences · By application",
+    line1: "Inside Swiss",
+    line2: "business, finance,",
+    line3: "and leadership.",
     subline:
-      "Curated programmes, private introductions, and three decades of Swiss financial expertise — by application, in confidence.",
-    subjects: "Cohort programmes · Private office · Published research",
+      "Curated executive intensives for entrepreneurs, principals, and international professionals — practical access to Swiss business culture, finance, and the networks behind them.",
+    subjects: "Executive intensives · Curated access · Private office",
     statusReviewing: "Reviewing applications · Q3 2026",
     locationLine: "Zurich · Geneva · Selected Swiss venues",
     scrollToProgrammes: "Scroll to programmes ↓",
   },
   posture: {
     eyebrow: "The platform posture",
-    sub: "Curated learning, access, and considered introductions",
+    sub: "Premium Swiss executive experiences · Curated access · Private networks",
     pillars: [
       { label: "By application", line: "Never open enrolment." },
       { label: "Twelve in the room", line: "Cohort-based on purpose." },
@@ -497,8 +497,8 @@ const en: Dict = {
         body: "Application questions look for specificity. Programme architecture commits to phases, not slogans. Fees are listed, not negotiated.",
       },
       {
-        title: "Honesty about scope",
-        body: "We are not advisory, not coaching, not regulated. We convene rooms; we do not deliver outcomes. We say so on every page.",
+        title: "Premium scope, clearly stated",
+        body: "Vision Goal sells curated access, considered introductions, and Swiss business know-how — not a course and not a consulting engagement. The regulated work, when it is needed, is delivered by the principals we introduce.",
       },
     ],
   },
@@ -540,14 +540,14 @@ const en: Dict = {
     },
     about: {
       eyebrow: "About the platform",
-      titlePart1: "A curated Swiss platform.",
-      titleGold: "Not advisory.",
+      titlePart1: "Curated Swiss",
+      titleGold: "executive access.",
       lede:
-        "Vision Goal exists to convene small, considered rooms on Swiss access, private banking, and topic-specific finance questions. The platform is curatorial; the rooms are by application; the proceedings are quiet.",
+        "Vision Goal creates curated Swiss executive learning experiences for entrepreneurs, executives, and international professionals who want practical access to Swiss finance, business culture, and premium networks.",
       statement:
-        "We do three things. We run a Swiss Business Access Immersion in Zurich. We run a Private Swiss Banking & Wealth Intensive in Geneva. And we host one Swiss Finance Week per year on a current question. Twelve in the room. Hosted by named practitioners. By application.",
+        "Vision Goal runs three flagship executive intensives — a Swiss Business Access Immersion in Zurich, a Private Swiss Banking & Wealth Intensive in Geneva, and a yearly Swiss Finance Week on a current question — supplemented by a Private Office for individual principals who want curated introductions instead of a cohort seat.",
       statement2:
-        "The platform is deliberately small. Curation is the product; the rooms are the deliverable. We do not run open enrolment, we do not deliver coaching, and we do not promise outcomes. We promise considered rooms with named hosts, and we run them as they are described on this page.",
+        "The platform is deliberately small. Curation is the product; the rooms, introductions, and experiences are the deliverables. You are not buying a course or a consulting engagement — you are buying access, insight, and Swiss business know-how that is difficult to assemble any other way.",
       standardsEyebrow: "Standards & ethics",
       standardsHeadline: "How we operate.",
       pressEyebrow: "Press & recognition",
@@ -755,20 +755,20 @@ const de: Dict = {
     ],
   },
   hero: {
-    eyebrow: "Kuratiertes Schweizer Vermögen & Banking · Auf Bewerbung",
-    line1: "Schweizer Vermögen",
-    line2: "und Banking,",
-    line3: "für Sie.",
+    eyebrow: "Kuratierte Schweizer Executive-Programme · Auf Bewerbung",
+    line1: "Schweizer Wirtschaft,",
+    line2: "Finanzen und",
+    line3: "Führung — von innen.",
     subline:
-      "Kuratierte Programme, private Vorstellungen und drei Jahrzehnte Schweizer Finanzexpertise — auf Bewerbung, in Vertraulichkeit.",
-    subjects: "Kohortenprogramme · Private Office · Publikationen",
+      "Kuratierte Executive-Intensivprogramme für Unternehmer, Principals und internationale Führungspersönlichkeiten — praktischer Zugang zu Schweizer Geschäftskultur, Finanzwesen und den dahinterliegenden Netzwerken.",
+    subjects: "Executive-Programme · Kuratierter Zugang · Private Office",
     statusReviewing: "Bewerbungen werden geprüft · Q3 2026",
     locationLine: "Zürich · Genf · Ausgewählte Schweizer Veranstaltungsorte",
     scrollToProgrammes: "Zu den Programmen ↓",
   },
   posture: {
     eyebrow: "Die Haltung der Plattform",
-    sub: "Kuratiertes Lernen, Zugang und überlegte Vorstellungen",
+    sub: "Premium Schweizer Executive-Erlebnisse · Kuratierter Zugang · Private Netzwerke",
     pillars: [
       { label: "Auf Bewerbung", line: "Niemals offene Anmeldung." },
       { label: "Zwölf im Raum", line: "Bewusst kohortenbasiert." },
@@ -957,8 +957,8 @@ const de: Dict = {
         body: "Bewerbungsfragen suchen Spezifität. Programmaufbau verpflichtet sich auf Phasen, nicht auf Slogans. Gebühren werden ausgewiesen, nicht verhandelt.",
       },
       {
-        title: "Ehrlichkeit über den Umfang",
-        body: "Wir sind keine Beratung, kein Coaching, nicht reguliert. Wir versammeln Räume; wir liefern keine Resultate. Das sagen wir auf jeder Seite.",
+        title: "Premium-Umfang, klar definiert",
+        body: "Vision Goal verkauft kuratierten Zugang, überlegte Vorstellungen und Schweizer Geschäftsexpertise — weder einen Kurs noch ein Beratungsmandat. Die regulierten Leistungen, sofern erforderlich, erbringen die von uns eingeführten Principals.",
       },
     ],
   },
@@ -1000,14 +1000,14 @@ const de: Dict = {
     },
     about: {
       eyebrow: "Über die Plattform",
-      titlePart1: "Eine kuratierte Schweizer Plattform.",
-      titleGold: "Keine Beratung.",
+      titlePart1: "Kuratierter Schweizer",
+      titleGold: "Executive-Zugang.",
       lede:
-        "Vision Goal existiert, um kleine, überlegte Räume zu Schweizer Zugang, Privatbanking und themenspezifischen Finanzfragen zusammenzubringen. Die Plattform ist kuratorisch; die Räume sind auf Bewerbung; die Verfahren sind leise.",
+        "Vision Goal schafft kuratierte Schweizer Executive-Lernerlebnisse für Unternehmer, Führungspersönlichkeiten und internationale Professionals, die praktischen Zugang zu Schweizer Finanzwesen, Geschäftskultur und Premium-Netzwerken suchen.",
       statement:
-        "Wir tun drei Dinge. Wir führen eine Swiss Business Access Immersion in Zürich durch. Wir führen ein Private Swiss Banking & Wealth Intensive in Genf durch. Und wir richten einmal jährlich eine Swiss Finance Week zu einer aktuellen Frage aus. Zwölf im Raum. Geführt von namentlich genannten Praktikern. Auf Bewerbung.",
+        "Vision Goal führt drei Flaggschiff-Executive-Programme — eine Swiss Business Access Immersion in Zürich, ein Private Swiss Banking & Wealth Intensive in Genf und einmal jährlich eine Swiss Finance Week zu einer aktuellen Frage — ergänzt durch ein Private Office für einzelne Principals, die kuratierte Vorstellungen statt eines Kohortenplatzes suchen.",
       statement2:
-        "Die Plattform ist bewusst klein. Kuration ist das Produkt; die Räume sind das Lieferergebnis. Wir betreiben keine offene Anmeldung, wir liefern kein Coaching, und wir versprechen keine Resultate. Wir versprechen überlegte Räume mit namentlich genannten Gastgebern, und wir führen sie genau so, wie auf dieser Seite beschrieben.",
+        "Die Plattform ist bewusst klein. Kuration ist das Produkt; die Räume, Vorstellungen und Erlebnisse sind die Lieferergebnisse. Sie kaufen weder einen Kurs noch ein Beratungsmandat — Sie kaufen Zugang, Einsicht und Schweizer Geschäftsexpertise, die anderswo schwer zu beschaffen sind.",
       standardsEyebrow: "Standards & Ethik",
       standardsHeadline: "Wie wir arbeiten.",
       pressEyebrow: "Presse & Auszeichnungen",
@@ -1217,20 +1217,20 @@ const fr: Dict = {
     ],
   },
   hero: {
-    eyebrow: "Fortune et banque suisses curatées · Sur candidature",
-    line1: "La fortune suisse",
-    line2: "et la banque,",
-    line3: "pour vous.",
+    eyebrow: "Expériences exécutives suisses curatées · Sur candidature",
+    line1: "L’entreprise, la",
+    line2: "finance, le leadership",
+    line3: "suisses — vus de l’intérieur.",
     subline:
-      "Programmes curatés, introductions privées et trois décennies d’expertise financière suisse — sur candidature, en toute discrétion.",
-    subjects: "Programmes en cohorte · Private office · Publications",
+      "Programmes exécutifs curatés pour entrepreneurs, principals et professionnels internationaux — un accès pratique à la culture business suisse, à la finance et aux réseaux qui les sous-tendent.",
+    subjects: "Programmes exécutifs · Accès curaté · Private office",
     statusReviewing: "Examen des candidatures · T3 2026",
     locationLine: "Zurich · Genève · Lieux suisses sélectionnés",
     scrollToProgrammes: "Voir les programmes ↓",
   },
   posture: {
     eyebrow: "La posture de la plateforme",
-    sub: "Apprentissage curaté, accès et introductions réfléchies",
+    sub: "Expériences exécutives suisses premium · Accès curaté · Réseaux privés",
     pillars: [
       { label: "Sur candidature", line: "Jamais d’inscription ouverte." },
       { label: "Douze dans la salle", line: "En cohorte par choix." },
@@ -1419,8 +1419,8 @@ const fr: Dict = {
         body: "Les questions de candidature cherchent la spécificité. L’architecture s’engage sur des phases, pas des slogans. Les frais sont affichés, pas négociés.",
       },
       {
-        title: "Honnêteté sur le périmètre",
-        body: "Nous ne sommes ni conseil, ni coaching, ni régulés. Nous convoquons des salles ; nous ne livrons pas de résultats. Nous le disons sur chaque page.",
+        title: "Périmètre premium, clairement énoncé",
+        body: "Vision Goal vend de l’accès curaté, des introductions réfléchies et un savoir-faire business suisse — pas un cours, pas une mission de conseil. Les services régulés, lorsqu’ils sont nécessaires, sont assurés par les principals que nous présentons.",
       },
     ],
   },
@@ -1462,14 +1462,14 @@ const fr: Dict = {
     },
     about: {
       eyebrow: "À propos de la plateforme",
-      titlePart1: "Une plateforme suisse curatée.",
-      titleGold: "Pas du conseil.",
+      titlePart1: "Accès exécutif",
+      titleGold: "suisse curaté.",
       lede:
-        "Vision Goal existe pour réunir de petites salles réfléchies sur l’accès suisse, la banque privée et les questions financières spécifiques. La plateforme est curatoriale ; les salles se font sur candidature ; les débats restent silencieux.",
+        "Vision Goal crée des expériences exécutives suisses curatées pour entrepreneurs, dirigeants et professionnels internationaux qui recherchent un accès pratique à la finance, à la culture business et aux réseaux suisses premium.",
       statement:
-        "Nous faisons trois choses. Nous animons une Swiss Business Access Immersion à Zurich. Nous animons un Private Swiss Banking & Wealth Intensive à Genève. Et nous tenons une fois par an une Swiss Finance Week sur une question d’actualité. Douze dans la salle. Animé par des praticiens nommés. Sur candidature.",
+        "Vision Goal organise trois programmes exécutifs phares — une Swiss Business Access Immersion à Zurich, un Private Swiss Banking & Wealth Intensive à Genève et une Swiss Finance Week annuelle sur une question d’actualité — complétés par un Private Office pour les principals qui préfèrent des introductions curatées à une place en cohorte.",
       statement2:
-        "La plateforme est volontairement petite. La curation est le produit ; les salles sont le livrable. Nous ne pratiquons pas l’inscription ouverte, nous ne livrons pas de coaching et nous ne promettons pas de résultats. Nous promettons des salles réfléchies avec des animateurs nommés, et nous les conduisons telles que décrites sur cette page.",
+        "La plateforme est volontairement petite. La curation est le produit ; les salles, les introductions et les expériences en sont les livrables. Vous n’achetez ni un cours ni une mission de conseil — vous achetez de l’accès, de l’insight et un savoir-faire business suisse difficile à assembler autrement.",
       standardsEyebrow: "Standards & éthique",
       standardsHeadline: "Comment nous opérons.",
       pressEyebrow: "Presse & reconnaissance",
@@ -1679,20 +1679,20 @@ const es: Dict = {
     ],
   },
   hero: {
-    eyebrow: "Riqueza y banca suizas curadas · Por candidatura",
-    line1: "La riqueza suiza",
-    line2: "y la banca,",
-    line3: "para usted.",
+    eyebrow: "Experiencias ejecutivas suizas curadas · Por candidatura",
+    line1: "Negocios, finanzas",
+    line2: "y liderazgo suizos —",
+    line3: "desde dentro.",
     subline:
-      "Programas curados, introducciones privadas y tres décadas de experiencia financiera suiza — por candidatura, en confianza.",
-    subjects: "Programas por cohorte · Private office · Publicaciones",
+      "Programas ejecutivos curados para emprendedores, principals y profesionales internacionales — acceso práctico a la cultura empresarial suiza, a las finanzas y a las redes detrás de ellas.",
+    subjects: "Programas ejecutivos · Acceso curado · Private office",
     statusReviewing: "Revisando candidaturas · T3 2026",
     locationLine: "Zúrich · Ginebra · Sedes suizas seleccionadas",
     scrollToProgrammes: "Ver los programas ↓",
   },
   posture: {
     eyebrow: "La postura de la plataforma",
-    sub: "Aprendizaje curado, acceso e introducciones consideradas",
+    sub: "Experiencias ejecutivas suizas premium · Acceso curado · Redes privadas",
     pillars: [
       { label: "Por candidatura", line: "Nunca matrícula abierta." },
       { label: "Doce en la sala", line: "Por cohorte, por elección." },
@@ -1881,8 +1881,8 @@ const es: Dict = {
         body: "Las preguntas de candidatura buscan especificidad. La arquitectura se compromete con fases, no eslóganes. Las tarifas se publican, no se negocian.",
       },
       {
-        title: "Honestidad sobre el alcance",
-        body: "No somos asesoría, no somos coaching, no estamos regulados. Convocamos salas; no entregamos resultados. Lo decimos en cada página.",
+        title: "Alcance premium, claramente enunciado",
+        body: "Vision Goal vende acceso curado, introducciones consideradas y know-how empresarial suizo — no un curso, no un encargo de consultoría. El trabajo regulado, cuando es necesario, lo entregan los principals que presentamos.",
       },
     ],
   },
@@ -1924,14 +1924,14 @@ const es: Dict = {
     },
     about: {
       eyebrow: "Acerca de la plataforma",
-      titlePart1: "Una plataforma suiza curada.",
-      titleGold: "No es asesoría.",
+      titlePart1: "Acceso ejecutivo",
+      titleGold: "suizo curado.",
       lede:
-        "Vision Goal existe para convocar pequeñas salas consideradas sobre acceso suizo, banca privada y preguntas financieras específicas. La plataforma es curatorial; las salas son por candidatura; los procedimientos son silenciosos.",
+        "Vision Goal crea experiencias ejecutivas suizas curadas para emprendedores, directivos y profesionales internacionales que buscan acceso práctico a las finanzas, la cultura empresarial y las redes premium suizas.",
       statement:
-        "Hacemos tres cosas. Llevamos a cabo una Swiss Business Access Immersion en Zúrich. Llevamos a cabo un Private Swiss Banking & Wealth Intensive en Ginebra. Y celebramos una Swiss Finance Week al año sobre una pregunta actual. Doce en la sala. Conducido por practicantes nombrados. Por candidatura.",
+        "Vision Goal opera tres programas ejecutivos insignia — una Swiss Business Access Immersion en Zúrich, un Private Swiss Banking & Wealth Intensive en Ginebra y, anualmente, una Swiss Finance Week sobre una pregunta de actualidad — complementados por un Private Office para principals que prefieren introducciones curadas en lugar de una plaza en cohorte.",
       statement2:
-        "La plataforma es deliberadamente pequeña. La curaduría es el producto; las salas son el entregable. No realizamos matrícula abierta, no entregamos coaching y no prometemos resultados. Prometemos salas consideradas con anfitriones nombrados, y las conducimos tal como se describe en esta página.",
+        "La plataforma es deliberadamente pequeña. La curaduría es el producto; las salas, introducciones y experiencias son los entregables. No compra un curso ni un encargo de consultoría — compra acceso, perspectiva y know-how empresarial suizo difícil de armar de otro modo.",
       standardsEyebrow: "Estándares y ética",
       standardsHeadline: "Cómo operamos.",
       pressEyebrow: "Prensa y reconocimiento",
@@ -2141,20 +2141,20 @@ const zh: Dict = {
     ],
   },
   hero: {
-    eyebrow: "精选瑞士财富与银行业 · 申请制",
-    line1: "瑞士财富",
-    line2: "与银行业,",
-    line3: "为您而设。",
+    eyebrow: "精选瑞士高管体验 · 申请制",
+    line1: "瑞士商业、金融",
+    line2: "与领导力,",
+    line3: "由内而外。",
     subline:
-      "精选课程、私人引荐, 以及三十年瑞士金融专长 —— 申请制, 全程审慎。",
-    subjects: "群体课程 · 私人办公室 · 已发表研究",
+      "为企业家、合伙人与跨国资深人士打造的精选高管集训 —— 让您亲临瑞士商业文化、金融体系, 以及背后的网络。",
+    subjects: "高管集训 · 精选通道 · 私人办公室",
     statusReviewing: "申请审阅中 · 2026 年第三季度",
     locationLine: "苏黎世 · 日内瓦 · 精选瑞士场地",
     scrollToProgrammes: "查看项目 ↓",
   },
   posture: {
     eyebrow: "平台姿态",
-    sub: "精选学习、通道与审慎引荐",
+    sub: "瑞士高端高管体验 · 精选通道 · 私享网络",
     pillars: [
       { label: "申请制", line: "从不公开招生。" },
       { label: "室内仅十二人", line: "群体制乃刻意。" },
@@ -2343,8 +2343,8 @@ const zh: Dict = {
         body: "申请问题考察具体性。项目架构以阶段承诺, 而非以口号。费用明示, 不议价。",
       },
       {
-        title: "对范围的诚实",
-        body: "我们既非顾问, 亦非教练, 也未受监管。我们召集房间; 不承诺结果。每一页皆如此声明。",
+        title: "高端范围, 清楚界定",
+        body: "Vision Goal 售卖的, 是精选通道、审慎引荐与瑞士商业素养 —— 既非课程, 也非咨询合约。在确有需要时, 受监管的工作由我们引荐的 Principal 承担。",
       },
     ],
   },
@@ -2386,14 +2386,14 @@ const zh: Dict = {
     },
     about: {
       eyebrow: "关于平台",
-      titlePart1: "一座精选的瑞士平台。",
-      titleGold: "非顾问。",
+      titlePart1: "瑞士高管",
+      titleGold: "精选通道。",
       lede:
-        "Vision Goal 旨在召集围绕瑞士通道、私人银行与具体金融议题的小型审慎房间。平台为策划性质; 房间为申请制; 议程从容静默。",
+        "Vision Goal 为企业家、高管与跨国资深人士打造精选的瑞士高管学习体验, 让您切实接触瑞士金融、商业文化与高端网络。",
       statement:
-        "我们做三件事。在苏黎世举办 Swiss Business Access Immersion。在日内瓦举办 Private Swiss Banking & Wealth Intensive。每年围绕一个当下议题举办一届 Swiss Finance Week。室内仅十二人。由具名从业者主持。申请制。",
+        "Vision Goal 设有三大旗舰高管项目 —— 苏黎世的 Swiss Business Access Immersion、日内瓦的 Private Swiss Banking & Wealth Intensive, 以及每年一届、围绕当下议题的 Swiss Finance Week —— 并辅以为不愿入组而希望获得精选引荐的个人 Principal 设立的私人办公室。",
       statement2:
-        "平台刻意精简。策划即产品; 房间为交付。我们不进行公开招生, 不提供教练辅导, 也不承诺结果。我们承诺由具名主持人主持的审慎房间, 并按本页所述方式运行。",
+        "平台刻意精简。策划即产品; 房间、引荐与体验则是交付。您所得到的不是一门课程, 也不是一份咨询合约 —— 而是难以从他处汇集的瑞士商业通道、洞察与专业素养。",
       standardsEyebrow: "标准与伦理",
       standardsHeadline: "我们如何运营。",
       pressEyebrow: "媒体与认可",
