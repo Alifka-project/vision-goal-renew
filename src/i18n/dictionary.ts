@@ -317,28 +317,29 @@ const en: Dict = {
     ],
   },
   programmesBlock: {
-    eyebrow: "The flagship intensives",
-    headline: "Three curated programmes.",
+    eyebrow: "The flagship executive intensives",
+    headline: "Three Swiss intensives.",
     headlineGold: "By application.",
   },
   programmeMeta: {
     access: {
       name: "Swiss Business Access Immersion",
       tagline:
-        "A curated immersion — direct access to Swiss businesses, networks, and operating culture.",
+        "Five days inside Swiss business — SME visits, boardrooms, hospitality, and operating culture you cannot read about elsewhere.",
       durationLabel: "5 days · in residence",
       city: "Zurich",
     },
     banking: {
       name: "Private Swiss Banking & Wealth Intensive",
-      tagline: "A chatham-house intensive — Swiss private banking, hosted by practitioners.",
+      tagline:
+        "Four days inside Swiss private banking — chatham-house rooms with named practitioners, behind closed doors.",
       durationLabel: "4 days · chatham-house",
       city: "Geneva",
     },
     topic: {
       name: "Swiss Finance Week",
       tagline:
-        "A themed week of curated rooms — one Swiss finance topic, hosted by practitioners.",
+        "Five themed days inside one Swiss finance question — curated rooms, hospitality settings, hosted by practitioners.",
       durationLabel: "5 days · curated",
       city: "Zurich",
     },
@@ -776,29 +777,29 @@ const de: Dict = {
     ],
   },
   programmesBlock: {
-    eyebrow: "Die Flaggschiff-Intensivprogramme",
-    headline: "Drei kuratierte Programme.",
+    eyebrow: "Die Flaggschiff-Executive-Programme",
+    headline: "Drei Schweizer Intensivprogramme.",
     headlineGold: "Auf Bewerbung.",
   },
   programmeMeta: {
     access: {
       name: "Swiss Business Access Immersion",
       tagline:
-        "Eine kuratierte Immersion — direkter Zugang zu Schweizer Unternehmen, Netzwerken und Geschäftskultur.",
+        "Fünf Tage hinter den Kulissen der Schweizer Wirtschaft — KMU-Besuche, Boardrooms, Gastfreundschaft und Operating-Kultur, die anderswo nicht zugänglich ist.",
       durationLabel: "5 Tage · vor Ort",
       city: "Zürich",
     },
     banking: {
       name: "Private Swiss Banking & Wealth Intensive",
       tagline:
-        "Ein Chatham-House-Intensivprogramm — Schweizer Privatbanking, geführt von Praktikern.",
+        "Vier Tage im Schweizer Privatbanking — Chatham-House-Räume mit namentlich genannten Praktikern, hinter verschlossenen Türen.",
       durationLabel: "4 Tage · Chatham-House",
       city: "Genf",
     },
     topic: {
       name: "Swiss Finance Week",
       tagline:
-        "Eine thematische Woche kuratierter Räume — ein Schweizer Finanzthema, geführt von Praktikern.",
+        "Fünf themenbezogene Tage zu einer aktuellen Schweizer Finanzfrage — kuratierte Räume, Gastfreundschaft, geführt von Praktikern.",
       durationLabel: "5 Tage · kuratiert",
       city: "Zürich",
     },
@@ -1238,29 +1239,29 @@ const fr: Dict = {
     ],
   },
   programmesBlock: {
-    eyebrow: "Les intensifs phares",
-    headline: "Trois programmes curatés.",
+    eyebrow: "Les programmes exécutifs phares",
+    headline: "Trois intensifs suisses.",
     headlineGold: "Sur candidature.",
   },
   programmeMeta: {
     access: {
       name: "Swiss Business Access Immersion",
       tagline:
-        "Une immersion curatée — accès direct aux entreprises, réseaux et culture opérationnelle suisses.",
+        "Cinq jours dans l’envers du décor du business suisse — visites de PME, conseils d’administration, hospitalité et culture opérationnelle qu’on ne lit nulle part ailleurs.",
       durationLabel: "5 jours · en résidence",
       city: "Zurich",
     },
     banking: {
       name: "Private Swiss Banking & Wealth Intensive",
       tagline:
-        "Un intensif chatham house — banque privée suisse, animé par des praticiens.",
+        "Quatre jours à l’intérieur de la banque privée suisse — salles chatham house avec praticiens nommés, à huis clos.",
       durationLabel: "4 jours · chatham house",
       city: "Genève",
     },
     topic: {
       name: "Swiss Finance Week",
       tagline:
-        "Une semaine thématique de salles curatées — un sujet de finance suisse, animé par des praticiens.",
+        "Cinq jours thématiques autour d’une question d’actualité de la finance suisse — salles curatées, hospitalité, animées par des praticiens.",
       durationLabel: "5 jours · curaté",
       city: "Zurich",
     },
@@ -1700,29 +1701,29 @@ const es: Dict = {
     ],
   },
   programmesBlock: {
-    eyebrow: "Los intensivos insignia",
-    headline: "Tres programas curados.",
+    eyebrow: "Los programas ejecutivos insignia",
+    headline: "Tres intensivos suizos.",
     headlineGold: "Por candidatura.",
   },
   programmeMeta: {
     access: {
       name: "Swiss Business Access Immersion",
       tagline:
-        "Una inmersión curada — acceso directo a empresas, redes y cultura operativa suizas.",
+        "Cinco días dentro del negocio suizo — visitas a PYMES, salas de juntas, hospitalidad y cultura operativa que no se encuentra en otros sitios.",
       durationLabel: "5 días · en residencia",
       city: "Zúrich",
     },
     banking: {
       name: "Private Swiss Banking & Wealth Intensive",
       tagline:
-        "Un intensivo chatham house — banca privada suiza, conducido por practicantes.",
+        "Cuatro días dentro de la banca privada suiza — salas chatham house con practicantes nombrados, a puerta cerrada.",
       durationLabel: "4 días · chatham house",
       city: "Ginebra",
     },
     topic: {
       name: "Swiss Finance Week",
       tagline:
-        "Una semana temática de salas curadas — un tema de finanzas suizas, conducido por practicantes.",
+        "Cinco días temáticos sobre una pregunta actual de las finanzas suizas — salas curadas, hospitalidad, conducidas por practicantes.",
       durationLabel: "5 días · curado",
       city: "Zúrich",
     },
@@ -2162,29 +2163,29 @@ const zh: Dict = {
     ],
   },
   programmesBlock: {
-    eyebrow: "旗舰集训项目",
-    headline: "三个精选项目。",
+    eyebrow: "旗舰高管集训项目",
+    headline: "三大瑞士集训。",
     headlineGold: "申请制。",
   },
   programmeMeta: {
     access: {
       name: "Swiss Business Access Immersion",
       tagline:
-        "精选沉浸式集训 —— 直通瑞士企业、网络与运营文化。",
+        "五天身处瑞士商业之中 —— 中小企业实地、董事会议、款待与他处难寻的运营文化。",
       durationLabel: "5 天 · 全程驻地",
       city: "苏黎世",
     },
     banking: {
       name: "Private Swiss Banking & Wealth Intensive",
       tagline:
-        "查塔姆守则下的集训 —— 瑞士私人银行业, 由资深从业者主持。",
+        "四天身处瑞士私人银行业 —— 查塔姆守则下与具名从业者闭门对话。",
       durationLabel: "4 天 · 查塔姆守则",
       city: "日内瓦",
     },
     topic: {
       name: "Swiss Finance Week",
       tagline:
-        "围绕单一瑞士金融议题的精选周 —— 由资深从业者主持。",
+        "围绕一个瑞士金融当下议题的五天主题周 —— 精选房间、款待场景, 由资深从业者主持。",
       durationLabel: "5 天 · 精选",
       city: "苏黎世",
     },

@@ -13,15 +13,15 @@ import { useT } from "@/i18n/I18nProvider";
 const whoFor = [
   {
     title: "Post-liquidity principals",
-    body: "Founders and operators after a sale or partial liquidity event, deciding how to think about a new balance-sheet shape.",
+    body: "Founders and operators after a sale or partial liquidity event, thinking about a new balance-sheet shape and who should sit beside them in Switzerland.",
   },
   {
     title: "Family principals",
-    body: "Members of single-family offices considering a Swiss seat for part of the family book, or refining an existing one.",
+    body: "Members of single-family offices considering a Swiss seat for part of the family book, or refining an existing one — with introductions that respect discretion.",
   },
   {
     title: "International decision-makers",
-    body: "Senior executives and partners weighing a Swiss anchor — operating, banking, or both — without an existing local relationship.",
+    body: "Senior executives, founders, and partners weighing a Swiss anchor — operating, banking, or both — who want to start from a curated, named shortlist instead of a search.",
   },
 ];
 
@@ -29,37 +29,37 @@ const howItWorks = [
   {
     n: "01",
     title: "A confidential conversation",
-    body: "A single, no-fee call with a senior member of the curation team. We do not advise; we listen. The aim is to understand the problem clearly enough to know who should be in the next room.",
+    body: "A single, no-fee call with the curation team. We listen carefully — the goal is to understand the problem precisely enough to know who, in Switzerland, you should be sitting next to.",
   },
   {
     n: "02",
     title: "A curated shortlist",
-    body: "If we believe the platform can help, we prepare a short list — typically two to three principals from our vetted network of Swiss bankers, family-office partners, or operators. Each is named, with a one-page rationale.",
+    body: "A named shortlist of two to three Swiss principals — private bankers, family-office partners, operating peers — each chosen against your situation, with a one-page rationale that you can act on.",
   },
   {
     n: "03",
     title: "Considered introduction",
-    body: "We make a single, considered introduction. We do not maintain a leaderboard; we do not run beauty contests. After the introduction, the relationship is yours.",
+    body: "A single, considered introduction made warmly by Vision Goal. After the introduction the relationship is yours — we do not maintain a leaderboard and we do not run beauty contests.",
   },
   {
     n: "04",
-    title: "Ongoing as appropriate",
-    body: "If the next question is curatorial — a cohort, a private seminar, a dispatch — we can host it. If it is operational, we step back. We are not the advisor; we are how you found the right one.",
+    title: "Continued curation",
+    body: "If the next step is curatorial — a private seminar, a programme seat, a behind-the-scenes Swiss experience — we host it. If it is operational, the principal you have met carries it from there.",
   },
 ];
 
 const standards = [
   {
     title: "No commission, no rebates",
-    body: "We do not accept retrocessions, finder’s fees, or rebates from the principals we introduce. The platform is paid by an annual programme of fees from cohort participants and a flat per-introduction administration fee, disclosed upfront.",
+    body: "Vision Goal does not accept retrocessions, finder’s fees, or rebates from the principals it introduces. The platform is paid by programme fees and a flat per-introduction administration fee, disclosed upfront. Your interests stay aligned with ours.",
   },
   {
     title: "Discretion as default",
-    body: "Conversations are confidential. We do not name clients. The Private Office register is shared only with the introduced principals on a need-to-know basis.",
+    body: "Conversations are confidential. Client names are never published. The Private Office register is shared only with the introduced principals on a need-to-know basis.",
   },
   {
-    title: "Not regulated advice",
-    body: "We are not a wealth manager, not a regulated advisor, and not a placement agent. We convene, we curate, and we introduce. The principals you meet are the ones who deliver the regulated work.",
+    title: "Curation, not transaction",
+    body: "Vision Goal curates and introduces. The regulated work — wealth management, banking, advisory — is delivered by the named Swiss principals you meet through us. You buy access; they deliver execution.",
   },
 ];
 
@@ -98,12 +98,12 @@ export default function PrivateOfficePage() {
                 </span>
               </div>
               <h1 className="mt-8 font-serif text-cream text-[2.5rem] sm:text-[3.5rem] lg:text-[5rem] leading-[1.04] tracking-[-0.02em] max-w-4xl">
-                Curated introductions for principals.
+                Curated Swiss introductions for principals.
               </h1>
               <p className="mt-8 max-w-prose text-body-lg text-cream/85">
-                For senior individuals — post-liquidity founders, family principals, international
-                decision-makers — who need to find the right Swiss banker, partner, or operator. We
-                listen, we curate, and we introduce. We do not advise.
+                For founders, family principals, and international decision-makers who would rather
+                start from a named, curated shortlist than a search. Vision Goal listens, curates,
+                and introduces — the regulated work is delivered by the Swiss principals you meet.
               </p>
               <div className="mt-12 flex flex-col sm:flex-row gap-3 sm:gap-5">
                 <Button href="/apply/private-consultation" variant="on-dark">
