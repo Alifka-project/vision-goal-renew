@@ -504,7 +504,13 @@ export type Insight = {
   authorSlug?: string;
   readingTime: string;
   href: string;
-  imageKey: "insightAccess" | "insightBanking" | "insightMethodology";
+  imageKey:
+    | "insightAccess"
+    | "insightBanking"
+    | "insightMethodology"
+    | "insightApplication"
+    | "insightCities"
+    | "insightRefusal";
   body: string[];
 };
 
@@ -571,7 +577,7 @@ export const featuredInsights: Insight[] = [
     authorName: "Vision Goal",
     readingTime: "4 min",
     href: "/insights/geneva-and-zurich",
-    imageKey: "insightMethodology",
+    imageKey: "insightCities",
     body: [
       "Vision Goal runs the Banking Intensive in Geneva and the Access Immersion and Topic Week in Zurich. The cities are not interchangeable.",
       "Geneva, for the Banking Intensive, is where the chatham-house posture is native. The institutions are nearer; the practitioners are closer; the silence in the room reads correctly.",
@@ -588,7 +594,7 @@ export const featuredInsights: Insight[] = [
     authorName: "Vision Goal",
     readingTime: "3 min",
     href: "/insights/an-application-not-a-sale",
-    imageKey: "insightAccess",
+    imageKey: "insightApplication",
     body: [
       "We are sometimes asked why we do not simply offer open enrolment and let the market decide. The answer is that the room is the product, and a room shaped by the market is a different product to one shaped by the host.",
       "An application asks three things: who you are, what you want from the room, and what you bring to it. The third question is the most important. A room without contribution is not a cohort; it is an audience.",
@@ -605,7 +611,7 @@ export const featuredInsights: Insight[] = [
     authorName: "Vision Goal",
     readingTime: "4 min",
     href: "/insights/what-we-do-not-do",
-    imageKey: "insightMethodology",
+    imageKey: "insightRefusal",
     body: [
       "We do not run open enrolment. Every seat is by application; the rooms shape themselves through curation, not transaction.",
       "We do not deliver coaching, advisory, or any regulated financial service. The platform is curatorial — hosts speak as practitioners, not as advisors.",

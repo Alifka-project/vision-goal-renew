@@ -23,10 +23,16 @@ export const images = {
   // Alumni context
   alumniRoom: u("photo-1517248135467-4c7edcad34c4", 1600), // moody dining / cohort-dinner room
 
-  // Insights
-  insightAccess: u("photo-1464822759023-fed622ff2c3b", 1100),
-  insightBanking: u("photo-1521295121783-8a321d551ad2", 1100), // globe in study — private wealth posture
-  insightMethodology: u("photo-1542037104857-ffbb0b9155fb", 1100),
+  // Private office — dedicated, distinct from programmeBanking
+  privateOffice: u("photo-1524758631624-e2822e304c36", 1400), // refined private lounge
+
+  // Insights — one image per article so no two insight pages share a hero
+  insightAccess: u("photo-1464822759023-fed622ff2c3b", 1100), // swiss-sme-evaluation
+  insightBanking: u("photo-1521295121783-8a321d551ad2", 1100), // discretion-as-posture (globe in study)
+  insightMethodology: u("photo-1542037104857-ffbb0b9155fb", 1100), // twelve-not-twenty (alpine sea of clouds)
+  insightApplication: u("photo-1499856871958-5b9627545d1a", 1100), // an-application-not-a-sale (european bridge at dusk)
+  insightCities: u("photo-1501785888041-af3ef285b470", 1100), // geneva-and-zurich (alpine lake with rowboat)
+  insightRefusal: u("photo-1577140917170-285929fb55b7", 1100), // what-we-do-not-do (minimal room — visual restraint)
 
   // CTA
   ctaAlps: u("photo-1506905925346-21bda4d32df4", 2000, 75),

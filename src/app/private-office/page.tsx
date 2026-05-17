@@ -73,7 +73,7 @@ export default function PrivateOfficePage() {
         <section className="relative bg-navy-deep text-cream overflow-hidden">
           <div className="absolute inset-0">
             <Image
-              src={images.programmeBanking}
+              src={images.privateOffice}
               alt=""
               fill
               priority
