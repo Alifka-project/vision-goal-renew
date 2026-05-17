@@ -21,11 +21,11 @@ export const images = {
   venueInterior: u("photo-1568084680786-a84f91d1153c", 1400), // editorial interior
 
   // Alumni context
-  alumniRoom: u("photo-1497366216548-37526070297c", 1600),
+  alumniRoom: u("photo-1517248135467-4c7edcad34c4", 1600), // moody dining / cohort-dinner room
 
   // Insights
   insightAccess: u("photo-1464822759023-fed622ff2c3b", 1100),
-  insightBanking: u("photo-1551836022-deb4988cc6c0", 1100),
+  insightBanking: u("photo-1521295121783-8a321d551ad2", 1100), // globe in study — private wealth posture
   insightMethodology: u("photo-1542037104857-ffbb0b9155fb", 1100),
 
   // CTA
