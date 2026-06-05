@@ -9,14 +9,17 @@ import { PageHero } from "@/components/modules/PageHero";
 import { hosts } from "@/lib/content";
 import { useT } from "@/i18n/I18nProvider";
 
-const programmeKey: Record<"access" | "banking" | "topic", "access" | "banking" | "topic"> = {
-  access: "access",
-  banking: "banking",
-  topic: "topic",
-};
-
-export default function HostsIndexPage() {
+// Pre-launch posture: this page used to list a roster of named hosts and
+// faculty. Per-programme contributors are now confirmed individually and
+// will be named publicly only once their participation has been agreed —
+// so the page renders the curated-network statement and the founding
+// curator as the single confirmed name.
+export default function PractitionerNetworkPage() {
   const t = useT();
+  // There is exactly one publicly-named entry on launch: the founder /
+  // curator. Additional confirmed contributors will be added per programme.
+  const founder = hosts[0];
+
   return (
     <>
       <Header variant="solid" />
@@ -25,76 +28,73 @@ export default function HostsIndexPage() {
           eyebrow={t.pages.hosts.eyebrow}
           title={
             <>
-              {t.pages.hosts.titlePart1} <span className="text-gold italic">{t.pages.hosts.titleGold}</span>
+              {t.pages.hosts.titlePart1}{" "}
+              <span className="text-gold italic">{t.pages.hosts.titleGold}</span>
             </>
           }
           lede={t.pages.hosts.lede}
         />
 
+        {/* Founding curator — the single named entry on launch */}
         <section className="bg-white py-section-y md:py-section-y-lg">
           <div className="container">
-            <ul className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-6">
-              {hosts.map((host, i) => (
-                <Reveal as="li" key={host.slug} duration={700} delay={i * 60}>
-                  <Link
-                    href={`/hosts/${host.slug}`}
-                    className="card-lift flex h-full flex-col p-7 border hairline bg-white hover:border-gold/40"
-                  >
-                    <div className="flex items-start gap-5">
-                      <div className="shrink-0 w-16 h-16 bg-navy text-cream flex items-center justify-center font-serif text-xl tracking-wide">
-                        {host.initials}
-                      </div>
-                      <div className="min-w-0">
-                        <div className="flex items-center gap-2 flex-wrap">
-                          <p className="font-serif text-navy text-lg leading-tight">{host.name}</p>
-                          {host.placeholder ? (
-                            <span className="text-[0.6rem] uppercase tracking-[0.16em] text-slate-2 border hairline px-1.5 py-0.5">
-                              Sample
-                            </span>
-                          ) : null}
-                        </div>
-                        <p className="mt-1 text-[0.78rem] text-slate-2 leading-snug">{host.role}</p>
-                      </div>
-                    </div>
-                    <div className="mt-6 flex flex-wrap gap-2 text-[0.7rem] uppercase tracking-[0.12em] text-gold">
-                      {host.expertise.map((tag) => (
+            <Reveal duration={800}>
+              <Eyebrow>Founding curator</Eyebrow>
+              <h2 className="mt-6 font-serif text-display-md md:text-[2.5rem] text-navy leading-[1.1] tracking-[-0.015em] max-w-prose">
+                The platform is curated by its founder.
+              </h2>
+            </Reveal>
+
+            <Reveal duration={700} delay={120}>
+              <article className="mt-12 max-w-4xl border hairline p-7 md:p-10 bg-white">
+                <div className="flex flex-col md:flex-row md:items-start gap-6 md:gap-8">
+                  <div className="shrink-0 w-20 h-20 md:w-24 md:h-24 bg-navy text-cream flex items-center justify-center font-serif text-2xl md:text-3xl tracking-wide">
+                    {founder.initials}
+                  </div>
+                  <div className="min-w-0">
+                    <p className="font-serif text-navy text-2xl md:text-3xl leading-tight">
+                      {founder.name}
+                    </p>
+                    <p className="mt-2 text-body text-slate-2 leading-snug">{founder.role}</p>
+                    <div className="mt-5 flex flex-wrap gap-2 text-[0.7rem] uppercase tracking-[0.12em] text-gold">
+                      {founder.expertise.map((tag) => (
                         <span key={tag} className="border hairline px-2 py-1">
                           {tag}
                         </span>
                       ))}
                     </div>
-                    <div className="mt-6 pt-5 border-t hairline flex flex-wrap gap-x-4 gap-y-1 text-[0.78rem] text-slate-2">
-                      {host.programmes.map((p) => (
-                        <span key={p}>{t.programmeMeta[programmeKey[p]].name}</span>
-                      ))}
+                    <p className="mt-7 text-body text-slate max-w-prose">{founder.bio}</p>
+                    <div className="mt-6 flex flex-wrap items-center gap-x-6 gap-y-2 text-[0.78rem] uppercase tracking-[0.14em] text-slate-2">
+                      <Link
+                        href={`/hosts/${founder.slug}`}
+                        className="hover:text-navy transition-colors duration-200"
+                      >
+                        <span className="link-underline link-underline-out">Full profile →</span>
+                      </Link>
+                      <a
+                        href={founder.linkedin}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="hover:text-navy transition-colors duration-200"
+                      >
+                        <span className="link-underline link-underline-out">LinkedIn ↗</span>
+                      </a>
                     </div>
-                  </Link>
-                  <a
-                    href={host.linkedin}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label={`${host.name} on LinkedIn`}
-                    className="mt-3 inline-flex items-center gap-2 text-[0.72rem] uppercase tracking-[0.16em] text-slate-2 hover:text-navy transition-colors duration-200"
-                  >
-                    <span aria-hidden="true">in</span>
-                    <span>LinkedIn</span>
-                    <span aria-hidden="true">↗</span>
-                  </a>
-                </Reveal>
-              ))}
-            </ul>
+                  </div>
+                </div>
+              </article>
+            </Reveal>
 
             <Reveal duration={700}>
-              <div className="mt-16 pt-10 border-t hairline">
+              <div className="mt-16 pt-10 border-t hairline max-w-3xl">
                 <Eyebrow>{t.pages.hosts.principleEyebrow}</Eyebrow>
-                <p className="mt-6 max-w-prose text-body text-slate">
-                  {t.pages.hosts.principleBody}
-                </p>
+                <p className="mt-6 text-body text-slate">{t.pages.hosts.principleBody}</p>
               </div>
             </Reveal>
           </div>
         </section>
 
+        {/* Criteria — kept as principle-based content, no names */}
         <section className="bg-cream py-section-y md:py-section-y-lg border-y hairline">
           <div className="container">
             <Reveal duration={800}>

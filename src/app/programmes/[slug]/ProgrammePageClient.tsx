@@ -161,37 +161,65 @@ export function ProgrammePageClient({ slug }: { slug: Programme["slug"] }) {
           </div>
         </section>
 
+        {/*
+         * Per-programme contributors are confirmed individually for each
+         * programme cycle and named publicly only once their participation
+         * has been agreed. Until then this section renders the
+         * curated-network statement plus a single named entry (the
+         * founding curator, where applicable).
+         */}
         <section className="bg-white py-section-y md:py-section-y-lg">
           <div className="container">
             <Reveal duration={800}>
               <Eyebrow>{dt.hostsEyebrow}</Eyebrow>
-              <h2 className="mt-6 font-serif text-display-md md:text-[3rem] text-navy leading-[1.05] tracking-[-0.015em]">
+              <h2 className="mt-6 font-serif text-display-md md:text-[3rem] text-navy leading-[1.05] tracking-[-0.015em] max-w-[24ch]">
                 {dt.hostsHeadlinePart1} <span className="text-gold italic">{dt.hostsHeadlineGold}</span>
               </h2>
             </Reveal>
-            <ul className="mt-12 grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-              {programmeHosts.map((host, i) => (
-                <Reveal as="li" key={host.slug} duration={700} delay={i * 80}>
-                  <Link
-                    href={`/hosts/${host.slug}`}
-                    className="card-lift flex items-center gap-5 p-6 border hairline bg-white hover:border-gold/40"
-                  >
-                    <div className="shrink-0 w-16 h-16 bg-navy text-cream flex items-center justify-center font-serif text-xl tracking-wide">
-                      {host.initials}
-                    </div>
-                    <div className="min-w-0">
-                      <p className="font-serif text-navy text-base leading-tight">{host.name}</p>
-                      <p className="mt-1 text-[0.78rem] text-slate-2 leading-snug">{host.role}</p>
-                      <div className="mt-2 flex flex-wrap gap-2 text-[0.7rem] text-gold uppercase tracking-[0.12em]">
-                        {host.expertise.map((tag) => (
-                          <span key={tag}>{tag}</span>
-                        ))}
-                      </div>
-                    </div>
-                  </Link>
-                </Reveal>
-              ))}
-            </ul>
+
+            <Reveal duration={800} delay={120}>
+              <p className="mt-10 max-w-prose text-body-lg text-slate">
+                {t.pages.hosts.lede}
+              </p>
+            </Reveal>
+
+            {programmeHosts.length > 0 ? (
+              <Reveal duration={700} delay={200}>
+                <ul className="mt-12 grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+                  {programmeHosts.map((host) => (
+                    <li key={host.slug}>
+                      <Link
+                        href={`/hosts/${host.slug}`}
+                        className="card-lift flex items-center gap-5 p-6 border hairline bg-white hover:border-gold/40"
+                      >
+                        <div className="shrink-0 w-16 h-16 bg-navy text-cream flex items-center justify-center font-serif text-xl tracking-wide">
+                          {host.initials}
+                        </div>
+                        <div className="min-w-0">
+                          <p className="font-serif text-navy text-base leading-tight">{host.name}</p>
+                          <p className="mt-1 text-[0.78rem] text-slate-2 leading-snug">{host.role}</p>
+                          <div className="mt-2 flex flex-wrap gap-2 text-[0.7rem] text-gold uppercase tracking-[0.12em]">
+                            {host.expertise.map((tag) => (
+                              <span key={tag}>{tag}</span>
+                            ))}
+                          </div>
+                        </div>
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </Reveal>
+            ) : null}
+
+            <Reveal duration={700} delay={260}>
+              <Link
+                href="/hosts"
+                className="mt-12 inline-flex items-center gap-3 text-sm text-navy font-medium"
+              >
+                <span className="link-underline link-underline-out">{t.hostsStrip.cta}</span>
+                <span aria-hidden="true">→</span>
+              </Link>
+            </Reveal>
           </div>
         </section>
 

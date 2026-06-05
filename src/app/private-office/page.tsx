@@ -102,8 +102,10 @@ export default function PrivateOfficePage() {
               </h1>
               <p className="mt-8 max-w-prose text-body-lg text-cream/85">
                 For founders, family principals, and international decision-makers who would rather
-                start from a named, curated shortlist than a search. Vision Goal listens, curates,
-                and introduces — the regulated work is delivered by the Swiss principals you meet.
+                start from a named, curated shortlist than a search. Vision Goal is an educational and
+                curatorial platform — it listens, curates, and introduces. Any regulated work — wealth
+                management, banking, tax, legal or investment advice — is provided separately by the
+                Swiss principals you meet, under their own authorisations.
               </p>
               <div className="mt-12 flex flex-col sm:flex-row gap-3 sm:gap-5">
                 <Button href="/apply/private-consultation" variant="on-dark">
@@ -195,12 +197,6 @@ export default function PrivateOfficePage() {
                   </dd>
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-y-1 md:gap-x-6 py-6 border-b hairline">
-                  <dt className="text-eyebrow uppercase text-slate-2">Indicative engagement size</dt>
-                  <dd className="md:col-span-2 text-body text-navy">
-                    The principals on our register typically take engagements from CHF 25M.
-                  </dd>
-                </div>
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-y-1 md:gap-x-6 py-6 border-b hairline">
                   <dt className="text-eyebrow uppercase text-slate-2">Response time</dt>
                   <dd className="md:col-span-2 text-body text-navy">Within 48 hours.</dd>
                 </div>
@@ -226,6 +222,16 @@ export default function PrivateOfficePage() {
                 </Reveal>
               ))}
             </ul>
+
+            <Reveal duration={700}>
+              <p className="mt-12 max-w-prose text-body-sm text-slate-2">
+                The Private Office is a curatorial introduction service. It is not asset management,
+                investment advice, tax advice or legal advice, and Vision Goal GmbH does not act as a
+                financial intermediary on behalf of clients. All regulated services are delivered by the
+                Swiss principals you meet, under their own FINMA authorisations and professional
+                obligations. This page is subject to legal review before launch.
+              </p>
+            </Reveal>
           </div>
         </section>
 

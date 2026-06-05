@@ -48,9 +48,17 @@ export function HeroEditorial() {
 
           {/* leading-[1.08] gives the italic descenders (p, g) clearance from the
               .reveal-line overflow:hidden box; without it the line is clipped. */}
+          {/*
+           * `reveal-line` is display:block, so block siblings produce no
+           * whitespace between them in `textContent` (the visual line break is
+           * pure CSS). That leaves copy/paste + screen readers reading
+           * "Inside Swissbusiness, finance,and leadership." Insert an
+           * explicit space character between each line so the underlying
+           * text content is well-formed.
+           */}
           <h1 className="mt-7 font-serif text-cream text-[2.5rem] sm:text-[3.5rem] lg:text-[4.75rem] xl:text-[5.5rem] leading-[1.08] tracking-[-0.02em]">
-            <span className="reveal-line"><span>{t.hero.line1}</span></span>
-            <span className="reveal-line delay-1"><span className="text-cream/85">{t.hero.line2}</span></span>
+            <span className="reveal-line"><span>{t.hero.line1}</span></span>{" "}
+            <span className="reveal-line delay-1"><span className="text-cream/85">{t.hero.line2}</span></span>{" "}
             <span className="reveal-line delay-2"><span className="text-gold-hi italic">{t.hero.line3}</span></span>
           </h1>
 

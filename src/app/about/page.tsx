@@ -6,6 +6,7 @@ import { PageHero } from "@/components/modules/PageHero";
 import { CTABlock } from "@/components/modules/CTABlock";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { Reveal } from "@/components/effects/Reveal";
+import { publications } from "@/lib/content";
 import { useT } from "@/i18n/I18nProvider";
 
 // Career timeline ported from visiongoal.ch — real institutions and dates.
@@ -71,12 +72,10 @@ const standards = [
   },
 ];
 
-const press = [
-  { outlet: "Neue Zürcher Zeitung", note: "Coverage of Swiss Finance Week 2025" },
-  { outlet: "Le Temps", note: "Banking Intensive — chatham-house format profile" },
-  { outlet: "Bilanz", note: "Profile of curated executive programmes in Switzerland" },
-  { outlet: "Finews", note: "Comment on small-cohort programme economics" },
-];
+// Press mentions removed pre-launch: we will not list outlets unless coverage
+// is real and linkable. Replaced with founder's peer-reviewed publications
+// (sourced from content.ts) — these are real, attributable, and link out to
+// Academia.edu.
 
 export default function AboutPage() {
   const t = useT();
@@ -139,16 +138,40 @@ export default function AboutPage() {
                 {t.pages.about.pressHeadline}
               </h2>
             </Reveal>
-            <ul className="mt-10 max-w-3xl border-t hairline">
-              {press.map((p, i) => (
-                <Reveal as="li" key={p.outlet} duration={700} delay={i * 60}>
-                  <div className="grid grid-cols-1 md:grid-cols-12 gap-y-2 md:gap-x-6 py-6 border-b hairline">
-                    <p className="md:col-span-4 font-serif text-navy text-lg">{p.outlet}</p>
-                    <p className="md:col-span-8 text-body-sm text-slate">{p.note}</p>
-                  </div>
+            <ul className="mt-10 max-w-4xl border-t hairline">
+              {publications.map((p, i) => (
+                <Reveal as="li" key={p.href} duration={700} delay={i * 30}>
+                  <a
+                    href={p.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group grid grid-cols-1 md:grid-cols-12 gap-y-2 md:gap-x-6 py-6 border-b hairline hover:bg-cream-2 transition-colors duration-300"
+                  >
+                    <p className="md:col-span-1 text-eyebrow uppercase text-gold tabular">
+                      {p.year}
+                    </p>
+                    <p className="md:col-span-8 font-serif text-navy text-lg leading-snug">
+                      {p.title}
+                      <span
+                        aria-hidden="true"
+                        className="ml-2 inline-block text-gold transition-transform duration-300 ease-editorial group-hover:translate-x-0.5"
+                      >
+                        ↗
+                      </span>
+                    </p>
+                    <p className="md:col-span-3 text-body-sm text-slate italic leading-snug">
+                      {p.journal}
+                    </p>
+                  </a>
                 </Reveal>
               ))}
             </ul>
+            <Reveal duration={700}>
+              <p className="mt-8 max-w-prose text-body-sm text-slate-2">
+                Each entry links to the peer-reviewed source on Academia.edu. Public press coverage will
+                be added here once it is real and linkable.
+              </p>
+            </Reveal>
           </div>
         </section>
 
@@ -167,14 +190,15 @@ export default function AboutPage() {
                   Andreas Svoboda
                 </h2>
                 <p className="mt-3 text-body-lg text-slate">
-                  Founder & Curator · 33 years across Swiss private banking
+                  Founder & Curator · Three decades across Swiss banking, wealth planning, insurance,
+                  finance and executive education
                 </p>
                 <p className="mt-8 font-serif text-xl lg:text-2xl text-navy leading-[1.4] max-w-prose">
-                  Andreas Svoboda founded Vision Goal in 2022 after thirty-three years across Swiss and
-                  Liechtenstein private banking. Twelve years at Bank Julius Bär & Co. AG as Head of
-                  Wealth Planning, Life & Pension across Switzerland and Singapore; nine years at UBS
-                  as Head of Finance for UBS Insurance companies; earlier roles at Credit Suisse and
-                  Zürcher Kantonalbank.
+                  Andreas Svoboda founded Vision Goal in 2022 after three decades across Swiss and
+                  Liechtenstein banking, wealth planning, insurance, finance and executive education.
+                  Twelve years at Bank Julius Bär & Co. AG as Head of Wealth Planning, Life & Pension
+                  across Switzerland and Singapore; nine years at UBS as Head of Finance for UBS
+                  Insurance companies; earlier roles at Credit Suisse and Zürcher Kantonalbank.
                 </p>
                 <p className="mt-6 text-body text-slate max-w-prose">
                   Twelve peer-reviewed papers on banking, sustainable finance, ESG, AI in financial

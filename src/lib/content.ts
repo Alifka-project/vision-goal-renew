@@ -270,71 +270,21 @@ export type Host = {
   placeholder?: boolean;
 };
 
+// Pre-launch posture: we name only confirmed contributors who have approved
+// public listing. The founder is named here; per-programme contributors are
+// confirmed individually for each programme cycle and added once their
+// participation has been agreed publicly. Do NOT add placeholder host
+// records — keep the list truthful even if it is small.
 export const hosts: Host[] = [
   {
     name: "Andreas Svoboda",
     slug: "andreas-svoboda",
-    role: "Founder & Curator · 33 years across Swiss private banking",
+    role: "Founder & Curator · Three decades across Swiss banking, wealth planning, insurance, finance and executive education",
     initials: "AS",
-    expertise: ["Wealth planning", "Swiss private banking", "Sustainable finance"],
-    bio: "Founder of Vision Goal (2022). Thirty-three years across Swiss and Liechtenstein private banking, including twelve years at Bank Julius Bär & Co. AG as Head of Wealth Planning, Life & Pension across Switzerland and Singapore, and earlier roles at UBS, Credit Suisse, and Zürcher Kantonalbank. FCCA, CFP®, Swiss Asset Manager licence, FINMA Insurance Broker authorisation; LL.M., MSc, DBA. Twelve peer-reviewed papers on banking, sustainable finance, ESG, and cross-border life insurance.",
+    expertise: ["Wealth planning", "Swiss banking", "Sustainable finance"],
+    bio: "Founder of Vision Goal (2022). Three decades across Swiss and Liechtenstein banking, wealth planning, insurance, finance and executive education — including twelve years at Bank Julius Bär & Co. AG as Head of Wealth Planning, Life & Pension across Switzerland and Singapore, and earlier roles at UBS, Credit Suisse, and Zürcher Kantonalbank. FCCA, CFP®, Swiss Asset Manager licence, FINMA Insurance Broker authorisation; LL.M., MSc, DBA. Twelve peer-reviewed papers on banking, sustainable finance, ESG, and cross-border life insurance.",
     programmes: ["access", "banking", "topic"],
     linkedin: "https://www.linkedin.com/",
-  },
-  {
-    name: "Henri Vauchel",
-    slug: "henri-vauchel",
-    role: "Host · Senior practitioner, Geneva",
-    initials: "HV",
-    expertise: ["Cross-border access", "Geneva"],
-    bio: "Senior practitioner with three decades of cross-border work between French-speaking Europe and Switzerland. Hosts the Geneva intensive and curates introductions for the access immersion.",
-    programmes: ["access", "banking"],
-    linkedin: "https://www.linkedin.com/",
-    placeholder: true,
-  },
-  {
-    name: "Anja Brönnimann",
-    slug: "anja-bronnimann",
-    role: "Host · Operating partner, Zurich",
-    initials: "AB",
-    expertise: ["Swiss SME access", "Operating culture"],
-    bio: "Operating partner with a portfolio of Swiss SME engagements. Curates the Swiss Business Access Immersion access map and hosts cohort sessions on Swiss operating culture.",
-    programmes: ["access"],
-    linkedin: "https://www.linkedin.com/",
-    placeholder: true,
-  },
-  {
-    name: "Rafael Kübler",
-    slug: "rafael-kuebler",
-    role: "Faculty · Swiss financial regulation",
-    initials: "RK",
-    expertise: ["FINMA", "Regulatory"],
-    bio: "Former regulator, now in private practice. Faculty on regulatory and supervisory questions in the Private Banking Intensive and selected Topic weeks.",
-    programmes: ["banking", "topic"],
-    linkedin: "https://www.linkedin.com/",
-    placeholder: true,
-  },
-  {
-    name: "Dr. Léa Marchand",
-    slug: "lea-marchand",
-    role: "Faculty · Macro practitioner, Geneva",
-    initials: "LM",
-    expertise: ["Macro", "Markets"],
-    bio: "Macro practitioner with a Geneva research seat. Faculty on macro and markets framings across the Banking Intensive and Topic weeks.",
-    programmes: ["banking", "topic"],
-    linkedin: "https://www.linkedin.com/",
-    placeholder: true,
-  },
-  {
-    name: "Stefan Imboden",
-    slug: "stefan-imboden",
-    role: "Host · Former MD, Swiss boutique bank",
-    initials: "SI",
-    expertise: ["Boutique banking", "Discretion"],
-    bio: "Former managing director of a Zurich boutique private bank. Hosts the discretion-and-posture sessions on the Banking Intensive and is a returning Topic-week host.",
-    programmes: ["banking", "topic"],
-    linkedin: "https://www.linkedin.com/",
-    placeholder: true,
   },
 ];
 
@@ -348,33 +298,38 @@ export type Cohort = {
   seatsLine: string;
 };
 
+// Pre-launch posture: pilot cohorts are not yet finalised for sale.
+// Every cohort line reads as "by application" — no seat counts, no waitlist
+// claim — until the first programmes have actually been confirmed and run.
+// Re-introduce seat-level detail (e.g. "4 seats remaining") once cohorts
+// have been ratified and the platform is ready to take registrations.
 export const upcomingCohorts: Cohort[] = [
   {
     programmeId: "access",
     programmeName: "Swiss Business Access Immersion",
-    startLabel: "23 — 27 June 2026",
+    startLabel: "From Q3 2026",
     city: "Zurich",
     language: "EN",
     status: "Open",
-    seatsLine: "4 seats remaining",
+    seatsLine: "Pilot cohort · by application",
   },
   {
     programmeId: "banking",
     programmeName: "Private Swiss Banking & Wealth Intensive",
-    startLabel: "8 — 11 September 2026",
+    startLabel: "From Q3 2026",
     city: "Geneva",
     language: "EN",
-    status: "Waitlist",
-    seatsLine: "Waitlist open",
+    status: "Open",
+    seatsLine: "Pilot cohort · by application",
   },
   {
     programmeId: "topic",
     programmeName: "Swiss Finance Week",
-    startLabel: "10 — 14 November 2026",
+    startLabel: "From Q4 2026",
     city: "Zurich",
     language: "EN",
     status: "Open",
-    seatsLine: "8 seats remaining",
+    seatsLine: "Pilot cohort · by application",
   },
 ];
 
@@ -521,8 +476,7 @@ export const featuredInsights: Insight[] = [
     title: "How Swiss SMEs evaluate an international partner.",
     excerpt:
       "The signals that matter inside a Swiss SME — what is read in the first meeting, and what is read in the third.",
-    authorName: "Anja Brönnimann",
-    authorSlug: "anja-bronnimann",
+    authorName: "Vision Goal",
     readingTime: "7 min",
     href: "/insights/swiss-sme-evaluation",
     imageKey: "insightAccess",
@@ -539,8 +493,7 @@ export const featuredInsights: Insight[] = [
     title: "Discretion is a posture, not a product.",
     excerpt:
       "Why the discretion that defines Swiss private banking is read as a stance, not a feature — and what that means for the room.",
-    authorName: "Dr. Margit Holzer",
-    authorSlug: "dr-margit-holzer",
+    authorName: "Vision Goal",
     readingTime: "9 min",
     href: "/insights/discretion-as-posture",
     imageKey: "insightBanking",

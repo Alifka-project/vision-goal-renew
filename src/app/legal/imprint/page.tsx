@@ -19,17 +19,19 @@ export default function ImprintPage() {
         >
           <h2 className="font-serif text-2xl text-navy">Operator</h2>
           <p>
-            Vision Goal is operated by the platform legal entity registered in Zurich, Switzerland. The
+            Vision Goal is operated by Vision Goal GmbH, a Swiss limited liability company. The
             information below satisfies the disclosure requirements under Swiss law.
           </p>
 
           <h3 className="font-serif text-xl text-navy mt-6">Registered office</h3>
           <p>
-            Vision Goal LLC
+            Vision Goal GmbH
             <br />
-            Pfäffikon SZ, Switzerland
+            [Registered address — to be confirmed before launch]
             <br />
-            Commercial register: CHE-XXX.XXX.XXX (placeholder — replace with the real UID before launch)
+            Switzerland
+            <br />
+            Commercial register / UID: [CHE-XXX.XXX.XXX — to be confirmed before launch]
           </p>
 
           <h3 className="font-serif text-xl text-navy mt-6">Contact</h3>
@@ -41,20 +43,16 @@ export default function ImprintPage() {
 
           <h3 className="font-serif text-xl text-navy mt-6">Responsible for content</h3>
           <p>
-            The platform team is responsible for the editorial content of the website. External links are
-            provided for context; the platform does not endorse or accept responsibility for the content of
-            third-party sites.
+            [Responsible person — to be confirmed before launch] is responsible for the editorial content
+            of this website on behalf of Vision Goal GmbH. External links are provided for context; Vision
+            Goal does not endorse or accept responsibility for the content of third-party sites.
           </p>
 
           <h3 className="font-serif text-xl text-navy mt-6">Disclaimer</h3>
           <p>
-            Vision Goal does not provide regulated financial, tax, or legal advice. Programme content is
-            curatorial and educational. Practitioners present in their personal capacity.
-          </p>
-
-          <p className="text-slate-2 text-body-sm mt-8">
-            Note: this is placeholder text for the redesign stage. The final imprint will be confirmed with
-            external counsel before launch — and translated for each locale at that time.
+            Vision Goal GmbH does not provide regulated financial, tax, or legal advice. Programme content
+            is curatorial and educational. Practitioners present in their personal capacity; any regulated
+            work is delivered separately by the named principals introduced through the platform.
           </p>
         </LegalShell>
       </main>

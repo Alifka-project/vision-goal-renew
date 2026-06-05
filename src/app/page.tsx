@@ -9,7 +9,6 @@ import { ThreeProgrammesBlock } from "@/components/modules/ThreeProgrammesBlock"
 import { HostsStrip } from "@/components/modules/HostsStrip";
 import { EditorialNarrative } from "@/components/modules/EditorialNarrative";
 import { CohortCalendar } from "@/components/modules/CohortCalendar";
-import { AlumniSignal } from "@/components/modules/AlumniSignal";
 import { InsightsList } from "@/components/modules/InsightsList";
 import { PrivateCohortBanner } from "@/components/modules/PrivateCohortBanner";
 import { CTABlock } from "@/components/modules/CTABlock";
@@ -34,7 +33,6 @@ export default function HomePage() {
         <HostsStrip />
         <EditorialNarrative />
         <CohortCalendar />
-        <AlumniSignal />
         <InsightsList />
         <PrivateCohortBanner />
         <CTABlock />
