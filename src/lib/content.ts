@@ -1,5 +1,10 @@
-// Placeholder content used at the landing-page stage before the CMS is wired up.
-// Every visible string must move into Sanity / locale files before launch — see CLAUDE.md §11.
+// Programme, host, cohort, and editorial content.
+//
+// Nothing here may describe something that has not happened. Cohorts carry no
+// seat count until they are contracted, hosts appear only once they have agreed
+// in writing to be listed, and participant accounts stay empty until a cohort has
+// actually run. Chrome and short strings live in src/i18n/dictionary.ts; the
+// long-form article bodies below are English-only by design.
 
 export type Programme = {
   id: "access" | "banking" | "topic";
@@ -265,13 +270,9 @@ export type Host = {
   expertise: string[];
   bio: string;
   programmes: ("access" | "banking" | "topic")[];
-  // Placeholder LinkedIn URL — real URLs are set in the CMS at launch.
-  // These are intentionally set to the LinkedIn root so the link works in dev
-  // without fabricating identities. Replace before going live.
-  linkedin: string;
-  // True if the host record is a placeholder profile pending the real
-  // confirmed roster. Surfaces a "Faculty TBA" badge in UI and keeps us honest.
-  placeholder?: boolean;
+  // Omitted until a real profile URL is supplied. The UI hides the link rather
+  // than pointing at the LinkedIn homepage.
+  linkedin?: string;
 };
 
 export const hosts: Host[] = [
@@ -283,62 +284,6 @@ export const hosts: Host[] = [
     expertise: ["Wealth planning", "Swiss private banking", "Sustainable finance"],
     bio: "Founder of Vision Goal (2022). Thirty-three years across Swiss and Liechtenstein private banking, including twelve years at Bank Julius Bär & Co. AG as Head of Wealth Planning, Life & Pension across Switzerland and Singapore, and earlier roles at UBS, Credit Suisse, and Zürcher Kantonalbank. Partner at Q WEALTH AG, a Swiss asset manager, and a FINMA-registered independent insurance intermediary. FCCA, CFP®; LL.M., MSc, DBA. Twelve peer-reviewed papers on banking, sustainable finance, ESG, and cross-border life insurance.",
     programmes: ["access", "banking", "topic"],
-    linkedin: "https://www.linkedin.com/",
-  },
-  {
-    name: "Henri Vauchel",
-    slug: "henri-vauchel",
-    role: "Host · Senior practitioner, Geneva",
-    initials: "HV",
-    expertise: ["Cross-border access", "Geneva"],
-    bio: "Senior practitioner with three decades of cross-border work between French-speaking Europe and Switzerland. Hosts the Geneva intensive and curates introductions for the access immersion.",
-    programmes: ["access", "banking"],
-    linkedin: "https://www.linkedin.com/",
-    placeholder: true,
-  },
-  {
-    name: "Anja Brönnimann",
-    slug: "anja-bronnimann",
-    role: "Host · Operating partner, Zurich",
-    initials: "AB",
-    expertise: ["Swiss SME access", "Operating culture"],
-    bio: "Operating partner with a portfolio of Swiss SME engagements. Curates the Swiss Business Access Immersion access map and hosts cohort sessions on Swiss operating culture.",
-    programmes: ["access"],
-    linkedin: "https://www.linkedin.com/",
-    placeholder: true,
-  },
-  {
-    name: "Rafael Kübler",
-    slug: "rafael-kuebler",
-    role: "Faculty · Swiss financial regulation",
-    initials: "RK",
-    expertise: ["FINMA", "Regulatory"],
-    bio: "Former regulator, now in private practice. Faculty on regulatory and supervisory questions in the Private Banking Intensive and selected Topic weeks.",
-    programmes: ["banking", "topic"],
-    linkedin: "https://www.linkedin.com/",
-    placeholder: true,
-  },
-  {
-    name: "Dr. Léa Marchand",
-    slug: "lea-marchand",
-    role: "Faculty · Macro practitioner, Geneva",
-    initials: "LM",
-    expertise: ["Macro", "Markets"],
-    bio: "Macro practitioner with a Geneva research seat. Faculty on macro and markets framings across the Banking Intensive and Topic weeks.",
-    programmes: ["banking", "topic"],
-    linkedin: "https://www.linkedin.com/",
-    placeholder: true,
-  },
-  {
-    name: "Stefan Imboden",
-    slug: "stefan-imboden",
-    role: "Host · Former MD, Swiss boutique bank",
-    initials: "SI",
-    expertise: ["Boutique banking", "Discretion"],
-    bio: "Former managing director of a Zurich boutique private bank. Leads the sessions on client confidentiality and disclosure on the Banking Intensive, and returns as a host during Topic week.",
-    programmes: ["banking", "topic"],
-    linkedin: "https://www.linkedin.com/",
-    placeholder: true,
   },
 ];
 
@@ -502,7 +447,13 @@ export type Insight = {
   authorSlug?: string;
   readingTime: string;
   href: string;
-  imageKey: "insightAccess" | "insightBanking" | "insightMethodology";
+  imageKey:
+    | "insightAccess"
+    | "insightBanking"
+    | "insightMethodology"
+    | "insightCities"
+    | "insightApplication"
+    | "insightRefusal";
   body: string[];
 };
 
@@ -587,7 +538,7 @@ const insightDrafts: InsightDraft[] = [
     excerpt:
       "Running two cities costs more and buys no economies of scale. We treat it as a cost of accuracy.",
     authorName: "Vision Goal",
-    imageKey: "insightMethodology",
+    imageKey: "insightCities",
     body: [
       "Vision Goal runs the Banking Intensive in Geneva, and both the Access Immersion and Swiss Finance Week in Zurich. We are asked often why we do not consolidate into one city, which would be cheaper and considerably simpler to operate. The answer is that the two centres do genuinely different work, and a programme built for one reads wrong in the other.",
       "Geneva's private banking industry predates the Swiss federal state. The oldest houses were founded in the eighteenth and early nineteenth centuries as partnerships, and several retained unlimited-liability partnership structures well into the last decade. That history is not decorative. An institution whose partners were personally liable for its obligations develops a particular relationship to risk, to growth, and to what it is willing to say in public. The city is French-speaking, physically closer to Lyon than to Zurich, and oriented historically toward European, Middle Eastern, and Latin American private clients.",
@@ -606,7 +557,7 @@ const insightDrafts: InsightDraft[] = [
     excerpt:
       "Three questions, two referees, and one of them decides most marginal cases. A plain account of how applications are assessed.",
     authorName: "Vision Goal",
-    imageKey: "insightAccess",
+    imageKey: "insightApplication",
     body: [
       "Every place on every Vision Goal programme goes through an application. We are periodically asked to drop it — publish the dates, take payment, let the market sort itself out. It would certainly be faster. The reason we have not is that the composition of the group is most of what participants are paying for, and a group assembled by whoever pays first is a different product from one assembled deliberately.",
       "The application itself is short: three substantive questions, two referees, and a consent statement. It is short on purpose. Length filters for available time rather than for fit, and the people we most want to attend usually have the least of it.",
@@ -627,7 +578,7 @@ const insightDrafts: InsightDraft[] = [
     excerpt:
       "Nine refusals, with the reasoning. Read it to rule us out quickly if the fit is wrong.",
     authorName: "Vision Goal",
-    imageKey: "insightMethodology",
+    imageKey: "insightRefusal",
     body: [
       "It is easier to describe this platform by exclusion than by claim. What follows is a list of things we have been asked for and declined, with the reasoning, so that anyone considering an application can rule us out quickly if the fit is wrong.",
       "We do not run open enrolment. Every place goes through an application, including for returning participants. The composition of the group is the product; selling places to whoever arrives first would produce a different and cheaper thing.",

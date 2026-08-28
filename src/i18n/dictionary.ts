@@ -355,8 +355,8 @@ const en: Dict = {
   },
   hostsStrip: {
     eyebrow: "Hosts & faculty",
-    headline: "Listed before you apply.",
-    headlineGold: "Present all week.",
+    headline: "Working practitioners lead every session.",
+    headlineGold: "Confirmed cohort by cohort.",
     cta: "All hosts and faculty",
   },
   editorial: {
@@ -523,13 +523,13 @@ const en: Dict = {
     },
     hosts: {
       eyebrow: "Hosts & faculty",
-      titlePart1: "Listed before you apply.",
-      titleGold: "Present all week.",
+      titlePart1: "Working practitioners,",
+      titleGold: "confirmed cohort by cohort.",
       lede:
-        "Hosts and faculty appear here as practitioners, attending in their personal capacity. We do not list anyone we have not booked.",
+        "Sessions are led by people who hold the seat they are describing, attending in a personal capacity. We list no one we have not booked, which is why this page is short.",
       principleEyebrow: "How this list is kept",
       principleBody:
-        "We do not list every speaker who has ever appeared. The founding curator is here; programme hosts are confirmed cycle by cycle. Profiles marked Sample are placeholder entries and will be replaced with confirmed hosts before the founding cohort opens.",
+        "The founder is the only permanent name here. Hosts for each cohort are contracted once dates are set, and appear on this page only after they have agreed in writing to be listed. Every host is published before applications for that cohort open, so you always know who you would be sitting with before you commit.",
     },
     alumni: {
       eyebrow: "Network",
@@ -844,8 +844,8 @@ const de: Dict = {
   },
   hostsStrip: {
     eyebrow: "Gastgeber & Fakultät",
-    headline: "Genannt, bevor Sie sich bewerben.",
-    headlineGold: "Die ganze Woche dabei.",
+    headline: "Praktiker aus der Praxis leiten jede Sitzung.",
+    headlineGold: "Pro Kohorte bestätigt.",
     cta: "Alle Gastgeber und Fakultät",
   },
   editorial: {
@@ -1012,13 +1012,13 @@ const de: Dict = {
     },
     hosts: {
       eyebrow: "Gastgeber & Fakultät",
-      titlePart1: "Genannt, bevor Sie sich bewerben.",
-      titleGold: "Die ganze Woche dabei.",
+      titlePart1: "Praktiker aus der Praxis,",
+      titleGold: "pro Kohorte bestätigt.",
       lede:
-        "Gastgeber und Fakultät erscheinen hier als Praktiker und nehmen in persönlicher Funktion teil. Wir listen niemanden, den wir nicht gebucht haben.",
+        "Die Sitzungen werden von Personen geleitet, die die beschriebene Position selbst innehaben, und die in persönlicher Funktion teilnehmen. Wir listen niemanden, den wir nicht gebucht haben — deshalb ist diese Seite kurz.",
       principleEyebrow: "Wie diese Liste geführt wird",
       principleBody:
-        "Wir listen nicht jeden Sprecher, der jemals aufgetreten ist. Der Gründungskurator steht hier; die Gastgeber der Programme werden Zyklus für Zyklus bestätigt. Als Beispiel markierte Profile sind Platzhalter und werden vor Öffnung der Gründungskohorte durch bestätigte Gastgeber ersetzt.",
+        "Der Gründer ist der einzige dauerhafte Name auf dieser Seite. Die Gastgeber einer Kohorte werden verpflichtet, sobald die Termine feststehen, und erscheinen hier erst, wenn sie einer Nennung schriftlich zugestimmt haben. Alle Gastgeber werden veröffentlicht, bevor die Bewerbung für die betreffende Kohorte öffnet — Sie wissen also stets, mit wem Sie es zu tun haben, bevor Sie sich festlegen.",
     },
     alumni: {
       eyebrow: "Netzwerk",
@@ -1333,8 +1333,8 @@ const fr: Dict = {
   },
   hostsStrip: {
     eyebrow: "Intervenants & faculté",
-    headline: "Nommés avant votre candidature.",
-    headlineGold: "Présents toute la semaine.",
+    headline: "Des praticiens en exercice animent chaque séance.",
+    headlineGold: "Confirmés cohorte par cohorte.",
     cta: "Tous les intervenants et la faculté",
   },
   editorial: {
@@ -1501,13 +1501,13 @@ const fr: Dict = {
     },
     hosts: {
       eyebrow: "Intervenants & faculté",
-      titlePart1: "Nommés avant votre candidature.",
-      titleGold: "Présents toute la semaine.",
+      titlePart1: "Des praticiens en exercice,",
+      titleGold: "confirmés cohorte par cohorte.",
       lede:
-        "Les intervenants et la faculté figurent ici comme praticiens, participant à titre personnel. Nous ne listons personne que nous n'ayons engagé.",
+        "Les séances sont animées par des personnes qui occupent réellement le poste dont elles parlent, à titre personnel. Nous ne listons personne que nous n'ayons engagé : c'est pourquoi cette page est courte.",
       principleEyebrow: "Comment cette liste est tenue",
       principleBody:
-        "Nous ne listons pas tous les orateurs jamais venus. Le curateur fondateur figure ici ; les intervenants des programmes sont confirmés cycle après cycle. Les profils marqués Exemple sont provisoires et seront remplacés par des intervenants confirmés avant l'ouverture de la cohorte fondatrice.",
+        "Le fondateur est le seul nom permanent de cette page. Les intervenants d'une cohorte sont engagés une fois les dates fixées et n'y figurent qu'après avoir accepté par écrit d'être cités. Tous les intervenants sont publiés avant l'ouverture des candidatures à la cohorte concernée : vous savez donc toujours avec qui vous siégerez avant de vous engager.",
     },
     alumni: {
       eyebrow: "Réseau",
@@ -1822,8 +1822,8 @@ const es: Dict = {
   },
   hostsStrip: {
     eyebrow: "Anfitriones y claustro",
-    headline: "Con nombre antes de que se presente.",
-    headlineGold: "Presentes toda la semana.",
+    headline: "Profesionales en activo dirigen cada sesión.",
+    headlineGold: "Confirmados cohorte a cohorte.",
     cta: "Todos los anfitriones y el claustro",
   },
   editorial: {
@@ -1990,13 +1990,13 @@ const es: Dict = {
     },
     hosts: {
       eyebrow: "Anfitriones y claustro",
-      titlePart1: "Con nombre antes de que se presente.",
-      titleGold: "Presentes toda la semana.",
+      titlePart1: "Profesionales en activo,",
+      titleGold: "confirmados cohorte a cohorte.",
       lede:
-        "Los anfitriones y el claustro aparecen aquí como profesionales y participan a título personal. No incluimos a nadie a quien no hayamos contratado.",
+        "Las sesiones las dirigen personas que ocupan realmente el puesto del que hablan, a título personal. No incluimos a nadie a quien no hayamos contratado: por eso esta página es breve.",
       principleEyebrow: "Cómo se mantiene esta lista",
       principleBody:
-        "No incluimos a todos los ponentes que han pasado por aquí. El curador fundador figura en la lista; los anfitriones de cada programa se confirman ciclo a ciclo. Los perfiles marcados como Ejemplo son provisionales y se sustituirán por anfitriones confirmados antes de que abra la cohorte fundadora.",
+        "El fundador es el único nombre permanente de esta página. Los anfitriones de cada cohorte se contratan una vez fijadas las fechas y solo aparecen aquí cuando han aceptado por escrito figurar. Todos se publican antes de que abran las solicitudes de esa cohorte, de modo que siempre sabe con quién se sentará antes de comprometerse.",
     },
     alumni: {
       eyebrow: "Red",
@@ -2311,8 +2311,8 @@ const zh: Dict = {
   },
   hostsStrip: {
     eyebrow: "主持人与讲席",
-    headline: "申请之前即已公布姓名。",
-    headlineGold: "全程在场。",
+    headline: "每场研讨均由一线从业者带领。",
+    headlineGold: "逐期确认。",
     cta: "全部主持人与讲席",
   },
   editorial: {
@@ -2479,13 +2479,13 @@ const zh: Dict = {
     },
     hosts: {
       eyebrow: "主持人与讲席",
-      titlePart1: "申请之前即已公布姓名。",
-      titleGold: "全程在场。",
+      titlePart1: "一线从业者，",
+      titleGold: "逐期确认。",
       lede:
-        "主持人与讲席以从业者身份出现在这里，并以个人身份参与。凡未确认合作的人，我们不会列出。",
+        "带领研讨的人，正身处他们所讲述的位置上，并以个人身份参与。凡未签约者，我们不会列出——因此本页很短。",
       principleEyebrow: "这份名单如何维护",
       principleBody:
-        "我们不会列出所有曾经登台的人。创始策划人已在此列；各项目的主持人按周期逐一确认。标注为示例的档案属占位内容，将在首届同期班开放申请前替换为已确认的主持人。",
+        "创办人是本页唯一长期在列的名字。各期主持人在日期确定后签约，并且只有在书面同意公开列名之后才会出现在这里。所有主持人都会在该期开放申请之前公布，因此在您做出决定之前，始终清楚将与谁同席。",
     },
     alumni: {
       eyebrow: "网络",

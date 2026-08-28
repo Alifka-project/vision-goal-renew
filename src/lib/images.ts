@@ -103,7 +103,7 @@ export const photography = {
     subject:
       "A reconvening setting. No identifiable participants unless written consent has been obtained.",
     alt: "",
-    fallback: stock("photo-1497366216548-37526070297c", 1600),
+    fallback: stock("photo-1517248135467-4c7edcad34c4", 1600),
   },
   insightAccess: {
     file: "insight-access.jpg",
@@ -128,6 +128,39 @@ export const photography = {
     subject: "Editorial frame for Methodology articles.",
     alt: "",
     fallback: stock("photo-1542037104857-ffbb0b9155fb", 1100),
+  },
+  // One frame per article, so no two Insights pages share a hero.
+  insightCities: {
+    file: "insight-cities.jpg",
+    commissioned: false,
+    width: 1100,
+    subject: "Editorial frame contrasting the Geneva and Zurich financial centres.",
+    alt: "",
+    fallback: stock("photo-1501785888041-af3ef285b470", 1100),
+  },
+  insightApplication: {
+    file: "insight-application.jpg",
+    commissioned: false,
+    width: 1100,
+    subject: "Editorial frame for the piece on applying rather than buying.",
+    alt: "",
+    fallback: stock("photo-1499856871958-5b9627545d1a", 1100),
+  },
+  insightRefusal: {
+    file: "insight-refusal.jpg",
+    commissioned: false,
+    width: 1100,
+    subject: "Restrained, near-empty frame for the piece on what Vision Goal does not do.",
+    alt: "",
+    fallback: stock("photo-1577140917170-285929fb55b7", 1100),
+  },
+  privateOffice: {
+    file: "private-office.jpg",
+    commissioned: false,
+    width: 1400,
+    subject: "A private lounge or meeting setting for the Private Office page.",
+    alt: "",
+    fallback: stock("photo-1524758631624-e2822e304c36", 1400),
   },
   ctaAlps: {
     file: "cta-alps.jpg",
