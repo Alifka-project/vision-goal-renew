@@ -7,36 +7,18 @@ import { PageHero } from "@/components/modules/PageHero";
 import { CTABlock } from "@/components/modules/CTABlock";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { Reveal } from "@/components/effects/Reveal";
-import { alumniVoices } from "@/lib/content";
+import { alumniVoices, pastCohorts } from "@/lib/content";
 import { images } from "@/lib/images";
 import { useT } from "@/i18n/I18nProvider";
 
-const pastCohorts = [
-  {
-    label: "Swiss Business Access · Zurich · 2025",
-    composition:
-      "Twelve participants from EMEA, GCC, and North America. Sectors: industrial SME, family office, technology.",
-    hosts: "Anja Brönnimann · Henri Vauchel",
-  },
-  {
-    label: "Private Banking Intensive · Geneva · 2025",
-    composition:
-      "Twelve practitioner-grade participants. Sectors: private wealth, family office, advisory adjacent.",
-    hosts: "Dr. Margit Holzer · Stefan Imboden · Rafael Kübler",
-  },
-  {
-    label: "Swiss Finance Week · Zurich · 2025",
-    composition:
-      "Twenty-four contributors across two rooms. Topic: Swiss capital markets posture in a multi-rate environment.",
-    hosts: "Dr. Léa Marchand · Rafael Kübler · Stefan Imboden",
-  },
-  {
-    label: "Swiss Business Access · Zurich · 2024",
-    composition:
-      "Twelve participants. Notable: three founders later commissioned a private cohort for their portfolio companies.",
-    hosts: "Anja Brönnimann · Henri Vauchel",
-  },
-];
+function EmptyState({ headline, body }: { headline: string; body: string }) {
+  return (
+    <div className="mt-12 border hairline bg-cream-2 px-8 py-12 lg:px-12 lg:py-16 max-w-3xl">
+      <h3 className="font-serif text-2xl lg:text-[1.75rem] text-navy leading-snug">{headline}</h3>
+      <p className="mt-4 text-body text-slate max-w-prose">{body}</p>
+    </div>
+  );
+}
 
 export default function AlumniPage() {
   const t = useT();
@@ -89,26 +71,35 @@ export default function AlumniPage() {
                 {t.alumni.voicesHeadline} <span className="text-gold italic">{t.alumni.voicesHeadlineGold}</span>
               </h2>
             </Reveal>
-            <ul className="mt-12 grid md:grid-cols-2 gap-6 lg:gap-8">
-              {alumniVoices.map((v, i) => (
-                <Reveal as="li" key={i} duration={700} delay={i * 80}>
-                  <figure className="h-full p-8 lg:p-10 bg-white border hairline">
-                    <span aria-hidden="true" className="block font-serif text-gold text-5xl leading-none">
-                      &ldquo;
-                    </span>
-                    <blockquote className="mt-2 font-serif text-navy text-xl lg:text-2xl leading-snug max-w-[36ch]">
-                      {v.quote}
-                    </blockquote>
-                    <figcaption className="mt-8 pt-6 border-t hairline">
-                      <p className="text-body-sm text-navy">{v.attribution}</p>
-                      <p className="mt-1 text-[0.72rem] uppercase tracking-[0.16em] text-slate-2">
-                        {v.cohortLabel}
-                      </p>
-                    </figcaption>
-                  </figure>
-                </Reveal>
-              ))}
-            </ul>
+            {alumniVoices.length > 0 ? (
+              <ul className="mt-12 grid md:grid-cols-2 gap-6 lg:gap-8">
+                {alumniVoices.map((v, i) => (
+                  <Reveal as="li" key={i} duration={700} delay={i * 80}>
+                    <figure className="h-full p-8 lg:p-10 bg-white border hairline">
+                      <span aria-hidden="true" className="block font-serif text-gold text-5xl leading-none">
+                        &ldquo;
+                      </span>
+                      <blockquote className="mt-2 font-serif text-navy text-xl lg:text-2xl leading-snug max-w-[36ch]">
+                        {v.quote}
+                      </blockquote>
+                      <figcaption className="mt-8 pt-6 border-t hairline">
+                        <p className="text-body-sm text-navy">{v.attribution}</p>
+                        <p className="mt-1 text-[0.72rem] uppercase tracking-[0.16em] text-slate-2">
+                          {v.cohortLabel}
+                        </p>
+                      </figcaption>
+                    </figure>
+                  </Reveal>
+                ))}
+              </ul>
+            ) : (
+              <Reveal duration={700}>
+                <EmptyState
+                  headline={t.pages.alumni.noVoicesHeadline}
+                  body={t.pages.alumni.noVoicesBody}
+                />
+              </Reveal>
+            )}
           </div>
         </section>
 
@@ -120,19 +111,28 @@ export default function AlumniPage() {
                 {t.alumni.pastHeadline}
               </h2>
             </Reveal>
-            <ul className="mt-12 border hairline divide-y divide-hairline">
-              {pastCohorts.map((c, i) => (
-                <Reveal as="li" key={c.label} duration={700} delay={i * 60}>
-                  <div className="grid md:grid-cols-12 gap-y-3 md:gap-x-6 px-6 py-7 lg:px-10 lg:py-8">
-                    <div className="md:col-span-4 font-serif text-navy text-lg lg:text-xl leading-snug">
-                      {c.label}
+            {pastCohorts.length > 0 ? (
+              <ul className="mt-12 border hairline divide-y divide-hairline">
+                {pastCohorts.map((c, i) => (
+                  <Reveal as="li" key={c.label} duration={700} delay={i * 60}>
+                    <div className="grid md:grid-cols-12 gap-y-3 md:gap-x-6 px-6 py-7 lg:px-10 lg:py-8">
+                      <div className="md:col-span-4 font-serif text-navy text-lg lg:text-xl leading-snug">
+                        {c.label}
+                      </div>
+                      <div className="md:col-span-5 text-body text-slate">{c.composition}</div>
+                      <div className="md:col-span-3 text-body-sm text-slate-2">{c.hosts}</div>
                     </div>
-                    <div className="md:col-span-5 text-body text-slate">{c.composition}</div>
-                    <div className="md:col-span-3 text-body-sm text-slate-2">{c.hosts}</div>
-                  </div>
-                </Reveal>
-              ))}
-            </ul>
+                  </Reveal>
+                ))}
+              </ul>
+            ) : (
+              <Reveal duration={700}>
+                <EmptyState
+                  headline={t.pages.alumni.noCohortsHeadline}
+                  body={t.pages.alumni.noCohortsBody}
+                />
+              </Reveal>
+            )}
           </div>
         </section>
 

@@ -1,24 +1,27 @@
 import type { Metadata } from "next";
 import "@/styles/globals.css";
 import { I18nProvider } from "@/i18n/I18nProvider";
+import { organisation } from "@/lib/organisation";
 
 const SITE_URL = "https://visiongoal.ch";
+
+const TITLE = "Vision Goal — Swiss executive immersions, twelve places each";
+const DESCRIPTION =
+  "Three Swiss executive intensives of twelve participants, led by working practitioners in Zurich and Geneva. 2026 founding cohorts — dates to be announced.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "Vision Goal — Curated Swiss access, by application",
+    default: TITLE,
     template: "%s · Vision Goal",
   },
-  description:
-    "A premium Swiss platform for cohort-based intensives and curated business access — three flagship programmes, hosted by practitioners, by application.",
+  description: DESCRIPTION,
   keywords: [
     "Swiss executive education",
     "Swiss business access",
     "Swiss private banking intensive",
     "Swiss finance week",
-    "cohort-based intensives Switzerland",
-    "by application",
+    "small cohort executive programme Switzerland",
     "chatham house",
     "Zurich",
     "Geneva",
@@ -33,15 +36,13 @@ export const metadata: Metadata = {
     alternateLocale: ["de_CH", "fr_CH", "es_ES", "zh_CN"],
     url: SITE_URL,
     siteName: "Vision Goal",
-    title: "Vision Goal — Curated Swiss access, by application",
-    description:
-      "A premium Swiss platform for cohort-based intensives and curated business access — three flagship programmes, hosted by practitioners, by application.",
+    title: TITLE,
+    description: DESCRIPTION,
   },
   twitter: {
     card: "summary_large_image",
-    title: "Vision Goal — Curated Swiss access, by application",
-    description:
-      "A premium Swiss platform for cohort-based intensives and curated business access.",
+    title: TITLE,
+    description: DESCRIPTION,
   },
   robots: {
     index: true,
@@ -70,17 +71,27 @@ export const metadata: Metadata = {
 const orgJsonLd = {
   "@context": "https://schema.org",
   "@type": "Organization",
-  name: "Vision Goal",
+  name: organisation.tradingName,
+  legalName: organisation.legalName,
   url: SITE_URL,
-  logo: `${SITE_URL}/og-default.png`,
-  description:
-    "A premium Swiss platform for cohort-based intensives and curated business access.",
+  description: DESCRIPTION,
+  email: organisation.email.general,
+  telephone: organisation.phone,
   address: {
     "@type": "PostalAddress",
-    addressLocality: "Zurich",
+    streetAddress: organisation.address.line1,
+    postalCode: organisation.address.postalCode,
+    addressLocality: organisation.address.city,
+    addressRegion: organisation.address.canton,
     addressCountry: "CH",
   },
-  sameAs: ["https://www.linkedin.com/"],
+  identifier: {
+    "@type": "PropertyValue",
+    propertyID: "UID",
+    value: organisation.uid,
+  },
+  founder: { "@type": "Person", name: organisation.responsiblePerson.name },
+  foundingDate: "2022-08-05",
 };
 
 const websiteJsonLd = {

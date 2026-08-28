@@ -4,7 +4,7 @@ import type { ReactNode } from "react";
 export const metadata: Metadata = {
   title: "Private Office",
   description:
-    "Curated introductions for principals — Vision Goal's Private Office surface. Confidential conversations and considered introductions to vetted Swiss bankers, partners, and operators. Not advice; introductions.",
+    "Vision Goal's Private Office: a confidential conversation, a short list of two or three Swiss principals, and one introduction. Introductions only — not regulated advice.",
   alternates: { canonical: "/private-office" },
 };
 

@@ -34,14 +34,17 @@ export function CohortCalendar() {
             return (
               <Reveal as="li" key={i} duration={700} delay={i * 80}>
                 <Link
-                  href="/apply"
+                  href="/request-dossier"
                   className="grid grid-cols-1 md:grid-cols-12 gap-y-3 md:gap-x-6 items-center px-6 py-7 lg:px-10 lg:py-8 group hover:bg-cream-2 transition-colors duration-300"
                 >
                   <div className="md:col-span-1 text-eyebrow uppercase text-gold tabular">
                     0{i + 1}
                   </div>
                   <div className="md:col-span-3 font-serif text-navy text-lg lg:text-xl leading-snug">
-                    <time className="tabular">{c.startLabel}</time>
+                    {c.cohortLabel}
+                    <span className="mt-1 block text-body-sm text-slate-2 font-sans">
+                      {c.datesLabel}
+                    </span>
                   </div>
                   <div className="md:col-span-4 text-body lg:text-body-lg text-ink">
                     {meta.name}
@@ -50,7 +53,6 @@ export function CohortCalendar() {
                     {meta.city} · {c.language}
                   </div>
                   <div className="md:col-span-2 flex md:justify-end items-center gap-3">
-                    <span className="text-body-sm text-slate-2 hidden lg:inline">{c.seatsLine}</span>
                     <StatusPill status={c.status} />
                     <span
                       aria-hidden="true"
@@ -64,6 +66,16 @@ export function CohortCalendar() {
             );
           })}
         </ul>
+
+        <Reveal duration={700}>
+          <p className="mt-8 max-w-prose text-body-sm text-slate-2">{t.cohorts.note}</p>
+          <Link
+            href="/request-dossier"
+            className="mt-6 inline-flex items-center gap-3 text-sm text-navy font-medium"
+          >
+            <span className="link-underline link-underline-out">{t.cta.requestDossier}</span>
+          </Link>
+        </Reveal>
       </div>
     </section>
   );

@@ -6,7 +6,7 @@ export default function robots(): MetadataRoute.Robots {
       {
         userAgent: "*",
         allow: "/",
-        disallow: ["/apply", "/apply/", "/_next/"],
+        disallow: ["/apply", "/apply/", "/_next/", "/api/", "/newsletter/"],
       },
     ],
     sitemap: "https://visiongoal.ch/sitemap.xml",

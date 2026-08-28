@@ -4,7 +4,7 @@ import type { ReactNode } from "react";
 export const metadata: Metadata = {
   title: "Alumni & network",
   description:
-    "Curated, attributable proof of who has been in the room. The Vision Goal alumni network across three flagship programmes.",
+    "How the Vision Goal network works: twelve participants per cohort, introductions arranged individually, and participant accounts published only with written consent.",
   alternates: { canonical: "/alumni" },
 };
 

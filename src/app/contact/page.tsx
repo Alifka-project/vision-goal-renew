@@ -1,16 +1,18 @@
 "use client";
 
-import { useState } from "react";
 import { Header } from "@/components/chrome/Header";
 import { Footer } from "@/components/chrome/Footer";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { Reveal } from "@/components/effects/Reveal";
 import { Field, TextInput, Textarea } from "@/components/ui/Field";
+import { ConsentCheckbox, FormError, Honeypot, Turnstile } from "@/components/forms/FormParts";
+import { useFormSubmission } from "@/components/forms/useFormSubmission";
+import { organisation, postalAddressLines } from "@/lib/organisation";
 import { useT } from "@/i18n/I18nProvider";
 
 export default function ContactPage() {
   const t = useT();
-  const [submitted, setSubmitted] = useState(false);
+  const { submit, isSubmitting, isSuccess, error, fieldErrors } = useFormSubmission("contact");
 
   return (
     <>
@@ -31,26 +33,29 @@ export default function ContactPage() {
         <section className="bg-white py-section-y md:py-section-y-lg">
           <div className="container grid lg:grid-cols-12 gap-12 lg:gap-16">
             <div className="lg:col-span-7">
-              {submitted ? (
+              {isSuccess ? (
                 <Reveal duration={800}>
-                  <div className="border hairline p-10 lg:p-14 bg-cream-2">
-                    <Eyebrow>{t.pages.contact.eyebrow}</Eyebrow>
+                  <div className="border hairline p-10 lg:p-14 bg-cream-2" role="status">
+                    <Eyebrow>{t.pages.contact.received}</Eyebrow>
                     <h2 className="mt-6 font-serif text-3xl lg:text-4xl text-navy leading-tight">
-                      {t.pages.consult.receivedHeadline}
+                      {t.pages.contact.receivedHeadline}
                     </h2>
                     <p className="mt-6 text-body text-slate max-w-prose">
-                      {t.pages.consult.receivedBody}
+                      {t.pages.contact.receivedBody}
                     </p>
                   </div>
                 </Reveal>
               ) : (
                 <form
                   className="grid gap-7"
+                  noValidate={false}
                   onSubmit={(e) => {
                     e.preventDefault();
-                    setSubmitted(true);
+                    void submit(e.currentTarget);
                   }}
                 >
+                  <Honeypot />
+                  <FormError error={error} fieldErrors={fieldErrors} />
                   <div className="grid sm:grid-cols-2 gap-6">
                     <Field label={t.fields.firstName} htmlFor="firstName" required>
                       <TextInput id="firstName" name="firstName" required autoComplete="given-name" />
@@ -73,15 +78,14 @@ export default function ContactPage() {
                   >
                     <Textarea id="message" name="message" required rows={6} />
                   </Field>
-                  <label className="flex items-start gap-3 text-body-sm text-slate">
-                    <input type="checkbox" required className="mt-1 accent-[#B8924A]" />
-                    <span>{t.fields.consentContact}</span>
-                  </label>
+                  <ConsentCheckbox text={t.fields.consentContact} />
+                  <Turnstile />
                   <button
                     type="submit"
-                    className="inline-flex items-center justify-center self-start px-6 py-3 text-sm font-medium border bg-navy text-cream border-navy hover:bg-navy-deep transition-colors duration-200"
+                    disabled={isSubmitting}
+                    className="inline-flex items-center justify-center self-start px-6 py-3 text-sm font-medium border bg-navy text-cream border-navy hover:bg-navy-deep transition-colors duration-200 disabled:opacity-60 disabled:cursor-not-allowed"
                   >
-                    {t.cta.send}
+                    {isSubmitting ? t.cta.sending : t.cta.send}
                   </button>
                 </form>
               )}
@@ -90,42 +94,43 @@ export default function ContactPage() {
             <aside className="lg:col-span-5 lg:pl-10 lg:border-l lg:border-hairline">
               <Reveal duration={800}>
                 <Eyebrow>{t.pages.contact.officeEyebrow}</Eyebrow>
-                <p className="mt-6 font-serif text-navy text-2xl leading-snug max-w-prose">
-                  Vision Goal LLC
-                  <br />
-                  Pfäffikon SZ, Switzerland
-                </p>
-                <p className="mt-2 text-body-sm text-slate-2">
-                  Programme venues: Zurich · Geneva · Selected Swiss locations
+                <address className="mt-6 not-italic font-serif text-navy text-2xl leading-snug max-w-prose">
+                  {postalAddressLines.map((line, i) => (
+                    <span key={line} className="block">
+                      {line}
+                      {i === 0 ? null : null}
+                    </span>
+                  ))}
+                </address>
+                <p className="mt-3 text-body-sm text-slate-2">
+                  {organisation.uid} · Programme venues: Zurich · Geneva · selected Swiss locations
                 </p>
                 <dl className="mt-10 space-y-6">
                   <div>
                     <dt className="text-eyebrow uppercase text-slate-2">{t.pages.contact.emailLabel}</dt>
                     <dd className="mt-2 text-body text-navy">
                       <a
-                        href="mailto:info@visiongoal.ch"
+                        href={`mailto:${organisation.email.general}`}
                         className="link-underline link-underline-out"
                       >
-                        info@visiongoal.ch
+                        {organisation.email.general}
+                      </a>
+                    </dd>
+                  </div>
+                  <div>
+                    <dt className="text-eyebrow uppercase text-slate-2">{t.pages.contact.phoneLabel}</dt>
+                    <dd className="mt-2 text-body text-navy">
+                      <a
+                        href={`tel:${organisation.phone.replace(/\s+/g, "")}`}
+                        className="link-underline link-underline-out tabular"
+                      >
+                        {organisation.phone}
                       </a>
                     </dd>
                   </div>
                   <div>
                     <dt className="text-eyebrow uppercase text-slate-2">{t.pages.contact.responseLabel}</dt>
                     <dd className="mt-2 text-body text-navy">{t.pages.contact.responseValue}</dd>
-                  </div>
-                  <div>
-                    <dt className="text-eyebrow uppercase text-slate-2">{t.pages.contact.linkedinLabel}</dt>
-                    <dd className="mt-2 text-body text-navy">
-                      <a
-                        href="https://www.linkedin.com/"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="link-underline link-underline-out"
-                      >
-                        Vision Goal
-                      </a>
-                    </dd>
                   </div>
                 </dl>
               </Reveal>

@@ -4,15 +4,16 @@ import { Header } from "@/components/chrome/Header";
 import { Footer } from "@/components/chrome/Footer";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { Reveal } from "@/components/effects/Reveal";
-import { Field, TextInput, Textarea, Select } from "@/components/ui/Field";
+import { Field, TextInput, Select } from "@/components/ui/Field";
 import { ConsentCheckbox, FormError, Honeypot, Turnstile } from "@/components/forms/FormParts";
 import { useFormSubmission } from "@/components/forms/useFormSubmission";
 import { programmes } from "@/lib/content";
 import { useT } from "@/i18n/I18nProvider";
 
-export default function PrivateConsultationPage() {
+export default function RequestDossierPage() {
   const t = useT();
-  const { submit, isSubmitting, isSuccess, error, fieldErrors } = useFormSubmission("consultation");
+  const { submit, isSubmitting, isSuccess, error, fieldErrors } = useFormSubmission("dossier");
+  const copy = t.pages.dossier;
 
   return (
     <>
@@ -21,11 +22,11 @@ export default function PrivateConsultationPage() {
         <section className="bg-cream-2 border-b hairline">
           <div className="container py-section-y md:py-section-y-lg">
             <Reveal duration={800}>
-              <Eyebrow>{t.pages.consult.eyebrow}</Eyebrow>
+              <Eyebrow>{copy.eyebrow}</Eyebrow>
               <h1 className="mt-6 font-serif text-display-md md:text-[3.5rem] lg:text-[4.25rem] text-navy leading-[1.05] tracking-[-0.015em] max-w-[20ch]">
-                {t.pages.consult.title}
+                {copy.titlePart1} <span className="text-gold italic">{copy.titleGold}</span>
               </h1>
-              <p className="mt-8 max-w-prose text-body-lg text-slate">{t.pages.consult.lede}</p>
+              <p className="mt-8 max-w-prose text-body-lg text-slate">{copy.lede}</p>
             </Reveal>
           </div>
         </section>
@@ -35,13 +36,11 @@ export default function PrivateConsultationPage() {
             {isSuccess ? (
               <Reveal duration={800}>
                 <div className="border hairline p-10 lg:p-14 bg-cream-2 text-center" role="status">
-                  <Eyebrow>{t.pages.consult.received}</Eyebrow>
+                  <Eyebrow>{copy.received}</Eyebrow>
                   <h2 className="mt-6 font-serif text-3xl lg:text-4xl text-navy leading-tight">
-                    {t.pages.consult.receivedHeadline}
+                    {copy.receivedHeadline}
                   </h2>
-                  <p className="mt-6 text-body text-slate max-w-prose mx-auto">
-                    {t.pages.consult.receivedBody}
-                  </p>
+                  <p className="mt-6 text-body text-slate max-w-prose mx-auto">{copy.receivedBody}</p>
                 </div>
               </Reveal>
             ) : (
@@ -65,17 +64,12 @@ export default function PrivateConsultationPage() {
                 <Field label={t.fields.email} htmlFor="email" required>
                   <TextInput id="email" name="email" type="email" required autoComplete="email" />
                 </Field>
-                <div className="grid sm:grid-cols-2 gap-6">
-                  <Field label={t.fields.role} htmlFor="role" required>
-                    <TextInput id="role" name="role" required />
-                  </Field>
-                  <Field label={t.fields.organisation} htmlFor="organisation" required>
-                    <TextInput id="organisation" name="organisation" required autoComplete="organization" />
-                  </Field>
-                </div>
+                <Field label={t.fields.organisation} htmlFor="organisation">
+                  <TextInput id="organisation" name="organisation" autoComplete="organization" />
+                </Field>
                 <Field label={t.fields.programmeOfInterest} htmlFor="programme">
-                  <Select id="programme" name="programme" defaultValue="unsure">
-                    <option value="unsure">{t.fields.notSure}</option>
+                  <Select id="programme" name="programme" defaultValue="all">
+                    <option value="all">{t.fields.allProgrammes}</option>
                     {programmes.map((p) => (
                       <option key={p.id} value={p.id}>
                         {t.programmeMeta[p.id].name}
@@ -83,29 +77,14 @@ export default function PrivateConsultationPage() {
                     ))}
                   </Select>
                 </Field>
-                <Field
-                  label={t.fields.discussTopic}
-                  htmlFor="topic"
-                  hint={t.fields.discussHint}
-                  required
-                >
-                  <Textarea id="topic" name="topic" required rows={5} />
-                </Field>
-                <Field
-                  label={t.fields.timing}
-                  htmlFor="timing"
-                  hint={t.fields.timingHint}
-                >
-                  <TextInput id="timing" name="timing" placeholder={t.fields.timingPlaceholder} />
-                </Field>
-                <ConsentCheckbox text={t.fields.consentConsult} />
+                <ConsentCheckbox text={t.fields.consentDossier} />
                 <Turnstile />
                 <button
                   type="submit"
                   disabled={isSubmitting}
                   className="inline-flex items-center justify-center self-start px-6 py-3 text-sm font-medium border bg-navy text-cream border-navy hover:bg-navy-deep transition-colors duration-200 disabled:opacity-60 disabled:cursor-not-allowed"
                 >
-                  {isSubmitting ? t.cta.sending : t.cta.requestConsult}
+                  {isSubmitting ? t.cta.sending : t.cta.requestDossier}
                 </button>
               </form>
             )}

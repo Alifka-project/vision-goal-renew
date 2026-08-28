@@ -1,16 +1,17 @@
 "use client";
 
-import { useState } from "react";
 import { Header } from "@/components/chrome/Header";
 import { Footer } from "@/components/chrome/Footer";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { Reveal } from "@/components/effects/Reveal";
 import { Field, TextInput, Textarea, Select } from "@/components/ui/Field";
+import { ConsentCheckbox, FormError, Honeypot, Turnstile } from "@/components/forms/FormParts";
+import { useFormSubmission } from "@/components/forms/useFormSubmission";
 import { useT } from "@/i18n/I18nProvider";
 
 export default function PrivateCohortPage() {
   const t = useT();
-  const [submitted, setSubmitted] = useState(false);
+  const { submit, isSubmitting, isSuccess, error, fieldErrors } = useFormSubmission("institutional");
 
   return (
     <>
@@ -30,9 +31,9 @@ export default function PrivateCohortPage() {
 
         <section className="bg-white py-section-y md:py-section-y-lg">
           <div className="container max-w-2xl">
-            {submitted ? (
+            {isSuccess ? (
               <Reveal duration={800}>
-                <div className="border hairline p-10 lg:p-14 bg-cream-2 text-center">
+                <div className="border hairline p-10 lg:p-14 bg-cream-2 text-center" role="status">
                   <Eyebrow>{t.pages.cohort.received}</Eyebrow>
                   <h2 className="mt-6 font-serif text-3xl lg:text-4xl text-navy leading-tight">
                     {t.pages.cohort.receivedHeadline}
@@ -47,9 +48,11 @@ export default function PrivateCohortPage() {
                 className="grid gap-7"
                 onSubmit={(e) => {
                   e.preventDefault();
-                  setSubmitted(true);
+                  void submit(e.currentTarget);
                 }}
               >
+                <Honeypot />
+                <FormError error={error} fieldErrors={fieldErrors} />
                 <div className="grid sm:grid-cols-2 gap-6">
                   <Field label={t.fields.firstName} htmlFor="firstName" required>
                     <TextInput id="firstName" name="firstName" required autoComplete="given-name" />
@@ -98,15 +101,14 @@ export default function PrivateCohortPage() {
                 >
                   <Textarea id="description" name="description" required rows={6} />
                 </Field>
-                <label className="flex items-start gap-3 text-body-sm text-slate">
-                  <input type="checkbox" required className="mt-1 accent-[#B8924A]" />
-                  <span>{t.fields.consentCohort}</span>
-                </label>
+                <ConsentCheckbox text={t.fields.consentCohort} />
+                <Turnstile />
                 <button
                   type="submit"
-                  className="inline-flex items-center justify-center self-start px-6 py-3 text-sm font-medium border bg-navy text-cream border-navy hover:bg-navy-deep transition-colors duration-200"
+                  disabled={isSubmitting}
+                  className="inline-flex items-center justify-center self-start px-6 py-3 text-sm font-medium border bg-navy text-cream border-navy hover:bg-navy-deep transition-colors duration-200 disabled:opacity-60 disabled:cursor-not-allowed"
                 >
-                  {t.cta.submitEnquiry} →
+                  {isSubmitting ? t.cta.sending : `${t.cta.submitEnquiry} →`}
                 </button>
               </form>
             )}

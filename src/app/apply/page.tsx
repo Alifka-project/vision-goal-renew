@@ -6,15 +6,27 @@ import { Footer } from "@/components/chrome/Footer";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { Reveal } from "@/components/effects/Reveal";
 import { Field, TextInput, Textarea, Select } from "@/components/ui/Field";
+import { ConsentCheckbox, FormError, Honeypot, Turnstile } from "@/components/forms/FormParts";
+import { useFormSubmission } from "@/components/forms/useFormSubmission";
 import { programmes } from "@/lib/content";
 import { useT } from "@/i18n/I18nProvider";
 
 export default function ApplyPage() {
   const t = useT();
   const [step, setStep] = useState(0);
-  const [submitted, setSubmitted] = useState(false);
+  // Only the current step is mounted, so each step's answers are lifted into
+  // state before moving on and replayed as defaults if the applicant goes back.
+  const [answers, setAnswers] = useState<Record<string, string>>({});
+  const { submit, isSubmitting, isSuccess, error, fieldErrors } = useFormSubmission("application");
   const steps = t.pages.apply.steps;
   const lastStep = steps.length - 1;
+
+  const captureStep = (form: HTMLFormElement) => {
+    const entries = Object.fromEntries(new FormData(form).entries()) as Record<string, string>;
+    const merged = { ...answers, ...entries };
+    setAnswers(merged);
+    return merged;
+  };
 
   return (
     <>
@@ -34,9 +46,9 @@ export default function ApplyPage() {
 
         <section className="bg-white py-section-y md:py-section-y-lg">
           <div className="container max-w-3xl">
-            {submitted ? (
+            {isSuccess ? (
               <Reveal duration={800}>
-                <div className="border hairline p-10 lg:p-14 bg-cream-2 text-center">
+                <div className="border hairline p-10 lg:p-14 bg-cream-2 text-center" role="status">
                   <Eyebrow>{t.pages.apply.received}</Eyebrow>
                   <h2 className="mt-6 font-serif text-3xl lg:text-4xl text-navy leading-tight">
                     {t.pages.apply.receivedHeadline}
@@ -78,37 +90,41 @@ export default function ApplyPage() {
                   className="grid gap-7"
                   onSubmit={(e) => {
                     e.preventDefault();
+                    const form = e.currentTarget;
+                    const merged = captureStep(form);
                     if (step < lastStep - 1) {
                       setStep((s) => s + 1);
                     } else {
-                      setSubmitted(true);
+                      void submit(form, merged);
                     }
                   }}
                 >
+                  <Honeypot />
+                  <FormError error={error} fieldErrors={fieldErrors} />
                   {step === 0 ? (
                     <fieldset className="grid gap-6">
                       <legend className="font-serif text-2xl text-navy mb-2">{t.pages.apply.stepLegend.identity}</legend>
                       <div className="grid sm:grid-cols-2 gap-6">
                         <Field label={t.fields.firstName} htmlFor="firstName" required>
-                          <TextInput id="firstName" name="firstName" required autoComplete="given-name" />
+                          <TextInput id="firstName" name="firstName" required autoComplete="given-name" defaultValue={answers.firstName ?? ""} />
                         </Field>
                         <Field label={t.fields.lastName} htmlFor="lastName" required>
-                          <TextInput id="lastName" name="lastName" required autoComplete="family-name" />
+                          <TextInput id="lastName" name="lastName" required autoComplete="family-name" defaultValue={answers.lastName ?? ""} />
                         </Field>
                       </div>
                       <Field label={t.fields.email} htmlFor="email" required>
-                        <TextInput id="email" name="email" type="email" required autoComplete="email" />
+                        <TextInput id="email" name="email" type="email" required autoComplete="email" defaultValue={answers.email ?? ""} />
                       </Field>
                       <div className="grid sm:grid-cols-2 gap-6">
                         <Field label={t.fields.role} htmlFor="role" required>
-                          <TextInput id="role" name="role" required />
+                          <TextInput id="role" name="role" required defaultValue={answers.role ?? ""} />
                         </Field>
                         <Field label={t.fields.organisation} htmlFor="organisation" required>
-                          <TextInput id="organisation" name="organisation" required autoComplete="organization" />
+                          <TextInput id="organisation" name="organisation" required autoComplete="organization" defaultValue={answers.organisation ?? ""} />
                         </Field>
                       </div>
                       <Field label={t.fields.country} htmlFor="country" required>
-                        <TextInput id="country" name="country" required autoComplete="country-name" />
+                        <TextInput id="country" name="country" required autoComplete="country-name" defaultValue={answers.country ?? ""} />
                       </Field>
                     </fieldset>
                   ) : null}
@@ -117,7 +133,7 @@ export default function ApplyPage() {
                     <fieldset className="grid gap-6">
                       <legend className="font-serif text-2xl text-navy mb-2">{t.pages.apply.stepLegend.programme}</legend>
                       <Field label={t.fields.programmeOfInterest} htmlFor="programme" required>
-                        <Select id="programme" name="programme" required defaultValue="">
+                        <Select id="programme" name="programme" required defaultValue={answers.programme ?? ""}>
                           <option value="" disabled>
                             {t.fields.selectProgramme}
                           </option>
@@ -134,7 +150,7 @@ export default function ApplyPage() {
                         htmlFor="cohort"
                         hint={t.fields.preferredCohortHint}
                       >
-                        <TextInput id="cohort" name="cohort" placeholder={t.fields.cohortPlaceholder} />
+                        <TextInput id="cohort" name="cohort" placeholder={t.fields.cohortPlaceholder} defaultValue={answers.cohort ?? ""} />
                       </Field>
                     </fieldset>
                   ) : null}
@@ -148,7 +164,7 @@ export default function ApplyPage() {
                         hint={t.fields.objectiveHint}
                         required
                       >
-                        <Textarea id="objective" name="objective" required rows={5} />
+                        <Textarea id="objective" name="objective" required rows={5} minLength={20} defaultValue={answers.objective ?? ""} />
                       </Field>
                       <Field
                         label={t.fields.contribution}
@@ -156,7 +172,7 @@ export default function ApplyPage() {
                         hint={t.fields.contributionHint}
                         required
                       >
-                        <Textarea id="contribution" name="contribution" required rows={5} />
+                        <Textarea id="contribution" name="contribution" required rows={5} minLength={20} defaultValue={answers.contribution ?? ""} />
                       </Field>
                     </fieldset>
                   ) : null}
@@ -167,22 +183,20 @@ export default function ApplyPage() {
                       <p className="text-body-sm text-slate-2 max-w-prose">{t.fields.refereeIntro}</p>
                       <div className="grid sm:grid-cols-2 gap-6">
                         <Field label={`1 — ${t.fields.refereeName}`} htmlFor="ref1Name" required>
-                          <TextInput id="ref1Name" name="ref1Name" required />
+                          <TextInput id="ref1Name" name="ref1Name" required defaultValue={answers.ref1Name ?? ""} />
                         </Field>
                         <Field label={`1 — ${t.fields.refereeEmail}`} htmlFor="ref1Email" required>
-                          <TextInput id="ref1Email" name="ref1Email" type="email" required />
+                          <TextInput id="ref1Email" name="ref1Email" type="email" required defaultValue={answers.ref1Email ?? ""} />
                         </Field>
                         <Field label={`2 — ${t.fields.refereeName}`} htmlFor="ref2Name" required>
-                          <TextInput id="ref2Name" name="ref2Name" required />
+                          <TextInput id="ref2Name" name="ref2Name" required defaultValue={answers.ref2Name ?? ""} />
                         </Field>
                         <Field label={`2 — ${t.fields.refereeEmail}`} htmlFor="ref2Email" required>
-                          <TextInput id="ref2Email" name="ref2Email" type="email" required />
+                          <TextInput id="ref2Email" name="ref2Email" type="email" required defaultValue={answers.ref2Email ?? ""} />
                         </Field>
                       </div>
-                      <label className="flex items-start gap-3 text-body-sm text-slate">
-                        <input type="checkbox" required className="mt-1 accent-[#B8924A]" />
-                        <span>{t.fields.consentApply}</span>
-                      </label>
+                      <ConsentCheckbox text={t.fields.consentApply} />
+                      <Turnstile />
                     </fieldset>
                   ) : null}
 
@@ -191,7 +205,11 @@ export default function ApplyPage() {
                       <button
                         type="button"
                         className="inline-flex items-center justify-center px-6 py-3 text-sm font-medium border hairline text-navy hover:bg-cream-2 transition-colors duration-200"
-                        onClick={() => setStep((s) => Math.max(0, s - 1))}
+                        onClick={(e) => {
+                          const form = e.currentTarget.form;
+                          if (form) captureStep(form);
+                          setStep((s) => Math.max(0, s - 1));
+                        }}
                       >
                         {t.cta.previous}
                       </button>
@@ -200,9 +218,14 @@ export default function ApplyPage() {
                     )}
                     <button
                       type="submit"
-                      className="inline-flex items-center justify-center px-6 py-3 text-sm font-medium border bg-navy text-cream border-navy hover:bg-navy-deep transition-colors duration-200"
+                      disabled={isSubmitting}
+                      className="inline-flex items-center justify-center px-6 py-3 text-sm font-medium border bg-navy text-cream border-navy hover:bg-navy-deep transition-colors duration-200 disabled:opacity-60 disabled:cursor-not-allowed"
                     >
-                      {step === lastStep - 1 ? t.cta.submitApplication : t.cta.continue}
+                      {isSubmitting
+                        ? t.cta.sending
+                        : step === lastStep - 1
+                          ? t.cta.submitApplication
+                          : t.cta.continue}
                     </button>
                   </div>
                 </form>

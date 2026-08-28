@@ -8,6 +8,7 @@ import { Eyebrow } from "@/components/ui/Eyebrow";
 import { Button } from "@/components/ui/Button";
 import { Reveal } from "@/components/effects/Reveal";
 import { images } from "@/lib/images";
+import { organisation, responseStandard } from "@/lib/organisation";
 import { useT } from "@/i18n/I18nProvider";
 
 const whoFor = [
@@ -21,7 +22,7 @@ const whoFor = [
   },
   {
     title: "International decision-makers",
-    body: "Senior executives, founders, and partners weighing a Swiss anchor — operating, banking, or both — who want to start from a curated, named shortlist instead of a search.",
+    body: "Senior executives, founders, and partners weighing a Swiss anchor — operating, banking, or both — who would rather start from a short list of specific people than from a search.",
   },
 ];
 
@@ -29,22 +30,22 @@ const howItWorks = [
   {
     n: "01",
     title: "A confidential conversation",
-    body: "A single, no-fee call with the curation team. We listen carefully — the goal is to understand the problem precisely enough to know who, in Switzerland, you should be sitting next to.",
+    body: "One call, no fee, forty-five minutes. We listen closely — the aim is to understand the problem precisely enough to know who in Switzerland you should be sitting next to.",
   },
   {
     n: "02",
-    title: "A curated shortlist",
-    body: "A named shortlist of two to three Swiss principals — private bankers, family-office partners, operating peers — each chosen against your situation, with a one-page rationale that you can act on.",
+    title: "A short list",
+    body: "Two or three Swiss principals — private bankers, family-office partners, operating peers — each chosen against your situation, with a one-page rationale you can act on.",
   },
   {
     n: "03",
-    title: "Considered introduction",
-    body: "A single, considered introduction made warmly by Vision Goal. After the introduction the relationship is yours — we do not maintain a leaderboard and we do not run beauty contests.",
+    title: "One introduction",
+    body: "A single introduction, made warmly. After that the relationship is yours; we do not run beauty contests and we do not keep score.",
   },
   {
     n: "04",
-    title: "Continued curation",
-    body: "If the next step is curatorial — a private seminar, a programme seat, a behind-the-scenes Swiss experience — we host it. If it is operational, the principal you have met carries it from there.",
+    title: "What follows",
+    body: "If the next step is a private seminar, a programme place, or a behind-the-scenes visit, we host it. If it is operational, the principal you have met carries it from there.",
   },
 ];
 
@@ -58,8 +59,8 @@ const standards = [
     body: "Conversations are confidential. Client names are never published. The Private Office register is shared only with the introduced principals on a need-to-know basis.",
   },
   {
-    title: "Curation, not transaction",
-    body: "Vision Goal curates and introduces. The regulated work — wealth management, banking, advisory — is delivered by the named Swiss principals you meet through us. You buy access; they deliver execution.",
+    title: "Introduction, not execution",
+    body: "Vision Goal selects and introduces. The regulated work — wealth management, banking, advisory — is carried out by the Swiss principals you meet, whom you engage directly. Vision Goal GmbH holds no FINMA authorisation and gives no investment, tax, or legal advice.",
   },
 ];
 
@@ -98,12 +99,12 @@ export default function PrivateOfficePage() {
                 </span>
               </div>
               <h1 className="mt-8 font-serif text-cream text-[2.5rem] sm:text-[3.5rem] lg:text-[5rem] leading-[1.04] tracking-[-0.02em] max-w-4xl">
-                Curated Swiss introductions for principals.
+                Swiss introductions for principals.
               </h1>
               <p className="mt-8 max-w-prose text-body-lg text-cream/85">
                 For founders, family principals, and international decision-makers who would rather
-                start from a named, curated shortlist than a search. Vision Goal listens, curates,
-                and introduces — the regulated work is delivered by the Swiss principals you meet.
+                start from two or three specific people than from a search. We listen, we select, and
+                we introduce; the regulated work is done by the Swiss principals you meet.
               </p>
               <div className="mt-12 flex flex-col sm:flex-row gap-3 sm:gap-5">
                 <Button href="/apply/private-consultation" variant="on-dark">
@@ -183,9 +184,9 @@ export default function PrivateOfficePage() {
                   <dd className="md:col-span-2 text-body text-navy">No fee · 45 minutes · confidential</dd>
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-y-1 md:gap-x-6 py-6 border-b hairline">
-                  <dt className="text-eyebrow uppercase text-slate-2">Curated shortlist</dt>
+                  <dt className="text-eyebrow uppercase text-slate-2">Short list</dt>
                   <dd className="md:col-span-2 text-body text-navy">
-                    CHF 4,500 administration fee · two to three named principals · one-page rationale per principal
+                    CHF 4,500 administration fee · two to three principals · one-page rationale each
                   </dd>
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-y-1 md:gap-x-6 py-6 border-b hairline">
@@ -202,7 +203,7 @@ export default function PrivateOfficePage() {
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-y-1 md:gap-x-6 py-6 border-b hairline">
                   <dt className="text-eyebrow uppercase text-slate-2">Response time</dt>
-                  <dd className="md:col-span-2 text-body text-navy">Within 48 hours.</dd>
+                  <dd className="md:col-span-2 text-body text-navy">{responseStandard.short}.</dd>
                 </div>
               </dl>
             </div>
@@ -243,7 +244,7 @@ export default function PrivateOfficePage() {
                   Request a confidential call
                 </Button>
                 <Link
-                  href="mailto:info@visiongoal.ch"
+                  href={`mailto:${organisation.email.general}`}
                   className="inline-flex items-center gap-3 px-6 py-3 text-sm font-medium text-cream/85 hover:text-gold-hi transition-colors duration-200"
                 >
                   <span className="link-underline link-underline-out">Or write directly</span>

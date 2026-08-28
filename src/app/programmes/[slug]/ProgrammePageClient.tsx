@@ -64,11 +64,11 @@ export function ProgrammePageClient({ slug }: { slug: Programme["slug"] }) {
               </h1>
               <p className="mt-8 max-w-prose text-body-lg text-cream/85">{meta.tagline}</p>
               <div className="mt-12 flex flex-col sm:flex-row gap-3 sm:gap-5">
-                <Button href="/apply" variant="on-dark">
-                  {t.cta.applyNext}
+                <Button href="/request-dossier" variant="on-dark">
+                  {t.cta.requestDossier}
                 </Button>
-                <Button href="/apply/private-consultation" variant="ghost-on-dark">
-                  {t.cta.requestConsult}
+                <Button href="/apply" variant="ghost-on-dark">
+                  {t.cta.applyNext}
                 </Button>
               </div>
             </Reveal>
@@ -125,36 +125,39 @@ export function ProgrammePageClient({ slug }: { slug: Programme["slug"] }) {
               </h2>
             </Reveal>
             {programmeCohorts.length > 0 ? (
-              <ul className="mt-12 border hairline divide-y divide-hairline bg-white">
-                {programmeCohorts.map((c, i) => (
-                  <li key={i}>
-                    <Link
-                      href="/apply"
-                      className="grid grid-cols-1 md:grid-cols-12 gap-y-3 md:gap-x-6 items-center px-6 py-7 lg:px-10 lg:py-8 group hover:bg-cream-2 transition-colors duration-300"
-                    >
-                      <div className="md:col-span-1 text-eyebrow uppercase text-gold tabular">
-                        0{i + 1}
-                      </div>
-                      <div className="md:col-span-3 font-serif text-navy text-lg lg:text-xl">
-                        <time className="tabular">{c.startLabel}</time>
-                      </div>
-                      <div className="md:col-span-3 text-body text-slate">
-                        {meta.city} · {c.language}
-                      </div>
-                      <div className="md:col-span-3 text-body-sm text-slate-2">{c.seatsLine}</div>
-                      <div className="md:col-span-2 flex md:justify-end items-center gap-3">
-                        <StatusPill status={c.status} />
-                        <span
-                          aria-hidden="true"
-                          className="text-gold transition-transform duration-300 ease-editorial group-hover:translate-x-1"
-                        >
-                          →
-                        </span>
-                      </div>
-                    </Link>
-                  </li>
-                ))}
-              </ul>
+              <>
+                <ul className="mt-12 border hairline divide-y divide-hairline bg-white">
+                  {programmeCohorts.map((c, i) => (
+                    <li key={i}>
+                      <Link
+                        href="/request-dossier"
+                        className="grid grid-cols-1 md:grid-cols-12 gap-y-3 md:gap-x-6 items-center px-6 py-7 lg:px-10 lg:py-8 group hover:bg-cream-2 transition-colors duration-300"
+                      >
+                        <div className="md:col-span-1 text-eyebrow uppercase text-gold tabular">
+                          0{i + 1}
+                        </div>
+                        <div className="md:col-span-4 font-serif text-navy text-lg lg:text-xl">
+                          {c.cohortLabel}
+                        </div>
+                        <div className="md:col-span-3 text-body text-slate">
+                          {meta.city} · {c.language}
+                        </div>
+                        <div className="md:col-span-2 text-body-sm text-slate-2">{c.datesLabel}</div>
+                        <div className="md:col-span-2 flex md:justify-end items-center gap-3">
+                          <StatusPill status={c.status} />
+                          <span
+                            aria-hidden="true"
+                            className="text-gold transition-transform duration-300 ease-editorial group-hover:translate-x-1"
+                          >
+                            →
+                          </span>
+                        </div>
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+                <p className="mt-8 max-w-prose text-body-sm text-slate-2">{dt.noCohortsNote}</p>
+              </>
             ) : (
               <p className="mt-12 text-body text-slate-2">{dt.noCohortsNote}</p>
             )}

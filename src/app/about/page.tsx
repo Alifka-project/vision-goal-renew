@@ -1,17 +1,24 @@
 "use client";
 
+import Link from "next/link";
 import { Header } from "@/components/chrome/Header";
 import { Footer } from "@/components/chrome/Footer";
 import { PageHero } from "@/components/modules/PageHero";
 import { CTABlock } from "@/components/modules/CTABlock";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { Reveal } from "@/components/effects/Reveal";
+import { publications } from "@/lib/content";
+import { organisation } from "@/lib/organisation";
 import { useT } from "@/i18n/I18nProvider";
 
 // Career timeline ported from visiongoal.ch — real institutions and dates.
 const career = [
-  { years: "2024 –", role: "Insurance Broker", institution: "S&L Management and Consulting GmbH" },
-  { years: "04.2024 –", role: "Partner", institution: "Q WEALTH AG, Zurich" },
+  {
+    years: "2024 –",
+    role: "Independent insurance intermediary",
+    institution: "S&L Management and Consulting GmbH",
+  },
+  { years: "04.2024 –", role: "Partner", institution: "Q WEALTH AG, Zurich — Swiss asset manager" },
   { years: "02.2012 – 05.2024", role: "Head of Wealth Planning, Life & Pension", institution: "Bank Julius Bär & Co. AG · Switzerland / Singapore" },
   { years: "09.2009 – 03.2011", role: "Board Member", institution: "Liechtenstein Insurance Association, Vaduz" },
   { years: "04.2008 – 03.2011", role: "Managing Director / Head of Finance", institution: "Wealth Assurance AG, Vaduz / Schaan" },
@@ -20,15 +27,18 @@ const career = [
   { years: "04.1991 – 09.1998", role: "Various roles", institution: "Zürcher Kantonalbank, Zurich" },
 ];
 
-// Regulatory and professional credentials ported from visiongoal.ch.
+// Regulatory and professional credentials.
+//
+// Authorisations are held by the regulated entities, not by an individual. The
+// wording below deliberately attributes each licence to the firm that holds it.
 const credentials = [
   {
-    title: "Swiss Licensed Asset Manager",
-    body: "Authorised Swiss Asset Manager — structured investment strategies, market analysis, and portfolio oversight.",
+    title: "Partner, Q WEALTH AG — Swiss asset manager",
+    body: "Q WEALTH AG is a Swiss asset manager and holds the applicable authorisation as a firm. Andreas Svoboda is a partner and works within the firm's licensed scope on investment strategy, market analysis, and portfolio oversight. He does not hold an asset-management licence personally.",
   },
   {
-    title: "FINMA-Licensed Insurance Broker",
-    body: "Independent FINMA-regulated insurance broking — supervised, transparent, and bound by regulator standards.",
+    title: "FINMA-registered independent insurance intermediary",
+    body: "Entered in the FINMA register of unaffiliated insurance intermediaries: independent of any insurer, and subject to the conduct, transparency, and disclosure duties of the Swiss Insurance Oversight Act.",
   },
   {
     title: "Chartered Certified Accountant (FCCA)",
@@ -40,7 +50,7 @@ const credentials = [
   },
   {
     title: "SVEB Zertifikat Modul 1",
-    body: "Swiss adult-education certificate — qualification to deliver financial training and curated workshops.",
+    body: "Swiss adult-education certificate — the qualification to deliver financial training and professional workshops.",
   },
   {
     title: "Academic credentials",
@@ -55,9 +65,9 @@ const standards = [
       "Cohort proceedings are not recorded; participant names are not published without consent. Public attribution is the exception, not the rule.",
   },
   {
-    title: "Chatham-house posture",
+    title: "The Chatham House Rule",
     body:
-      "On the Banking Intensive, participants may use what is said but never identify the speaker or any other participant. Notes are personal use only.",
+      "On the Banking Intensive, participants may use what is said but never identify the speaker or any other participant. Notes are for personal use only.",
   },
   {
     title: "Applicant data handling",
@@ -71,12 +81,10 @@ const standards = [
   },
 ];
 
-const press = [
-  { outlet: "Neue Zürcher Zeitung", note: "Coverage of Swiss Finance Week 2025" },
-  { outlet: "Le Temps", note: "Banking Intensive — chatham-house format profile" },
-  { outlet: "Bilanz", note: "Profile of curated executive programmes in Switzerland" },
-  { outlet: "Finews", note: "Comment on small-cohort programme economics" },
-];
+// The four most recent peer-reviewed papers, each verifiable at the source.
+// This section previously listed press mentions that had not been secured; it
+// will only return once real coverage exists and can be linked.
+const publishedWork = publications.slice(0, 4);
 
 export default function AboutPage() {
   const t = useT();
@@ -140,15 +148,36 @@ export default function AboutPage() {
               </h2>
             </Reveal>
             <ul className="mt-10 max-w-3xl border-t hairline">
-              {press.map((p, i) => (
-                <Reveal as="li" key={p.outlet} duration={700} delay={i * 60}>
-                  <div className="grid grid-cols-1 md:grid-cols-12 gap-y-2 md:gap-x-6 py-6 border-b hairline">
-                    <p className="md:col-span-4 font-serif text-navy text-lg">{p.outlet}</p>
-                    <p className="md:col-span-8 text-body-sm text-slate">{p.note}</p>
-                  </div>
+              {publishedWork.map((paper, i) => (
+                <Reveal as="li" key={paper.href} duration={700} delay={i * 60}>
+                  <a
+                    href={paper.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="grid grid-cols-1 md:grid-cols-12 gap-y-2 md:gap-x-6 py-6 border-b hairline group"
+                  >
+                    <p className="md:col-span-2 text-eyebrow uppercase text-slate-2 tabular">
+                      {paper.year}
+                    </p>
+                    <p className="md:col-span-7 font-serif text-navy text-lg leading-snug group-hover:text-gold transition-colors duration-200">
+                      {paper.title}
+                    </p>
+                    <p className="md:col-span-3 text-body-sm text-slate">{paper.journal}</p>
+                  </a>
                 </Reveal>
               ))}
             </ul>
+            <Reveal duration={700}>
+              <Link
+                href="/insights"
+                className="mt-8 inline-flex items-center gap-3 text-sm text-navy font-medium"
+              >
+                <span className="link-underline link-underline-out">
+                  All twelve peer-reviewed papers
+                </span>
+                <span aria-hidden="true">→</span>
+              </Link>
+            </Reveal>
           </div>
         </section>
 
@@ -177,18 +206,17 @@ export default function AboutPage() {
                   Zürcher Kantonalbank.
                 </p>
                 <p className="mt-6 text-body text-slate max-w-prose">
-                  Twelve peer-reviewed papers on banking, sustainable finance, ESG, AI in financial
-                  services, and cross-border life insurance. Fluent in German and English. Pfäffikon SZ.
+                  Partner at Q WEALTH AG, a Swiss asset manager, and a FINMA-registered independent
+                  insurance intermediary. Twelve peer-reviewed papers on banking, sustainable finance,
+                  ESG, AI in financial services, and cross-border life insurance. Fluent in German and
+                  English. Based in Pfäffikon SZ.
                 </p>
                 <a
-                  href="https://www.linkedin.com/"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  href={`mailto:${organisation.email.general}`}
                   className="mt-8 inline-flex items-center gap-2 text-[0.78rem] uppercase tracking-[0.14em] text-slate-2 hover:text-navy transition-colors duration-200"
                 >
-                  <span aria-hidden="true">in</span>
-                  <span className="link-underline link-underline-out">LinkedIn profile</span>
-                  <span aria-hidden="true">↗</span>
+                  <span className="link-underline link-underline-out">{organisation.email.general}</span>
+                  <span aria-hidden="true">→</span>
                 </a>
               </Reveal>
             </div>
@@ -230,7 +258,7 @@ export default function AboutPage() {
             <Reveal duration={800}>
               <Eyebrow>Standards & registration</Eyebrow>
               <h2 className="mt-6 font-serif text-display-md md:text-[3rem] text-navy leading-[1.05] tracking-[-0.015em] max-w-prose">
-                The credentials behind the curation.
+                The credentials behind the programmes.
               </h2>
             </Reveal>
             <ul className="mt-12 grid md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10 max-w-6xl">
@@ -243,9 +271,12 @@ export default function AboutPage() {
             </ul>
             <Reveal duration={700}>
               <p className="mt-12 max-w-prose text-body-sm text-slate-2">
-                The platform is curatorial and educational; the regulated work is delivered by named
-                principals introduced through Vision Goal’s network. Programme content is not regulated
-                financial, tax, or legal advice.
+                {organisation.legalName} provides training, coaching, and business-access services. It
+                holds no FINMA authorisation and is not a bank, asset manager, or insurance
+                intermediary. Regulatory authorisations referred to above are held by the firms named,
+                not by any individual. Regulated work is carried out by the licensed practitioners
+                introduced through the network, engaged directly by the client. Programme content is
+                not investment, tax, or legal advice.
               </p>
             </Reveal>
           </div>

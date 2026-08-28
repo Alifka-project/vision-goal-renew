@@ -4,7 +4,7 @@ import type { ReactNode } from "react";
 export const metadata: Metadata = {
   title: "Programmes",
   description:
-    "Three flagship Swiss intensives — by application. Swiss Business Access Immersion, Private Swiss Banking & Wealth Intensive, and Swiss Finance Week.",
+    "Three flagship Swiss intensives of twelve participants each: Swiss Business Access Immersion, Private Swiss Banking & Wealth Intensive, and Swiss Finance Week.",
   alternates: {
     canonical: "/programmes",
     languages: {
