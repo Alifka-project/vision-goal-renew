@@ -20,10 +20,13 @@ export async function generateMetadata({
   return {
     title: programme.name,
     description: programme.tagline,
-    alternates: { canonical: `/programmes/${programme.slug}` },
+    alternates: { canonical: `/experiences/${programme.slug}` },
   };
 }
 
+// Pre-launch: no Offer / price / location JSON-LD is emitted — those become
+// misleading when no dates / cities / fees are confirmed. We keep a lean
+// EducationEvent-ish description with just the organisation and the format.
 export default async function ProgrammePage({
   params,
 }: {
@@ -33,34 +36,25 @@ export default async function ProgrammePage({
   const programme = programmes.find((p) => p.slug === slug);
   if (!programme) notFound();
 
-  const courseJsonLd = {
+  const jsonLd = {
     "@context": "https://schema.org",
     "@type": "Course",
     name: programme.name,
     description: programme.tagline,
-    url: `${SITE_URL}/programmes/${programme.slug}`,
+    url: `${SITE_URL}/experiences/${programme.slug}`,
     provider: {
       "@type": "Organization",
       name: "Vision Goal",
       url: SITE_URL,
     },
-    offers: {
-      "@type": "Offer",
-      price: programme.fee.replace(/[^\d]/g, ""),
-      priceCurrency: "CHF",
-      availability: "https://schema.org/LimitedAvailability",
-      url: `${SITE_URL}/apply`,
-    },
-    educationalCredentialAwarded: "Vision Goal alumni network access",
     inLanguage: "en",
-    locationCreated: { "@type": "Place", name: programme.city, address: { "@type": "PostalAddress", addressLocality: programme.city, addressCountry: "CH" } },
   };
 
   return (
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(courseJsonLd) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
       <ProgrammePageClient slug={programme.slug} />
     </>

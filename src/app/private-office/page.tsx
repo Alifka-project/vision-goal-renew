@@ -44,14 +44,14 @@ const howItWorks = [
   {
     n: "04",
     title: "Continued curation",
-    body: "If the next step is curatorial — a private seminar, a programme seat, a behind-the-scenes Swiss experience — we host it. If it is operational, the principal you have met carries it from there.",
+    body: "If the next step is curatorial — a private session or a behind-the-scenes Swiss experience — we host it. If it is operational, the principal you have met carries it from there.",
   },
 ];
 
 const standards = [
   {
     title: "No commission, no rebates",
-    body: "Vision Goal does not accept retrocessions, finder’s fees, or rebates from the principals it introduces. The platform is paid by programme fees and a flat per-introduction administration fee, disclosed upfront. Your interests stay aligned with ours.",
+    body: "Vision Goal does not accept retrocessions, finder’s fees, or rebates from the principals it introduces. Any fee is agreed with you directly and disclosed upfront. Your interests stay aligned with ours.",
   },
   {
     title: "Discretion as default",
@@ -108,7 +108,7 @@ export default function PrivateOfficePage() {
                 Swiss principals you meet, under their own authorisations.
               </p>
               <div className="mt-12 flex flex-col sm:flex-row gap-3 sm:gap-5">
-                <Button href="/apply/private-consultation" variant="on-dark">
+                <Button href="/contact" variant="on-dark">
                   Request a confidential call
                 </Button>
                 <Button href="/about" variant="ghost-on-dark">
@@ -174,26 +174,35 @@ export default function PrivateOfficePage() {
               <Reveal duration={800}>
                 <Eyebrow>Engagement</Eyebrow>
                 <h2 className="mt-6 font-serif text-display-md md:text-[2.75rem] text-navy leading-[1.08] tracking-[-0.015em]">
-                  What it costs. What it covers.
+                  How the engagement works.
                 </h2>
               </Reveal>
             </div>
             <div className="lg:col-span-7">
+              {/* Fee figures removed pre-launch — nothing is priced publicly
+                  until the engagement model is confirmed. Fees are agreed
+                  directly with each principal and disclosed upfront. */}
               <dl className="border-t hairline">
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-y-1 md:gap-x-6 py-6 border-b hairline">
                   <dt className="text-eyebrow uppercase text-slate-2">Initial call</dt>
-                  <dd className="md:col-span-2 text-body text-navy">No fee · 45 minutes · confidential</dd>
+                  <dd className="md:col-span-2 text-body text-navy">No fee · confidential</dd>
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-y-1 md:gap-x-6 py-6 border-b hairline">
                   <dt className="text-eyebrow uppercase text-slate-2">Curated shortlist</dt>
                   <dd className="md:col-span-2 text-body text-navy">
-                    CHF 4,500 administration fee · two to three named principals · one-page rationale per principal
+                    A small number of named principals · a short written rationale for each
                   </dd>
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-y-1 md:gap-x-6 py-6 border-b hairline">
                   <dt className="text-eyebrow uppercase text-slate-2">Introduction</dt>
                   <dd className="md:col-span-2 text-body text-navy">
-                    Included in the shortlist fee · single considered introduction
+                    A single considered introduction, made warmly
+                  </dd>
+                </div>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-y-1 md:gap-x-6 py-6 border-b hairline">
+                  <dt className="text-eyebrow uppercase text-slate-2">Fees</dt>
+                  <dd className="md:col-span-2 text-body text-navy">
+                    Agreed directly and disclosed upfront, before any work begins
                   </dd>
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-y-1 md:gap-x-6 py-6 border-b hairline">
@@ -245,7 +254,7 @@ export default function PrivateOfficePage() {
                 <span className="text-gold-hi italic">we will know in forty-five minutes.</span>
               </h2>
               <div className="mt-12 flex flex-col sm:flex-row gap-3 sm:gap-5">
-                <Button href="/apply/private-consultation" variant="on-dark">
+                <Button href="/contact" variant="on-dark">
                   Request a confidential call
                 </Button>
                 <Link

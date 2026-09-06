@@ -23,6 +23,11 @@ export type Dict = {
     privateOffice: string;
     skipToContent: string;
     primaryNav: string;
+    // New top-level items for the simplified navigation
+    // (Home | What We Do | Experiences | Insights | About | Contact)
+    whatWeDo: string;
+    experiences: string;
+    contact: string;
   };
   cta: {
     applyNext: string;
@@ -38,6 +43,12 @@ export type Dict = {
     continue: string;
     previous: string;
     submitApplication: string;
+    // New CTAs for the pre-launch posture — no application flow yet;
+    // engagement is a conversation via the contact form
+    discussExperience: string;
+    discoverVisionGoal: string;
+    readExperience: string;
+    allExperiences: string;
   };
   dispatch: {
     label: string;
@@ -64,9 +75,28 @@ export type Dict = {
     headline: string;
     headlineGold: string;
   };
+  // "Learning in Practice" — homepage section that shows real event
+  // photography and grounds the platform in applied learning, not
+  // a brochure feel.
+  learningInPractice: {
+    eyebrow: string;
+    headline: string;
+    body: string;
+    caption: string;
+  };
   programmeMeta: Record<
     "access" | "banking" | "topic",
-    { name: string; tagline: string; durationLabel: string; city: string }
+    {
+      name: string;
+      tagline: string;
+      // `formatLabel` describes the SHAPE of the experience without
+      // committing to a duration or city — city / durationLabel are kept
+      // in the type for now so existing consumers do not break, but they
+      // render as empty strings pre-launch until real cohorts are set.
+      formatLabel: string;
+      durationLabel: string;
+      city: string;
+    }
   >;
   hostsStrip: {
     eyebrow: string;
@@ -253,46 +283,50 @@ export type Dict = {
 
 const en: Dict = {
   meta: {
-    title: "Vision Goal — Curated Swiss access, by application",
+    title: "Vision Goal",
     description:
-      "A premium Swiss platform for cohort-based intensives and curated business access — three flagship programmes, hosted by practitioners, by application.",
+      "Vision Goal creates curated Swiss executive learning experiences — applied, small, considered.",
   },
   nav: {
     home: "Home",
-    programmes: "Programmes",
+    programmes: "Experiences",
     hosts: "Practitioner Network",
     alumni: "Network",
     insights: "Insights",
     about: "About",
-    apply: "Apply",
+    apply: "Contact",
     privateOffice: "Private Office",
     skipToContent: "Skip to content",
     primaryNav: "Primary",
+    whatWeDo: "What We Do",
+    experiences: "Experiences",
+    contact: "Contact",
   },
   cta: {
-    applyNext: "Apply for next cohort",
-    requestConsult: "Request a private consultation →",
-    applyForCohort: "Apply for next cohort",
-    submitEnquiry: "Submit enquiry",
-    readProgramme: "Read the programme",
-    allProgrammes: "All programmes",
+    applyNext: "Discuss an Experience",
+    requestConsult: "Discover Vision Goal →",
+    applyForCohort: "Discuss an Experience",
+    submitEnquiry: "Send message",
+    readProgramme: "Read more",
+    allProgrammes: "All experiences",
     allHosts: "Back to the practitioner network",
     allInsights: "All insights",
     subscribe: "Subscribe",
     send: "Send →",
     continue: "Continue →",
     previous: "← Previous",
-    submitApplication: "Submit application",
+    submitApplication: "Send message",
+    discussExperience: "Discuss an Experience",
+    discoverVisionGoal: "Discover Vision Goal →",
+    readExperience: "Read more",
+    allExperiences: "All experiences",
   },
   dispatch: {
     label: "Dispatch",
     items: [
-      "Swiss Business Access Immersion · Zurich · 23—27 June 2026 · 4 seats remaining",
-      "Private Swiss Banking & Wealth Intensive · Geneva · 8—11 September 2026 · Waitlist",
-      "Swiss Finance Week · Zurich · 10—14 November 2026 · 8 seats",
-      "Private cohort enquiries open · Five business-day response",
-      "Cohort-based · Twelve in the room · Hosted by practitioners",
-      "By application · Never open enrolment",
+      "Applied learning · Small rooms · Practitioner-led",
+      "By conversation · Never open enrolment",
+      "Curated Swiss executive experiences",
     ],
   },
   hero: {
@@ -303,8 +337,8 @@ const en: Dict = {
     subline:
       "Curated executive intensives for entrepreneurs, principals, and international professionals — practical access to Swiss business culture, finance, and the networks behind them.",
     subjects: "Executive intensives · Curated access · Private office",
-    statusReviewing: "Reviewing applications · Q3 2026",
-    locationLine: "Zurich · Geneva · Selected Swiss venues",
+    statusReviewing: "Currently curating experiences",
+    locationLine: "Switzerland · Selected venues",
     scrollToProgrammes: "Scroll to programmes ↓",
   },
   posture: {
@@ -312,36 +346,45 @@ const en: Dict = {
     sub: "Premium Swiss executive experiences · Curated access · Private networks",
     pillars: [
       { label: "By application", line: "Never open enrolment." },
-      { label: "Twelve in the room", line: "Cohort-based on purpose." },
+      { label: "Small rooms", line: "Kept small on purpose." },
       { label: "Hosted by practitioners", line: "Named on the page." },
     ],
   },
   programmesBlock: {
-    eyebrow: "The flagship executive intensives",
-    headline: "Three Swiss intensives.",
-    headlineGold: "By application.",
+    eyebrow: "Formats of learning",
+    headline: "Three ways to learn,",
+    headlineGold: "in practice.",
+  },
+  learningInPractice: {
+    eyebrow: "Learning in Practice",
+    headline: "Finance beyond slides and textbooks.",
+    body: "Learning becomes more relevant when financial and strategic concepts are connected with real operating environments, professional dialogue and peer exchange.",
+    caption: "An example of applied learning in a premium Swiss business setting.",
   },
   programmeMeta: {
     access: {
-      name: "Swiss Business Access Immersion",
+      name: "Business Immersion Experience",
       tagline:
-        "Five days inside Swiss business — SME visits, boardrooms, hospitality, and operating culture you cannot read about elsewhere.",
-      durationLabel: "5 days · in residence",
-      city: "Zurich",
+        "An applied immersion in Swiss business — connecting operating culture, professional dialogue and peer exchange.",
+      formatLabel: "Immersive format",
+      durationLabel: "",
+      city: "",
     },
     banking: {
-      name: "Private Swiss Banking & Wealth Intensive",
+      name: "Finance & Wealth Intensive",
       tagline:
-        "Four days inside Swiss private banking — chatham-house rooms with named practitioners, behind closed doors.",
-      durationLabel: "4 days · chatham-house",
-      city: "Geneva",
+        "A focused format for practitioner-grade dialogue on finance, wealth planning and governance — under considered discretion.",
+      formatLabel: "Focused intensive",
+      durationLabel: "",
+      city: "",
     },
     topic: {
-      name: "Swiss Finance Week",
+      name: "Themed Learning Sessions",
       tagline:
-        "Five themed days inside one Swiss finance question — curated rooms, hospitality settings, hosted by practitioners.",
-      durationLabel: "5 days · curated",
-      city: "Zurich",
+        "Themed, curated sessions built around a specific question — hosted, small, and applied.",
+      formatLabel: "Themed sessions",
+      durationLabel: "",
+      city: "",
     },
   },
   hostsStrip: {
@@ -354,12 +397,12 @@ const en: Dict = {
     eyebrow: "The rooms",
     headline: "Editorial. Restrained.",
     headlineGold: "Swiss.",
-    side: "Curated venues. Twelve in the room. Discretion by default.",
+    side: "Curated environments. Small on purpose. Discretion by default.",
     tiles: [
-      { label: "Zurich", caption: "In residence" },
-      { label: "Geneva", caption: "Chatham-house" },
-      { label: "Alpine retreat", caption: "Quiet rooms" },
-      { label: "Curated salons", caption: "Twelve in the room" },
+      { label: "Considered venues", caption: "In residence" },
+      { label: "Chatham-house", caption: "Closed rooms" },
+      { label: "Alpine settings", caption: "Quiet rooms" },
+      { label: "Curated salons", caption: "Small rooms" },
     ],
   },
   cohorts: {
@@ -400,9 +443,9 @@ const en: Dict = {
     response: "Response within five business days.",
   },
   ctaBlock: {
-    eyebrow: "Ready to apply",
-    line1: "The room is small.",
-    line2: "It closes when it’s full.",
+    eyebrow: "Start a conversation",
+    line1: "The rooms are small.",
+    line2: "The conversation comes first.",
   },
   trust: {
     eyebrow: "The platform in numbers",
@@ -546,7 +589,7 @@ const en: Dict = {
       lede:
         "Vision Goal creates curated Swiss executive learning experiences for entrepreneurs, executives, and international professionals who want practical access to Swiss finance, business culture, and premium networks.",
       statement:
-        "Vision Goal runs three flagship executive intensives — a Swiss Business Access Immersion in Zurich, a Private Swiss Banking & Wealth Intensive in Geneva, and a yearly Swiss Finance Week on a current question — supplemented by a Private Office for individual principals who want curated introductions instead of a cohort seat.",
+        "Vision Goal designs curated executive learning experiences in a small number of formats — an immersive format, a focused intensive, and themed sessions — supplemented by a Private Office for individual principals who want curated introductions rather than a seat in a room.",
       statement2:
         "The platform is deliberately small. Curation is the product; the rooms, introductions, and experiences are the deliverables. You are not buying a course or a consulting engagement — you are buying access, insight, and Swiss business know-how that is difficult to assemble any other way.",
       standardsEyebrow: "Standards & ethics",
@@ -700,7 +743,7 @@ const en: Dict = {
     legalPrivacy: "Privacy",
     legalCookies: "Cookies",
     legalApplicationTerms: "Application terms",
-    copyright: "© 2026 Vision Goal · Zurich, Switzerland",
+    copyright: "© 2026 Vision Goal GmbH · Switzerland",
     contactEyebrow: "Direct line",
     contactPhoneLabel: "Phone",
     contactEmailLabel: "Email",
@@ -713,46 +756,50 @@ const en: Dict = {
 
 const de: Dict = {
   meta: {
-    title: "Vision Goal — Kuratierter Schweizer Zugang, auf Bewerbung",
+    title: "Vision Goal",
     description:
-      "Eine premium Schweizer Plattform für kohortenbasierte Intensivprogramme und kuratierten Geschäftszugang — drei Flaggschiff-Programme, geführt von Praktikern, auf Bewerbung.",
+      "Vision Goal schafft kuratierte Schweizer Executive-Lernerfahrungen — angewandt, klein, sorgfältig.",
   },
   nav: {
     home: "Start",
-    programmes: "Programme",
+    programmes: "Erfahrungen",
     hosts: "Praktiker-Netzwerk",
     alumni: "Netzwerk",
     insights: "Einblicke",
     about: "Über uns",
-    apply: "Bewerben",
+    apply: "Kontakt",
     privateOffice: "Private Office",
     skipToContent: "Zum Inhalt springen",
     primaryNav: "Hauptnavigation",
+    whatWeDo: "Was wir tun",
+    experiences: "Erfahrungen",
+    contact: "Kontakt",
   },
   cta: {
-    applyNext: "Für nächste Kohorte bewerben",
-    requestConsult: "Private Beratung anfragen →",
-    applyForCohort: "Für nächste Kohorte bewerben",
-    submitEnquiry: "Anfrage senden",
-    readProgramme: "Programm lesen",
-    allProgrammes: "Alle Programme",
+    applyNext: "Eine Erfahrung besprechen",
+    requestConsult: "Vision Goal entdecken →",
+    applyForCohort: "Eine Erfahrung besprechen",
+    submitEnquiry: "Nachricht senden",
+    readProgramme: "Mehr lesen",
+    allProgrammes: "Alle Erfahrungen",
     allHosts: "Zurück zum Praktiker-Netzwerk",
     allInsights: "Alle Einblicke",
     subscribe: "Abonnieren",
     send: "Senden →",
     continue: "Weiter →",
     previous: "← Zurück",
-    submitApplication: "Bewerbung absenden",
+    submitApplication: "Nachricht senden",
+    discussExperience: "Eine Erfahrung besprechen",
+    discoverVisionGoal: "Vision Goal entdecken →",
+    readExperience: "Mehr lesen",
+    allExperiences: "Alle Erfahrungen",
   },
   dispatch: {
     label: "Dispatch",
     items: [
-      "Swiss Business Access Immersion · Zürich · 23.—27. Juni 2026 · 4 Plätze frei",
-      "Private Swiss Banking & Wealth Intensive · Genf · 8.—11. September 2026 · Warteliste",
-      "Swiss Finance Week · Zürich · 10.—14. November 2026 · 8 Plätze",
-      "Anfragen für private Kohorten offen · Antwort in fünf Werktagen",
-      "Kohortenbasiert · Zwölf im Raum · Geführt von Praktikern",
-      "Auf Bewerbung · Keine offene Anmeldung",
+      "Angewandtes Lernen · Kleine Räume · Von Praktikern geleitet",
+      "Auf Gespräch · Keine offene Anmeldung",
+      "Kuratierte Schweizer Executive-Erfahrungen",
     ],
   },
   hero: {
@@ -763,45 +810,54 @@ const de: Dict = {
     subline:
       "Kuratierte Executive-Intensivprogramme für Unternehmer, Principals und internationale Führungspersönlichkeiten — praktischer Zugang zu Schweizer Geschäftskultur, Finanzwesen und den dahinterliegenden Netzwerken.",
     subjects: "Executive-Programme · Kuratierter Zugang · Private Office",
-    statusReviewing: "Bewerbungen werden geprüft · Q3 2026",
-    locationLine: "Zürich · Genf · Ausgewählte Schweizer Veranstaltungsorte",
+    statusReviewing: "Erfahrungen werden derzeit kuratiert",
+    locationLine: "Schweiz · Ausgewählte Orte",
     scrollToProgrammes: "Zu den Programmen ↓",
   },
   posture: {
     eyebrow: "Die Haltung der Plattform",
     sub: "Premium Schweizer Executive-Erlebnisse · Kuratierter Zugang · Private Netzwerke",
     pillars: [
-      { label: "Auf Bewerbung", line: "Niemals offene Anmeldung." },
-      { label: "Zwölf im Raum", line: "Bewusst kohortenbasiert." },
-      { label: "Geführt von Praktikern", line: "Namentlich auf der Seite." },
+      { label: "Auf Gespräch", line: "Niemals offene Anmeldung." },
+      { label: "Kleine Räume", line: "Bewusst klein gehalten." },
+      { label: "Von Praktikern geleitet", line: "Angewandt, nicht theoretisch." },
     ],
   },
   programmesBlock: {
-    eyebrow: "Die Flaggschiff-Executive-Programme",
-    headline: "Drei Schweizer Intensivprogramme.",
-    headlineGold: "Auf Bewerbung.",
+    eyebrow: "Formate des Lernens",
+    headline: "Drei Wege zu lernen,",
+    headlineGold: "in der Praxis.",
+  },
+  learningInPractice: {
+    eyebrow: "Lernen in der Praxis",
+    headline: "Finanzen jenseits von Folien und Lehrbüchern.",
+    body: "Lernen wird relevanter, wenn finanzielle und strategische Konzepte mit realen operativen Umgebungen, professionellem Dialog und Peer-Austausch verbunden werden.",
+    caption: "Ein Beispiel für angewandtes Lernen in einem premium Schweizer Geschäftsumfeld.",
   },
   programmeMeta: {
     access: {
-      name: "Swiss Business Access Immersion",
+      name: "Business Immersion Experience",
       tagline:
-        "Fünf Tage hinter den Kulissen der Schweizer Wirtschaft — KMU-Besuche, Boardrooms, Gastfreundschaft und Operating-Kultur, die anderswo nicht zugänglich ist.",
-      durationLabel: "5 Tage · vor Ort",
-      city: "Zürich",
+        "Eine angewandte Immersion in die Schweizer Wirtschaft — verbindet Operating-Kultur, professionellen Dialog und Peer-Austausch.",
+      formatLabel: "Immersives Format",
+      durationLabel: "",
+      city: "",
     },
     banking: {
-      name: "Private Swiss Banking & Wealth Intensive",
+      name: "Finance & Wealth Intensive",
       tagline:
-        "Vier Tage im Schweizer Privatbanking — Chatham-House-Räume mit namentlich genannten Praktikern, hinter verschlossenen Türen.",
-      durationLabel: "4 Tage · Chatham-House",
-      city: "Genf",
+        "Ein fokussiertes Format für Dialog auf Praktiker-Niveau zu Finanzen, Vermögensplanung und Governance — unter sorgfältiger Diskretion.",
+      formatLabel: "Fokussiertes Intensiv",
+      durationLabel: "",
+      city: "",
     },
     topic: {
-      name: "Swiss Finance Week",
+      name: "Themed Learning Sessions",
       tagline:
-        "Fünf themenbezogene Tage zu einer aktuellen Schweizer Finanzfrage — kuratierte Räume, Gastfreundschaft, geführt von Praktikern.",
-      durationLabel: "5 Tage · kuratiert",
-      city: "Zürich",
+        "Themenbezogene, kuratierte Sitzungen zu einer spezifischen Frage — geführt, klein, angewandt.",
+      formatLabel: "Themenbezogene Sitzungen",
+      durationLabel: "",
+      city: "",
     },
   },
   hostsStrip: {
@@ -814,12 +870,12 @@ const de: Dict = {
     eyebrow: "Die Räume",
     headline: "Redaktionell. Zurückhaltend.",
     headlineGold: "Schweizerisch.",
-    side: "Kuratierte Veranstaltungsorte. Zwölf im Raum. Diskretion als Standard.",
+    side: "Kuratierte Umgebungen. Bewusst klein. Diskretion als Standard.",
     tiles: [
-      { label: "Zürich", caption: "Vor Ort" },
+      { label: "Überlegte Orte", caption: "Vor Ort" },
       { label: "Genf", caption: "Chatham-House" },
       { label: "Alpiner Rückzug", caption: "Stille Räume" },
-      { label: "Kuratierte Salons", caption: "Zwölf im Raum" },
+      { label: "Kuratierte Salons", caption: "Kleine Räume" },
     ],
   },
   cohorts: {
@@ -860,9 +916,9 @@ const de: Dict = {
     response: "Antwort in fünf Werktagen.",
   },
   ctaBlock: {
-    eyebrow: "Bereit zur Bewerbung",
-    line1: "Der Raum ist klein.",
-    line2: "Er schliesst, wenn er voll ist.",
+    eyebrow: "Ins Gespräch kommen",
+    line1: "Die Räume sind klein.",
+    line2: "Das Gespräch steht am Anfang.",
   },
   trust: {
     eyebrow: "Die Plattform in Zahlen",
@@ -1006,7 +1062,7 @@ const de: Dict = {
       lede:
         "Vision Goal schafft kuratierte Schweizer Executive-Lernerlebnisse für Unternehmer, Führungspersönlichkeiten und internationale Professionals, die praktischen Zugang zu Schweizer Finanzwesen, Geschäftskultur und Premium-Netzwerken suchen.",
       statement:
-        "Vision Goal führt drei Flaggschiff-Executive-Programme — eine Swiss Business Access Immersion in Zürich, ein Private Swiss Banking & Wealth Intensive in Genf und einmal jährlich eine Swiss Finance Week zu einer aktuellen Frage — ergänzt durch ein Private Office für einzelne Principals, die kuratierte Vorstellungen statt eines Kohortenplatzes suchen.",
+        "Vision Goal gestaltet kuratierte Executive-Lernerfahrungen in einigen wenigen Formaten — ein immersives Format, ein fokussiertes Intensiv und themenbezogene Sitzungen — ergänzt durch ein Private Office für einzelne Principals, die kuratierte Vorstellungen statt eines Platzes im Raum suchen.",
       statement2:
         "Die Plattform ist bewusst klein. Kuration ist das Produkt; die Räume, Vorstellungen und Erlebnisse sind die Lieferergebnisse. Sie kaufen weder einen Kurs noch ein Beratungsmandat — Sie kaufen Zugang, Einsicht und Schweizer Geschäftsexpertise, die anderswo schwer zu beschaffen sind.",
       standardsEyebrow: "Standards & Ethik",
@@ -1162,7 +1218,7 @@ const de: Dict = {
     legalPrivacy: "Datenschutz",
     legalCookies: "Cookies",
     legalApplicationTerms: "Bewerbungsbedingungen",
-    copyright: "© 2026 Vision Goal · Zürich, Schweiz",
+    copyright: "© 2026 Vision Goal GmbH · Schweiz",
     contactEyebrow: "Direkter Draht",
     contactPhoneLabel: "Telefon",
     contactEmailLabel: "E-Mail",
@@ -1175,46 +1231,50 @@ const de: Dict = {
 
 const fr: Dict = {
   meta: {
-    title: "Vision Goal — Accès suisse curaté, sur candidature",
+    title: "Vision Goal",
     description:
-      "Une plateforme suisse premium pour intensifs en cohorte et accès business curaté — trois programmes phares, animés par des praticiens, sur candidature.",
+      "Vision Goal crée des expériences d’apprentissage exécutif suisses curatées — appliquées, restreintes, réfléchies.",
   },
   nav: {
     home: "Accueil",
-    programmes: "Programmes",
+    programmes: "Expériences",
     hosts: "Réseau de praticiens",
     alumni: "Réseau",
     insights: "Analyses",
     about: "À propos",
-    apply: "Candidater",
+    apply: "Contact",
     privateOffice: "Private Office",
     skipToContent: "Aller au contenu",
     primaryNav: "Principal",
+    whatWeDo: "Ce que nous faisons",
+    experiences: "Expériences",
+    contact: "Contact",
   },
   cta: {
-    applyNext: "Candidater à la prochaine cohorte",
-    requestConsult: "Demander une consultation privée →",
-    applyForCohort: "Candidater à la prochaine cohorte",
-    submitEnquiry: "Envoyer la demande",
-    readProgramme: "Lire le programme",
-    allProgrammes: "Tous les programmes",
+    applyNext: "Discuter d’une expérience",
+    requestConsult: "Découvrir Vision Goal →",
+    applyForCohort: "Discuter d’une expérience",
+    submitEnquiry: "Envoyer un message",
+    readProgramme: "En savoir plus",
+    allProgrammes: "Toutes les expériences",
     allHosts: "Retour au réseau de praticiens",
     allInsights: "Toutes les analyses",
     subscribe: "S’abonner",
     send: "Envoyer →",
     continue: "Continuer →",
     previous: "← Précédent",
-    submitApplication: "Envoyer la candidature",
+    submitApplication: "Envoyer un message",
+    discussExperience: "Discuter d’une expérience",
+    discoverVisionGoal: "Découvrir Vision Goal →",
+    readExperience: "En savoir plus",
+    allExperiences: "Toutes les expériences",
   },
   dispatch: {
     label: "Dispatch",
     items: [
-      "Swiss Business Access Immersion · Zurich · 23—27 juin 2026 · 4 places restantes",
-      "Private Swiss Banking & Wealth Intensive · Genève · 8—11 septembre 2026 · Liste d’attente",
-      "Swiss Finance Week · Zurich · 10—14 novembre 2026 · 8 places",
-      "Demandes de cohortes privées ouvertes · Réponse sous cinq jours ouvrés",
-      "En cohorte · Douze dans la salle · Animé par des praticiens",
-      "Sur candidature · Jamais d’inscription ouverte",
+      "Apprentissage appliqué · Petites salles · Animé par des praticiens",
+      "Par la conversation · Jamais d’inscription ouverte",
+      "Expériences exécutives suisses curatées",
     ],
   },
   hero: {
@@ -1225,45 +1285,54 @@ const fr: Dict = {
     subline:
       "Programmes exécutifs curatés pour entrepreneurs, principals et professionnels internationaux — un accès pratique à la culture business suisse, à la finance et aux réseaux qui les sous-tendent.",
     subjects: "Programmes exécutifs · Accès curaté · Private office",
-    statusReviewing: "Examen des candidatures · T3 2026",
-    locationLine: "Zurich · Genève · Lieux suisses sélectionnés",
+    statusReviewing: "Expériences en cours de curation",
+    locationLine: "Suisse · Lieux sélectionnés",
     scrollToProgrammes: "Voir les programmes ↓",
   },
   posture: {
     eyebrow: "La posture de la plateforme",
     sub: "Expériences exécutives suisses premium · Accès curaté · Réseaux privés",
     pillars: [
-      { label: "Sur candidature", line: "Jamais d’inscription ouverte." },
-      { label: "Douze dans la salle", line: "En cohorte par choix." },
-      { label: "Animé par des praticiens", line: "Nommés sur la page." },
+      { label: "Par la conversation", line: "Jamais d’inscription ouverte." },
+      { label: "Petites salles", line: "Restreintes par choix." },
+      { label: "Animé par des praticiens", line: "Appliqué, pas théorique." },
     ],
   },
   programmesBlock: {
-    eyebrow: "Les programmes exécutifs phares",
-    headline: "Trois intensifs suisses.",
-    headlineGold: "Sur candidature.",
+    eyebrow: "Formats d’apprentissage",
+    headline: "Trois façons d’apprendre,",
+    headlineGold: "en pratique.",
+  },
+  learningInPractice: {
+    eyebrow: "Apprentissage en pratique",
+    headline: "La finance au-delà des slides et des manuels.",
+    body: "L’apprentissage devient plus pertinent lorsque les concepts financiers et stratégiques sont reliés à des environnements opérationnels réels, à un dialogue professionnel et à un échange entre pairs.",
+    caption: "Un exemple d’apprentissage appliqué dans un cadre business suisse premium.",
   },
   programmeMeta: {
     access: {
-      name: "Swiss Business Access Immersion",
+      name: "Business Immersion Experience",
       tagline:
-        "Cinq jours dans l’envers du décor du business suisse — visites de PME, conseils d’administration, hospitalité et culture opérationnelle qu’on ne lit nulle part ailleurs.",
-      durationLabel: "5 jours · en résidence",
-      city: "Zurich",
+        "Une immersion appliquée dans le business suisse — reliant culture opérationnelle, dialogue professionnel et échange entre pairs.",
+      formatLabel: "Format immersif",
+      durationLabel: "",
+      city: "",
     },
     banking: {
-      name: "Private Swiss Banking & Wealth Intensive",
+      name: "Finance & Wealth Intensive",
       tagline:
-        "Quatre jours à l’intérieur de la banque privée suisse — salles chatham house avec praticiens nommés, à huis clos.",
-      durationLabel: "4 jours · chatham house",
-      city: "Genève",
+        "Un format concentré pour un dialogue de niveau praticien sur la finance, la planification patrimoniale et la gouvernance — sous discrétion réfléchie.",
+      formatLabel: "Intensif ciblé",
+      durationLabel: "",
+      city: "",
     },
     topic: {
-      name: "Swiss Finance Week",
+      name: "Themed Learning Sessions",
       tagline:
-        "Cinq jours thématiques autour d’une question d’actualité de la finance suisse — salles curatées, hospitalité, animées par des praticiens.",
-      durationLabel: "5 jours · curaté",
-      city: "Zurich",
+        "Des sessions thématiques et curatées construites autour d’une question précise — animées, restreintes, appliquées.",
+      formatLabel: "Sessions thématiques",
+      durationLabel: "",
+      city: "",
     },
   },
   hostsStrip: {
@@ -1276,12 +1345,12 @@ const fr: Dict = {
     eyebrow: "Les salles",
     headline: "Éditorial. Mesuré.",
     headlineGold: "Suisse.",
-    side: "Lieux curatés. Douze dans la salle. Discrétion par défaut.",
+    side: "Environnements curatés. Restreints par choix. Discrétion par défaut.",
     tiles: [
       { label: "Zurich", caption: "En résidence" },
       { label: "Genève", caption: "Chatham house" },
       { label: "Retraite alpine", caption: "Salles silencieuses" },
-      { label: "Salons curatés", caption: "Douze dans la salle" },
+      { label: "Salons curatés", caption: "Petites salles" },
     ],
   },
   cohorts: {
@@ -1322,9 +1391,9 @@ const fr: Dict = {
     response: "Réponse sous cinq jours ouvrés.",
   },
   ctaBlock: {
-    eyebrow: "Prêt à candidater",
-    line1: "La salle est petite.",
-    line2: "Elle ferme quand elle est pleine.",
+    eyebrow: "Engager la conversation",
+    line1: "Les salles sont petites.",
+    line2: "La conversation vient d’abord.",
   },
   trust: {
     eyebrow: "La plateforme en chiffres",
@@ -1468,7 +1537,7 @@ const fr: Dict = {
       lede:
         "Vision Goal crée des expériences exécutives suisses curatées pour entrepreneurs, dirigeants et professionnels internationaux qui recherchent un accès pratique à la finance, à la culture business et aux réseaux suisses premium.",
       statement:
-        "Vision Goal organise trois programmes exécutifs phares — une Swiss Business Access Immersion à Zurich, un Private Swiss Banking & Wealth Intensive à Genève et une Swiss Finance Week annuelle sur une question d’actualité — complétés par un Private Office pour les principals qui préfèrent des introductions curatées à une place en cohorte.",
+        "Vision Goal conçoit des expériences d’apprentissage exécutif curatées en quelques formats — un format immersif, un intensif ciblé et des sessions thématiques — complétés par un Private Office pour les principals qui préfèrent des introductions curatées à une place dans une salle.",
       statement2:
         "La plateforme est volontairement petite. La curation est le produit ; les salles, les introductions et les expériences en sont les livrables. Vous n’achetez ni un cours ni une mission de conseil — vous achetez de l’accès, de l’insight et un savoir-faire business suisse difficile à assembler autrement.",
       standardsEyebrow: "Standards & éthique",
@@ -1624,7 +1693,7 @@ const fr: Dict = {
     legalPrivacy: "Confidentialité",
     legalCookies: "Cookies",
     legalApplicationTerms: "Conditions de candidature",
-    copyright: "© 2026 Vision Goal · Zurich, Suisse",
+    copyright: "© 2026 Vision Goal GmbH · Suisse",
     contactEyebrow: "Ligne directe",
     contactPhoneLabel: "Téléphone",
     contactEmailLabel: "E-mail",
@@ -1637,46 +1706,50 @@ const fr: Dict = {
 
 const es: Dict = {
   meta: {
-    title: "Vision Goal — Acceso suizo curado, por candidatura",
+    title: "Vision Goal",
     description:
-      "Una plataforma suiza premium para intensivos por cohorte y acceso de negocio curado — tres programas insignia, conducidos por practicantes, por candidatura.",
+      "Vision Goal crea experiencias suizas curadas de aprendizaje ejecutivo — aplicadas, reducidas, consideradas.",
   },
   nav: {
     home: "Inicio",
-    programmes: "Programas",
+    programmes: "Experiencias",
     hosts: "Red de profesionales",
     alumni: "Red",
     insights: "Análisis",
     about: "Acerca",
-    apply: "Postular",
+    apply: "Contacto",
     privateOffice: "Private Office",
     skipToContent: "Ir al contenido",
     primaryNav: "Principal",
+    whatWeDo: "Qué hacemos",
+    experiences: "Experiencias",
+    contact: "Contacto",
   },
   cta: {
-    applyNext: "Postular a la próxima cohorte",
-    requestConsult: "Solicitar consulta privada →",
-    applyForCohort: "Postular a la próxima cohorte",
-    submitEnquiry: "Enviar consulta",
-    readProgramme: "Leer el programa",
-    allProgrammes: "Todos los programas",
+    applyNext: "Conversar sobre una experiencia",
+    requestConsult: "Descubrir Vision Goal →",
+    applyForCohort: "Conversar sobre una experiencia",
+    submitEnquiry: "Enviar mensaje",
+    readProgramme: "Leer más",
+    allProgrammes: "Todas las experiencias",
     allHosts: "Volver a la red de profesionales",
     allInsights: "Todos los análisis",
     subscribe: "Suscribirse",
     send: "Enviar →",
     continue: "Continuar →",
     previous: "← Anterior",
-    submitApplication: "Enviar candidatura",
+    submitApplication: "Enviar mensaje",
+    discussExperience: "Conversar sobre una experiencia",
+    discoverVisionGoal: "Descubrir Vision Goal →",
+    readExperience: "Leer más",
+    allExperiences: "Todas las experiencias",
   },
   dispatch: {
     label: "Dispatch",
     items: [
-      "Swiss Business Access Immersion · Zúrich · 23—27 de junio de 2026 · 4 plazas restantes",
-      "Private Swiss Banking & Wealth Intensive · Ginebra · 8—11 de septiembre de 2026 · Lista de espera",
-      "Swiss Finance Week · Zúrich · 10—14 de noviembre de 2026 · 8 plazas",
-      "Consultas de cohorte privada abiertas · Respuesta en cinco días hábiles",
-      "Por cohorte · Doce en la sala · Conducido por practicantes",
-      "Por candidatura · Nunca matrícula abierta",
+      "Aprendizaje aplicado · Salas reducidas · Conducido por practicantes",
+      "Por conversación · Nunca matrícula abierta",
+      "Experiencias ejecutivas suizas curadas",
     ],
   },
   hero: {
@@ -1687,45 +1760,54 @@ const es: Dict = {
     subline:
       "Programas ejecutivos curados para emprendedores, principals y profesionales internacionales — acceso práctico a la cultura empresarial suiza, a las finanzas y a las redes detrás de ellas.",
     subjects: "Programas ejecutivos · Acceso curado · Private office",
-    statusReviewing: "Revisando candidaturas · T3 2026",
-    locationLine: "Zúrich · Ginebra · Sedes suizas seleccionadas",
+    statusReviewing: "Experiencias en curso de curaduría",
+    locationLine: "Suiza · Sedes seleccionadas",
     scrollToProgrammes: "Ver los programas ↓",
   },
   posture: {
     eyebrow: "La postura de la plataforma",
     sub: "Experiencias ejecutivas suizas premium · Acceso curado · Redes privadas",
     pillars: [
-      { label: "Por candidatura", line: "Nunca matrícula abierta." },
-      { label: "Doce en la sala", line: "Por cohorte, por elección." },
-      { label: "Conducido por practicantes", line: "Nombrados en la página." },
+      { label: "Por conversación", line: "Nunca matrícula abierta." },
+      { label: "Salas reducidas", line: "Reducidas por elección." },
+      { label: "Conducido por practicantes", line: "Aplicado, no teórico." },
     ],
   },
   programmesBlock: {
-    eyebrow: "Los programas ejecutivos insignia",
-    headline: "Tres intensivos suizos.",
-    headlineGold: "Por candidatura.",
+    eyebrow: "Formatos de aprendizaje",
+    headline: "Tres formas de aprender,",
+    headlineGold: "en la práctica.",
+  },
+  learningInPractice: {
+    eyebrow: "Aprendizaje en la práctica",
+    headline: "Finanzas más allá de las diapositivas y los manuales.",
+    body: "El aprendizaje se vuelve más relevante cuando los conceptos financieros y estratégicos se conectan con entornos operativos reales, diálogo profesional e intercambio entre pares.",
+    caption: "Un ejemplo de aprendizaje aplicado en un entorno de negocio suizo premium.",
   },
   programmeMeta: {
     access: {
-      name: "Swiss Business Access Immersion",
+      name: "Business Immersion Experience",
       tagline:
-        "Cinco días dentro del negocio suizo — visitas a PYMES, salas de juntas, hospitalidad y cultura operativa que no se encuentra en otros sitios.",
-      durationLabel: "5 días · en residencia",
-      city: "Zúrich",
+        "Una inmersión aplicada en el negocio suizo — conectando cultura operativa, diálogo profesional e intercambio entre pares.",
+      formatLabel: "Formato inmersivo",
+      durationLabel: "",
+      city: "",
     },
     banking: {
-      name: "Private Swiss Banking & Wealth Intensive",
+      name: "Finance & Wealth Intensive",
       tagline:
-        "Cuatro días dentro de la banca privada suiza — salas chatham house con practicantes nombrados, a puerta cerrada.",
-      durationLabel: "4 días · chatham house",
-      city: "Ginebra",
+        "Un formato enfocado para diálogo de nivel practicante sobre finanzas, planificación patrimonial y gobernanza — bajo discreción considerada.",
+      formatLabel: "Intensivo enfocado",
+      durationLabel: "",
+      city: "",
     },
     topic: {
-      name: "Swiss Finance Week",
+      name: "Themed Learning Sessions",
       tagline:
-        "Cinco días temáticos sobre una pregunta actual de las finanzas suizas — salas curadas, hospitalidad, conducidas por practicantes.",
-      durationLabel: "5 días · curado",
-      city: "Zúrich",
+        "Sesiones temáticas y curadas construidas alrededor de una pregunta específica — conducidas, reducidas, aplicadas.",
+      formatLabel: "Sesiones temáticas",
+      durationLabel: "",
+      city: "",
     },
   },
   hostsStrip: {
@@ -1738,12 +1820,12 @@ const es: Dict = {
     eyebrow: "Las salas",
     headline: "Editorial. Mesurado.",
     headlineGold: "Suizo.",
-    side: "Sedes curadas. Doce en la sala. Discreción por defecto.",
+    side: "Entornos curados. Reducidos por elección. Discreción por defecto.",
     tiles: [
       { label: "Zúrich", caption: "En residencia" },
       { label: "Ginebra", caption: "Chatham house" },
       { label: "Retiro alpino", caption: "Salas silenciosas" },
-      { label: "Salones curados", caption: "Doce en la sala" },
+      { label: "Salones curados", caption: "Salas reducidas" },
     ],
   },
   cohorts: {
@@ -1784,9 +1866,9 @@ const es: Dict = {
     response: "Respuesta en cinco días hábiles.",
   },
   ctaBlock: {
-    eyebrow: "Listo para postular",
-    line1: "La sala es pequeña.",
-    line2: "Cierra cuando se llena.",
+    eyebrow: "Iniciar una conversación",
+    line1: "Las salas son pequeñas.",
+    line2: "La conversación va primero.",
   },
   trust: {
     eyebrow: "La plataforma en cifras",
@@ -1930,7 +2012,7 @@ const es: Dict = {
       lede:
         "Vision Goal crea experiencias ejecutivas suizas curadas para emprendedores, directivos y profesionales internacionales que buscan acceso práctico a las finanzas, la cultura empresarial y las redes premium suizas.",
       statement:
-        "Vision Goal opera tres programas ejecutivos insignia — una Swiss Business Access Immersion en Zúrich, un Private Swiss Banking & Wealth Intensive en Ginebra y, anualmente, una Swiss Finance Week sobre una pregunta de actualidad — complementados por un Private Office para principals que prefieren introducciones curadas en lugar de una plaza en cohorte.",
+        "Vision Goal diseña experiencias curadas de aprendizaje ejecutivo en unos pocos formatos — un formato inmersivo, un intensivo enfocado y sesiones temáticas — complementados por un Private Office para principals que prefieren introducciones curadas en lugar de una plaza en una sala.",
       statement2:
         "La plataforma es deliberadamente pequeña. La curaduría es el producto; las salas, introducciones y experiencias son los entregables. No compra un curso ni un encargo de consultoría — compra acceso, perspectiva y know-how empresarial suizo difícil de armar de otro modo.",
       standardsEyebrow: "Estándares y ética",
@@ -2086,7 +2168,7 @@ const es: Dict = {
     legalPrivacy: "Privacidad",
     legalCookies: "Cookies",
     legalApplicationTerms: "Términos de candidatura",
-    copyright: "© 2026 Vision Goal · Zúrich, Suiza",
+    copyright: "© 2026 Vision Goal GmbH · Suiza",
     contactEyebrow: "Línea directa",
     contactPhoneLabel: "Teléfono",
     contactEmailLabel: "Correo",
@@ -2099,46 +2181,50 @@ const es: Dict = {
 
 const zh: Dict = {
   meta: {
-    title: "Vision Goal — 精选瑞士通道, 申请制",
+    title: "Vision Goal",
     description:
-      "面向群体集训与精选商务通道的高端瑞士平台 —— 三大旗舰项目, 由资深从业者主持, 申请制。",
+      "Vision Goal 创造精心策展的瑞士高管学习体验 —— 应用性强、规模精简、审慎周到。",
   },
   nav: {
     home: "首页",
-    programmes: "项目",
+    programmes: "体验",
     hosts: "实践者网络",
     alumni: "网络",
     insights: "洞察",
     about: "关于",
-    apply: "申请",
+    apply: "联系",
     privateOffice: "私人办公室",
     skipToContent: "跳至正文",
     primaryNav: "主导航",
+    whatWeDo: "我们做什么",
+    experiences: "体验",
+    contact: "联系",
   },
   cta: {
-    applyNext: "申请下一期群体",
-    requestConsult: "申请私下咨询 →",
-    applyForCohort: "申请下一期群体",
-    submitEnquiry: "提交咨询",
-    readProgramme: "查看项目",
-    allProgrammes: "全部项目",
+    applyNext: "洽谈一次体验",
+    requestConsult: "了解 Vision Goal →",
+    applyForCohort: "洽谈一次体验",
+    submitEnquiry: "发送信息",
+    readProgramme: "了解更多",
+    allProgrammes: "全部体验",
     allHosts: "返回实践者网络",
     allInsights: "全部洞察",
     subscribe: "订阅",
     send: "发送 →",
     continue: "继续 →",
     previous: "← 上一步",
-    submitApplication: "提交申请",
+    submitApplication: "发送信息",
+    discussExperience: "洽谈一次体验",
+    discoverVisionGoal: "了解 Vision Goal →",
+    readExperience: "了解更多",
+    allExperiences: "全部体验",
   },
   dispatch: {
     label: "速递",
     items: [
-      "Swiss Business Access Immersion · 苏黎世 · 2026 年 6 月 23—27 日 · 余 4 席",
-      "Private Swiss Banking & Wealth Intensive · 日内瓦 · 2026 年 9 月 8—11 日 · 候补",
-      "Swiss Finance Week · 苏黎世 · 2026 年 11 月 10—14 日 · 8 席",
-      "私享群体咨询开放 · 五个工作日内回复",
-      "群体制 · 室内仅十二人 · 资深从业者主持",
-      "申请制 · 从不公开招生",
+      "应用式学习 · 小型场景 · 资深从业者主持",
+      "凭对话 · 从不公开招生",
+      "精心策展的瑞士高管体验",
     ],
   },
   hero: {
@@ -2149,45 +2235,54 @@ const zh: Dict = {
     subline:
       "为企业家、合伙人与跨国资深人士打造的精选高管集训 —— 让您亲临瑞士商业文化、金融体系, 以及背后的网络。",
     subjects: "高管集训 · 精选通道 · 私人办公室",
-    statusReviewing: "申请审阅中 · 2026 年第三季度",
-    locationLine: "苏黎世 · 日内瓦 · 精选瑞士场地",
+    statusReviewing: "体验正在策展中",
+    locationLine: "瑞士 · 精选场地",
     scrollToProgrammes: "查看项目 ↓",
   },
   posture: {
     eyebrow: "平台姿态",
     sub: "瑞士高端高管体验 · 精选通道 · 私享网络",
     pillars: [
-      { label: "申请制", line: "从不公开招生。" },
-      { label: "室内仅十二人", line: "群体制乃刻意。" },
-      { label: "资深从业者主持", line: "页面署名。" },
+      { label: "凭对话", line: "从不公开招生。" },
+      { label: "小型场景", line: "刻意保持精简。" },
+      { label: "资深从业者主持", line: "应用性, 而非理论。" },
     ],
   },
   programmesBlock: {
-    eyebrow: "旗舰高管集训项目",
-    headline: "三大瑞士集训。",
-    headlineGold: "申请制。",
+    eyebrow: "学习形式",
+    headline: "三种学习方式,",
+    headlineGold: "以实践为核心。",
+  },
+  learningInPractice: {
+    eyebrow: "学以致用",
+    headline: "超越幻灯片与教科书的金融学习。",
+    body: "当金融与战略概念与真实的运营环境、专业对话与同侪交流相连接时, 学习才更具意义。",
+    caption: "在瑞士高端商业场景中的应用式学习一例。",
   },
   programmeMeta: {
     access: {
-      name: "Swiss Business Access Immersion",
+      name: "Business Immersion Experience",
       tagline:
-        "五天身处瑞士商业之中 —— 中小企业实地、董事会议、款待与他处难寻的运营文化。",
-      durationLabel: "5 天 · 全程驻地",
-      city: "苏黎世",
+        "身处瑞士商业的应用式浸入 —— 连接运营文化、专业对话与同侪交流。",
+      formatLabel: "浸入式形式",
+      durationLabel: "",
+      city: "",
     },
     banking: {
-      name: "Private Swiss Banking & Wealth Intensive",
+      name: "Finance & Wealth Intensive",
       tagline:
-        "四天身处瑞士私人银行业 —— 查塔姆守则下与具名从业者闭门对话。",
-      durationLabel: "4 天 · 查塔姆守则",
-      city: "日内瓦",
+        "针对金融、财富规划与治理的从业者级对话的聚焦形式 —— 在审慎的保密之下。",
+      formatLabel: "聚焦集训",
+      durationLabel: "",
+      city: "",
     },
     topic: {
-      name: "Swiss Finance Week",
+      name: "Themed Learning Sessions",
       tagline:
-        "围绕一个瑞士金融当下议题的五天主题周 —— 精选房间、款待场景, 由资深从业者主持。",
-      durationLabel: "5 天 · 精选",
-      city: "苏黎世",
+        "围绕特定议题精心策展的主题会话 —— 主持式、精简、应用性强。",
+      formatLabel: "主题会话",
+      durationLabel: "",
+      city: "",
     },
   },
   hostsStrip: {
@@ -2200,7 +2295,7 @@ const zh: Dict = {
     eyebrow: "场所",
     headline: "克制。编辑式。",
     headlineGold: "瑞士风格。",
-    side: "精选场地。室内仅十二人。审慎为常态。",
+    side: "精选场地。刻意保持精简。审慎为常态。",
     tiles: [
       { label: "苏黎世", caption: "驻地" },
       { label: "日内瓦", caption: "查塔姆守则" },
@@ -2246,9 +2341,9 @@ const zh: Dict = {
     response: "五个工作日内回复。",
   },
   ctaBlock: {
-    eyebrow: "准备申请",
-    line1: "房间很小。",
-    line2: "满员即闭。",
+    eyebrow: "开启对话",
+    line1: "场地保持精简。",
+    line2: "对话是第一步。",
   },
   trust: {
     eyebrow: "平台数据",
@@ -2392,7 +2487,7 @@ const zh: Dict = {
       lede:
         "Vision Goal 为企业家、高管与跨国资深人士打造精选的瑞士高管学习体验, 让您切实接触瑞士金融、商业文化与高端网络。",
       statement:
-        "Vision Goal 设有三大旗舰高管项目 —— 苏黎世的 Swiss Business Access Immersion、日内瓦的 Private Swiss Banking & Wealth Intensive, 以及每年一届、围绕当下议题的 Swiss Finance Week —— 并辅以为不愿入组而希望获得精选引荐的个人 Principal 设立的私人办公室。",
+        "Vision Goal 以少数几种形式设计精选的高管学习体验 —— 浸入式形式、聚焦集训与主题会话 —— 并辅以为希望获得精选引荐、而非席位的个人 Principal 设立的私人办公室。",
       statement2:
         "平台刻意精简。策划即产品; 房间、引荐与体验则是交付。您所得到的不是一门课程, 也不是一份咨询合约 —— 而是难以从他处汇集的瑞士商业通道、洞察与专业素养。",
       standardsEyebrow: "标准与伦理",
@@ -2544,7 +2639,7 @@ const zh: Dict = {
     legalPrivacy: "隐私",
     legalCookies: "Cookie",
     legalApplicationTerms: "申请条款",
-    copyright: "© 2026 Vision Goal · 瑞士苏黎世",
+    copyright: "© 2026 Vision Goal GmbH · 瑞士",
     contactEyebrow: "直线联络",
     contactPhoneLabel: "电话",
     contactEmailLabel: "邮箱",

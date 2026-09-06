@@ -20,7 +20,6 @@ export function LegalShell({ eyebrow, title, lastUpdated, active, children }: Pr
     { label: t.footer.legalImprint, href: "/legal/imprint" },
     { label: t.footer.legalPrivacy, href: "/legal/privacy" },
     { label: t.footer.legalCookies, href: "/legal/cookies" },
-    { label: t.footer.legalApplicationTerms, href: "/legal/application-terms" },
   ];
 
   return (

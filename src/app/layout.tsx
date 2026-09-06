@@ -4,24 +4,28 @@ import { I18nProvider } from "@/i18n/I18nProvider";
 
 const SITE_URL = "https://visiongoal.ch";
 
+const SITE_TITLE = "Vision Goal — Curated Swiss executive learning";
+const SITE_DESCRIPTION =
+  "Vision Goal creates curated Swiss executive learning experiences that connect financial and strategic thinking with real operating environments, professional dialogue and peer exchange.";
+
+// Metadata carries no programme names, prices, cohort dates, cities or
+// participant counts pre-launch. `template` appends "· Vision Goal" to
+// child titles, so the default title must NOT itself end in "Vision Goal"
+// or the tab reads "Vision Goal · Vision Goal".
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "Vision Goal — Curated Swiss access, by application",
+    default: SITE_TITLE,
     template: "%s · Vision Goal",
   },
-  description:
-    "A premium Swiss platform for cohort-based intensives and curated business access — three flagship programmes, hosted by practitioners, by application.",
+  description: SITE_DESCRIPTION,
   keywords: [
     "Swiss executive education",
-    "Swiss business access",
-    "Swiss private banking intensive",
-    "Swiss finance week",
-    "cohort-based intensives Switzerland",
-    "by application",
-    "chatham house",
-    "Zurich",
-    "Geneva",
+    "executive learning",
+    "applied learning",
+    "finance workshop",
+    "Swiss business experience",
+    "curated learning experiences",
   ],
   authors: [{ name: "Vision Goal", url: SITE_URL }],
   creator: "Vision Goal",
@@ -30,18 +34,24 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_CH",
-    alternateLocale: ["de_CH", "fr_CH", "es_ES", "zh_CN"],
     url: SITE_URL,
     siteName: "Vision Goal",
-    title: "Vision Goal — Curated Swiss access, by application",
-    description:
-      "A premium Swiss platform for cohort-based intensives and curated business access — three flagship programmes, hosted by practitioners, by application.",
+    title: SITE_TITLE,
+    description: SITE_DESCRIPTION,
+    images: [
+      {
+        url: "/og-default.jpg",
+        width: 1200,
+        height: 630,
+        alt: "A premium Swiss retail environment during a Vision Goal learning experience.",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Vision Goal — Curated Swiss access, by application",
-    description:
-      "A premium Swiss platform for cohort-based intensives and curated business access.",
+    title: SITE_TITLE,
+    description: SITE_DESCRIPTION,
+    images: ["/og-default.jpg"],
   },
   robots: {
     index: true,
@@ -54,15 +64,12 @@ export const metadata: Metadata = {
       "max-video-preview": -1,
     },
   },
+  // Only English is published while the other locales are in review.
   alternates: {
     canonical: "/",
     languages: {
       "x-default": "/",
       en: "/",
-      de: "/",
-      fr: "/",
-      es: "/",
-      zh: "/",
     },
   },
 };
@@ -72,12 +79,10 @@ const orgJsonLd = {
   "@type": "Organization",
   name: "Vision Goal",
   url: SITE_URL,
-  logo: `${SITE_URL}/og-default.png`,
-  description:
-    "A premium Swiss platform for cohort-based intensives and curated business access.",
+  logo: `${SITE_URL}/og-default.jpg`,
+  description: SITE_DESCRIPTION,
   address: {
     "@type": "PostalAddress",
-    addressLocality: "Zurich",
     addressCountry: "CH",
   },
   sameAs: ["https://www.linkedin.com/"],
@@ -88,7 +93,7 @@ const websiteJsonLd = {
   "@type": "WebSite",
   name: "Vision Goal",
   url: SITE_URL,
-  inLanguage: ["en", "de", "fr", "es", "zh"],
+  inLanguage: ["en"],
 };
 
 export default function RootLayout({

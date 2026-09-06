@@ -4,10 +4,20 @@ import { useEffect, useRef, useState } from "react";
 import { localeLabels, locales, type Locale } from "@/i18n/config";
 import { useI18n } from "@/i18n/I18nProvider";
 
+// Pre-launch: only fully-reviewed locales are exposed in the switcher.
+// The DE / FR / ES / ZH dictionaries still exist and can be enabled here
+// once each translation has been proofed — just add the code to the array.
+const VISIBLE_LOCALES: Locale[] = ["en"];
+
 export function LangSwitcher() {
   const { locale, setLocale } = useI18n();
   const [open, setOpen] = useState(false);
   const ref = useRef<HTMLDivElement | null>(null);
+
+  // With one locale exposed the switcher is decorative noise — hide it.
+  if (VISIBLE_LOCALES.length <= 1) return null;
+
+  const shownLocales = locales.filter((l) => VISIBLE_LOCALES.includes(l));
 
   useEffect(() => {
     if (!open) return;
@@ -51,7 +61,7 @@ export function LangSwitcher() {
           aria-label="Language"
           className="absolute right-0 mt-3 min-w-[10rem] bg-navy-deep border border-cream/15 shadow-[0_30px_60px_-30px_rgba(0,0,0,0.6)] z-40"
         >
-          {locales.map((l: Locale) => {
+          {shownLocales.map((l: Locale) => {
             const active = l === locale;
             return (
               <li key={l}>

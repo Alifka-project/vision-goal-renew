@@ -1,5 +1,12 @@
 // Placeholder content used at the landing-page stage before the CMS is wired up.
 // Every visible string must move into Sanity / locale files before launch — see CLAUDE.md §11.
+//
+// Pre-launch posture (client feedback pass 2): no specific programme names,
+// prices, durations, cities, participant limits, hosts, venues, dates, alumni
+// promises. What ships now describes indicative FORMATS the platform runs —
+// generic Experience shapes, no products for sale. Once real cohorts are
+// confirmed we can reintroduce named programmes with fees, dates and
+// locations here.
 
 export type Programme = {
   id: "access" | "banking" | "topic";
@@ -9,246 +16,176 @@ export type Programme = {
   oneLineFor: string;
   outcome: string;
   href: string;
-  city: string;
-  durationLabel: string;
   whoFor: string;
   notFor: string;
-  fee: string;
-  feeIncludes: string[];
-  feeExcludes: string[];
   architecture: { phase: string; title: string; body: string }[];
-  format: { label: string; value: string }[];
   faqs: { q: string; a: string }[];
   outcomes: string[];
 };
 
+// Indicative Experience formats. Not products for sale — no fees, dates,
+// cities, participant limits, hosts or venues are stated until they are
+// confirmed for a specific cohort. The three ids are internal only; visible
+// names describe the shape of the learning, not a fixed programme.
 export const programmes: Programme[] = [
   {
     id: "access",
     slug: "access",
-    name: "Swiss Business Access Immersion",
+    name: "Business Immersion Experience",
     tagline:
-      "Five days inside Swiss business — boardrooms, SME visits, hospitality, and the operating culture you cannot read about elsewhere.",
+      "An applied immersion in Swiss business — connecting operating culture, SME visits and considered peer dialogue.",
     oneLineFor:
-      "International entrepreneurs, executives, and family principals who want practical access to Switzerland and the networks behind it.",
+      "Entrepreneurs, executives and family principals who want practical, working exposure to Swiss business — not a lecture room.",
     outcome:
-      "Direct access to Swiss principals, a working map of the operating culture, and a curated network you can call on.",
-    href: "/programmes/access",
-    city: "Zurich",
-    durationLabel: "5 days · in residence",
+      "A working feel for Swiss operating culture, applied dialogue with practitioners, and a curated network built on shared context.",
+    href: "/experiences/access",
     whoFor:
-      "International entrepreneurs, senior executives, family-office principals, and corporate decision-makers engaging with Switzerland — by expansion, partnership, or capital deployment. Considered seniority; specific objectives.",
+      "Entrepreneurs, senior executives, family principals and corporate decision-makers engaging with Switzerland — by expansion, partnership or capital deployment. Considered seniority; specific objectives.",
     notFor:
-      "Open enrolment, generic networking circuits, or first-jobbers building a CV. The room is small on purpose.",
-    fee: "CHF 14,500",
-    feeIncludes: [
-      "Five days in residence with a cohort of twelve",
-      "Behind-the-scenes visits to Swiss SMEs and Zurich operating partners",
-      "A curated fine-dining business case and a hosted hospitality session",
-      "Small-group rooms with named Swiss principals; site visits with hosts",
-      "Welcome dinner, two structured cohort meals, and an alpine field session",
-      "Twelve months of follow-on alumni access",
-    ],
-    feeExcludes: ["Travel", "Accommodation", "Personal expenses"],
+      "Open enrolment, generic networking circuits, or professionals building a CV. The rooms are small on purpose.",
     architecture: [
       {
         phase: "Before",
-        title: "Pre-immersion briefing",
-        body: "A two-week structured preparation: curated reading, framing calls with hosts, and a written brief on your specific access objectives. The room arrives ready.",
+        title: "Structured preparation",
+        body: "A structured pre-experience briefing: curated reading, framing conversations, and a written brief on your specific access objectives. The room arrives ready.",
       },
       {
         phase: "Inside",
-        title: "Five days in Zurich",
-        body: "Mornings inside Swiss boardrooms and at SME sites; afternoons in small-group rooms with named principals; evenings reserved for considered cohort dialogue — and one alpine field session to break frame. This is not a lecture room; it is a working week inside Swiss business.",
+        title: "In the room",
+        body: "Working sessions inside Swiss businesses and operating environments, small-group dialogue with practitioners, and considered peer exchange. Not a lecture room — a working series of sessions inside Swiss business.",
       },
       {
         phase: "After",
-        title: "Twelve months follow-on",
-        body: "Quarterly host dispatches, named introductions on request, an annual Zurich reconvening, and access to the alumni register. The relationship continues.",
+        title: "Continued dialogue",
+        body: "Considered follow-on dialogue, tailored to the objectives you brought into the room. Details of any continued-access format are confirmed at the time each experience is announced.",
       },
-    ],
-    format: [
-      { label: "Location", value: "Zurich, in residence — Swiss site visits each day" },
-      { label: "Languages", value: "English (DE / FR on request)" },
-      { label: "Group size", value: "Twelve principals in the room" },
-      { label: "Schedule", value: "Five consecutive days · 09:00 – 18:00 plus evenings" },
-      { label: "Materials", value: "Briefings, host notes, alumni handbook" },
-      { label: "Follow-on", value: "Twelve months of curated alumni access" },
     ],
     faqs: [
       {
-        q: "What makes this different from an executive programme at a business school?",
-        a: "We do not run a school or a course. The deliverable is access — to Swiss principals, businesses, and operating culture, hosted by named practitioners. The room is small; the days are working days; the relationship continues for twelve months. You leave with names, judgement, and a network you can call on, not a certificate.",
+        q: "How is this different from an executive programme at a business school?",
+        a: "Vision Goal does not run a school or a course. The deliverable is applied learning and considered access — hosted by practitioners, in small rooms, with a working brief you can act on. There is no certificate; the room is the deliverable.",
       },
       {
         q: "Will participants be named publicly?",
-        a: "Discretion is the default. The cohort register is shared with participants only. Public attribution requires written consent.",
+        a: "Discretion is the default. Participant registers are shared inside the room only. Public attribution requires written consent.",
       },
       {
-        q: "How is the application reviewed?",
-        a: "By the host curation team. We assess fit, specificity of access objectives, and the calibre of contribution you bring to the room. Expected response within ten business days.",
-      },
-      {
-        q: "Deferral and refund?",
-        a: "One deferral to the next cohort is available up to thirty days before start. Refunds beyond the cooling-off window are not standard — see the application terms.",
+        q: "How do I engage?",
+        a: "Start with a conversation via the contact form. Vision Goal listens, understands your context, and comes back with what could be relevant.",
       },
     ],
     outcomes: [
-      "Practical access — named introductions to Swiss SME principals, family-office partners, or operating peers, matched against your written objectives.",
-      "An operating-culture briefing — the signals that read inside a Swiss boardroom, and the ones that quietly do not, drawn from behind-the-scenes visits and host commentary.",
-      "A small, considered network — twelve months of follow-on alumni access with quarterly dispatches and an annual reconvening in Zurich.",
+      "Applied exposure — working sessions inside Swiss operating environments, matched against a brief you have written.",
+      "Operating-culture judgement — the quiet signals that read inside Swiss businesses, drawn from practitioner commentary in the room.",
+      "A small, considered network — built on shared context, not badge collection.",
     ],
   },
   {
     id: "banking",
     slug: "banking",
-    name: "Private Swiss Banking & Wealth Intensive",
+    name: "Finance & Wealth Intensive",
     tagline:
-      "Four days inside Swiss private banking — chatham-house rooms with named practitioners, behind closed doors.",
+      "A focused format for practitioner-grade dialogue on finance, wealth planning and governance — under considered discretion.",
     oneLineFor:
-      "Senior professionals, family principals, and adjacent operators who want practitioner-grade insight into Swiss private banking — and a network to call on after.",
+      "Senior professionals, family principals and adjacent operators who want practitioner-grade insight and a network built from shared context.",
     outcome:
-      "A working map of the Swiss private banking landscape, chatham-house dialogue with named practitioners, and considered judgement on the questions that shape your remit.",
-    href: "/programmes/banking",
-    city: "Geneva",
-    durationLabel: "4 days · chatham-house",
+      "A working map of the practitioner landscape, considered dialogue behind closed doors, and judgement you can bring back to your remit.",
+    href: "/experiences/banking",
     whoFor:
-      "Senior professionals, family principals, and adjacent operators in private wealth, banking, family office, or wealth-planning practice. Practitioner-grade audience by application.",
+      "Senior professionals, family principals and adjacent operators in wealth, banking, family office or wealth-planning practice. Practitioner-grade audience by conversation.",
     notFor:
-      "Retail investors, sales professionals seeking leads, or media. The room is closed; nothing said is for attribution.",
-    fee: "CHF 12,800",
-    feeIncludes: [
-      "Four days inside Swiss private banking, under chatham-house rules",
-      "Closed-door rooms with named practitioners and former principals",
-      "A private-bank visit in Geneva and an evening with senior wealth practitioners",
-      "Curated pre-reading and host briefing notes",
-      "Two cohort dinners in Geneva; one alpine setting on day four",
-      "Continued-dialogue access — quarterly practitioner notes, annual reconvening",
-    ],
-    feeExcludes: ["Travel", "Accommodation", "Personal expenses"],
+      "Retail investors, sales professionals seeking leads, or media. Sessions are closed; nothing said is for attribution.",
     architecture: [
       {
         phase: "Before",
-        title: "Pre-reading & briefing",
-        body: "Curated briefings on the Swiss private banking landscape — structures, regulation, current practitioner debates — circulated two weeks ahead.",
+        title: "Framing & briefing",
+        body: "Curated framing on the landscape — structures, current practitioner debates, the questions worth holding in the room — circulated ahead of each session.",
       },
       {
         phase: "Inside",
-        title: "Four days in Geneva",
-        body: "Mornings on landscape and structure; afternoons inside practitioner judgement; one closed visit to a Geneva private bank; evenings reserved for considered dialogue. Nothing recorded; nothing for attribution.",
+        title: "In the room",
+        body: "Sessions built around applied practitioner judgement, held under discretion. Nothing recorded; nothing for attribution. The room is small and closed on purpose.",
       },
       {
         phase: "After",
         title: "Continued dialogue",
-        body: "Quarterly practitioner notes, an annual reconvening, and an invitation-only continued-dialogue list. The relationship is small and warm.",
+        body: "Considered follow-on where useful. Any continued-access format is confirmed at the time each session is scheduled.",
       },
-    ],
-    format: [
-      { label: "Location", value: "Geneva, chatham-house venue + private-bank visit" },
-      { label: "Languages", value: "English" },
-      { label: "Group size", value: "Twelve principals in the room" },
-      { label: "Schedule", value: "Four consecutive days · 09:30 – 17:30 plus evenings" },
-      { label: "Materials", value: "Pre-reading, host notes, no recordings" },
-      { label: "Continued dialogue", value: "Quarterly practitioner notes" },
     ],
     faqs: [
       {
         q: "Is this a school programme or a consulting engagement?",
-        a: "Neither. You are buying access to Swiss private banking — practitioner-grade conversation behind closed doors, a closed visit to a Geneva private bank, and considered judgement you can take back to your remit. There is no certificate and no deliverable; the room is the deliverable.",
+        a: "Neither. Vision Goal creates applied learning experiences — practitioner-grade conversation behind closed doors, and considered judgement you can bring back to your remit. There is no certificate and no deliverable; the room is the deliverable.",
       },
       {
-        q: "What does chatham-house mean here?",
-        a: "Participants may use what is said but may never identify the speaker or any other participant. Recordings are not permitted; notes are personal use only.",
+        q: "What does discretion mean here?",
+        a: "Participants may use what is said but never identify the speaker or any other participant. Recordings are not permitted; notes are personal use only.",
       },
       {
-        q: "Will I meet specific institutions?",
-        a: "Practitioners are named on the cohort page and present in their personal capacity. One closed visit to a Geneva private bank is part of the week; further institutional introductions are mediated by the curation team after the room.",
-      },
-      {
-        q: "Can my organisation send several participants?",
-        a: "Cohorts admit a maximum of two from any single institution. Larger institutional engagements are routed through the private cohort enquiry.",
+        q: "How do I engage?",
+        a: "Reach out via the contact form. A short conversation is the first step — no application process before a specific format is confirmed.",
       },
     ],
     outcomes: [
-      "Practitioner-grade access — chatham-house dialogue with named former and current Swiss private bankers, plus a closed visit inside a Geneva private bank.",
-      "A working map of the landscape — structures, postures, and the working questions that are held in the room and not said on a stage.",
-      "Continued network — quarterly practitioner notes, an annual reconvening, and a small register of cohort alumni you can call on.",
+      "Practitioner-grade dialogue — closed-room conversation with senior practitioners.",
+      "A working map of the landscape — the questions that are actually held in the room, not the ones on a stage.",
+      "A small, considered network — practitioners you can call on when the question is real.",
     ],
   },
   {
     id: "topic",
     slug: "topic",
-    name: "Swiss Finance Week",
+    name: "Themed Learning Sessions",
     tagline:
-      "Five themed days inside one Swiss finance question — curated rooms, hospitality settings, and host commentary that does not appear on a stage.",
+      "Themed, curated sessions built around a specific question — hosted, small, and applied.",
     oneLineFor:
-      "Senior contributors with a working stake in the year's selected Swiss finance question — by application, not audience.",
+      "Senior contributors with a working stake in the question being held — by conversation, not audience.",
     outcome:
-      "A working synthesis on the year's question, a curated network of contributors, and a follow-on dispatch you can return to.",
-    href: "/programmes/topic",
-    city: "Zurich",
-    durationLabel: "5 days · curated",
+      "A working synthesis on the question in play, a curated set of contributors, and a follow-on you can actually return to.",
+    href: "/experiences/topic",
     whoFor:
-      "Senior professionals, institutional partners, family principals, and policy practitioners with a working stake in the announced topic. Posture is contributory, not observational.",
+      "Senior professionals, institutional partners, family principals and policy practitioners with a working stake in the announced theme. Contributory posture, not observational.",
     notFor:
-      "Press, junior staff seeking exposure, or vendors prospecting. The week is for working contributors; the room is curated.",
-    fee: "CHF 9,500",
-    feeIncludes: [
-      "Five themed days in Zurich",
-      "Curated rooms hosted by named practitioners",
-      "Two behind-the-scenes site visits aligned to the year’s topic",
-      "A topic dossier circulated three weeks ahead, plus post-week dispatch",
-      "Welcome reception, topic dinner in a private setting",
-      "Six months of continued-dialogue access on the topic",
-    ],
-    feeExcludes: ["Travel", "Accommodation", "Personal expenses"],
+      "Press, junior staff seeking exposure, or vendors prospecting. Sessions are for working contributors; the room is curated.",
     architecture: [
       {
         phase: "Before",
-        title: "Topic dossier",
-        body: "A structured topic dossier circulated three weeks ahead — framings, primary sources, and the questions the week intends to address. Arrive prepared.",
+        title: "Thematic framing",
+        body: "A structured framing circulated ahead of each session — the primary questions, the sources worth reading, the shape of the conversation. Arrive prepared.",
       },
       {
         phase: "Inside",
-        title: "Five days in Zurich",
-        body: "Five days of curated rooms in Zurich. Each room is built around a specific question with a host who has working judgement on it. Two site visits land the question in operating reality. The week ends with a synthesis session.",
+        title: "In the room",
+        body: "Curated sessions built around a specific question, each hosted by a practitioner with working judgement on it. The format ends with a synthesis conversation.",
       },
       {
         phase: "After",
         title: "Synthesis & follow-on",
-        body: "A post-week host dispatch captures the synthesis, divergences, and follow-on questions. Six months of continued-dialogue access on the topic.",
+        body: "A short post-session synthesis captures the divergences and follow-on questions worth returning to. Continued-access details are confirmed per session.",
       },
-    ],
-    format: [
-      { label: "Location", value: "Zurich, curated venues + two operating-site visits" },
-      { label: "Languages", value: "English" },
-      { label: "Group size", value: "Twenty-four contributors, divided into rooms of twelve" },
-      { label: "Schedule", value: "Five consecutive days · 09:00 – 18:00" },
-      { label: "Materials", value: "Topic dossier, room notes, post-week dispatch" },
-      { label: "Follow-on", value: "Six months continued-dialogue access" },
     ],
     faqs: [
       {
         q: "Is this a conference or a course?",
-        a: "Neither. It is a curated working week for senior contributors on one current Swiss finance question. There is no plenary stage, no audience, no certificate — just small rooms, named hosts, two operating-site visits, and a follow-on dispatch you can use.",
+        a: "Neither. It is a curated set of working sessions for senior contributors on a specific question. No plenary stage, no audience, no certificate — small rooms, host-led, applied.",
       },
       {
-        q: "How is the topic selected?",
-        a: "The host curation team selects one current Swiss finance question per year, surfaced from practitioner conversations and dispatches.",
+        q: "How is the theme selected?",
+        a: "By conversation with practitioners — the questions that are currently live, not the ones that read well on a poster.",
       },
       {
-        q: "Do I need expertise in the topic to attend?",
-        a: "Working stake, not academic expertise. The week is built for contributors who can move the question forward, not for general audience.",
+        q: "Do I need expertise in the theme to attend?",
+        a: "A working stake, not academic expertise. Sessions are built for contributors who can move the question forward.",
       },
       {
         q: "Will the proceedings be published?",
-        a: "A post-week host dispatch is shared with cohort alumni only. Public publication of any specific exchange requires written consent from those present.",
+        a: "The post-session synthesis is shared with those in the room only. Public publication of any specific exchange requires written consent from those present.",
       },
     ],
     outcomes: [
-      "A working synthesis of the year's chosen Swiss finance question — drawn from rooms designed for contributors with operational stake, not audience.",
-      "A post-week host dispatch — circulated to cohort alumni only — capturing the synthesis, divergences, and follow-on questions.",
-      "Six months of continued-dialogue access on the topic, with named follow-on introductions to other contributors where useful.",
+      "A working synthesis of the question in play — drawn from sessions designed for contributors with operational stake, not audience.",
+      "A post-session synthesis — shared with those in the room — capturing divergences and follow-on questions.",
+      "Considered follow-on where useful — named introductions to other contributors on request.",
     ],
   },
 ];
@@ -279,10 +216,10 @@ export const hosts: Host[] = [
   {
     name: "Andreas Svoboda",
     slug: "andreas-svoboda",
-    role: "Founder & Curator · Three decades across Swiss banking, wealth planning, insurance, finance and executive education",
+    role: "Founder & Curator · More than 30 years across finance, banking, insurance, governance and executive education",
     initials: "AS",
-    expertise: ["Wealth planning", "Swiss banking", "Sustainable finance"],
-    bio: "Founder of Vision Goal (2022). Three decades across Swiss and Liechtenstein banking, wealth planning, insurance, finance and executive education — including twelve years at Bank Julius Bär & Co. AG as Head of Wealth Planning, Life & Pension across Switzerland and Singapore, and earlier roles at UBS, Credit Suisse, and Zürcher Kantonalbank. FCCA, CFP®, Swiss Asset Manager licence, FINMA Insurance Broker authorisation; LL.M., MSc, DBA. Twelve peer-reviewed papers on banking, sustainable finance, ESG, and cross-border life insurance.",
+    expertise: ["Wealth planning", "Governance", "Executive education"],
+    bio: "Founder of Vision Goal (2022). More than 30 years across finance, banking, insurance, governance and executive education — including twelve years at Bank Julius Bär & Co. AG as Head of Wealth Planning, Life & Pension across Switzerland and Singapore, and earlier roles at UBS, Credit Suisse, and Zürcher Kantonalbank. FCCA, CFP®, Swiss Asset Manager licence, FINMA Insurance Broker authorisation; LL.M., MSc, DBA. Twelve peer-reviewed papers on banking, sustainable finance, ESG, and cross-border life insurance.",
     programmes: ["access", "banking", "topic"],
     linkedin: "https://www.linkedin.com/",
   },
@@ -298,40 +235,11 @@ export type Cohort = {
   seatsLine: string;
 };
 
-// Pre-launch posture: pilot cohorts are not yet finalised for sale.
-// Every cohort line reads as "by application" — no seat counts, no waitlist
-// claim — until the first programmes have actually been confirmed and run.
-// Re-introduce seat-level detail (e.g. "4 seats remaining") once cohorts
-// have been ratified and the platform is ready to take registrations.
-export const upcomingCohorts: Cohort[] = [
-  {
-    programmeId: "access",
-    programmeName: "Swiss Business Access Immersion",
-    startLabel: "From Q3 2026",
-    city: "Zurich",
-    language: "EN",
-    status: "Open",
-    seatsLine: "Pilot cohort · by application",
-  },
-  {
-    programmeId: "banking",
-    programmeName: "Private Swiss Banking & Wealth Intensive",
-    startLabel: "From Q3 2026",
-    city: "Geneva",
-    language: "EN",
-    status: "Open",
-    seatsLine: "Pilot cohort · by application",
-  },
-  {
-    programmeId: "topic",
-    programmeName: "Swiss Finance Week",
-    startLabel: "From Q4 2026",
-    city: "Zurich",
-    language: "EN",
-    status: "Open",
-    seatsLine: "Pilot cohort · by application",
-  },
-];
+// No cohorts are announced. Specific dates, cities, programme names and
+// participant limits will be reinstated here once real cohorts have been
+// confirmed and are ready to accept participants. Until then, callers that
+// import `upcomingCohorts` render nothing.
+export const upcomingCohorts: Cohort[] = [];
 
 export type AlumniVoice = {
   quote: string;
@@ -339,32 +247,9 @@ export type AlumniVoice = {
   cohortLabel: string;
 };
 
-export const alumniVoices: AlumniVoice[] = [
-  {
-    quote:
-      "Five days that compressed two years of relationship-building. The rooms were small, the conversations were candid, and the introductions were considered.",
-    attribution: "International decision-maker · EMEA",
-    cohortLabel: "Swiss Business Access · Zurich 2025",
-  },
-  {
-    quote:
-      "Practitioner-grade. The hosts said things in this room that they will not say on a stage. That is the entire point.",
-    attribution: "Senior banking professional · Europe",
-    cohortLabel: "Private Banking Intensive · Geneva 2025",
-  },
-  {
-    quote:
-      "The week was a working week, not a stage. We left with a synthesis dispatch we are still referencing six months later.",
-    attribution: "Institutional partner · Asia",
-    cohortLabel: "Swiss Finance Week · Zurich 2025",
-  },
-  {
-    quote:
-      "What I valued most: the absence of advisory tone. The room respected the seniority in it.",
-    attribution: "Family-office principal · GCC",
-    cohortLabel: "Swiss Business Access · Zurich 2024",
-  },
-];
+// No alumni voices are shown pre-launch. Real, consented quotes from actual
+// participants will populate this array once the first cohorts have run.
+export const alumniVoices: AlumniVoice[] = [];
 
 // Peer-reviewed publications by the founder, hosted on Academia.edu.
 // These are real, attributable, and link out to the source. Sorted newest first.
@@ -501,7 +386,7 @@ export const featuredInsights: Insight[] = [
       "Discretion in Swiss private banking is often described as a feature of the service. Inside the institutions that practise it well, it is described differently — as a posture that shapes which clients are taken on, which conversations are held, and how decisions are remembered.",
       "Practitioners distinguish between confidentiality, which is contractual, and discretion, which is cultural. The first is what the client signs. The second is what the institution carries.",
       "A discreet posture is conservative on language, slow to introduce, and watchful on attribution. It is also commercially expensive — it limits what one will say in a marketing room — and that is precisely why clients of a certain calibre still seek it out.",
-      "On the Banking Intensive we hold this question under chatham-house rules because the answer cannot be given on a public stage without diluting it. The room is built for the answer.",
+      "In the finance and wealth sessions we hold this question under discretion because the answer cannot be given on a public stage without diluting it. The room is built for the answer.",
     ],
   },
   {
@@ -522,37 +407,36 @@ export const featuredInsights: Insight[] = [
     ],
   },
   {
-    slug: "geneva-and-zurich",
+    slug: "geography-is-curatorial",
     category: "Methodology",
-    title: "Why Geneva and Zurich, never one or the other.",
+    title: "Geography is curatorial.",
     excerpt:
-      "The platform runs in two cities for a reason. The reason is not symmetry.",
+      "Where a learning experience happens is part of what is being taught, not a logistical afterthought.",
     authorName: "Vision Goal",
     readingTime: "4 min",
-    href: "/insights/geneva-and-zurich",
+    href: "/insights/geography-is-curatorial",
     imageKey: "insightCities",
     body: [
-      "Vision Goal runs the Banking Intensive in Geneva and the Access Immersion and Topic Week in Zurich. The cities are not interchangeable.",
-      "Geneva, for the Banking Intensive, is where the chatham-house posture is native. The institutions are nearer; the practitioners are closer; the silence in the room reads correctly.",
-      "Zurich, for Access and Topic, is where the operating questions are asked most directly. SMEs answer; founders meet; the working week of Swiss business is visible.",
-      "We do not host the Banking Intensive in Zurich, and we do not host the Access Immersion in Geneva. Geography is curatorial here, not logistical.",
+      "The place a learning experience is held changes what it teaches. A closed-room finance session reads one way in a considered practitioner setting; the same conversation held in a plenary hall reads as performance.",
+      "Vision Goal chooses environments for what they carry — the discretion of a chatham-house room, the operating context of a working business, the composure of a considered venue. Geography is part of the curriculum.",
+      "Cities and venues for specific formats are confirmed at the time each experience is announced. The principle stays the same: the room is the deliverable, and the room is chosen for the question.",
     ],
   },
   {
-    slug: "an-application-not-a-sale",
+    slug: "a-conversation-not-a-sale",
     category: "Dispatches",
-    title: "An application is not a sale.",
+    title: "A conversation is not a sale.",
     excerpt:
-      "Why every Vision Goal cohort goes through application — and what we read in the application that we will not read elsewhere.",
+      "Why every engagement with Vision Goal starts with a conversation — and what a short conversation surfaces that a form never will.",
     authorName: "Vision Goal",
     readingTime: "3 min",
-    href: "/insights/an-application-not-a-sale",
+    href: "/insights/a-conversation-not-a-sale",
     imageKey: "insightApplication",
     body: [
-      "We are sometimes asked why we do not simply offer open enrolment and let the market decide. The answer is that the room is the product, and a room shaped by the market is a different product to one shaped by the host.",
-      "An application asks three things: who you are, what you want from the room, and what you bring to it. The third question is the most important. A room without contribution is not a cohort; it is an audience.",
-      "We read applications for specificity. Vague answers are not refused on principle, but they signal that the room would receive a vague contribution.",
-      "An applicant who has thought clearly about what they want and what they offer is already a member of the room — the application has done the work the first session would otherwise do.",
+      "We are sometimes asked why we do not simply publish a menu and let people transact. The answer is that the room is the product, and a room shaped by a shopping cart is a different product to one shaped by a considered conversation.",
+      "A short conversation surfaces three things: who you are, what you would want from the room, and what you would bring to it. The third question is the most important. A room without contribution is not a room; it is an audience.",
+      "We listen for specificity. Vague answers are not refused on principle, but they signal that the room would receive a vague contribution.",
+      "Someone who has thought clearly about what they want and what they offer has already made the room stronger — the conversation has done the work the first session would otherwise do.",
     ],
   },
   {
@@ -566,8 +450,8 @@ export const featuredInsights: Insight[] = [
     href: "/insights/what-we-do-not-do",
     imageKey: "insightRefusal",
     body: [
-      "We do not run open enrolment. Every seat is by application; the rooms shape themselves through curation, not transaction.",
-      "We do not deliver coaching, advisory, or any regulated financial service. The platform is curatorial — hosts speak as practitioners, not as advisors.",
+      "We do not run open enrolment. Engagement starts with a conversation; rooms shape themselves through curation, not transaction.",
+      "We do not deliver coaching, advisory, or any regulated financial service. The platform is curatorial — practitioners speak in their own capacity, not as advisors.",
       "We do not record cohort sessions. We do not publish participant names without consent. We do not stage cohort photography for marketing.",
       "We do not scale the cohort. Twelve in the room is a structural choice, not a soft cap.",
       "We do not pursue media coverage of cohort proceedings. The platform reads quieter than its peers because the proceedings are quieter than its peers.",

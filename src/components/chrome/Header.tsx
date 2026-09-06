@@ -18,14 +18,19 @@ export function Header(_props: { variant?: "transparent" | "solid" } = {}) {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  // Simplified pre-launch navigation:
+  // Home | What We Do | Experiences | Insights | About | Contact
+  // Hosts (/hosts) and Alumni-turned-Network (/alumni) routes still exist
+  // but are dropped from top-level nav until named contributors and
+  // real alumni voices are confirmed. Private Office lives under About
+  // rather than as a top-level item.
   const nav = [
     { label: t.nav.home, href: "/" },
-    { label: t.nav.programmes, href: "/programmes" },
-    { label: t.nav.privateOffice, href: "/private-office" },
-    { label: t.nav.hosts, href: "/hosts" },
-    { label: t.nav.alumni, href: "/alumni" },
+    { label: t.nav.whatWeDo, href: "/what-we-do" },
+    { label: t.nav.experiences, href: "/experiences" },
     { label: t.nav.insights, href: "/insights" },
     { label: t.nav.about, href: "/about" },
+    { label: t.nav.contact, href: "/contact" },
   ];
 
   return (
@@ -64,11 +69,11 @@ export function Header(_props: { variant?: "transparent" | "solid" } = {}) {
         <div className="flex items-center gap-3 lg:gap-4">
           <LangSwitcher />
           <Button
-            href="/apply"
+            href="/contact"
             variant="on-dark"
             className="hidden lg:inline-flex"
           >
-            {t.nav.apply}
+            {t.cta.discussExperience}
           </Button>
           {/* Hamburger + drawer (below lg) */}
           <MobileMenu navItems={nav} />

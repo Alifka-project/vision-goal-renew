@@ -58,11 +58,10 @@ export function ThreeProgrammesBlock() {
                     />
                     <div className="absolute top-5 left-5 right-5 flex items-center justify-between text-eyebrow uppercase text-cream">
                       <span className="tabular">0{i + 1}</span>
-                      <span>{meta.city}</span>
                     </div>
                     <div className="absolute bottom-5 left-5 right-5">
                       <p className="text-[0.7rem] uppercase tracking-[0.18em] text-cream/85">
-                        {meta.durationLabel}
+                        {meta.formatLabel}
                       </p>
                     </div>
                   </div>

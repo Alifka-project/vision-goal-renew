@@ -71,10 +71,10 @@ export function HeroEditorial() {
           </p>
 
           <div className="mt-8 flex flex-col sm:flex-row gap-3 sm:gap-5 items-start sm:items-center fade-in-soft">
-            <Button href="/apply" variant="on-dark">
+            <Button href="/contact" variant="on-dark">
               {t.cta.applyNext}
             </Button>
-            <Button href="/apply/private-consultation" variant="ghost-on-dark">
+            <Button href="/what-we-do" variant="ghost-on-dark">
               {t.cta.requestConsult}
             </Button>
           </div>

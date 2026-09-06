@@ -10,9 +10,10 @@ import { publications } from "@/lib/content";
 import { useT } from "@/i18n/I18nProvider";
 
 // Career timeline ported from visiongoal.ch — real institutions and dates.
+// The Q WEALTH AG line was removed at the client's request: nothing here
+// should present the founder as currently working for that firm.
 const career = [
   { years: "2024 –", role: "Insurance Broker", institution: "S&L Management and Consulting GmbH" },
-  { years: "04.2024 –", role: "Partner", institution: "Q WEALTH AG, Zurich" },
   { years: "02.2012 – 05.2024", role: "Head of Wealth Planning, Life & Pension", institution: "Bank Julius Bär & Co. AG · Switzerland / Singapore" },
   { years: "09.2009 – 03.2011", role: "Board Member", institution: "Liechtenstein Insurance Association, Vaduz" },
   { years: "04.2008 – 03.2011", role: "Managing Director / Head of Finance", institution: "Wealth Assurance AG, Vaduz / Schaan" },
@@ -190,15 +191,15 @@ export default function AboutPage() {
                   Andreas Svoboda
                 </h2>
                 <p className="mt-3 text-body-lg text-slate">
-                  Founder & Curator · Three decades across Swiss banking, wealth planning, insurance,
-                  finance and executive education
+                  Founder & Curator · More than 30 years across finance, banking, insurance,
+                  governance and executive education
                 </p>
                 <p className="mt-8 font-serif text-xl lg:text-2xl text-navy leading-[1.4] max-w-prose">
-                  Andreas Svoboda founded Vision Goal in 2022 after three decades across Swiss and
-                  Liechtenstein banking, wealth planning, insurance, finance and executive education.
-                  Twelve years at Bank Julius Bär & Co. AG as Head of Wealth Planning, Life & Pension
-                  across Switzerland and Singapore; nine years at UBS as Head of Finance for UBS
-                  Insurance companies; earlier roles at Credit Suisse and Zürcher Kantonalbank.
+                  Andreas Svoboda founded Vision Goal in 2022 after more than 30 years across
+                  finance, banking, insurance, governance and executive education. Twelve years at
+                  Bank Julius Bär & Co. AG as Head of Wealth Planning, Life & Pension across
+                  Switzerland and Singapore; nine years at UBS as Head of Finance for UBS Insurance
+                  companies; earlier roles at Credit Suisse and Zürcher Kantonalbank.
                 </p>
                 <p className="mt-6 text-body text-slate max-w-prose">
                   Twelve peer-reviewed papers on banking, sustainable finance, ESG, AI in financial

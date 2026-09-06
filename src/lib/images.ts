@@ -1,9 +1,26 @@
 // Curated photographic references — Swiss / alpine / architecture / interior.
-// These are placeholders that align with the brand brief (no handshakes / skylines / graphs).
-// Replace with commissioned photography before launch.
+// Stock imagery aligned with the brand brief (no handshakes / skylines / graphs)
+// coexists with real event photography supplied by the founder — those live
+// under /public/photos and appear here as `photo*` keys. Next.js Image serves
+// WebP/AVIF on the fly for both local and remote sources; alt text is set at
+// the call site so each image reads meaningfully to screen readers.
 
 const u = (id: string, w = 1600, q = 80) =>
   `https://images.unsplash.com/${id}?auto=format&fit=crop&w=${w}&q=${q}`;
+
+// Real event photographs supplied by the founder. Portrait vs landscape is
+// noted for layout. Public path: `/photos/<name>.jpg` (WebP variants live
+// alongside if a plain <picture> fallback is ever needed).
+export const photos = {
+  // Group at Restaurant Orsini, Zurich — senior professionals (768×1024, portrait).
+  orsiniSeniorGroup: "/photos/orsini-senior-group.jpg",
+  // Group at Restaurant Orsini, Zurich — mixed audience (665×1182, portrait).
+  orsiniMixedGroup: "/photos/orsini-mixed-group.jpg",
+  // Premium retail delicatessen environment (1080×665, landscape — cropped).
+  retailDelicatessen: "/photos/retail-delicatessen.jpg",
+  // Kitchen behind-the-scenes access (1182×665, landscape, deliberately informal).
+  kitchenBehindScenes: "/photos/kitchen-behind-scenes.jpg",
+} as const;
 
 export const images = {
   // Hero — dramatic alpine vista

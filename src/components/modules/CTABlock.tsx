@@ -38,10 +38,10 @@ export function CTABlock() {
             <span className="text-gold-hi italic">{t.ctaBlock.line2}</span>
           </h2>
           <div className="mt-12 flex flex-col sm:flex-row gap-3 sm:gap-5">
-            <Button href="/apply" variant="on-dark">
+            <Button href="/contact" variant="on-dark">
               {t.cta.applyNext}
             </Button>
-            <Button href="/apply/private-consultation" variant="ghost-on-dark">
+            <Button href="/what-we-do" variant="ghost-on-dark">
               {t.cta.requestConsult}
             </Button>
           </div>

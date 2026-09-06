@@ -6,31 +6,30 @@ import { useT } from "@/i18n/I18nProvider";
 export function Footer() {
   const t = useT();
 
+  // Pre-launch footer sections. The three columns mirror the simplified
+  // top-nav (Experiences / Platform / Contact) — programme-detail links,
+  // per-programme application links and specific "private cohort" pathways
+  // are all removed until real programmes are confirmed.
   const sections = [
     {
       title: t.footer.sectionProgrammes,
       links: [
-        { label: t.programmeMeta.access.name, href: "/programmes/access" },
-        { label: t.programmeMeta.banking.name, href: "/programmes/banking" },
-        { label: t.programmeMeta.topic.name, href: "/programmes/topic" },
+        { label: t.nav.whatWeDo, href: "/what-we-do" },
+        { label: t.nav.experiences, href: "/experiences" },
       ],
     },
     {
       title: t.footer.sectionPlatform,
       links: [
-        { label: t.hostsStrip.eyebrow, href: "/hosts" },
-        { label: t.pages.alumni.eyebrow, href: "/alumni" },
         { label: t.nav.insights, href: "/insights" },
         { label: t.nav.about, href: "/about" },
+        { label: t.nav.privateOffice, href: "/private-office" },
       ],
     },
     {
       title: t.footer.sectionApply,
       links: [
-        { label: t.footer.linkApplication, href: "/apply" },
-        { label: t.footer.linkPrivateConsultation, href: "/apply/private-consultation" },
-        { label: t.footer.linkPrivateCohort, href: "/apply/private-cohort" },
-        { label: t.footer.linkContact, href: "/contact" },
+        { label: t.nav.contact, href: "/contact" },
       ],
     },
   ];
@@ -39,7 +38,6 @@ export function Footer() {
     { label: t.footer.legalImprint, href: "/legal/imprint" },
     { label: t.footer.legalPrivacy, href: "/legal/privacy" },
     { label: t.footer.legalCookies, href: "/legal/cookies" },
-    { label: t.footer.legalApplicationTerms, href: "/legal/application-terms" },
   ];
 
   return (
@@ -90,8 +88,13 @@ export function Footer() {
             <p className="mt-6 max-w-prose-narrow text-body-sm text-cream/70 leading-relaxed">
               {t.footer.blurb}
             </p>
+            {/*
+             * Pre-launch language footprint. Only fully-reviewed locales
+             * appear here; DE / FR / ES / ZH are still translation drafts
+             * and will re-appear once each has been proofed.
+             */}
             <p className="mt-6 text-[0.7rem] uppercase tracking-[0.18em] text-cream/55">
-              EN <span className="text-cream/30">·</span> DE <span className="text-cream/30">·</span> FR <span className="text-cream/30">·</span> ES <span className="text-cream/30">·</span> ZH
+              EN
             </p>
           </div>
 

@@ -111,10 +111,10 @@ export function InsightPageClient({ slug }: { slug: Insight["slug"] }) {
                 {t.ctaBlock.line1} {t.ctaBlock.line2}
               </h2>
               <div className="mt-8 flex flex-col sm:flex-row gap-3 sm:gap-5">
-                <Button href="/apply" variant="primary">
+                <Button href="/contact" variant="primary">
                   {t.cta.applyNext}
                 </Button>
-                <Button href="/apply/private-consultation" variant="ghost">
+                <Button href="/what-we-do" variant="ghost">
                   {t.cta.requestConsult}
                 </Button>
               </div>

@@ -92,7 +92,7 @@ export function HostProfileClient({ slug }: { slug: Host["slug"] }) {
                       className="card-lift block h-full p-7 lg:p-8 bg-white border hairline group hover:border-gold/40"
                     >
                       <p className="text-eyebrow uppercase text-gold tabular">
-                        {meta.city} · {meta.durationLabel}
+                        {meta.formatLabel}
                       </p>
                       <h3 className="mt-4 font-serif text-xl lg:text-[1.5rem] text-navy leading-[1.2]">
                         {meta.name}

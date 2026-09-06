@@ -6,7 +6,10 @@ export default function robots(): MetadataRoute.Robots {
       {
         userAgent: "*",
         allow: "/",
-        disallow: ["/apply", "/apply/", "/_next/"],
+        // /hosts and /alumni still resolve but hold no confirmed
+        // contributors or alumni yet — keep them out of the index until
+        // there is something real on them.
+        disallow: ["/hosts", "/hosts/", "/alumni", "/_next/"],
       },
     ],
     sitemap: "https://visiongoal.ch/sitemap.xml",
