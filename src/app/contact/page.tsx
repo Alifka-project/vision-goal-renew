@@ -1,76 +1,33 @@
 "use client";
 
-import { useState } from "react";
 import { Header } from "@/components/chrome/Header";
 import { Footer } from "@/components/chrome/Footer";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { ButtonAction } from "@/components/ui/Button";
 import { Reveal } from "@/components/effects/Reveal";
 import { Field, TextInput, Textarea, Select } from "@/components/ui/Field";
+import { ConsentCheckbox, FormError, Honeypot } from "@/components/forms/FormParts";
+import { useFormSubmission } from "@/components/forms/useFormSubmission";
+import { AREAS_OF_INTEREST } from "@/lib/forms/schemas";
+import { organisation } from "@/lib/organisation";
 import { useT } from "@/i18n/I18nProvider";
 
-const CONTACT_EMAIL = "info@visiongoal.ch";
-
-// Areas of interest, exactly as specified in the client brief.
-const AREAS_OF_INTEREST = [
-  "Executive learning",
-  "Tailored organisational programme",
-  "Finance workshop",
-  "Swiss business experience",
-  "Speaking or teaching enquiry",
-  "Other",
-];
-
-type Status = "idle" | "sending" | "sent" | "error";
-
 // The multi-step application form was removed pre-launch: there is no
-// application or selection process while no programme is confirmed. This
-// is a plain contact form. With no backend wired up yet it hands off to
-// the visitor's mail client addressed to info@visiongoal.ch — swap the
-// `submit` body for a POST to an API route once an endpoint exists.
+// application or selection process while no programme is confirmed. This is
+// the plain contact form the client specified, posted as JSON to /api/submit
+// so the payload is validated server-side, rate limited and spam filtered
+// rather than handed to the visitor's mail client.
 export default function ContactPage() {
   const t = useT();
-  const [status, setStatus] = useState<Status>("idle");
+  const { submit, status, error, fieldErrors, isSubmitting, isSuccess } =
+    useFormSubmission("contact");
 
-  async function submit(e: React.FormEvent<HTMLFormElement>) {
+  const consentText =
+    "I agree that Vision Goal may store the details above in order to respond to this enquiry.";
+
+  async function onSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    setStatus("sending");
-
-    const form = new FormData(e.currentTarget);
-    const value = (k: string) => String(form.get(k) ?? "").trim();
-
-    const firstName = value("firstName");
-    const lastName = value("lastName");
-    const email = value("email");
-    const area = value("areaOfInterest");
-    const message = value("message");
-    const consent = form.get("consent") != null;
-
-    if (!firstName || !lastName || !email || !area || !message || !consent) {
-      setStatus("error");
-      return;
-    }
-
-    const lines = [
-      `Name: ${firstName} ${lastName}`,
-      `Email: ${email}`,
-      `Organisation: ${value("organisation") || "—"}`,
-      `Role: ${value("role") || "—"}`,
-      `Area of interest: ${area}`,
-      `Privacy consent: agreed`,
-      "",
-      message,
-    ];
-
-    const subject = encodeURIComponent(`Vision Goal enquiry — ${area}`);
-    const body = encodeURIComponent(lines.join("\n"));
-
-    try {
-      window.location.href = `mailto:${CONTACT_EMAIL}?subject=${subject}&body=${body}`;
-      setStatus("sent");
-    } catch {
-      setStatus("error");
-    }
+    await submit(e.currentTarget);
   }
 
   return (
@@ -95,36 +52,31 @@ export default function ContactPage() {
         <section className="bg-white py-section-y md:py-section-y-lg">
           <div className="container grid lg:grid-cols-12 gap-12 lg:gap-16">
             <div className="lg:col-span-7">
-              {status === "sent" ? (
+              {isSuccess ? (
                 <Reveal duration={800}>
                   <div
                     role="status"
                     aria-live="polite"
                     className="border hairline p-10 lg:p-14 bg-cream-2"
                   >
-                    <Eyebrow>Message ready</Eyebrow>
+                    <Eyebrow>Message sent</Eyebrow>
                     <h2 className="mt-6 font-serif text-3xl lg:text-4xl text-navy leading-tight">
-                      Thank you — your message is on its way.
+                      Thank you — your message has been received.
                     </h2>
                     <p className="mt-6 text-body text-slate max-w-prose">
-                      Your email client should have opened with the message prepared. If it did not,
-                      write directly to{" "}
-                      <a href={`mailto:${CONTACT_EMAIL}`} className="text-navy underline">
-                        {CONTACT_EMAIL}
+                      We read every enquiry personally and will come back to you shortly. If it is
+                      easier, you can also write directly to{" "}
+                      <a href={`mailto:${organisation.email.general}`} className="text-navy underline">
+                        {organisation.email.general}
                       </a>
                       .
                     </p>
-                    <button
-                      type="button"
-                      onClick={() => setStatus("idle")}
-                      className="mt-8 text-sm text-navy font-medium link-underline link-underline-out"
-                    >
-                      Send another message
-                    </button>
                   </div>
                 </Reveal>
               ) : (
-                <form className="grid gap-7" onSubmit={submit} noValidate>
+                <form className="grid gap-7" onSubmit={onSubmit} noValidate>
+                  <Honeypot />
+
                   <div className="grid sm:grid-cols-2 gap-6">
                     <Field label={t.fields.firstName} htmlFor="firstName" required>
                       <TextInput id="firstName" name="firstName" required autoComplete="given-name" />
@@ -169,26 +121,13 @@ export default function ContactPage() {
                     <Textarea id="message" name="message" required />
                   </Field>
 
-                  <label className="flex items-start gap-3 text-body-sm text-slate">
-                    <input
-                      type="checkbox"
-                      name="consent"
-                      required
-                      className="mt-1 h-4 w-4 shrink-0 accent-[#0a1f44]"
-                    />
-                    <span>{t.fields.consentContact}</span>
-                  </label>
+                  <ConsentCheckbox text={consentText} />
 
-                  {status === "error" ? (
-                    <p role="alert" className="text-body-sm text-[#8b2f2f]">
-                      Please complete the required fields — first name, last name, email, area of
-                      interest, your message, and the privacy consent.
-                    </p>
-                  ) : null}
+                  <FormError error={error} fieldErrors={fieldErrors} />
 
                   <div>
-                    <ButtonAction type="submit" variant="primary" disabled={status === "sending"}>
-                      {status === "sending" ? "Sending…" : t.cta.submitEnquiry}
+                    <ButtonAction type="submit" variant="primary" disabled={isSubmitting}>
+                      {isSubmitting ? "Sending…" : t.cta.submitEnquiry}
                     </ButtonAction>
                   </div>
                 </form>
@@ -205,10 +144,10 @@ export default function ContactPage() {
                     </dt>
                     <dd className="mt-1">
                       <a
-                        href={`mailto:${CONTACT_EMAIL}`}
+                        href={`mailto:${organisation.email.general}`}
                         className="font-serif text-navy text-lg hover:text-gold transition-colors duration-200"
                       >
-                        {CONTACT_EMAIL}
+                        {organisation.email.general}
                       </a>
                     </dd>
                   </div>

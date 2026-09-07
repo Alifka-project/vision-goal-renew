@@ -71,14 +71,16 @@ export default function PractitionerNetworkPage() {
                       >
                         <span className="link-underline link-underline-out">Full profile →</span>
                       </Link>
-                      <a
-                        href={founder.linkedin}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="hover:text-navy transition-colors duration-200"
-                      >
-                        <span className="link-underline link-underline-out">LinkedIn ↗</span>
-                      </a>
+                      {founder.linkedin ? (
+                        <a
+                          href={founder.linkedin}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="hover:text-navy transition-colors duration-200"
+                        >
+                          <span className="link-underline link-underline-out">LinkedIn ↗</span>
+                        </a>
+                      ) : null}
                     </div>
                   </div>
                 </div>

@@ -49,6 +49,7 @@ export type Dict = {
     discoverVisionGoal: string;
     readExperience: string;
     allExperiences: string;
+    sending: string;
   };
   dispatch: {
     label: string;
@@ -217,6 +218,7 @@ export type Dict = {
     consentConsult: string;
     consentCohort: string;
     consentContact: string;
+    consentNewsletter: string;
     audience: string;
     audienceHint: string;
     audiencePlaceholder: string;
@@ -296,6 +298,7 @@ const en: Dict = {
     discoverVisionGoal: "Discover Vision Goal →",
     readExperience: "Read more",
     allExperiences: "All experiences",
+    sending: "Sending…",
   },
   dispatch: {
     label: "Dispatch",
@@ -656,6 +659,8 @@ const en: Dict = {
       "I confirm I am authorised to make this enquiry on behalf of my institution and consent to platform processing per the privacy policy.",
     consentContact:
       "I consent to platform processing of this message per the privacy policy.",
+    consentNewsletter:
+      "Yes, send me the Vision Goal dispatch. I can unsubscribe at any time.",
     audience: "Audience",
     audienceHint: "Who is the cohort being commissioned for?",
     audiencePlaceholder: "e.g. senior alumni; partner-track principals",
@@ -737,6 +742,7 @@ const de: Dict = {
     discoverVisionGoal: "Vision Goal entdecken →",
     readExperience: "Mehr lesen",
     allExperiences: "Alle Erfahrungen",
+    sending: "Wird gesendet…",
   },
   dispatch: {
     label: "Dispatch",
@@ -1098,6 +1104,8 @@ const de: Dict = {
       "Ich bestätige, dass ich befugt bin, diese Anfrage im Namen meiner Institution zu stellen, und stimme der plattformseitigen Verarbeitung gemäss der Datenschutzerklärung zu.",
     consentContact:
       "Ich stimme der plattformseitigen Verarbeitung dieser Nachricht gemäss der Datenschutzerklärung zu.",
+    consentNewsletter:
+      "Ja, senden Sie mir den Vision Goal Dispatch. Ich kann mich jederzeit abmelden.",
     audience: "Zielgruppe",
     audienceHint: "Für wen wird die Kohorte beauftragt?",
     audiencePlaceholder: "z.B. Senior-Alumni; Partner-Track-Principals",
@@ -1180,6 +1188,7 @@ const fr: Dict = {
     discoverVisionGoal: "Découvrir Vision Goal →",
     readExperience: "En savoir plus",
     allExperiences: "Toutes les expériences",
+    sending: "Envoi…",
   },
   dispatch: {
     label: "Dispatch",
@@ -1541,6 +1550,8 @@ const fr: Dict = {
       "Je confirme être autorisé à formuler cette demande au nom de mon institution et consens au traitement par la plateforme selon la politique de confidentialité.",
     consentContact:
       "Je consens au traitement de ce message par la plateforme selon la politique de confidentialité.",
+    consentNewsletter:
+      "Oui, envoyez-moi le dispatch Vision Goal. Je peux me désabonner à tout moment.",
     audience: "Audience",
     audienceHint: "Pour qui la cohorte est-elle commandée ?",
     audiencePlaceholder: "ex. alumni seniors ; principals partner-track",
@@ -1623,6 +1634,7 @@ const es: Dict = {
     discoverVisionGoal: "Descubrir Vision Goal →",
     readExperience: "Leer más",
     allExperiences: "Todas las experiencias",
+    sending: "Enviando…",
   },
   dispatch: {
     label: "Dispatch",
@@ -1984,6 +1996,8 @@ const es: Dict = {
       "Confirmo estar autorizado a realizar esta consulta en nombre de mi institución y consiento el tratamiento por la plataforma según la política de privacidad.",
     consentContact:
       "Consiento el tratamiento de este mensaje por la plataforma según la política de privacidad.",
+    consentNewsletter:
+      "Sí, envíenme el dispatch de Vision Goal. Puedo darme de baja en cualquier momento.",
     audience: "Audiencia",
     audienceHint: "¿Para quién se encarga la cohorte?",
     audiencePlaceholder: "p.ej. alumni senior; principals partner-track",
@@ -2066,6 +2080,7 @@ const zh: Dict = {
     discoverVisionGoal: "了解 Vision Goal →",
     readExperience: "了解更多",
     allExperiences: "全部体验",
+    sending: "发送中…",
   },
   dispatch: {
     label: "速递",
@@ -2425,6 +2440,8 @@ const zh: Dict = {
       "本人确认有权代表所属机构提出此咨询, 并依据隐私政策同意平台处理。",
     consentContact:
       "本人依据隐私政策同意平台处理此消息。",
+    consentNewsletter:
+      "是的, 请向我发送 Vision Goal 速递。我可以随时取消订阅。",
     audience: "对象",
     audienceHint: "本群体为何对象而设?",
     audiencePlaceholder: "例如: 资深校友;合伙人通道",

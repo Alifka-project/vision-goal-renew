@@ -6,12 +6,16 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "typecheck": "tsc --noEmit",
+    "audit:photography": "node scripts/audit-photography.mjs"
   },
   "dependencies": {
     "next": "^15.5.16",
     "react": "^19.2.0",
-    "react-dom": "^19.2.0"
+    "react-dom": "^19.2.0",
+    "resend": "^6.24.0",
+    "zod": "^4.4.3"
   },
   "devDependencies": {
     "@types/node": "^22.9.0",

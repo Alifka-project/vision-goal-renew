@@ -12,15 +12,6 @@ import { featuredInsights, publications } from "@/lib/content";
 import { images } from "@/lib/images";
 import { useT } from "@/i18n/I18nProvider";
 
-const categories = [
-  "All",
-  "Swiss Access",
-  "Private Banking",
-  "Markets",
-  "Methodology",
-  "Dispatches",
-] as const;
-
 export default function InsightsIndexPage() {
   const t = useT();
   const [featured, ...rest] = featuredInsights;
@@ -82,28 +73,7 @@ export default function InsightsIndexPage() {
           </div>
         </section>
 
-        <section className="bg-cream-2 py-10 border-y hairline">
-          <div className="container">
-            <ul className="flex flex-wrap gap-2 sm:gap-3" aria-label="Categories">
-              {categories.map((c, i) => (
-                <li key={c}>
-                  <button
-                    type="button"
-                    className={`text-[0.78rem] uppercase tracking-[0.14em] px-4 py-2 border transition-colors duration-200 ${
-                      i === 0
-                        ? "bg-navy text-cream border-navy"
-                        : "bg-white text-slate hairline hover:border-gold/40 hover:text-navy"
-                    }`}
-                  >
-                    {c}
-                  </button>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </section>
-
-        <section className="bg-white py-section-y md:py-section-y-lg">
+        <section className="bg-white py-section-y md:py-section-y-lg border-t hairline">
           <div className="container">
             <ul className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
               {rest.map((insight, i) => (
