@@ -97,15 +97,28 @@ export function Reveal({
   const offsetY = direction === "up" ? distance : direction === "down" ? -distance : 0;
   const appliedDelay = Math.min(delay, MAX_DELAY_MS);
 
+  // The hidden state must never be baked into the server HTML. The server
+  // cannot know the visitor's motion preference, so emitting opacity:0 here
+  // would leave reduced-motion users (and anyone whose JS is slow or fails)
+  // staring at a blank section. Instead the server renders the content
+  // plainly and `data-reveal` opts in to the animation; globals.css hides it
+  // only under `prefers-reduced-motion: no-preference`, where JS is about to
+  // reveal it anyway.
   const style: React.CSSProperties = {
-    opacity: visible ? 1 : 0,
+    opacity: visible ? 1 : undefined,
     transform: visible ? "translate3d(0,0,0)" : `translate3d(${offsetX}px, ${offsetY}px, 0)`,
     transition: `opacity ${duration}ms cubic-bezier(0.22, 1, 0.36, 1) ${appliedDelay}ms, transform ${duration}ms cubic-bezier(0.22, 1, 0.36, 1) ${appliedDelay}ms`,
     willChange: "opacity, transform",
   };
 
   return (
-    <Tag ref={ref as never} className={className} style={style}>
+    <Tag
+      ref={ref as never}
+      className={className}
+      style={style}
+      data-reveal=""
+      data-visible={visible ? "" : undefined}
+    >
       {children}
     </Tag>
   );

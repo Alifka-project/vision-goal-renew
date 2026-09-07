@@ -44,8 +44,9 @@ export default function ContactPage() {
     const email = value("email");
     const area = value("areaOfInterest");
     const message = value("message");
+    const consent = form.get("consent") != null;
 
-    if (!firstName || !lastName || !email || !area || !message) {
+    if (!firstName || !lastName || !email || !area || !message || !consent) {
       setStatus("error");
       return;
     }
@@ -56,6 +57,7 @@ export default function ContactPage() {
       `Organisation: ${value("organisation") || "—"}`,
       `Role: ${value("role") || "—"}`,
       `Area of interest: ${area}`,
+      `Privacy consent: agreed`,
       "",
       message,
     ];
@@ -180,7 +182,7 @@ export default function ContactPage() {
                   {status === "error" ? (
                     <p role="alert" className="text-body-sm text-[#8b2f2f]">
                       Please complete the required fields — first name, last name, email, area of
-                      interest and your message.
+                      interest, your message, and the privacy consent.
                     </p>
                   ) : null}
 

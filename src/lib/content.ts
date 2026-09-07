@@ -390,20 +390,20 @@ export const featuredInsights: Insight[] = [
     ],
   },
   {
-    slug: "twelve-not-twenty",
+    slug: "small-rooms",
     category: "Methodology",
-    title: "Why we run cohorts of twelve, never twenty.",
+    title: "Why the room stays small.",
     excerpt:
-      "Group dynamics, attention, and the calibre of what is said — the case for the small cohort.",
+      "Group dynamics, attention, and the calibre of what is said — the case for the small room.",
     authorName: "Vision Goal",
     readingTime: "5 min",
-    href: "/insights/twelve-not-twenty",
+    href: "/insights/small-rooms",
     imageKey: "insightMethodology",
     body: [
-      "We run cohorts of twelve. We have been asked many times to run cohorts of twenty. We do not.",
-      "At twelve, the room is a single conversation. Every participant is named, every question is heard, and every contribution is observable to every other participant. The hosts can read each face and adjust the room in real time.",
-      "At twenty, the room becomes an audience. Some voices recede; the dialogue becomes a sequence of presentations. The hosts revert to lecturing rather than hosting. Calibre drops, and so does what participants are willing to say in front of each other.",
-      "The economic argument for twenty is that it covers the room cost more easily. The argument for twelve is that twelve is what the product is. Open enrolment platforms can run at twenty. We cannot — because we are not selling seats; we are convening rooms.",
+      "We are asked, often, to run bigger rooms. We do not.",
+      "Kept small, the room is a single conversation. Every participant is present to every other, every question is heard, and every contribution is observable. The host can read the room and adjust it in real time.",
+      "Scaled up, the room becomes an audience. Some voices recede; the dialogue becomes a sequence of presentations. The host reverts to lecturing rather than hosting. Calibre drops, and so does what participants are willing to say in front of each other.",
+      "The economic argument for a bigger room is that it covers its cost more easily. The argument for a small one is that the small room is what the product is. Open enrolment platforms can scale. We cannot — because we are not selling seats; we are convening rooms.",
     ],
   },
   {
@@ -452,9 +452,9 @@ export const featuredInsights: Insight[] = [
     body: [
       "We do not run open enrolment. Engagement starts with a conversation; rooms shape themselves through curation, not transaction.",
       "We do not deliver coaching, advisory, or any regulated financial service. The platform is curatorial — practitioners speak in their own capacity, not as advisors.",
-      "We do not record cohort sessions. We do not publish participant names without consent. We do not stage cohort photography for marketing.",
-      "We do not scale the cohort. Twelve in the room is a structural choice, not a soft cap.",
-      "We do not pursue media coverage of cohort proceedings. The platform reads quieter than its peers because the proceedings are quieter than its peers.",
+      "We do not record sessions. We do not publish participant names without consent. We do not stage photography for marketing.",
+      "We do not scale the room. Its size is a structural choice, not a soft cap.",
+      "We do not pursue media coverage of proceedings. The platform reads quieter than its peers because the proceedings are quieter than its peers.",
     ],
   },
 ];

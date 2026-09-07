@@ -4,7 +4,7 @@ import type { ReactNode } from "react";
 export const metadata: Metadata = {
   title: "About",
   description:
-    "Vision Goal is a curated Swiss platform for cohort-based intensives and access — three flagship programmes, by application, hosted by practitioners.",
+    "Vision Goal is a curated Swiss platform for applied executive learning experiences — small, practitioner-hosted, and connected to real operating environments.",
   alternates: { canonical: "/about" },
 };
 

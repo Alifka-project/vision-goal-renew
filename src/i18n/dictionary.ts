@@ -111,14 +111,6 @@ export type Dict = {
     side: string;
     tiles: { label: string; caption: string }[];
   };
-  cohorts: {
-    eyebrow: string;
-    headline: string;
-    headlineGold: string;
-    statusOpen: string;
-    statusWaitlist: string;
-    statusClosed: string;
-  };
   alumni: {
     eyebrow: string;
     intro: string;
@@ -163,9 +155,6 @@ export type Dict = {
     hostsCriteriaEyebrow: string;
     hostsCriteriaHeadline: string;
     hostsCriteriaItems: { title: string; body: string }[];
-    alumniNumbersEyebrow: string;
-    alumniNumbersHeadline: string;
-    alumniStats: { value: string; label: string }[];
     insightsCategoriesEyebrow: string;
     insightsCategoriesHeadline: string;
     insightsCategoriesItems: { name: string; body: string }[];
@@ -217,11 +206,6 @@ export type Dict = {
     organisation: string;
     institution: string;
     country: string;
-    programmeOfInterest: string;
-    selectProgramme: string;
-    notSure: string;
-    preferredCohort: string;
-    preferredCohortHint: string;
     objective: string;
     objectiveHint: string;
     contribution: string;
@@ -236,13 +220,6 @@ export type Dict = {
     audience: string;
     audienceHint: string;
     audiencePlaceholder: string;
-    format: string;
-    selectFormat: string;
-    formatThree: string;
-    formatChatham: string;
-    formatWeek: string;
-    formatModular: string;
-    formatUndecided: string;
     languages: string;
     dates: string;
     description: string;
@@ -253,7 +230,6 @@ export type Dict = {
     timing: string;
     timingHint: string;
     timingPlaceholder: string;
-    cohortPlaceholder: string;
     discussTopic: string;
     discussHint: string;
   };
@@ -330,7 +306,7 @@ const en: Dict = {
     ],
   },
   hero: {
-    eyebrow: "Curated Swiss executive experiences · By application",
+    eyebrow: "Curated Swiss executive learning experiences",
     line1: "Inside Swiss",
     line2: "business, finance,",
     line3: "and leadership.",
@@ -345,9 +321,9 @@ const en: Dict = {
     eyebrow: "The platform posture",
     sub: "Premium Swiss executive experiences · Curated access · Private networks",
     pillars: [
-      { label: "By application", line: "Never open enrolment." },
+      { label: "By conversation", line: "Never open enrolment." },
       { label: "Small rooms", line: "Kept small on purpose." },
-      { label: "Hosted by practitioners", line: "Named on the page." },
+      { label: "Hosted by practitioners", line: "Applied, not theoretical." },
     ],
   },
   programmesBlock: {
@@ -405,14 +381,6 @@ const en: Dict = {
       { label: "Curated salons", caption: "Small rooms" },
     ],
   },
-  cohorts: {
-    eyebrow: "Pilot cohorts",
-    headline: "Three rooms,",
-    headlineGold: "by application.",
-    statusOpen: "By application",
-    statusWaitlist: "By application",
-    statusClosed: "Closed",
-  },
   alumni: {
     eyebrow: "Alumni signal",
     intro: "",
@@ -450,9 +418,7 @@ const en: Dict = {
   trust: {
     eyebrow: "The platform in numbers",
     stats: [
-      { value: "33", label: "Years across Swiss private banking" },
-      { value: "3", label: "Flagship programmes" },
-      { value: "12", label: "Maximum in the room" },
+      { value: "30+", label: "Years across finance, banking, insurance & governance" },
       { value: "12", label: "Peer-reviewed publications" },
     ],
   },
@@ -465,12 +431,12 @@ const en: Dict = {
         body: "Every session has a named practitioner in the room. We do not bring stage speakers; we bring people who can answer the next question.",
       },
       {
-        title: "Twelve, not twenty",
-        body: "Cohorts are sized so every voice is heard and every introduction is considered. The economics of the room are deliberate.",
+        title: "Small, not scaled",
+        body: "Rooms are sized so every voice is heard and every introduction is considered. The economics of the room are deliberate.",
       },
       {
-        title: "Application, not enrolment",
-        body: "Each room is curated. We read for specificity of objective and calibre of contribution — not credentials and not budget.",
+        title: "Conversation, not enrolment",
+        body: "Each room is curated. A short conversation establishes specificity of objective and calibre of contribution — not credentials and not budget.",
       },
     ],
     hostsCriteriaEyebrow: "What we look for in a host",
@@ -488,14 +454,6 @@ const en: Dict = {
         title: "Time for the cohort",
         body: "Hosts commit to the full programme — not a keynote and a flight home. The room is small precisely so the host can stay in it.",
       },
-    ],
-    alumniNumbersEyebrow: "The network in numbers",
-    alumniNumbersHeadline: "A small register, kept warm.",
-    alumniStats: [
-      { value: "84", label: "Alumni across cohorts since 2022" },
-      { value: "12", label: "Maximum participants per cohort" },
-      { value: "27", label: "Countries represented in the network" },
-      { value: "4", label: "Annual reconvening days per year" },
     ],
     insightsCategoriesEyebrow: "Editorial categories",
     insightsCategoriesHeadline: "Five places we publish.",
@@ -548,9 +506,9 @@ const en: Dict = {
   },
   pages: {
     programmes: {
-      eyebrow: "The flagship intensives",
-      titlePart1: "Three programmes.",
-      titleGold: "By application.",
+      eyebrow: "Formats of learning",
+      titlePart1: "Three formats.",
+      titleGold: "By conversation.",
       lede:
         "Each programme is a curated room: small, hosted by named practitioners, and run with a single posture — restraint over volume, evidence over claim, judgement over performance.",
     },
@@ -598,7 +556,7 @@ const en: Dict = {
       pressHeadline: "Selected peer-reviewed work.",
       curatorEyebrow: "A note from the curator",
       curatorNote:
-        "The platform exists for the rooms. Everything else — the website, the dispatch, the press column — is in service of what happens when twelve people sit down for four days under chatham-house rules with a host who has nothing to sell them. If we keep the rooms honest, the rest takes care of itself.",
+        "The platform exists for the rooms. Everything else — the website, the dispatch, the editorial — is in service of what happens when a small room sits down under chatham-house rules with a host who has nothing to sell them. If we keep the rooms honest, the rest takes care of itself.",
       curatorAttribution: "Vision Goal · Zurich",
     },
     contact: {
@@ -682,12 +640,6 @@ const en: Dict = {
     organisation: "Organisation",
     institution: "Institution",
     country: "Country",
-    programmeOfInterest: "Programme of interest",
-    selectProgramme: "Select a programme",
-    notSure: "I am not sure — please advise",
-    preferredCohort: "Preferred cohort",
-    preferredCohortHint:
-      "If you have a preferred date, indicate it. Otherwise we will route you to the next available.",
     objective: "What do you want from the room?",
     objectiveHint: "Specificity is read carefully. Two to four sentences.",
     contribution: "What do you bring to the room?",
@@ -707,13 +659,6 @@ const en: Dict = {
     audience: "Audience",
     audienceHint: "Who is the cohort being commissioned for?",
     audiencePlaceholder: "e.g. senior alumni; partner-track principals",
-    format: "Format",
-    selectFormat: "Select a format",
-    formatThree: "Three-day intensive",
-    formatChatham: "Four-day chatham-house",
-    formatWeek: "Curated week",
-    formatModular: "Modular / multi-touch",
-    formatUndecided: "Undecided — please advise",
     languages: "Preferred languages",
     dates: "Preferred dates",
     description: "Brief description of the engagement",
@@ -725,16 +670,15 @@ const en: Dict = {
     timing: "Preferred timing",
     timingHint: "Indicate one or two preferred windows. We will confirm the slot.",
     timingPlaceholder: "e.g. Wednesday afternoons CET",
-    cohortPlaceholder: "e.g. June 2026",
     discussTopic: "What you would like to discuss",
     discussHint: "Three to five sentences are enough. Specificity is welcomed.",
   },
   footer: {
     blurb:
-      "A premium Swiss platform for cohort-based intensives and curated business access — three flagship programmes, hosted by practitioners, by application.",
+      "A curated Swiss platform for applied executive learning — small rooms, practitioner-led, connected to real operating environments.",
     sectionProgrammes: "Programmes",
     sectionPlatform: "Platform",
-    sectionApply: "Apply",
+    sectionApply: "Contact",
     linkApplication: "Application",
     linkPrivateConsultation: "Private consultation",
     linkPrivateCohort: "Private cohort enquiry",
@@ -803,7 +747,7 @@ const de: Dict = {
     ],
   },
   hero: {
-    eyebrow: "Kuratierte Schweizer Executive-Programme · Auf Bewerbung",
+    eyebrow: "Kuratierte Schweizer Executive-Lernerfahrungen",
     line1: "Schweizer Wirtschaft,",
     line2: "Finanzen und",
     line3: "Führung — von innen.",
@@ -873,18 +817,10 @@ const de: Dict = {
     side: "Kuratierte Umgebungen. Bewusst klein. Diskretion als Standard.",
     tiles: [
       { label: "Überlegte Orte", caption: "Vor Ort" },
-      { label: "Genf", caption: "Chatham-House" },
+      { label: "Chatham-House", caption: "Geschlossene Räume" },
       { label: "Alpiner Rückzug", caption: "Stille Räume" },
       { label: "Kuratierte Salons", caption: "Kleine Räume" },
     ],
-  },
-  cohorts: {
-    eyebrow: "Pilot-Kohorten",
-    headline: "Drei Räume,",
-    headlineGold: "auf Bewerbung.",
-    statusOpen: "Auf Bewerbung",
-    statusWaitlist: "Auf Bewerbung",
-    statusClosed: "Geschlossen",
   },
   alumni: {
     eyebrow: "Alumni-Signal",
@@ -923,9 +859,7 @@ const de: Dict = {
   trust: {
     eyebrow: "Die Plattform in Zahlen",
     stats: [
-      { value: "33", label: "Jahre Schweizer Privatbanking" },
-      { value: "3", label: "Flaggschiff-Programme" },
-      { value: "12", label: "Maximum im Raum" },
+      { value: "30+", label: "Jahre in Finanzwesen, Banking, Versicherung & Governance" },
       { value: "12", label: "Peer-reviewte Publikationen" },
     ],
   },
@@ -938,12 +872,12 @@ const de: Dict = {
         body: "In jeder Sitzung ist ein namentlich genannter Praktiker im Raum. Wir buchen keine Bühnenredner; wir bringen Menschen, die die nächste Frage beantworten können.",
       },
       {
-        title: "Zwölf, nicht zwanzig",
-        body: "Kohorten sind so dimensioniert, dass jede Stimme gehört und jede Vorstellung überlegt wird. Die Ökonomie des Raums ist bewusst gewählt.",
+        title: "Klein, nicht skaliert",
+        body: "Räume sind so dimensioniert, dass jede Stimme gehört und jede Vorstellung überlegt wird. Die Ökonomie des Raums ist bewusst gewählt.",
       },
       {
-        title: "Bewerbung, keine Anmeldung",
-        body: "Jeder Raum ist kuratiert. Wir lesen auf Spezifität des Ziels und Kaliber des Beitrags — nicht auf Titel und nicht auf Budget.",
+        title: "Gespräch, keine Anmeldung",
+        body: "Jeder Raum ist kuratiert. Ein kurzes Gespräch klärt Spezifität des Ziels und Kaliber des Beitrags — nicht Titel und nicht Budget.",
       },
     ],
     hostsCriteriaEyebrow: "Was wir an einem Gastgeber suchen",
@@ -961,14 +895,6 @@ const de: Dict = {
         title: "Zeit für die Kohorte",
         body: "Gastgeber verpflichten sich auf das gesamte Programm — keine Keynote und Heimflug. Der Raum ist klein, damit der Gastgeber bleiben kann.",
       },
-    ],
-    alumniNumbersEyebrow: "Das Netzwerk in Zahlen",
-    alumniNumbersHeadline: "Ein kleines Register, warm gehalten.",
-    alumniStats: [
-      { value: "84", label: "Alumni über alle Kohorten seit 2022" },
-      { value: "12", label: "Maximale Teilnehmer pro Kohorte" },
-      { value: "27", label: "Vertretene Länder im Netzwerk" },
-      { value: "4", label: "Jährliche Wiedersehenstage pro Jahr" },
     ],
     insightsCategoriesEyebrow: "Redaktionelle Kategorien",
     insightsCategoriesHeadline: "Fünf Orte, an denen wir publizieren.",
@@ -1021,9 +947,9 @@ const de: Dict = {
   },
   pages: {
     programmes: {
-      eyebrow: "Die Flaggschiff-Intensivprogramme",
-      titlePart1: "Drei Programme.",
-      titleGold: "Auf Bewerbung.",
+      eyebrow: "Formate des Lernens",
+      titlePart1: "Drei Formate.",
+      titleGold: "Auf Gespräch.",
       lede:
         "Jedes Programm ist ein kuratierter Raum: klein, von namentlich genannten Praktikern geführt und mit einer einzigen Haltung geleitet — Zurückhaltung statt Lautstärke, Belege statt Behauptungen, Urteilsvermögen statt Inszenierung.",
     },
@@ -1071,7 +997,7 @@ const de: Dict = {
       pressHeadline: "Ausgewählte begutachtete Arbeiten.",
       curatorEyebrow: "Eine Notiz des Kurators",
       curatorNote:
-        "Die Plattform existiert für die Räume. Alles andere — die Website, der Dispatch, die Pressespalte — steht im Dienste dessen, was geschieht, wenn zwölf Personen unter Chatham-House-Regeln vier Tage mit einem Gastgeber zusammensitzen, der ihnen nichts zu verkaufen hat. Wenn wir die Räume ehrlich halten, regelt sich der Rest von selbst.",
+        "Die Plattform existiert für die Räume. Alles andere — die Website, der Dispatch, das Editorial — steht im Dienste dessen, was geschieht, wenn ein kleiner Raum unter Chatham-House-Regeln mit einem Gastgeber zusammensitzt, der ihnen nichts zu verkaufen hat. Wenn wir die Räume ehrlich halten, regelt sich der Rest von selbst.",
       curatorAttribution: "Vision Goal · Zürich",
     },
     contact: {
@@ -1155,12 +1081,6 @@ const de: Dict = {
     organisation: "Organisation",
     institution: "Institution",
     country: "Land",
-    programmeOfInterest: "Programm",
-    selectProgramme: "Programm wählen",
-    notSure: "Ich bin unsicher — bitte beraten",
-    preferredCohort: "Bevorzugte Kohorte",
-    preferredCohortHint:
-      "Wenn Sie ein bevorzugtes Datum haben, geben Sie es an. Andernfalls leiten wir Sie zur nächsten verfügbaren Kohorte.",
     objective: "Was wollen Sie aus dem Raum mitnehmen?",
     objectiveHint: "Spezifität wird sorgfältig gelesen. Zwei bis vier Sätze.",
     contribution: "Was bringen Sie in den Raum ein?",
@@ -1181,13 +1101,6 @@ const de: Dict = {
     audience: "Zielgruppe",
     audienceHint: "Für wen wird die Kohorte beauftragt?",
     audiencePlaceholder: "z.B. Senior-Alumni; Partner-Track-Principals",
-    format: "Format",
-    selectFormat: "Format wählen",
-    formatThree: "Dreitägiges Intensivprogramm",
-    formatChatham: "Viertägiges Chatham-House",
-    formatWeek: "Kuratierte Woche",
-    formatModular: "Modular / mehrteilig",
-    formatUndecided: "Unentschieden — bitte beraten",
     languages: "Bevorzugte Sprachen",
     dates: "Bevorzugte Termine",
     description: "Kurze Beschreibung des Auftrags",
@@ -1200,16 +1113,15 @@ const de: Dict = {
     timingHint:
       "Geben Sie ein oder zwei bevorzugte Zeitfenster an. Wir bestätigen den Termin.",
     timingPlaceholder: "z.B. Mittwochnachmittage MEZ",
-    cohortPlaceholder: "z.B. Juni 2026",
     discussTopic: "Was Sie besprechen möchten",
     discussHint: "Drei bis fünf Sätze genügen. Spezifität ist willkommen.",
   },
   footer: {
     blurb:
-      "Eine premium Schweizer Plattform für kohortenbasierte Intensivprogramme und kuratierten Geschäftszugang — drei Flaggschiff-Programme, geführt von Praktikern, auf Bewerbung.",
+      "Eine kuratierte Schweizer Plattform für angewandtes Executive-Lernen — kleine Räume, von Praktikern geleitet, mit realen operativen Umgebungen verbunden.",
     sectionProgrammes: "Programme",
     sectionPlatform: "Plattform",
-    sectionApply: "Bewerben",
+    sectionApply: "Kontakt",
     linkApplication: "Bewerbung",
     linkPrivateConsultation: "Private Beratung",
     linkPrivateCohort: "Anfrage private Kohorte",
@@ -1278,7 +1190,7 @@ const fr: Dict = {
     ],
   },
   hero: {
-    eyebrow: "Expériences exécutives suisses curatées · Sur candidature",
+    eyebrow: "Expériences d’apprentissage exécutif suisses curatées",
     line1: "L’entreprise, la",
     line2: "finance, le leadership",
     line3: "suisses — vus de l’intérieur.",
@@ -1347,19 +1259,11 @@ const fr: Dict = {
     headlineGold: "Suisse.",
     side: "Environnements curatés. Restreints par choix. Discrétion par défaut.",
     tiles: [
-      { label: "Zurich", caption: "En résidence" },
-      { label: "Genève", caption: "Chatham house" },
+      { label: "Lieux réfléchis", caption: "En résidence" },
+      { label: "Chatham house", caption: "Salles fermées" },
       { label: "Retraite alpine", caption: "Salles silencieuses" },
       { label: "Salons curatés", caption: "Petites salles" },
     ],
-  },
-  cohorts: {
-    eyebrow: "Cohortes pilotes",
-    headline: "Trois salles,",
-    headlineGold: "sur candidature.",
-    statusOpen: "Sur candidature",
-    statusWaitlist: "Sur candidature",
-    statusClosed: "Fermée",
   },
   alumni: {
     eyebrow: "Signal alumni",
@@ -1398,9 +1302,7 @@ const fr: Dict = {
   trust: {
     eyebrow: "La plateforme en chiffres",
     stats: [
-      { value: "33", label: "Années dans la banque privée suisse" },
-      { value: "3", label: "Programmes phares" },
-      { value: "12", label: "Maximum dans la salle" },
+      { value: "30+", label: "Années en finance, banque, assurance & gouvernance" },
       { value: "12", label: "Publications à comité de lecture" },
     ],
   },
@@ -1413,12 +1315,12 @@ const fr: Dict = {
         body: "Chaque session a un praticien nommé dans la salle. Nous n’invitons pas d’orateurs de scène ; nous invitons des personnes capables de répondre à la question suivante.",
       },
       {
-        title: "Douze, pas vingt",
-        body: "Les cohortes sont dimensionnées pour que chaque voix soit entendue et chaque introduction réfléchie. L’économie de la salle est délibérée.",
+        title: "Petit, pas mis à l’échelle",
+        body: "Les salles sont dimensionnées pour que chaque voix soit entendue et chaque introduction réfléchie. L’économie de la salle est délibérée.",
       },
       {
-        title: "Candidature, pas inscription",
-        body: "Chaque salle est curatée. Nous lisons la spécificité de l’objectif et le calibre de la contribution — pas les titres, pas le budget.",
+        title: "Conversation, pas inscription",
+        body: "Chaque salle est curatée. Une courte conversation établit la spécificité de l’objectif et le calibre de la contribution — pas les titres, pas le budget.",
       },
     ],
     hostsCriteriaEyebrow: "Ce que nous cherchons chez un animateur",
@@ -1436,14 +1338,6 @@ const fr: Dict = {
         title: "Du temps pour la cohorte",
         body: "Les animateurs s’engagent sur tout le programme — pas une keynote et un avion de retour. La salle est petite pour que l’animateur y reste.",
       },
-    ],
-    alumniNumbersEyebrow: "Le réseau en chiffres",
-    alumniNumbersHeadline: "Un petit registre, gardé chaud.",
-    alumniStats: [
-      { value: "84", label: "Alumni au total depuis 2022" },
-      { value: "12", label: "Participants maximum par cohorte" },
-      { value: "27", label: "Pays représentés dans le réseau" },
-      { value: "4", label: "Jours de retrouvailles par an" },
     ],
     insightsCategoriesEyebrow: "Catégories éditoriales",
     insightsCategoriesHeadline: "Cinq lieux où nous publions.",
@@ -1496,9 +1390,9 @@ const fr: Dict = {
   },
   pages: {
     programmes: {
-      eyebrow: "Les intensifs phares",
-      titlePart1: "Trois programmes.",
-      titleGold: "Sur candidature.",
+      eyebrow: "Formats d’apprentissage",
+      titlePart1: "Trois formats.",
+      titleGold: "Sur conversation.",
       lede:
         "Chaque programme est une salle curatée : petite, animée par des praticiens nommés, et menée avec une seule posture — la mesure plutôt que le volume, la preuve plutôt que la déclaration, le jugement plutôt que la performance.",
     },
@@ -1546,7 +1440,7 @@ const fr: Dict = {
       pressHeadline: "Travaux évalués par les pairs — sélection.",
       curatorEyebrow: "Une note du curateur",
       curatorNote:
-        "La plateforme existe pour les salles. Tout le reste — le site, le dispatch, la rubrique presse — est au service de ce qui se passe quand douze personnes s’assoient quatre jours sous chatham house avec un animateur qui n’a rien à leur vendre. Si nous tenons les salles avec honnêteté, le reste s’occupe de lui-même.",
+        "La plateforme existe pour les salles. Tout le reste — le site, le dispatch, l’éditorial — est au service de ce qui se passe quand une petite salle s’assoit sous chatham house avec un animateur qui n’a rien à leur vendre. Si nous tenons les salles avec honnêteté, le reste s’occupe de lui-même.",
       curatorAttribution: "Vision Goal · Zurich",
     },
     contact: {
@@ -1630,12 +1524,6 @@ const fr: Dict = {
     organisation: "Organisation",
     institution: "Institution",
     country: "Pays",
-    programmeOfInterest: "Programme",
-    selectProgramme: "Choisir un programme",
-    notSure: "Je ne suis pas sûr — merci de m’orienter",
-    preferredCohort: "Cohorte préférée",
-    preferredCohortHint:
-      "Si vous avez une date préférée, indiquez-la. Sinon, nous vous orientons vers la prochaine disponible.",
     objective: "Que voulez-vous tirer de la salle ?",
     objectiveHint: "La spécificité est lue avec attention. Deux à quatre phrases.",
     contribution: "Qu’apportez-vous à la salle ?",
@@ -1656,13 +1544,6 @@ const fr: Dict = {
     audience: "Audience",
     audienceHint: "Pour qui la cohorte est-elle commandée ?",
     audiencePlaceholder: "ex. alumni seniors ; principals partner-track",
-    format: "Format",
-    selectFormat: "Choisir un format",
-    formatThree: "Intensif de trois jours",
-    formatChatham: "Chatham house de quatre jours",
-    formatWeek: "Semaine curatée",
-    formatModular: "Modulaire / multi-touch",
-    formatUndecided: "Indécis — merci de m’orienter",
     languages: "Langues préférées",
     dates: "Dates préférées",
     description: "Brève description de la mission",
@@ -1675,16 +1556,15 @@ const fr: Dict = {
     timingHint:
       "Indiquez une ou deux fenêtres préférées. Nous confirmerons le créneau.",
     timingPlaceholder: "ex. mercredis après-midi CET",
-    cohortPlaceholder: "ex. juin 2026",
     discussTopic: "Ce dont vous souhaitez parler",
     discussHint: "Trois à cinq phrases suffisent. La spécificité est bienvenue.",
   },
   footer: {
     blurb:
-      "Une plateforme suisse premium pour intensifs en cohorte et accès business curaté — trois programmes phares, animés par des praticiens, sur candidature.",
+      "Une plateforme suisse curatée pour un apprentissage exécutif appliqué — petites salles, animées par des praticiens, reliées à des environnements opérationnels réels.",
     sectionProgrammes: "Programmes",
     sectionPlatform: "Plateforme",
-    sectionApply: "Candidater",
+    sectionApply: "Contact",
     linkApplication: "Candidature",
     linkPrivateConsultation: "Consultation privée",
     linkPrivateCohort: "Demande de cohorte privée",
@@ -1753,7 +1633,7 @@ const es: Dict = {
     ],
   },
   hero: {
-    eyebrow: "Experiencias ejecutivas suizas curadas · Por candidatura",
+    eyebrow: "Experiencias suizas curadas de aprendizaje ejecutivo",
     line1: "Negocios, finanzas",
     line2: "y liderazgo suizos —",
     line3: "desde dentro.",
@@ -1822,19 +1702,11 @@ const es: Dict = {
     headlineGold: "Suizo.",
     side: "Entornos curados. Reducidos por elección. Discreción por defecto.",
     tiles: [
-      { label: "Zúrich", caption: "En residencia" },
-      { label: "Ginebra", caption: "Chatham house" },
+      { label: "Sedes consideradas", caption: "En residencia" },
+      { label: "Chatham house", caption: "Salas cerradas" },
       { label: "Retiro alpino", caption: "Salas silenciosas" },
       { label: "Salones curados", caption: "Salas reducidas" },
     ],
-  },
-  cohorts: {
-    eyebrow: "Cohortes piloto",
-    headline: "Tres salas,",
-    headlineGold: "por candidatura.",
-    statusOpen: "Por candidatura",
-    statusWaitlist: "Por candidatura",
-    statusClosed: "Cerrada",
   },
   alumni: {
     eyebrow: "Señal alumni",
@@ -1873,9 +1745,7 @@ const es: Dict = {
   trust: {
     eyebrow: "La plataforma en cifras",
     stats: [
-      { value: "33", label: "Años en la banca privada suiza" },
-      { value: "3", label: "Programas insignia" },
-      { value: "12", label: "Máximo en la sala" },
+      { value: "30+", label: "Años en finanzas, banca, seguros y gobernanza" },
       { value: "12", label: "Publicaciones revisadas por pares" },
     ],
   },
@@ -1888,12 +1758,12 @@ const es: Dict = {
         body: "Cada sesión tiene un practicante nombrado en la sala. No traemos oradores de escenario; traemos personas capaces de responder la siguiente pregunta.",
       },
       {
-        title: "Doce, no veinte",
-        body: "Las cohortes están dimensionadas para que cada voz se escuche y cada presentación se considere. La economía de la sala es deliberada.",
+        title: "Reducido, no escalado",
+        body: "Las salas están dimensionadas para que cada voz se escuche y cada presentación se considere. La economía de la sala es deliberada.",
       },
       {
-        title: "Candidatura, no matrícula",
-        body: "Cada sala es curada. Leemos la especificidad del objetivo y el calibre de la contribución — no títulos y no presupuesto.",
+        title: "Conversación, no matrícula",
+        body: "Cada sala es curada. Una breve conversación establece la especificidad del objetivo y el calibre de la contribución — no títulos y no presupuesto.",
       },
     ],
     hostsCriteriaEyebrow: "Lo que buscamos en un anfitrión",
@@ -1911,14 +1781,6 @@ const es: Dict = {
         title: "Tiempo para la cohorte",
         body: "Los anfitriones se comprometen con todo el programa — no una keynote y vuelo de regreso. La sala es pequeña precisamente para que el anfitrión permanezca.",
       },
-    ],
-    alumniNumbersEyebrow: "La red en cifras",
-    alumniNumbersHeadline: "Un registro pequeño, mantenido cálido.",
-    alumniStats: [
-      { value: "84", label: "Alumni en todas las cohortes desde 2022" },
-      { value: "12", label: "Participantes máximos por cohorte" },
-      { value: "27", label: "Países representados en la red" },
-      { value: "4", label: "Días anuales de reencuentro" },
     ],
     insightsCategoriesEyebrow: "Categorías editoriales",
     insightsCategoriesHeadline: "Cinco lugares donde publicamos.",
@@ -1971,9 +1833,9 @@ const es: Dict = {
   },
   pages: {
     programmes: {
-      eyebrow: "Los intensivos insignia",
-      titlePart1: "Tres programas.",
-      titleGold: "Por candidatura.",
+      eyebrow: "Formatos de aprendizaje",
+      titlePart1: "Tres formatos.",
+      titleGold: "Por conversación.",
       lede:
         "Cada programa es una sala curada: pequeña, conducida por practicantes nombrados y dirigida con una sola postura — la mesura sobre el volumen, la prueba sobre la afirmación, el juicio sobre la actuación.",
     },
@@ -2021,7 +1883,7 @@ const es: Dict = {
       pressHeadline: "Trabajos revisados por pares — selección.",
       curatorEyebrow: "Una nota del curador",
       curatorNote:
-        "La plataforma existe para las salas. Todo lo demás — el sitio, el dispatch, la columna de prensa — está al servicio de lo que ocurre cuando doce personas se sientan cuatro días bajo reglas chatham house con un anfitrión que no tiene nada que venderles. Si mantenemos las salas honestas, el resto se cuida solo.",
+        "La plataforma existe para las salas. Todo lo demás — el sitio, el dispatch, el editorial — está al servicio de lo que ocurre cuando una sala reducida se sienta bajo reglas chatham house con un anfitrión que no tiene nada que venderles. Si mantenemos las salas honestas, el resto se cuida solo.",
       curatorAttribution: "Vision Goal · Zúrich",
     },
     contact: {
@@ -2105,12 +1967,6 @@ const es: Dict = {
     organisation: "Organización",
     institution: "Institución",
     country: "País",
-    programmeOfInterest: "Programa",
-    selectProgramme: "Seleccionar programa",
-    notSure: "No estoy seguro — por favor, oriénteme",
-    preferredCohort: "Cohorte preferida",
-    preferredCohortHint:
-      "Si tiene una fecha preferida, indíquela. De lo contrario, lo orientaremos a la próxima disponible.",
     objective: "¿Qué quiere de la sala?",
     objectiveHint: "La especificidad se lee con cuidado. Dos a cuatro frases.",
     contribution: "¿Qué aporta a la sala?",
@@ -2131,13 +1987,6 @@ const es: Dict = {
     audience: "Audiencia",
     audienceHint: "¿Para quién se encarga la cohorte?",
     audiencePlaceholder: "p.ej. alumni senior; principals partner-track",
-    format: "Formato",
-    selectFormat: "Seleccionar formato",
-    formatThree: "Intensivo de tres días",
-    formatChatham: "Chatham house de cuatro días",
-    formatWeek: "Semana curada",
-    formatModular: "Modular / multi-touch",
-    formatUndecided: "Indeciso — por favor, oriénteme",
     languages: "Idiomas preferidos",
     dates: "Fechas preferidas",
     description: "Breve descripción del encargo",
@@ -2150,16 +1999,15 @@ const es: Dict = {
     timingHint:
       "Indique una o dos ventanas preferidas. Confirmaremos el horario.",
     timingPlaceholder: "p.ej. miércoles por la tarde CET",
-    cohortPlaceholder: "p.ej. junio de 2026",
     discussTopic: "Lo que desea tratar",
     discussHint: "Tres a cinco frases bastan. La especificidad es bienvenida.",
   },
   footer: {
     blurb:
-      "Una plataforma suiza premium para intensivos por cohorte y acceso de negocio curado — tres programas insignia, conducidos por practicantes, por candidatura.",
+      "Una plataforma suiza curada para el aprendizaje ejecutivo aplicado — salas reducidas, conducidas por practicantes, conectadas con entornos operativos reales.",
     sectionProgrammes: "Programas",
     sectionPlatform: "Plataforma",
-    sectionApply: "Postular",
+    sectionApply: "Contacto",
     linkApplication: "Candidatura",
     linkPrivateConsultation: "Consulta privada",
     linkPrivateCohort: "Consulta cohorte privada",
@@ -2228,7 +2076,7 @@ const zh: Dict = {
     ],
   },
   hero: {
-    eyebrow: "精选瑞士高管体验 · 申请制",
+    eyebrow: "精选瑞士高管学习体验",
     line1: "瑞士商业、金融",
     line2: "与领导力,",
     line3: "由内而外。",
@@ -2297,19 +2145,11 @@ const zh: Dict = {
     headlineGold: "瑞士风格。",
     side: "精选场地。刻意保持精简。审慎为常态。",
     tiles: [
-      { label: "苏黎世", caption: "驻地" },
-      { label: "日内瓦", caption: "查塔姆守则" },
+      { label: "精选场地", caption: "驻地" },
+      { label: "查塔姆守则", caption: "闭门场景" },
       { label: "阿尔卑斯静修", caption: "静室" },
-      { label: "精选沙龙", caption: "室内仅十二人" },
+      { label: "精选沙龙", caption: "小型场景" },
     ],
-  },
-  cohorts: {
-    eyebrow: "试点期次",
-    headline: "三间会场，",
-    headlineGold: "凭申请加入。",
-    statusOpen: "凭申请",
-    statusWaitlist: "凭申请",
-    statusClosed: "关闭",
   },
   alumni: {
     eyebrow: "校友之声",
@@ -2348,9 +2188,7 @@ const zh: Dict = {
   trust: {
     eyebrow: "平台数据",
     stats: [
-      { value: "33", label: "瑞士私人银行从业年资" },
-      { value: "3", label: "旗舰项目" },
-      { value: "12", label: "房间内人数上限" },
+      { value: "30+", label: "横跨金融、银行、保险与治理的从业年资" },
       { value: "12", label: "同行评审论文" },
     ],
   },
@@ -2363,12 +2201,12 @@ const zh: Dict = {
         body: "每节课都有具名从业者在场。我们不安排登台演讲, 我们带来能回答下一个问题的人。",
       },
       {
-        title: "十二人, 而非二十人",
-        body: "群体规模刻意为之, 让每个声音被听见, 每次引荐被斟酌。房间的经济学是有意的。",
+        title: "精简, 而非规模化",
+        body: "房间规模刻意为之, 让每个声音被听见, 每次引荐被斟酌。房间的经济学是有意的。",
       },
       {
-        title: "申请, 而非报名",
-        body: "每个房间都经策划。我们看重目标的具体性与贡献的分量 —— 而非头衔, 也非预算。",
+        title: "对话, 而非报名",
+        body: "每个房间都经策划。一次简短的对话即可厘清目标的具体性与贡献的分量 —— 而非头衔, 也非预算。",
       },
     ],
     hostsCriteriaEyebrow: "我们对主持人的要求",
@@ -2386,14 +2224,6 @@ const zh: Dict = {
         title: "全程陪伴",
         body: "主持人承诺投入整段项目 —— 而非主旨演讲后即刻离开。房间之小, 正是为了让主持人留下。",
       },
-    ],
-    alumniNumbersEyebrow: "网络数据",
-    alumniNumbersHeadline: "一份精简的名册, 持续温度。",
-    alumniStats: [
-      { value: "84", label: "自 2022 年至今的全部校友" },
-      { value: "12", label: "每期群体最多人数" },
-      { value: "27", label: "网络覆盖国家与地区数" },
-      { value: "4", label: "每年重聚天数" },
     ],
     insightsCategoriesEyebrow: "编辑版块",
     insightsCategoriesHeadline: "我们发表的五个版面。",
@@ -2446,9 +2276,9 @@ const zh: Dict = {
   },
   pages: {
     programmes: {
-      eyebrow: "旗舰集训项目",
-      titlePart1: "三个项目。",
-      titleGold: "申请制。",
+      eyebrow: "学习形式",
+      titlePart1: "三种形式。",
+      titleGold: "凭对话。",
       lede:
         "每个项目都是一间精选的房间: 小规模, 由具名从业者主持, 以单一姿态运行 —— 克制胜过喧哗、证据胜过断言、判断胜过表演。",
     },
@@ -2496,7 +2326,7 @@ const zh: Dict = {
       pressHeadline: "经同行评审的精选论文。",
       curatorEyebrow: "策展人手记",
       curatorNote:
-        "平台为房间而存在。其他一切 —— 网站、速递、媒体专栏 —— 都服务于一件事: 当十二人在查塔姆守则下与一位无所推销的主持人相聚四日时, 在房间里发生的事。只要房间保持诚实, 其余的便会自行妥善。",
+        "平台为房间而存在。其他一切 —— 网站、速递、编辑内容 —— 都服务于一件事: 当一个小型场景在查塔姆守则下与一位无所推销的主持人相聚时, 在房间里发生的事。只要房间保持诚实, 其余的便会自行妥善。",
       curatorAttribution: "Vision Goal · 苏黎世",
     },
     contact: {
@@ -2580,12 +2410,6 @@ const zh: Dict = {
     organisation: "机构",
     institution: "机构",
     country: "国家 / 地区",
-    programmeOfInterest: "意向项目",
-    selectProgramme: "选择项目",
-    notSure: "尚未确定 —— 请协助",
-    preferredCohort: "意向群体",
-    preferredCohortHint:
-      "若有意向日期请注明, 否则我们会安排至最近一期。",
     objective: "您希望从房间中获得什么?",
     objectiveHint: "具体性会被仔细阅读。两到四句即可。",
     contribution: "您能为房间带来什么?",
@@ -2604,13 +2428,6 @@ const zh: Dict = {
     audience: "对象",
     audienceHint: "本群体为何对象而设?",
     audiencePlaceholder: "例如: 资深校友;合伙人通道",
-    format: "形式",
-    selectFormat: "选择形式",
-    formatThree: "三日集训",
-    formatChatham: "四日查塔姆守则",
-    formatWeek: "精选周",
-    formatModular: "模块化 / 多触点",
-    formatUndecided: "未决 —— 请协助",
     languages: "意向语言",
     dates: "意向日期",
     description: "项目简述",
@@ -2621,16 +2438,15 @@ const zh: Dict = {
     timing: "意向时段",
     timingHint: "请提供一两个意向时段, 我们将确认。",
     timingPlaceholder: "例如: 周三下午 CET",
-    cohortPlaceholder: "例如: 2026 年 6 月",
     discussTopic: "您希望讨论的内容",
     discussHint: "三到五句即可。具体性受欢迎。",
   },
   footer: {
     blurb:
-      "面向群体集训与精选商务通道的高端瑞士平台 —— 三大旗舰项目, 由资深从业者主持, 申请制。",
+      "精心策展的瑞士平台, 专注于应用式高管学习 —— 小型场景、由资深从业者主持、与真实运营环境相连。",
     sectionProgrammes: "项目",
     sectionPlatform: "平台",
-    sectionApply: "申请",
+    sectionApply: "联系",
     linkApplication: "申请",
     linkPrivateConsultation: "私下咨询",
     linkPrivateCohort: "私享群体咨询",

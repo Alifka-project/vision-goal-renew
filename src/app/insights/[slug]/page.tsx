@@ -21,11 +21,25 @@ export async function generateMetadata({
     title: insight.title,
     description: insight.excerpt || `${insight.category} · ${insight.readingTime}.`,
     alternates: { canonical: insight.href },
+    // A page-level openGraph block REPLACES the root one rather than merging,
+    // so the shared image, url and siteName have to be restated here or these
+    // articles would share with no preview image at all.
     openGraph: {
       type: "article",
       title: insight.title,
       description: insight.excerpt,
       authors: [insight.authorName],
+      url: `${SITE_URL}${insight.href}`,
+      siteName: "Vision Goal",
+      locale: "en_CH",
+      images: [
+        {
+          url: "/og-default.jpg",
+          width: 1200,
+          height: 630,
+          alt: "A premium Swiss retail environment during a Vision Goal learning experience.",
+        },
+      ],
     },
   };
 }

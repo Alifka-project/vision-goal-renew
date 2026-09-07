@@ -4,7 +4,7 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/Button";
 import { useT, useI18n } from "@/i18n/I18nProvider";
-import { localeLabels, locales, type Locale } from "@/i18n/config";
+import { localeLabels, visibleLocales, hasLocaleChoice, type Locale } from "@/i18n/config";
 
 type Props = {
   navItems: { label: string; href: string }[];
@@ -128,10 +128,11 @@ export function MobileMenu({ navItems }: Props) {
           ))}
         </nav>
 
+        {hasLocaleChoice ? (
         <div className="px-6 py-6 border-t border-cream/10">
           <p className="text-eyebrow uppercase text-gold-hi mb-4">Language</p>
           <ul className="grid grid-cols-2 gap-2">
-            {locales.map((l: Locale) => {
+            {visibleLocales.map((l: Locale) => {
               const active = l === locale;
               return (
                 <li key={l}>
@@ -155,6 +156,7 @@ export function MobileMenu({ navItems }: Props) {
             })}
           </ul>
         </div>
+        ) : null}
 
         <div className="px-6 py-6 border-t border-cream/10">
           <Button href="/contact" variant="on-dark" className="w-full justify-center">
