@@ -30,13 +30,19 @@ export function pageMetadata({
   image?: string;
   imageAlt?: string;
 }): Metadata {
-  // The root layout appends "· Vision Goal" via title.template; Open Graph
-  // has no template, so the suffix is added explicitly here to keep the two
-  // consistent.
-  const ogTitle = `${title} · ${SITE_NAME}`;
+  // The suffix is written out explicitly rather than left to the root
+  // layout's title.template. A plain-string `title` in any intermediate
+  // layout (experiences/, insights/, hosts/) stops that template reaching the
+  // routes nested beneath it, so /experiences/access rendered as bare
+  // "Business Immersion Experience" while /experiences carried the suffix.
+  // `absolute` bypasses templates entirely, and Open Graph — which has no
+  // template at all — uses the same string, so the tab, the share card and
+  // the search result can never disagree.
+  const fullTitle = `${title} · ${SITE_NAME}`;
+  const ogTitle = fullTitle;
 
   return {
-    title,
+    title: { absolute: fullTitle },
     description,
     alternates: { canonical: path },
     openGraph: {

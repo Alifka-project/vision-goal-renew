@@ -18,6 +18,15 @@ import { useT } from "@/i18n/I18nProvider";
 // what it is for, how it is architected (Before / Inside / After), the
 // outcomes it aims at, and answers to the common questions. Reintroduce
 // fee / format / cohort blocks once real cohorts are ratified.
+// Vertical focal point for each hero. The banking concept now uses a real
+// portrait photograph, so its band is pulled up to keep the subject's head in
+// frame; the stock images keep the default centre.
+const programmeFocus: Record<string, string> = {
+  access: "object-center",
+  banking: "object-[50%_28%]",
+  topic: "object-center",
+};
+
 const programmeImages: Record<string, string> = {
   access: images.programmeAccess,
   banking: images.programmeBanking,
@@ -42,7 +51,7 @@ export function ProgrammePageClient({ slug }: { slug: Programme["slug"] }) {
               fill
               priority
               sizes="100vw"
-              className="object-cover"
+              className={`object-cover ${programmeFocus[programme.id] ?? "object-center"}`}
             />
             <div
               aria-hidden="true"

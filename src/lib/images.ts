@@ -20,6 +20,10 @@ export const photos = {
   retailDelicatessen: "/photos/retail-delicatessen.jpg",
   // Kitchen behind-the-scenes access (1182×665, landscape, deliberately informal).
   kitchenBehindScenes: "/photos/kitchen-behind-scenes.jpg",
+  // Professional at a laptop in a wood-panelled executive office (724×1086, portrait).
+  executiveDesk: "/photos/executive-desk.jpg",
+  // Professional crossing a formally furnished hotel lounge (1158×1600, ~3:4 portrait).
+  hotelLounge: "/photos/hotel-lounge.jpg",
 } as const;
 
 export const images = {
@@ -28,14 +32,20 @@ export const images = {
 
   // Programme moods
   programmeAccess: u("photo-1497366216548-37526070297c", 1200), // warm modern interior
-  programmeBanking: u("photo-1551836022-deb4988cc6c0", 1200), // classical architecture
+  // Real photography, replacing a generic stock portrait (a person holding a
+  // coffee mug against a brick wall) that the old comment mislabelled as
+  // "classical architecture".
+  programmeBanking: "/photos/executive-desk.jpg",
   programmeTopic: u("photo-1481627834876-b7833e8f5570", 1200), // library / study
 
   // Venue / visual statements
   venueZurich: u("photo-1518998053901-5348d3961a04", 1400), // european cityscape architecture
   venueGeneva: u("photo-1502786129293-79981df4e689", 1400), // lake geneva
   venueAlps: u("photo-1469474968028-56623f02e42e", 1400), // mountain forest
-  venueInterior: u("photo-1568084680786-a84f91d1153c", 1400), // editorial interior
+  // Real photography, replacing a stock tropical resort with palm trees that
+  // the old comment mislabelled as "editorial interior" — off-brand for a
+  // Swiss platform. The 3:4 tile matches this ~0.72 portrait almost exactly.
+  venueInterior: "/photos/hotel-lounge.jpg",
 
   // Alumni context
   alumniRoom: u("photo-1517248135467-4c7edcad34c4", 1600), // moody dining / cohort-dinner room

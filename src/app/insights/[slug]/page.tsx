@@ -18,7 +18,9 @@ export async function generateMetadata({
   const insight = featuredInsights.find((i) => i.slug === slug);
   if (!insight) return {};
   return {
-    title: insight.title,
+    // Absolute for the same reason as pageMetadata(): insights/layout.tsx sets
+    // a plain-string title, which blocks the root template on nested routes.
+    title: { absolute: `${insight.title} · Vision Goal` },
     description: insight.excerpt || `${insight.category} · ${insight.readingTime}.`,
     alternates: { canonical: insight.href },
     // A page-level openGraph block REPLACES the root one rather than merging,
@@ -26,7 +28,7 @@ export async function generateMetadata({
     // articles would share with no preview image at all.
     openGraph: {
       type: "article",
-      title: insight.title,
+      title: `${insight.title} · Vision Goal`,
       description: insight.excerpt,
       authors: [insight.authorName],
       url: `${SITE_URL}${insight.href}`,

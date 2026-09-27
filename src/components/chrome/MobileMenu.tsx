@@ -160,7 +160,7 @@ export function MobileMenu({ navItems }: Props) {
 
         <div className="px-6 py-6 border-t border-cream/10">
           <Button href="/contact" variant="on-dark" className="w-full justify-center">
-            {t.cta.discussExperience}
+            {t.cta.expressInterest}
           </Button>
         </div>
       </aside>

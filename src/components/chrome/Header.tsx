@@ -73,7 +73,7 @@ export function Header(_props: { variant?: "transparent" | "solid" } = {}) {
             variant="on-dark"
             className="hidden lg:inline-flex"
           >
-            {t.cta.discussExperience}
+            {t.cta.expressInterest}
           </Button>
           {/* Hamburger + drawer (below lg) */}
           <MobileMenu navItems={nav} />
