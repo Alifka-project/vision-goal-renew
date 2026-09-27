@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/seo";
 import { notFound } from "next/navigation";
 import { hosts } from "@/lib/content";
 import { HostProfileClient } from "./HostProfileClient";
@@ -17,11 +18,11 @@ export async function generateMetadata({
   const { slug } = await params;
   const host = hosts.find((h) => h.slug === slug);
   if (!host) return {};
-  return {
+  return pageMetadata({
     title: host.name,
     description: `${host.role}. ${host.expertise.join(" · ")}.`,
-    alternates: { canonical: `/hosts/${host.slug}` },
-  };
+    path: `/hosts/${host.slug}`,
+  });
 }
 
 export default async function HostProfilePage({

@@ -50,6 +50,7 @@ export type Dict = {
     readExperience: string;
     allExperiences: string;
     sending: string;
+    expressInterest: string;
   };
   dispatch: {
     label: string;
@@ -75,6 +76,8 @@ export type Dict = {
     eyebrow: string;
     headline: string;
     headlineGold: string;
+    bespokeTitle: string;
+    bespokeBody: string;
   };
   // "Learning in Practice" — homepage section that shows real event
   // photography and grounds the platform in applied learning, not
@@ -84,6 +87,12 @@ export type Dict = {
     headline: string;
     body: string;
     caption: string;
+    // The practical learning value: the questions explored, and how a real
+    // setting is used to explore them. Added because the site was strong on
+    // selectivity and thin on what a participant actually takes away.
+    exploreEyebrow: string;
+    exploreHeadline: string;
+    exploreItems: { title: string; body: string }[];
   };
   programmeMeta: Record<
     "access" | "banking" | "topic",
@@ -170,9 +179,6 @@ export type Dict = {
     insightsIndex: { eyebrow: string; titlePart1: string; titleGold: string; lede: string };
     about: { eyebrow: string; titlePart1: string; titleGold: string; lede: string; statement: string; statement2: string; standardsEyebrow: string; standardsHeadline: string; pressEyebrow: string; pressHeadline: string; curatorEyebrow: string; curatorNote: string; curatorAttribution: string };
     contact: { eyebrow: string; titlePart1: string; titleGold: string; lede: string; officeEyebrow: string; emailLabel: string; responseLabel: string; responseValue: string; linkedinLabel: string };
-    apply: { eyebrow: string; titlePart1: string; titleGold: string; lede: string; steps: string[]; stepLegend: { identity: string; programme: string; whyNow: string; referees: string }; received: string; receivedHeadline: string; receivedBody: string };
-    consult: { eyebrow: string; title: string; lede: string; received: string; receivedHeadline: string; receivedBody: string };
-    cohort: { eyebrow: string; titlePart1: string; titleGold: string; lede: string; received: string; receivedHeadline: string; receivedBody: string };
     legalSidebar: string;
     programmeDetail: {
       outcomesEyebrow: string;
@@ -190,6 +196,7 @@ export type Dict = {
       investmentSub: string;
       includesLabel: string;
       excludesLabel: string;
+      indicativeNotice: string;
       postureEyebrow: string;
       postureHeadline: string;
       forLabel: string;
@@ -211,9 +218,6 @@ export type Dict = {
     objectiveHint: string;
     contribution: string;
     contributionHint: string;
-    refereeIntro: string;
-    refereeName: string;
-    refereeEmail: string;
     consentApply: string;
     consentConsult: string;
     consentCohort: string;
@@ -281,9 +285,9 @@ const en: Dict = {
     contact: "Contact",
   },
   cta: {
-    applyNext: "Discuss an Experience",
+    applyNext: "Express interest",
     requestConsult: "Discover Vision Goal →",
-    applyForCohort: "Discuss an Experience",
+    applyForCohort: "Express interest",
     submitEnquiry: "Send message",
     readProgramme: "Read more",
     allProgrammes: "All experiences",
@@ -299,12 +303,13 @@ const en: Dict = {
     readExperience: "Read more",
     allExperiences: "All experiences",
     sending: "Sending…",
+    expressInterest: "Express interest",
   },
   dispatch: {
     label: "Dispatch",
     items: [
       "Applied learning · Small rooms · Practitioner-led",
-      "By conversation · Never open enrolment",
+      "Expressions of interest welcome · A short conversation follows",
       "Curated Swiss executive experiences",
     ],
   },
@@ -314,31 +319,54 @@ const en: Dict = {
     line2: "business, finance,",
     line3: "and leadership.",
     subline:
-      "Curated executive intensives for entrepreneurs, principals, and international professionals — practical access to Swiss business culture, finance, and the networks behind them.",
-    subjects: "Executive intensives · Curated access · Private office",
+      "Finance and business learning for entrepreneurs, executives and international professionals — connecting academic knowledge and practitioner experience with real Swiss operating environments.",
+    subjects: "Executive learning · Applied experiences · Private Office",
     statusReviewing: "Currently curating experiences",
     locationLine: "Switzerland · Selected venues",
-    scrollToProgrammes: "Scroll to programmes ↓",
+    scrollToProgrammes: "Explore experiences ↓",
   },
   posture: {
-    eyebrow: "The platform posture",
-    sub: "Premium Swiss executive experiences · Curated access · Private networks",
+    eyebrow: "How the learning works",
+    sub: "Applied executive learning · Real operating environments · Practitioner-led",
     pillars: [
-      { label: "By conversation", line: "Never open enrolment." },
-      { label: "Small rooms", line: "Kept small on purpose." },
-      { label: "Hosted by practitioners", line: "Applied, not theoretical." },
+      { label: "Questions worth asking", line: "How value, risk and capital actually behave." },
+      { label: "Real settings", line: "Businesses, not slide decks." },
+      { label: "Practitioner-led", line: "People who do the work, not present it." },
     ],
   },
   programmesBlock: {
-    eyebrow: "Formats of learning",
-    headline: "Three ways to learn,",
-    headlineGold: "in practice.",
+    eyebrow: "Learning concepts",
+    headline: "Indicative learning concepts,",
+    headlineGold: "currently being developed.",
+    bespokeTitle: "Bespoke Learning Experience",
+    bespokeBody:
+      "A tailored finance or business-learning experience developed around the objectives of an organisation, professional group or selected participants.",
   },
   learningInPractice: {
     eyebrow: "Learning in Practice",
     headline: "Finance beyond slides and textbooks.",
     body: "Learning becomes more relevant when financial and strategic concepts are connected with real operating environments, professional dialogue and peer exchange.",
     caption: "An example of applied learning in a premium Swiss business setting.",
+    exploreEyebrow: "What is explored",
+    exploreHeadline: "The questions a session is built around.",
+    exploreItems: [
+      {
+        title: "How value is actually created",
+        body: "Pricing, margins, cost structure and working capital — traced through a real operation rather than a case study, so the numbers attach to something you can see.",
+      },
+      {
+        title: "How capital and risk behave",
+        body: "Funding, liquidity, governance and succession: the financial questions owners and executives face, and the trade-offs that decide them.",
+      },
+      {
+        title: "How Swiss business operates",
+        body: "How decisions get made, how relationships are built, and what the operating culture expects of someone arriving from outside it.",
+      },
+      {
+        title: "Where theory meets practice",
+        body: "Academic frameworks are useful and incomplete. Sessions put them next to practitioner judgement and a real organisation, and look at where each one holds.",
+      },
+    ],
   },
   programmeMeta: {
     access: {
@@ -400,7 +428,7 @@ const en: Dict = {
     practitionerNotes: "Practitioner notes.",
     featuredLabel: "Featured",
     dispatchEyebrow: "Dispatch",
-    dispatchHeadline: "Two pieces a month.",
+    dispatchHeadline: "Occasional, never promotional.",
     dispatchHeadlineGold: "No promotion.",
     dispatchHelp: "Double opt-in. Unsubscribe at any time.",
     dispatchOk:
@@ -411,7 +439,7 @@ const en: Dict = {
     eyebrow: "For institutional partners",
     headline: "Commission a",
     headlineGold: "private cohort.",
-    response: "Response within five business days.",
+    response: "I normally respond within 48 hours.",
   },
   ctaBlock: {
     eyebrow: "Start a conversation",
@@ -509,11 +537,11 @@ const en: Dict = {
   },
   pages: {
     programmes: {
-      eyebrow: "Formats of learning",
-      titlePart1: "Three formats.",
-      titleGold: "By conversation.",
+      eyebrow: "Learning concepts",
+      titlePart1: "Indicative learning concepts",
+      titleGold: "currently being developed.",
       lede:
-        "Each programme is a curated room: small, hosted by named practitioners, and run with a single posture — restraint over volume, evidence over claim, judgement over performance.",
+        "These concepts describe what each experience is intended to teach and the shape it is likely to take. Dates, venues, contributors and activities are not yet confirmed. You are welcome to express interest in any of them — a short conversation then helps establish whether it would be a good fit.",
     },
     hosts: {
       eyebrow: "Practitioner network",
@@ -541,7 +569,7 @@ const en: Dict = {
       titlePart1: "Practitioner notes.",
       titleGold: "Swiss perspective.",
       lede:
-        "Short, considered notes on Swiss access, private banking, markets, and the methodology behind the platform. Two pieces a month; never promotional.",
+        "Short, considered notes on Swiss business, finance and the thinking behind the platform. Sent occasionally; never promotional.",
     },
     about: {
       eyebrow: "About the platform",
@@ -571,42 +599,8 @@ const en: Dict = {
       officeEyebrow: "Office",
       emailLabel: "Email",
       responseLabel: "Response time",
-      responseValue: "Five business days",
+      responseValue: "Within 48 hours",
       linkedinLabel: "LinkedIn",
-    },
-    apply: {
-      eyebrow: "Apply for next cohort",
-      titlePart1: "A short application.",
-      titleGold: "Considered review.",
-      lede:
-        "Every cohort is curated. The application is short on purpose; we read for specificity, not length. Expected response within ten business days.",
-      steps: ["Identity", "Programme", "Why now", "Referees", "Confirmation"],
-      stepLegend: { identity: "Identity", programme: "Programme", whyNow: "Why now", referees: "Referees" },
-      received: "Application received",
-      receivedHeadline: "Thank you. We will be in touch.",
-      receivedBody:
-        "The host curation team reviews every application. You should expect a considered response within ten business days. In the meantime you can read our latest dispatches or request a private consultation.",
-    },
-    consult: {
-      eyebrow: "Private consultation",
-      title: "Confirm fit before you apply.",
-      lede:
-        "A short, confidential call with a member of the host curation team. We use it to confirm programme fit and answer the questions an application form cannot. Response within five business days.",
-      received: "Request received",
-      receivedHeadline: "Thank you. We will be in touch.",
-      receivedBody:
-        "A member of the curation team will reach out within five business days to schedule a confidential call.",
-    },
-    cohort: {
-      eyebrow: "For institutional partners",
-      titlePart1: "Commission a",
-      titleGold: "private cohort.",
-      lede:
-        "Closed cohorts and topic intensives, curated for institutional partners. We deliver in EN / DE / FR, in flexible formats from three days to a curated week. Response within five business days.",
-      received: "Enquiry received",
-      receivedHeadline: "Thank you. We will be in touch.",
-      receivedBody:
-        "A member of the curation team will reach out within five business days to discuss format, timing, and audience.",
     },
     legalSidebar: "Legal",
     programmeDetail: {
@@ -625,8 +619,10 @@ const en: Dict = {
       investmentSub: "Programme fee · ex. VAT",
       includesLabel: "Includes",
       excludesLabel: "Not included",
-      postureEyebrow: "Application posture",
-      postureHeadline: "Who the room is for.",
+      indicativeNotice:
+        "This is an indicative learning concept currently being developed. Dates, venues, contributors and activities are not yet confirmed. You are welcome to express interest — a short conversation then helps establish whether it would be a good fit.",
+      postureEyebrow: "Who this experience may suit",
+      postureHeadline: "Who this experience may suit.",
       forLabel: "For",
       notForLabel: "Not for",
       faqEyebrow: "Frequently asked",
@@ -647,10 +643,6 @@ const en: Dict = {
     objectiveHint: "Specificity is read carefully. Two to four sentences.",
     contribution: "What do you bring to the room?",
     contributionHint: "The cohort is a contribution, not an audience. Two to four sentences.",
-    refereeIntro:
-      "Two referees who can speak to your professional posture. We will not contact them without your written consent.",
-    refereeName: "Referee — name",
-    refereeEmail: "Referee — email",
     consentApply:
       "I confirm the application is made in confidence and consent to platform processing of my information per the application terms.",
     consentConsult:
@@ -697,9 +689,9 @@ const en: Dict = {
     contactPhoneLabel: "Phone",
     contactEmailLabel: "Email",
     contactResponseLabel: "Response window",
-    contactResponseValue: "Within 48 hours for institutional and HNWI enquiries",
+    contactResponseValue: "I normally respond within 48 hours",
     contactPhone: "+41 78 728 09 33",
-    contactEmail: "info@visiongoal.ch",
+    contactEmail: "office@visiongoal.ch",
   },
 };
 
@@ -725,9 +717,9 @@ const de: Dict = {
     contact: "Kontakt",
   },
   cta: {
-    applyNext: "Eine Erfahrung besprechen",
+    applyNext: "Interesse bekunden",
     requestConsult: "Vision Goal entdecken →",
-    applyForCohort: "Eine Erfahrung besprechen",
+    applyForCohort: "Interesse bekunden",
     submitEnquiry: "Nachricht senden",
     readProgramme: "Mehr lesen",
     allProgrammes: "Alle Erfahrungen",
@@ -743,12 +735,13 @@ const de: Dict = {
     readExperience: "Mehr lesen",
     allExperiences: "Alle Erfahrungen",
     sending: "Wird gesendet…",
+    expressInterest: "Interesse bekunden",
   },
   dispatch: {
     label: "Dispatch",
     items: [
       "Angewandtes Lernen · Kleine Räume · Von Praktikern geleitet",
-      "Auf Gespräch · Keine offene Anmeldung",
+      "Interessensbekundungen willkommen · Ein kurzes Gespräch folgt",
       "Kuratierte Schweizer Executive-Erfahrungen",
     ],
   },
@@ -762,27 +755,50 @@ const de: Dict = {
     subjects: "Executive-Programme · Kuratierter Zugang · Private Office",
     statusReviewing: "Erfahrungen werden derzeit kuratiert",
     locationLine: "Schweiz · Ausgewählte Orte",
-    scrollToProgrammes: "Zu den Programmen ↓",
+    scrollToProgrammes: "Erfahrungen entdecken ↓",
   },
   posture: {
     eyebrow: "Die Haltung der Plattform",
     sub: "Premium Schweizer Executive-Erlebnisse · Kuratierter Zugang · Private Netzwerke",
     pillars: [
-      { label: "Auf Gespräch", line: "Niemals offene Anmeldung." },
+      { label: "Auf Gespräch", line: "Ein kurzes Gespräch klärt die Eignung." },
       { label: "Kleine Räume", line: "Bewusst klein gehalten." },
       { label: "Von Praktikern geleitet", line: "Angewandt, nicht theoretisch." },
     ],
   },
   programmesBlock: {
-    eyebrow: "Formate des Lernens",
-    headline: "Drei Wege zu lernen,",
-    headlineGold: "in der Praxis.",
+    eyebrow: "Lernkonzepte",
+    headline: "Indikative Lernkonzepte,",
+    headlineGold: "die derzeit entwickelt werden.",
+    bespokeTitle: "Massgeschneiderte Lernerfahrung",
+    bespokeBody:
+      "Eine massgeschneiderte Finanz- oder Business-Lernerfahrung, entwickelt rund um die Ziele einer Organisation, einer Berufsgruppe oder ausgewählter Teilnehmender.",
   },
   learningInPractice: {
     eyebrow: "Lernen in der Praxis",
     headline: "Finanzen jenseits von Folien und Lehrbüchern.",
     body: "Lernen wird relevanter, wenn finanzielle und strategische Konzepte mit realen operativen Umgebungen, professionellem Dialog und Peer-Austausch verbunden werden.",
     caption: "Ein Beispiel für angewandtes Lernen in einem premium Schweizer Geschäftsumfeld.",
+    exploreEyebrow: "Was untersucht wird",
+    exploreHeadline: "Die Fragen, um die eine Session aufgebaut ist.",
+    exploreItems: [
+      {
+        title: "Wie Wert tatsächlich entsteht",
+        body: "Preisgestaltung, Margen, Kostenstruktur und Working Capital — nachvollzogen an einem realen Betrieb statt an einer Fallstudie.",
+      },
+      {
+        title: "Wie sich Kapital und Risiko verhalten",
+        body: "Finanzierung, Liquidität, Governance und Nachfolge: die finanziellen Fragen von Eigentümern und Führungskräften — und die Abwägungen, die sie entscheiden.",
+      },
+      {
+        title: "Wie Schweizer Wirtschaft funktioniert",
+        body: "Wie Entscheidungen getroffen und Beziehungen aufgebaut werden, und was die Unternehmenskultur von jemandem erwartet, der von aussen kommt.",
+      },
+      {
+        title: "Wo Theorie auf Praxis trifft",
+        body: "Akademische Modelle sind nützlich und unvollständig. Sessions stellen sie neben praktische Urteilskraft und eine reale Organisation.",
+      },
+    ],
   },
   programmeMeta: {
     access: {
@@ -844,7 +860,7 @@ const de: Dict = {
     practitionerNotes: "Notizen aus der Praxis.",
     featuredLabel: "Hervorgehoben",
     dispatchEyebrow: "Dispatch",
-    dispatchHeadline: "Zwei Beiträge pro Monat.",
+    dispatchHeadline: "Gelegentlich, niemals werblich.",
     dispatchHeadlineGold: "Keine Werbung.",
     dispatchHelp: "Doppeltes Opt-In. Jederzeit abbestellbar.",
     dispatchOk:
@@ -855,7 +871,7 @@ const de: Dict = {
     eyebrow: "Für institutionelle Partner",
     headline: "Eine private",
     headlineGold: "Kohorte beauftragen.",
-    response: "Antwort in fünf Werktagen.",
+    response: "Ich antworte in der Regel innerhalb von 48 Stunden.",
   },
   ctaBlock: {
     eyebrow: "Ins Gespräch kommen",
@@ -953,9 +969,9 @@ const de: Dict = {
   },
   pages: {
     programmes: {
-      eyebrow: "Formate des Lernens",
-      titlePart1: "Drei Formate.",
-      titleGold: "Auf Gespräch.",
+      eyebrow: "Lernkonzepte",
+      titlePart1: "Indikative Lernkonzepte,",
+      titleGold: "die derzeit entwickelt werden.",
       lede:
         "Jedes Programm ist ein kuratierter Raum: klein, von namentlich genannten Praktikern geführt und mit einer einzigen Haltung geleitet — Zurückhaltung statt Lautstärke, Belege statt Behauptungen, Urteilsvermögen statt Inszenierung.",
     },
@@ -985,7 +1001,7 @@ const de: Dict = {
       titlePart1: "Notizen aus der Praxis.",
       titleGold: "Schweizer Perspektive.",
       lede:
-        "Kurze, überlegte Notizen zu Schweizer Zugang, Privatbanking, Märkten und der Methodik hinter der Plattform. Zwei Beiträge pro Monat; niemals werblich.",
+        "Kurze, überlegte Notizen zu Schweizer Wirtschaft, Finanzen und dem Denken hinter der Plattform. Gelegentlich versandt; niemals werblich.",
     },
     about: {
       eyebrow: "Über die Plattform",
@@ -1015,42 +1031,8 @@ const de: Dict = {
       officeEyebrow: "Büro",
       emailLabel: "E-Mail",
       responseLabel: "Antwortzeit",
-      responseValue: "Fünf Werktage",
+      responseValue: "Innerhalb von 48 Stunden",
       linkedinLabel: "LinkedIn",
-    },
-    apply: {
-      eyebrow: "Für nächste Kohorte bewerben",
-      titlePart1: "Eine kurze Bewerbung.",
-      titleGold: "Sorgfältige Prüfung.",
-      lede:
-        "Jede Kohorte ist kuratiert. Die Bewerbung ist absichtlich kurz; wir lesen auf Spezifität, nicht auf Länge. Antwort innerhalb von zehn Werktagen.",
-      steps: ["Identität", "Programm", "Warum jetzt", "Referenzen", "Bestätigung"],
-      stepLegend: { identity: "Identität", programme: "Programm", whyNow: "Warum jetzt", referees: "Referenzen" },
-      received: "Bewerbung eingegangen",
-      receivedHeadline: "Vielen Dank. Wir melden uns.",
-      receivedBody:
-        "Das Kurationsteam prüft jede Bewerbung. Sie können mit einer überlegten Antwort innerhalb von zehn Werktagen rechnen. In der Zwischenzeit können Sie unsere neuesten Dispatches lesen oder eine private Beratung anfragen.",
-    },
-    consult: {
-      eyebrow: "Private Beratung",
-      title: "Passung vor der Bewerbung bestätigen.",
-      lede:
-        "Ein kurzes, vertrauliches Gespräch mit einem Mitglied des Kurationsteams. Wir nutzen es, um die Programmpassung zu bestätigen und die Fragen zu beantworten, die ein Bewerbungsformular nicht beantworten kann. Antwort in fünf Werktagen.",
-      received: "Anfrage eingegangen",
-      receivedHeadline: "Vielen Dank. Wir melden uns.",
-      receivedBody:
-        "Ein Mitglied des Kurationsteams meldet sich innerhalb von fünf Werktagen, um ein vertrauliches Gespräch zu vereinbaren.",
-    },
-    cohort: {
-      eyebrow: "Für institutionelle Partner",
-      titlePart1: "Eine private",
-      titleGold: "Kohorte beauftragen.",
-      lede:
-        "Geschlossene Kohorten und Themenintensive, kuratiert für institutionelle Partner. Wir liefern in EN / DE / FR, in flexiblen Formaten von drei Tagen bis zur kuratierten Woche. Antwort in fünf Werktagen.",
-      received: "Anfrage eingegangen",
-      receivedHeadline: "Vielen Dank. Wir melden uns.",
-      receivedBody:
-        "Ein Mitglied des Kurationsteams meldet sich innerhalb von fünf Werktagen, um Format, Termine und Zielgruppe zu besprechen.",
     },
     legalSidebar: "Rechtliches",
     programmeDetail: {
@@ -1069,8 +1051,10 @@ const de: Dict = {
       investmentSub: "Programmgebühr · zzgl. MwSt.",
       includesLabel: "Enthalten",
       excludesLabel: "Nicht enthalten",
-      postureEyebrow: "Bewerbungshaltung",
-      postureHeadline: "Für wen der Raum gedacht ist.",
+      indicativeNotice:
+        "Dies ist ein indikatives Lernkonzept, das derzeit entwickelt wird. Termine, Orte, Beitragende und Aktivitäten sind noch nicht bestätigt. Sie können gerne Ihr Interesse bekunden — ein kurzes Gespräch klärt dann die Eignung.",
+      postureEyebrow: "Für wen diese Erfahrung geeignet sein könnte",
+      postureHeadline: "Für wen diese Erfahrung geeignet sein könnte.",
       forLabel: "Für",
       notForLabel: "Nicht für",
       faqEyebrow: "Häufig gefragt",
@@ -1092,10 +1076,6 @@ const de: Dict = {
     contribution: "Was bringen Sie in den Raum ein?",
     contributionHint:
       "Die Kohorte ist ein Beitrag, kein Publikum. Zwei bis vier Sätze.",
-    refereeIntro:
-      "Zwei Referenzen, die zu Ihrer beruflichen Haltung sprechen können. Wir kontaktieren sie nicht ohne Ihre schriftliche Einwilligung.",
-    refereeName: "Referenz — Name",
-    refereeEmail: "Referenz — E-Mail",
     consentApply:
       "Ich bestätige, dass die Bewerbung vertraulich erfolgt, und stimme der plattformseitigen Verarbeitung meiner Angaben gemäss den Bewerbungsbedingungen zu.",
     consentConsult:
@@ -1143,9 +1123,9 @@ const de: Dict = {
     contactPhoneLabel: "Telefon",
     contactEmailLabel: "E-Mail",
     contactResponseLabel: "Antwortfenster",
-    contactResponseValue: "Innerhalb von 48 Stunden für institutionelle und HNWI-Anfragen",
+    contactResponseValue: "Ich antworte in der Regel innerhalb von 48 Stunden",
     contactPhone: "+41 78 728 09 33",
-    contactEmail: "info@visiongoal.ch",
+    contactEmail: "office@visiongoal.ch",
   },
 };
 
@@ -1171,9 +1151,9 @@ const fr: Dict = {
     contact: "Contact",
   },
   cta: {
-    applyNext: "Discuter d’une expérience",
+    applyNext: "Manifester son intérêt",
     requestConsult: "Découvrir Vision Goal →",
-    applyForCohort: "Discuter d’une expérience",
+    applyForCohort: "Manifester son intérêt",
     submitEnquiry: "Envoyer un message",
     readProgramme: "En savoir plus",
     allProgrammes: "Toutes les expériences",
@@ -1189,12 +1169,13 @@ const fr: Dict = {
     readExperience: "En savoir plus",
     allExperiences: "Toutes les expériences",
     sending: "Envoi…",
+    expressInterest: "Manifester son intérêt",
   },
   dispatch: {
     label: "Dispatch",
     items: [
       "Apprentissage appliqué · Petites salles · Animé par des praticiens",
-      "Par la conversation · Jamais d’inscription ouverte",
+      "Manifestations d’intérêt bienvenues · Une courte conversation suit",
       "Expériences exécutives suisses curatées",
     ],
   },
@@ -1208,27 +1189,50 @@ const fr: Dict = {
     subjects: "Programmes exécutifs · Accès curaté · Private office",
     statusReviewing: "Expériences en cours de curation",
     locationLine: "Suisse · Lieux sélectionnés",
-    scrollToProgrammes: "Voir les programmes ↓",
+    scrollToProgrammes: "Explorer les expériences ↓",
   },
   posture: {
     eyebrow: "La posture de la plateforme",
     sub: "Expériences exécutives suisses premium · Accès curaté · Réseaux privés",
     pillars: [
-      { label: "Par la conversation", line: "Jamais d’inscription ouverte." },
+      { label: "Par la conversation", line: "Une courte conversation établit l’adéquation." },
       { label: "Petites salles", line: "Restreintes par choix." },
       { label: "Animé par des praticiens", line: "Appliqué, pas théorique." },
     ],
   },
   programmesBlock: {
-    eyebrow: "Formats d’apprentissage",
-    headline: "Trois façons d’apprendre,",
-    headlineGold: "en pratique.",
+    eyebrow: "Concepts d’apprentissage",
+    headline: "Concepts d’apprentissage indicatifs,",
+    headlineGold: "actuellement en développement.",
+    bespokeTitle: "Expérience d’apprentissage sur mesure",
+    bespokeBody:
+      "Une expérience d’apprentissage en finance ou en gestion, conçue sur mesure autour des objectifs d’une organisation, d’un groupe professionnel ou de participants sélectionnés.",
   },
   learningInPractice: {
     eyebrow: "Apprentissage en pratique",
     headline: "La finance au-delà des slides et des manuels.",
     body: "L’apprentissage devient plus pertinent lorsque les concepts financiers et stratégiques sont reliés à des environnements opérationnels réels, à un dialogue professionnel et à un échange entre pairs.",
     caption: "Un exemple d’apprentissage appliqué dans un cadre business suisse premium.",
+    exploreEyebrow: "Ce qui est exploré",
+    exploreHeadline: "Les questions autour desquelles une session est construite.",
+    exploreItems: [
+      {
+        title: "Comment la valeur se crée réellement",
+        body: "Prix, marges, structure de coûts et besoin en fonds de roulement — suivis dans une opération réelle plutôt que dans une étude de cas.",
+      },
+      {
+        title: "Comment se comportent le capital et le risque",
+        body: "Financement, liquidité, gouvernance et succession : les questions financières des dirigeants, et les arbitrages qui les tranchent.",
+      },
+      {
+        title: "Comment fonctionne l’entreprise suisse",
+        body: "Comment les décisions se prennent, comment les relations se construisent, et ce que la culture attend de quelqu’un venu de l’extérieur.",
+      },
+      {
+        title: "Où la théorie rencontre la pratique",
+        body: "Les cadres académiques sont utiles et incomplets. Les sessions les confrontent au jugement des praticiens et à une organisation réelle.",
+      },
+    ],
   },
   programmeMeta: {
     access: {
@@ -1290,7 +1294,7 @@ const fr: Dict = {
     practitionerNotes: "Notes de praticiens.",
     featuredLabel: "À la une",
     dispatchEyebrow: "Dispatch",
-    dispatchHeadline: "Deux pièces par mois.",
+    dispatchHeadline: "Occasionnel, jamais promotionnel.",
     dispatchHeadlineGold: "Aucune promotion.",
     dispatchHelp: "Double opt-in. Désinscription possible à tout moment.",
     dispatchOk:
@@ -1301,7 +1305,7 @@ const fr: Dict = {
     eyebrow: "Pour les partenaires institutionnels",
     headline: "Commander une",
     headlineGold: "cohorte privée.",
-    response: "Réponse sous cinq jours ouvrés.",
+    response: "Je réponds normalement sous 48 heures.",
   },
   ctaBlock: {
     eyebrow: "Engager la conversation",
@@ -1399,9 +1403,9 @@ const fr: Dict = {
   },
   pages: {
     programmes: {
-      eyebrow: "Formats d’apprentissage",
-      titlePart1: "Trois formats.",
-      titleGold: "Sur conversation.",
+      eyebrow: "Concepts d’apprentissage",
+      titlePart1: "Concepts d’apprentissage indicatifs,",
+      titleGold: "actuellement en développement.",
       lede:
         "Chaque programme est une salle curatée : petite, animée par des praticiens nommés, et menée avec une seule posture — la mesure plutôt que le volume, la preuve plutôt que la déclaration, le jugement plutôt que la performance.",
     },
@@ -1431,7 +1435,7 @@ const fr: Dict = {
       titlePart1: "Notes de praticiens.",
       titleGold: "Perspective suisse.",
       lede:
-        "Notes courtes et réfléchies sur l’accès suisse, la banque privée, les marchés et la méthodologie de la plateforme. Deux pièces par mois ; jamais promotionnelles.",
+        "Notes courtes et réfléchies sur le business suisse, la finance et la réflexion derrière la plateforme. Envoyées occasionnellement ; jamais promotionnelles.",
     },
     about: {
       eyebrow: "À propos de la plateforme",
@@ -1461,42 +1465,8 @@ const fr: Dict = {
       officeEyebrow: "Bureau",
       emailLabel: "E-mail",
       responseLabel: "Délai de réponse",
-      responseValue: "Cinq jours ouvrés",
+      responseValue: "Sous 48 heures",
       linkedinLabel: "LinkedIn",
-    },
-    apply: {
-      eyebrow: "Candidater à la prochaine cohorte",
-      titlePart1: "Une candidature courte.",
-      titleGold: "Examen attentif.",
-      lede:
-        "Chaque cohorte est curatée. La candidature est volontairement courte ; nous lisons la spécificité, pas la longueur. Réponse attendue sous dix jours ouvrés.",
-      steps: ["Identité", "Programme", "Pourquoi maintenant", "Référents", "Confirmation"],
-      stepLegend: { identity: "Identité", programme: "Programme", whyNow: "Pourquoi maintenant", referees: "Référents" },
-      received: "Candidature reçue",
-      receivedHeadline: "Merci. Nous vous contacterons.",
-      receivedBody:
-        "L’équipe de curation lit chaque candidature. Vous pouvez attendre une réponse réfléchie sous dix jours ouvrés. Entre-temps, lisez nos derniers dispatches ou demandez une consultation privée.",
-    },
-    consult: {
-      eyebrow: "Consultation privée",
-      title: "Confirmer l’adéquation avant de candidater.",
-      lede:
-        "Un échange court et confidentiel avec un membre de l’équipe de curation. Nous l’utilisons pour confirmer l’adéquation et répondre aux questions qu’un formulaire ne traite pas. Réponse sous cinq jours ouvrés.",
-      received: "Demande reçue",
-      receivedHeadline: "Merci. Nous vous contacterons.",
-      receivedBody:
-        "Un membre de l’équipe de curation vous contactera sous cinq jours ouvrés pour planifier un échange confidentiel.",
-    },
-    cohort: {
-      eyebrow: "Pour les partenaires institutionnels",
-      titlePart1: "Commander une",
-      titleGold: "cohorte privée.",
-      lede:
-        "Cohortes fermées et intensifs thématiques curatés pour partenaires institutionnels. Nous livrons en EN / DE / FR, dans des formats flexibles allant de trois jours à une semaine curatée. Réponse sous cinq jours ouvrés.",
-      received: "Demande reçue",
-      receivedHeadline: "Merci. Nous vous contacterons.",
-      receivedBody:
-        "Un membre de l’équipe de curation vous contactera sous cinq jours ouvrés pour discuter format, calendrier et audience.",
     },
     legalSidebar: "Mentions légales",
     programmeDetail: {
@@ -1515,8 +1485,10 @@ const fr: Dict = {
       investmentSub: "Frais du programme · hors TVA",
       includesLabel: "Inclus",
       excludesLabel: "Non inclus",
-      postureEyebrow: "Posture de candidature",
-      postureHeadline: "Pour qui la salle est faite.",
+      indicativeNotice:
+        "Il s’agit d’un concept d’apprentissage indicatif, actuellement en développement. Dates, lieux, intervenants et activités ne sont pas encore confirmés. Vous pouvez manifester votre intérêt — une courte conversation permet ensuite d’établir l’adéquation.",
+      postureEyebrow: "À qui cette expérience peut convenir",
+      postureHeadline: "À qui cette expérience peut convenir.",
       forLabel: "Pour",
       notForLabel: "Pas pour",
       faqEyebrow: "Foire aux questions",
@@ -1538,10 +1510,6 @@ const fr: Dict = {
     contribution: "Qu’apportez-vous à la salle ?",
     contributionHint:
       "La cohorte est une contribution, non un public. Deux à quatre phrases.",
-    refereeIntro:
-      "Deux référents capables de parler de votre posture professionnelle. Nous ne les contacterons pas sans votre accord écrit.",
-    refereeName: "Référent — nom",
-    refereeEmail: "Référent — e-mail",
     consentApply:
       "Je confirme que cette candidature est faite en confidentialité et consens au traitement de mes données par la plateforme selon les conditions de candidature.",
     consentConsult:
@@ -1589,9 +1557,9 @@ const fr: Dict = {
     contactPhoneLabel: "Téléphone",
     contactEmailLabel: "E-mail",
     contactResponseLabel: "Délai de réponse",
-    contactResponseValue: "Sous 48 heures pour les demandes institutionnelles et HNWI",
+    contactResponseValue: "Je réponds normalement sous 48 heures",
     contactPhone: "+41 78 728 09 33",
-    contactEmail: "info@visiongoal.ch",
+    contactEmail: "office@visiongoal.ch",
   },
 };
 
@@ -1617,9 +1585,9 @@ const es: Dict = {
     contact: "Contacto",
   },
   cta: {
-    applyNext: "Conversar sobre una experiencia",
+    applyNext: "Expresar interés",
     requestConsult: "Descubrir Vision Goal →",
-    applyForCohort: "Conversar sobre una experiencia",
+    applyForCohort: "Expresar interés",
     submitEnquiry: "Enviar mensaje",
     readProgramme: "Leer más",
     allProgrammes: "Todas las experiencias",
@@ -1635,12 +1603,13 @@ const es: Dict = {
     readExperience: "Leer más",
     allExperiences: "Todas las experiencias",
     sending: "Enviando…",
+    expressInterest: "Expresar interés",
   },
   dispatch: {
     label: "Dispatch",
     items: [
       "Aprendizaje aplicado · Salas reducidas · Conducido por practicantes",
-      "Por conversación · Nunca matrícula abierta",
+      "Expresiones de interés bienvenidas · Sigue una breve conversación",
       "Experiencias ejecutivas suizas curadas",
     ],
   },
@@ -1654,27 +1623,50 @@ const es: Dict = {
     subjects: "Programas ejecutivos · Acceso curado · Private office",
     statusReviewing: "Experiencias en curso de curaduría",
     locationLine: "Suiza · Sedes seleccionadas",
-    scrollToProgrammes: "Ver los programas ↓",
+    scrollToProgrammes: "Explorar las experiencias ↓",
   },
   posture: {
     eyebrow: "La postura de la plataforma",
     sub: "Experiencias ejecutivas suizas premium · Acceso curado · Redes privadas",
     pillars: [
-      { label: "Por conversación", line: "Nunca matrícula abierta." },
+      { label: "Por conversación", line: "Una breve conversación establece la idoneidad." },
       { label: "Salas reducidas", line: "Reducidas por elección." },
       { label: "Conducido por practicantes", line: "Aplicado, no teórico." },
     ],
   },
   programmesBlock: {
-    eyebrow: "Formatos de aprendizaje",
-    headline: "Tres formas de aprender,",
-    headlineGold: "en la práctica.",
+    eyebrow: "Conceptos de aprendizaje",
+    headline: "Conceptos de aprendizaje indicativos,",
+    headlineGold: "actualmente en desarrollo.",
+    bespokeTitle: "Experiencia de aprendizaje a medida",
+    bespokeBody:
+      "Una experiencia de aprendizaje financiero o empresarial desarrollada a medida en torno a los objetivos de una organización, un grupo profesional o participantes seleccionados.",
   },
   learningInPractice: {
     eyebrow: "Aprendizaje en la práctica",
     headline: "Finanzas más allá de las diapositivas y los manuales.",
     body: "El aprendizaje se vuelve más relevante cuando los conceptos financieros y estratégicos se conectan con entornos operativos reales, diálogo profesional e intercambio entre pares.",
     caption: "Un ejemplo de aprendizaje aplicado en un entorno de negocio suizo premium.",
+    exploreEyebrow: "Qué se explora",
+    exploreHeadline: "Las preguntas sobre las que se construye una sesión.",
+    exploreItems: [
+      {
+        title: "Cómo se crea realmente el valor",
+        body: "Precios, márgenes, estructura de costes y capital circulante — seguidos en una operación real en lugar de un caso de estudio.",
+      },
+      {
+        title: "Cómo se comportan el capital y el riesgo",
+        body: "Financiación, liquidez, gobernanza y sucesión: las preguntas financieras de propietarios y directivos, y las decisiones que las resuelven.",
+      },
+      {
+        title: "Cómo opera el negocio suizo",
+        body: "Cómo se toman las decisiones, cómo se construyen las relaciones y qué espera la cultura operativa de quien llega de fuera.",
+      },
+      {
+        title: "Dónde la teoría encuentra la práctica",
+        body: "Los marcos académicos son útiles e incompletos. Las sesiones los sitúan junto al criterio del practicante y una organización real.",
+      },
+    ],
   },
   programmeMeta: {
     access: {
@@ -1736,7 +1728,7 @@ const es: Dict = {
     practitionerNotes: "Notas de practicantes.",
     featuredLabel: "Destacado",
     dispatchEyebrow: "Dispatch",
-    dispatchHeadline: "Dos piezas al mes.",
+    dispatchHeadline: "Ocasional, nunca promocional.",
     dispatchHeadlineGold: "Sin promoción.",
     dispatchHelp: "Doble opt-in. Cancele cuando quiera.",
     dispatchOk:
@@ -1747,7 +1739,7 @@ const es: Dict = {
     eyebrow: "Para socios institucionales",
     headline: "Encargar una",
     headlineGold: "cohorte privada.",
-    response: "Respuesta en cinco días hábiles.",
+    response: "Normalmente respondo en un plazo de 48 horas.",
   },
   ctaBlock: {
     eyebrow: "Iniciar una conversación",
@@ -1845,9 +1837,9 @@ const es: Dict = {
   },
   pages: {
     programmes: {
-      eyebrow: "Formatos de aprendizaje",
-      titlePart1: "Tres formatos.",
-      titleGold: "Por conversación.",
+      eyebrow: "Conceptos de aprendizaje",
+      titlePart1: "Conceptos de aprendizaje indicativos,",
+      titleGold: "actualmente en desarrollo.",
       lede:
         "Cada programa es una sala curada: pequeña, conducida por practicantes nombrados y dirigida con una sola postura — la mesura sobre el volumen, la prueba sobre la afirmación, el juicio sobre la actuación.",
     },
@@ -1877,7 +1869,7 @@ const es: Dict = {
       titlePart1: "Notas de practicantes.",
       titleGold: "Perspectiva suiza.",
       lede:
-        "Notas cortas y consideradas sobre acceso suizo, banca privada, mercados y la metodología detrás de la plataforma. Dos piezas al mes; nunca promocionales.",
+        "Notas cortas y consideradas sobre negocio suizo, finanzas y el pensamiento detrás de la plataforma. Enviadas ocasionalmente; nunca promocionales.",
     },
     about: {
       eyebrow: "Acerca de la plataforma",
@@ -1907,42 +1899,8 @@ const es: Dict = {
       officeEyebrow: "Oficina",
       emailLabel: "Correo",
       responseLabel: "Tiempo de respuesta",
-      responseValue: "Cinco días hábiles",
+      responseValue: "En un plazo de 48 horas",
       linkedinLabel: "LinkedIn",
-    },
-    apply: {
-      eyebrow: "Postular a la próxima cohorte",
-      titlePart1: "Una candidatura corta.",
-      titleGold: "Revisión considerada.",
-      lede:
-        "Cada cohorte es curada. La candidatura es deliberadamente corta; leemos por especificidad, no por extensión. Respuesta esperada en diez días hábiles.",
-      steps: ["Identidad", "Programa", "Por qué ahora", "Referentes", "Confirmación"],
-      stepLegend: { identity: "Identidad", programme: "Programa", whyNow: "Por qué ahora", referees: "Referentes" },
-      received: "Candidatura recibida",
-      receivedHeadline: "Gracias. Nos pondremos en contacto.",
-      receivedBody:
-        "El equipo de curaduría revisa cada candidatura. Puede esperar una respuesta considerada en diez días hábiles. Mientras tanto, puede leer nuestros últimos dispatches o solicitar una consulta privada.",
-    },
-    consult: {
-      eyebrow: "Consulta privada",
-      title: "Confirmar el encaje antes de postular.",
-      lede:
-        "Una llamada corta y confidencial con un miembro del equipo de curaduría. La usamos para confirmar el encaje del programa y responder lo que un formulario no responde. Respuesta en cinco días hábiles.",
-      received: "Solicitud recibida",
-      receivedHeadline: "Gracias. Nos pondremos en contacto.",
-      receivedBody:
-        "Un miembro del equipo de curaduría se pondrá en contacto en cinco días hábiles para coordinar una llamada confidencial.",
-    },
-    cohort: {
-      eyebrow: "Para socios institucionales",
-      titlePart1: "Encargar una",
-      titleGold: "cohorte privada.",
-      lede:
-        "Cohortes cerradas e intensivos temáticos curados para socios institucionales. Entregamos en EN / DE / FR, en formatos flexibles desde tres días hasta una semana curada. Respuesta en cinco días hábiles.",
-      received: "Consulta recibida",
-      receivedHeadline: "Gracias. Nos pondremos en contacto.",
-      receivedBody:
-        "Un miembro del equipo de curaduría se pondrá en contacto en cinco días hábiles para discutir formato, fechas y audiencia.",
     },
     legalSidebar: "Legal",
     programmeDetail: {
@@ -1961,8 +1919,10 @@ const es: Dict = {
       investmentSub: "Tarifa del programa · sin IVA",
       includesLabel: "Incluye",
       excludesLabel: "No incluye",
-      postureEyebrow: "Postura de candidatura",
-      postureHeadline: "Para quién es la sala.",
+      indicativeNotice:
+        "Este es un concepto de aprendizaje indicativo, actualmente en desarrollo. Fechas, sedes, contribuyentes y actividades aún no están confirmados. Puede expresar su interés — una breve conversación establece después la idoneidad.",
+      postureEyebrow: "A quién puede convenir esta experiencia",
+      postureHeadline: "A quién puede convenir esta experiencia.",
       forLabel: "Para",
       notForLabel: "No para",
       faqEyebrow: "Preguntas frecuentes",
@@ -1984,10 +1944,6 @@ const es: Dict = {
     contribution: "¿Qué aporta a la sala?",
     contributionHint:
       "La cohorte es una contribución, no un público. Dos a cuatro frases.",
-    refereeIntro:
-      "Dos referentes que puedan hablar de su postura profesional. No los contactaremos sin su consentimiento por escrito.",
-    refereeName: "Referente — nombre",
-    refereeEmail: "Referente — correo",
     consentApply:
       "Confirmo que la candidatura se realiza de manera confidencial y consiento el tratamiento de mis datos por la plataforma según los términos de candidatura.",
     consentConsult:
@@ -2035,9 +1991,9 @@ const es: Dict = {
     contactPhoneLabel: "Teléfono",
     contactEmailLabel: "Correo",
     contactResponseLabel: "Ventana de respuesta",
-    contactResponseValue: "En 48 horas para consultas institucionales y HNWI",
+    contactResponseValue: "Normalmente respondo en un plazo de 48 horas",
     contactPhone: "+41 78 728 09 33",
-    contactEmail: "info@visiongoal.ch",
+    contactEmail: "office@visiongoal.ch",
   },
 };
 
@@ -2063,9 +2019,9 @@ const zh: Dict = {
     contact: "联系",
   },
   cta: {
-    applyNext: "洽谈一次体验",
+    applyNext: "表达兴趣",
     requestConsult: "了解 Vision Goal →",
-    applyForCohort: "洽谈一次体验",
+    applyForCohort: "表达兴趣",
     submitEnquiry: "发送信息",
     readProgramme: "了解更多",
     allProgrammes: "全部体验",
@@ -2081,12 +2037,13 @@ const zh: Dict = {
     readExperience: "了解更多",
     allExperiences: "全部体验",
     sending: "发送中…",
+    expressInterest: "表达兴趣",
   },
   dispatch: {
     label: "速递",
     items: [
       "应用式学习 · 小型场景 · 资深从业者主持",
-      "凭对话 · 从不公开招生",
+      "欢迎表达兴趣 · 随后进行简短对话",
       "精心策展的瑞士高管体验",
     ],
   },
@@ -2100,27 +2057,50 @@ const zh: Dict = {
     subjects: "高管集训 · 精选通道 · 私人办公室",
     statusReviewing: "体验正在策展中",
     locationLine: "瑞士 · 精选场地",
-    scrollToProgrammes: "查看项目 ↓",
+    scrollToProgrammes: "探索体验 ↓",
   },
   posture: {
     eyebrow: "平台姿态",
     sub: "瑞士高端高管体验 · 精选通道 · 私享网络",
     pillars: [
-      { label: "凭对话", line: "从不公开招生。" },
+      { label: "凭对话", line: "一次简短对话即可确认是否合适。" },
       { label: "小型场景", line: "刻意保持精简。" },
       { label: "资深从业者主持", line: "应用性, 而非理论。" },
     ],
   },
   programmesBlock: {
-    eyebrow: "学习形式",
-    headline: "三种学习方式,",
-    headlineGold: "以实践为核心。",
+    eyebrow: "学习概念",
+    headline: "指示性学习概念，",
+    headlineGold: "目前仍在开发中。",
+    bespokeTitle: "定制学习体验",
+    bespokeBody:
+      "围绕某一组织、专业群体或特定参与者的目标，量身打造的金融或商业学习体验。",
   },
   learningInPractice: {
     eyebrow: "学以致用",
     headline: "超越幻灯片与教科书的金融学习。",
     body: "当金融与战略概念与真实的运营环境、专业对话与同侪交流相连接时, 学习才更具意义。",
     caption: "在瑞士高端商业场景中的应用式学习一例。",
+    exploreEyebrow: "探讨什么",
+    exploreHeadline: "一场学习围绕哪些问题展开。",
+    exploreItems: [
+      {
+        title: "价值究竟如何创造",
+        body: "定价、利润率、成本结构与营运资金 —— 在真实运营中追溯, 而非停留于案例。",
+      },
+      {
+        title: "资本与风险如何运作",
+        body: "融资、流动性、治理与传承: 所有者与高管面对的财务问题, 以及决定取舍的关键。",
+      },
+      {
+        title: "瑞士商业如何运转",
+        body: "决策如何作出、关系如何建立, 以及经营文化对外来者的期待。",
+      },
+      {
+        title: "理论与实践的交会",
+        body: "学术框架有用但不完整。学习将其与从业者判断和真实组织并置, 检视各自成立的边界。",
+      },
+    ],
   },
   programmeMeta: {
     access: {
@@ -2182,7 +2162,7 @@ const zh: Dict = {
     practitionerNotes: "从业者札记。",
     featuredLabel: "精选",
     dispatchEyebrow: "速递",
-    dispatchHeadline: "每月两篇。",
+    dispatchHeadline: "不定期发送, 从不促销。",
     dispatchHeadlineGold: "无促销。",
     dispatchHelp: "双重确认订阅。可随时退订。",
     dispatchOk:
@@ -2193,7 +2173,7 @@ const zh: Dict = {
     eyebrow: "面向机构合作方",
     headline: "委托一期",
     headlineGold: "私享群体。",
-    response: "五个工作日内回复。",
+    response: "我通常在 48 小时内回复。",
   },
   ctaBlock: {
     eyebrow: "开启对话",
@@ -2291,9 +2271,9 @@ const zh: Dict = {
   },
   pages: {
     programmes: {
-      eyebrow: "学习形式",
-      titlePart1: "三种形式。",
-      titleGold: "凭对话。",
+      eyebrow: "学习概念",
+      titlePart1: "指示性学习概念，",
+      titleGold: "目前仍在开发中。",
       lede:
         "每个项目都是一间精选的房间: 小规模, 由具名从业者主持, 以单一姿态运行 —— 克制胜过喧哗、证据胜过断言、判断胜过表演。",
     },
@@ -2323,7 +2303,7 @@ const zh: Dict = {
       titlePart1: "从业者札记。",
       titleGold: "瑞士视角。",
       lede:
-        "对瑞士通道、私人银行、市场以及平台方法论的简短而审慎之札记。每月两篇; 从不促销。",
+        "对瑞士商业、金融以及平台思考的简短而审慎之札记。不定期发送; 从不促销。",
     },
     about: {
       eyebrow: "关于平台",
@@ -2353,42 +2333,8 @@ const zh: Dict = {
       officeEyebrow: "办公室",
       emailLabel: "邮箱",
       responseLabel: "回复时间",
-      responseValue: "五个工作日",
+      responseValue: "48 小时内",
       linkedinLabel: "LinkedIn",
-    },
-    apply: {
-      eyebrow: "申请下一期群体",
-      titlePart1: "简短的申请。",
-      titleGold: "审慎的审阅。",
-      lede:
-        "每一期群体均经策划。申请刻意简短; 我们看重具体性, 而非篇幅。预期十个工作日内回复。",
-      steps: ["身份", "项目", "为何此时", "推荐人", "确认"],
-      stepLegend: { identity: "身份", programme: "项目", whyNow: "为何此时", referees: "推荐人" },
-      received: "申请已收到",
-      receivedHeadline: "感谢。我们会与您联系。",
-      receivedBody:
-        "策划团队会审阅每一份申请。您可期望在十个工作日内得到审慎的回复。其间, 您可阅读最新速递或申请一次私下咨询。",
-    },
-    consult: {
-      eyebrow: "私下咨询",
-      title: "申请前先确认契合。",
-      lede:
-        "与策划团队成员的一次简短保密通话。我们以此确认项目契合度, 解答申请表难以承载的问题。五个工作日内回复。",
-      received: "请求已收到",
-      receivedHeadline: "感谢。我们会与您联系。",
-      receivedBody:
-        "策划团队成员将在五个工作日内与您联系, 以安排一次保密通话。",
-    },
-    cohort: {
-      eyebrow: "面向机构合作方",
-      titlePart1: "委托一期",
-      titleGold: "私享群体。",
-      lede:
-        "为机构合作方策划的封闭式群体与议题集训。我们以英语 / 德语 / 法语交付, 形式灵活, 自三日至精选周不等。五个工作日内回复。",
-      received: "咨询已收到",
-      receivedHeadline: "感谢。我们会与您联系。",
-      receivedBody:
-        "策划团队成员将在五个工作日内与您联系, 沟通形式、时间与对象。",
     },
     legalSidebar: "法律",
     programmeDetail: {
@@ -2407,8 +2353,10 @@ const zh: Dict = {
       investmentSub: "项目费用 · 不含增值税",
       includesLabel: "包含",
       excludesLabel: "不含",
-      postureEyebrow: "申请姿态",
-      postureHeadline: "房间为谁而设。",
+      indicativeNotice:
+        "这是一项仍在开发中的指示性学习概念。日期、场地、贡献者与活动内容尚未确认。欢迎表达兴趣 —— 随后的简短对话可帮助确认是否合适。",
+      postureEyebrow: "这项体验可能适合谁",
+      postureHeadline: "这项体验可能适合谁。",
       forLabel: "适用于",
       notForLabel: "不适用于",
       faqEyebrow: "常见问题",
@@ -2429,9 +2377,6 @@ const zh: Dict = {
     objectiveHint: "具体性会被仔细阅读。两到四句即可。",
     contribution: "您能为房间带来什么?",
     contributionHint: "群体是贡献, 而非观众。两到四句即可。",
-    refereeIntro: "两位能描述您专业姿态的推荐人。未经书面同意, 我们不会与其联系。",
-    refereeName: "推荐人 — 姓名",
-    refereeEmail: "推荐人 — 邮箱",
     consentApply:
       "本人确认申请系基于保密前提, 并依据申请条款同意平台处理本人信息。",
     consentConsult:
@@ -2477,9 +2422,9 @@ const zh: Dict = {
     contactPhoneLabel: "电话",
     contactEmailLabel: "邮箱",
     contactResponseLabel: "回复时间",
-    contactResponseValue: "机构与高净值咨询: 48 小时内回复",
+    contactResponseValue: "我通常在 48 小时内回复",
     contactPhone: "+41 78 728 09 33",
-    contactEmail: "info@visiongoal.ch",
+    contactEmail: "office@visiongoal.ch",
   },
 };
 

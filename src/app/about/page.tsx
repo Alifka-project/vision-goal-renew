@@ -22,15 +22,15 @@ const career = [
   { years: "04.1991 – 09.1998", role: "Various roles", institution: "Zürcher Kantonalbank, Zurich" },
 ];
 
-// Regulatory and professional credentials ported from visiongoal.ch.
+// Regulatory and professional credentials.
+// "Swiss Licensed Asset Manager" was removed at the client's request: it
+// described a former involvement with Q WEALTH and is no longer current.
+// Do not reinstate it without written confirmation that the authorisation
+// is held personally and currently.
 const credentials = [
   {
-    title: "Swiss Licensed Asset Manager",
-    body: "Authorised Swiss Asset Manager — structured investment strategies, market analysis, and portfolio oversight.",
-  },
-  {
-    title: "FINMA-Licensed Insurance Broker",
-    body: "Independent FINMA-regulated insurance broking — supervised, transparent, and bound by regulator standards.",
+    title: "FINMA-registered independent insurance intermediary",
+    body: "Registered with the Swiss Financial Market Supervisory Authority as an independent insurance intermediary — supervised, transparent, and bound by regulator standards.",
   },
   {
     title: "Chartered Certified Accountant (FCCA)",
@@ -54,22 +54,22 @@ const standards = [
   {
     title: "Discretion by default",
     body:
-      "Cohort proceedings are not recorded; participant names are not published without consent. Public attribution is the exception, not the rule.",
+      "Sessions are not recorded and participant names are not published without consent. Public attribution is the exception, not the rule.",
   },
   {
-    title: "Chatham-house posture",
+    title: "What is said stays in the room",
     body:
-      "On the Banking Intensive, participants may use what is said but never identify the speaker or any other participant. Notes are personal use only.",
+      "Participants may use what they learn but do not attribute it to a named speaker or another participant. Notes are for personal use.",
   },
   {
-    title: "Applicant data handling",
+    title: "How your details are handled",
     body:
-      "Applicant information is processed under Swiss FADP and EU GDPR. We do not share applicant data with third parties without consent.",
+      "Enquiry details are processed under the Swiss FADP and the EU GDPR, used only to answer your enquiry, and never shared with third parties without your consent.",
   },
   {
-    title: "Hosts speak as practitioners",
+    title: "Contributors speak in their own capacity",
     body:
-      "The platform is curatorial. Hosts and faculty are present in their personal capacity; the platform does not deliver regulated financial, tax, or legal advice.",
+      "Vision Goal is an educational and curatorial platform. Contributors speak in their personal capacity; Vision Goal does not provide regulated financial, investment, tax, legal, insurance or pension advice.",
   },
 ];
 
@@ -206,13 +206,13 @@ export default function AboutPage() {
                   services, and cross-border life insurance. Fluent in German and English. Pfäffikon SZ.
                 </p>
                 <a
-                  href="https://www.linkedin.com/"
+                  href="https://www.linkedin.com/company/98380448/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="mt-8 inline-flex items-center gap-2 text-[0.78rem] uppercase tracking-[0.14em] text-slate-2 hover:text-navy transition-colors duration-200"
                 >
                   <span aria-hidden="true">in</span>
-                  <span className="link-underline link-underline-out">LinkedIn profile</span>
+                  <span className="link-underline link-underline-out">Vision Goal on LinkedIn</span>
                   <span aria-hidden="true">↗</span>
                 </a>
               </Reveal>

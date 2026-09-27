@@ -88,6 +88,42 @@ export function ThreeProgrammesBlock() {
             );
           })}
         </ul>
+
+        {/*
+         * Fourth concept: Bespoke. It has no detail page because it has no
+         * fixed shape by definition — it is built around one organisation or
+         * group — so it renders as a full-width panel rather than a card that
+         * would imply a comparable, scheduled product.
+         */}
+        <Reveal duration={800} delay={360}>
+          <div className="mt-6 lg:mt-8 border hairline bg-white">
+            <div className="grid lg:grid-cols-12 gap-8 lg:gap-12 p-7 lg:p-10 items-center">
+              <div className="lg:col-span-8">
+                <p className="text-eyebrow uppercase text-gold tabular">04</p>
+                <h3 className="mt-4 font-serif text-2xl lg:text-[1.75rem] text-navy leading-[1.2]">
+                  {t.programmesBlock.bespokeTitle}
+                </h3>
+                <p className="mt-4 text-body text-slate max-w-prose">
+                  {t.programmesBlock.bespokeBody}
+                </p>
+              </div>
+              <div className="lg:col-span-4 lg:text-right">
+                <Link
+                  href="/contact"
+                  className="inline-flex items-center gap-3 text-sm text-navy font-medium group"
+                >
+                  <span className="link-underline link-underline-out">{t.cta.expressInterest}</span>
+                  <span
+                    aria-hidden="true"
+                    className="inline-block transition-transform duration-300 ease-editorial group-hover:translate-x-1"
+                  >
+                    →
+                  </span>
+                </Link>
+              </div>
+            </div>
+          </div>
+        </Reveal>
       </div>
     </section>
   );

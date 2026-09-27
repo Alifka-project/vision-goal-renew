@@ -7,18 +7,13 @@ import { LegalShell } from "@/components/modules/LegalShell";
 import { organisation } from "@/lib/organisation";
 import { useT } from "@/i18n/I18nProvider";
 
-// This table must describe what the site actually sets. At present that is one
-// first-party preference cookie, plus Cloudflare's own cookie when the Turnstile
-// spam challenge is enabled. Adding analytics later means adding a consent
-// banner and a row here at the same time.
+// This table must describe what the site actually sets — nothing aspirational.
+// The former `vg-locale` preference cookie is gone: the site ships in English
+// only, the language switcher is not rendered, and so that cookie is never
+// written. Cloudflare's cookie appears only on pages carrying a form, and only
+// when the Turnstile challenge is configured. Adding analytics later means
+// adding a consent banner and a row here at the same time.
 const cookies = [
-  {
-    name: "vg-locale",
-    provider: "visiongoal.ch (first party)",
-    category: "Strictly necessary",
-    purpose: "Remembers the interface language you selected so the site does not reset it on each visit.",
-    duration: "12 months",
-  },
   {
     name: "cf_chl_* / __cf_bm",
     provider: "Cloudflare, Inc.",
@@ -38,7 +33,7 @@ export default function CookiesPage() {
         <LegalShell
           eyebrow={t.pages.legalSidebar}
           title={t.footer.legalCookies}
-          lastUpdated="August 2026"
+          lastUpdated="September 2026"
           active="/legal/cookies"
         >
           <p>
@@ -87,18 +82,17 @@ export default function CookiesPage() {
 
           <h2 className="font-serif text-2xl text-navy mt-6">Controlling cookies yourself</h2>
           <p>
-            You can delete or block cookies through your browser settings. Blocking{" "}
-            <code>vg-locale</code> means the site will fall back to its default language on each
-            visit. Blocking Cloudflare&rsquo;s cookie may prevent our forms from accepting your
-            submission, in which case please write to{" "}
+            You can delete or block cookies through your browser settings. Blocking
+            Cloudflare&rsquo;s cookie may prevent our forms from accepting your submission, in which
+            case please write to{" "}
             <a href={`mailto:${organisation.email.general}`}>{organisation.email.general}</a> instead.
           </p>
 
           <h2 className="font-serif text-2xl text-navy mt-6">Other storage</h2>
           <p>
-            The multi-step application form holds your answers in the memory of your browser tab while
-            you move between steps. Nothing is written to local storage or session storage, and the
-            answers are discarded if you close the tab before submitting.
+            The contact form keeps what you type in the memory of your browser tab until you submit
+            it. Nothing is written to local storage or session storage, and anything you have typed
+            is discarded if you close the tab before submitting.
           </p>
 
           <p className="mt-8">

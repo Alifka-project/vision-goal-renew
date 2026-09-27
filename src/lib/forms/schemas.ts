@@ -69,10 +69,6 @@ export const applicationSchema = z.object({
   cohort: optionalText(120),
   objective: longText(),
   contribution: longText(),
-  ref1Name: shortText(120),
-  ref1Email: email,
-  ref2Name: shortText(120),
-  ref2Email: email,
   consent,
 });
 
@@ -102,11 +98,18 @@ export const institutionalSchema = z.object({
 
 // The client specified this field list exactly: first name, last name, email,
 // optional organisation, optional role, area of interest, message, consent.
+//
+// The areas mirror what the site actually offers: the three indicative
+// learning concepts, a bespoke experience, a Private Office enquiry, a
+// speaking/teaching enquiry, and a catch-all. Keep these in step with the
+// concept names in content.ts — a visitor should recognise the option from
+// the page they arrived from.
 export const AREAS_OF_INTEREST = [
-  "Executive learning",
-  "Tailored organisational programme",
-  "Finance workshop",
-  "Swiss business experience",
+  "Business Immersion Experience",
+  "Finance & Wealth Intensive",
+  "Themed Learning Sessions",
+  "Bespoke Learning Experience",
+  "Private Office",
   "Speaking or teaching enquiry",
   "Other",
 ] as const;

@@ -79,7 +79,7 @@ export async function POST(request: Request) {
     console.error("[submit] delivery failed", { kind: submission.kind, reason: result.reason });
     return fail(
       503,
-      "We could not deliver your message just now. Please email info@visiongoal.ch and we will pick it up from there.",
+      "We could not deliver your message just now. Please email office@visiongoal.ch and we will pick it up from there.",
     );
   }
 

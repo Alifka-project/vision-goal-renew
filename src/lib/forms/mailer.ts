@@ -47,10 +47,6 @@ const FIELD_LABELS: Record<string, string> = {
   cohort: "Preferred cohort",
   objective: "What they want",
   contribution: "What they bring",
-  ref1Name: "Referee 1 — name",
-  ref1Email: "Referee 1 — email",
-  ref2Name: "Referee 2 — name",
-  ref2Email: "Referee 2 — email",
   topic: "Discussion topic",
   timing: "Preferred timing",
   audience: "Audience",
@@ -103,31 +99,30 @@ function notificationHtml(submission: Submission, meta: Meta) {
 
 const ACKNOWLEDGEMENTS: Record<FormKind, { subject: string; heading: string; body: string[] }> = {
   application: {
-    subject: "Your Vision Goal application",
-    heading: "Your application has reached us.",
+    subject: "Your enquiry",
+    heading: "Your enquiry has reached us.",
     body: [
-      "Thank you for applying. The curation team reads every application in full and will reply within five business days, whichever way the answer goes.",
-      "We will not contact your referees without asking you first in writing.",
+      "Thank you for your interest. I read every enquiry personally and normally respond within 48 hours.",
     ],
   },
   consultation: {
     subject: "Your consultation request",
     heading: "Your request has reached us.",
     body: [
-      "Thank you. We will be in touch within five business days to arrange a confidential call at a time that suits you.",
+      "Thank you. I will be in touch within 48 hours to arrange a call at a time that suits you.",
     ],
   },
   institutional: {
     subject: "Your private cohort enquiry",
     heading: "Your enquiry has reached us.",
     body: [
-      "Thank you. We will reply within five business days to discuss format, timing, and audience.",
+      "Thank you. I normally respond within 48 hours to discuss format, timing and audience.",
     ],
   },
   contact: {
     subject: "Your message to Vision Goal",
     heading: "Your message has reached us.",
-    body: ["Thank you for writing. We reply to every message within five business days."],
+    body: ["Thank you for writing. I read every message personally and normally respond within 48 hours."],
   },
   // The dossier form is not currently reachable — no programme dates, fees or
   // cohorts are confirmed, so there is nothing to send a dossier about. The
@@ -137,7 +132,7 @@ const ACKNOWLEDGEMENTS: Record<FormKind, { subject: string; heading: string; bod
     subject: "Your enquiry",
     heading: "Your request has reached us.",
     body: [
-      "Thank you. We will reply within five business days, and we will write to you again once further details are confirmed.",
+      "Thank you. I normally respond within 48 hours, and will write again once further details are confirmed.",
     ],
   },
   // The dispatch runs on a double opt-in, so this address is not subscribed until

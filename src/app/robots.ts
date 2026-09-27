@@ -1,6 +1,16 @@
 import type { MetadataRoute } from "next";
 
+// Staging deployments must not be crawled at all. Vercel sets VERCEL_ENV to
+// "preview" for every non-production deployment, so only visiongoal.ch itself
+// serves a permissive robots.txt.
+const IS_PRODUCTION =
+  process.env.VERCEL_ENV === "production" || process.env.NEXT_PUBLIC_SITE_ENV === "production";
+
 export default function robots(): MetadataRoute.Robots {
+  if (!IS_PRODUCTION) {
+    return { rules: [{ userAgent: "*", disallow: "/" }] };
+  }
+
   return {
     rules: [
       {

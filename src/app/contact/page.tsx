@@ -23,7 +23,7 @@ export default function ContactPage() {
     useFormSubmission("contact");
 
   const consentText =
-    "I agree that Vision Goal may store the details above in order to respond to this enquiry.";
+    "I agree that Vision Goal may store the details above in order to respond to this enquiry, as described in the";
 
   async function onSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();

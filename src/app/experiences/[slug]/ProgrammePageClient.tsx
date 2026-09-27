@@ -65,9 +65,17 @@ export function ProgrammePageClient({ slug }: { slug: Programme["slug"] }) {
                 {meta.name}
               </h1>
               <p className="mt-8 max-w-prose text-body-lg text-cream/85">{meta.tagline}</p>
+              {/*
+               * States plainly that nothing here is scheduled. Without this
+               * the architecture and outcomes below read as a confirmed
+               * programme rather than an intention.
+               */}
+              <p className="mt-6 max-w-prose text-body-sm text-cream/70 border-l-2 border-gold/50 pl-4">
+                {t.pages.programmeDetail.indicativeNotice}
+              </p>
               <div className="mt-12 flex flex-col sm:flex-row gap-3 sm:gap-5">
                 <Button href="/contact" variant="on-dark">
-                  {t.cta.discussExperience}
+                  {t.cta.expressInterest}
                 </Button>
                 <Button href="/experiences" variant="ghost-on-dark">
                   {t.cta.allExperiences}

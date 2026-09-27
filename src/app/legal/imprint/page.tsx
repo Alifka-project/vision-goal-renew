@@ -17,7 +17,7 @@ export default function ImprintPage() {
         <LegalShell
           eyebrow={t.pages.legalSidebar}
           title={t.footer.legalImprint}
-          lastUpdated="August 2026"
+          lastUpdated="September 2026"
           active="/legal/imprint"
         >
           <h2 className="font-serif text-2xl text-navy">Operator of this website</h2>
@@ -55,7 +55,7 @@ export default function ImprintPage() {
           <p>
             {organisation.vatNumber
               ? `Swiss VAT number: ${organisation.vatNumber}`
-              : "The company is not currently entered in the Swiss VAT register. Programme fees are therefore shown without a VAT component."}
+              : "The company is not currently entered in the Swiss VAT register."}
           </p>
 
           <h3 className="font-serif text-xl text-navy mt-6">Contact</h3>
@@ -64,9 +64,7 @@ export default function ImprintPage() {
             <br />
             Telephone: <a href={`tel:${organisation.phone.replace(/\s+/g, "")}`}>{organisation.phone}</a>
             <br />
-            Editorial enquiries: <a href={`mailto:${email.editorial}`}>{email.editorial}</a>
-            <br />
-            Data protection: <a href={`mailto:${email.privacy}`}>{email.privacy}</a>
+            General, editorial and data-protection enquiries all reach the same mailbox.
           </p>
 
           <h3 className="font-serif text-xl text-navy mt-6">Person responsible for the content</h3>
@@ -75,14 +73,31 @@ export default function ImprintPage() {
             same person is the contact point for data-protection matters.
           </p>
 
+          <h3 className="font-serif text-xl text-navy mt-6">What we do</h3>
+          <p>
+            {organisation.legalName} has two propositions. The first is applied executive learning:
+            finance and business-learning experiences that connect academic knowledge and practitioner
+            experience with real operating environments. The second is the Private Office, a
+            curatorial introduction service through which we help clients clarify their objectives,
+            identify relevant Swiss specialists and arrange considered introductions.
+          </p>
+
           <h3 className="font-serif text-xl text-navy mt-6">Regulatory status</h3>
           <p>
-            {organisation.legalName} provides training, coaching, and business-access services. It is
-            not a bank, securities firm, asset manager, fund manager, or insurance intermediary, and
-            it holds no authorisation from the Swiss Financial Market Supervisory Authority (FINMA).
-            Nothing on this website constitutes investment, tax, or legal advice, or an offer or
-            solicitation to acquire any financial instrument. Where regulated services are required,
-            they are provided by separately licensed practitioners engaged directly by the client.
+            {organisation.legalName} provides education, training and curatorial introduction
+            services. It is not a bank, securities firm, asset manager, fund manager, or insurance
+            intermediary, and it holds no authorisation from the Swiss Financial Market Supervisory
+            Authority (FINMA). Nothing on this website constitutes investment, tax, legal, insurance
+            or pension advice, or an offer or solicitation to acquire any financial instrument.
+          </p>
+          <p>
+            The distinction matters and we hold to it: Vision Goal&rsquo;s role is curatorial. Any
+            regulated advice, any suitability assessment concerning a specific financial product, any
+            product recommendation, and all contracting and execution remain with the external
+            provider the client selects, under that provider&rsquo;s own authorisations and
+            professional responsibilities. Vision Goal does not act as a financial intermediary on
+            behalf of clients and does not accept retrocessions, finder&rsquo;s fees or rebates from
+            the specialists it introduces.
           </p>
 
           <h3 className="font-serif text-xl text-navy mt-6">Liability for content</h3>

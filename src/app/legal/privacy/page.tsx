@@ -17,7 +17,7 @@ export default function PrivacyPage() {
         <LegalShell
           eyebrow={t.pages.legalSidebar}
           title={t.footer.legalPrivacy}
-          lastUpdated="August 2026"
+          lastUpdated="September 2026"
           active="/legal/privacy"
         >
           <p>
@@ -44,12 +44,11 @@ export default function PrivacyPage() {
 
           <h2 className="font-serif text-2xl text-navy mt-6">What we collect and why</h2>
           <p>
-            <strong>Form submissions.</strong> The application, private consultation, institutional
-            enquiry, contact, and dossier-request forms collect the details you enter: name, email
-            address, telephone number where given, role, organisation, country, and the free-text
-            answers you write. The cohort application additionally collects the names and email
-            addresses of two referees. Forms are submitted over an encrypted connection to our server
-            and are never transmitted in a URL.
+            <strong>Contact form.</strong> The contact form collects the details you enter: first
+            and last name, email address, organisation and role where you give them, the area of
+            interest you select, and the message you write. Forms are submitted over an encrypted
+            connection to our server and are never transmitted in a URL. There is no application or
+            admission process.
           </p>
           <p>
             <strong>Dispatch subscription.</strong> The dispatch operates on a double opt-in. When you
@@ -78,23 +77,20 @@ export default function PrivacyPage() {
 
           <h2 className="font-serif text-2xl text-navy mt-6">Legal bases</h2>
           <p>
-            Under the GDPR, we rely on: performance of a contract or pre-contractual steps at your
-            request (Art. 6(1)(b)) for assessing applications and delivering programmes; consent (Art.
-            6(1)(a)) for the dispatch and for dossier and cohort-date announcements; and legitimate
-            interests (Art. 6(1)(f)) for operating and securing the website, preventing abuse, and
-            responding to enquiries. Under the FADP, processing is carried out in accordance with the
+            Under the GDPR, we rely on: pre-contractual steps taken at your request (Art. 6(1)(b))
+            when you enquire about a learning experience or a Private Office introduction; consent
+            (Art. 6(1)(a)) for the dispatch; and legitimate interests (Art. 6(1)(f)) for operating and
+            securing the website, preventing abuse, and responding to enquiries. Under the FADP, processing is carried out in accordance with the
             principles of lawfulness, good faith, proportionality, and purpose limitation, and on the
             basis of your consent where consent is the stated basis above.
           </p>
 
-          <h2 className="font-serif text-2xl text-navy mt-6">Applicant data</h2>
+          <h2 className="font-serif text-2xl text-navy mt-6">Enquiry data</h2>
           <p>
-            Application content is read by the curation team only. Referees are never contacted
-            without first obtaining your written consent for that specific contact. Where an
-            application is successful, the data is retained for the duration of the programme and for
-            twelve months of follow-on network administration thereafter. Where an application is not
-            taken forward, it is deleted within ninety days of the decision unless you ask us to keep
-            it on file for a future cohort.
+            What you write in an enquiry is read by Vision Goal only. Where an enquiry leads to a
+            Private Office introduction, your details are shared with a specialist only once you have
+            asked for that introduction, and only to the extent needed to make it. Enquiries that do
+            not lead anywhere are deleted within twenty-four months of the last exchange.
           </p>
 
           <h2 className="font-serif text-2xl text-navy mt-6">Retention</h2>
@@ -143,7 +139,7 @@ export default function PrivacyPage() {
           </p>
           <p>
             Write to <a href={`mailto:${email.privacy}`}>{email.privacy}</a> to exercise any of these
-            rights. We respond within five business days and complete requests within thirty days. We
+            rights. I normally respond within 48 hours and complete requests within thirty days. We
             may ask you to confirm your identity before disclosing personal data.
           </p>
           <p>
@@ -163,7 +159,7 @@ export default function PrivacyPage() {
           <h2 className="font-serif text-2xl text-navy mt-6">Automated decision-making</h2>
           <p>
             We do not carry out automated decision-making or profiling that produces legal effects
-            concerning you. Every application is read and decided by a person.
+            concerning you. Every enquiry is read and answered by a person.
           </p>
 
           <h2 className="font-serif text-2xl text-navy mt-6">Changes to this policy</h2>

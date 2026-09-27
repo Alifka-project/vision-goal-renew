@@ -8,7 +8,7 @@ type Status = "idle" | "submitting" | "success" | "error";
 export type FieldErrors = Record<string, string[]>;
 
 const GENERIC_ERROR =
-  "Something went wrong on our side. Please try again, or write to info@visiongoal.ch.";
+  "Something went wrong on our side. Please try again, or write to office@visiongoal.ch.";
 
 /**
  * Posts a form as JSON to /api/submit.

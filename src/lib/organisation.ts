@@ -36,10 +36,13 @@ export const organisation = {
   },
 
   email: {
-    general: "info@visiongoal.ch",
-    applications: "applications@visiongoal.ch",
-    privacy: "privacy@visiongoal.ch",
-    editorial: "editorial@visiongoal.ch",
+    // One mailbox is in use. info@ was retired after heavy spam, and
+    // applications@ / privacy@ / editorial@ were never provisioned — so
+    // everything routes to office@ rather than publishing dead addresses.
+    general: "office@visiongoal.ch",
+    applications: "office@visiongoal.ch",
+    privacy: "office@visiongoal.ch",
+    editorial: "office@visiongoal.ch",
   },
   phone: "+41 78 728 09 33",
 
@@ -62,6 +65,6 @@ export const postalAddressInline = `${organisation.address.line1}, ${organisatio
 // days, and ten business days on different pages.
 export const RESPONSE_STANDARD_DAYS = 5;
 export const responseStandard = {
-  short: "Within five business days",
-  sentence: "We reply to every enquiry within five business days.",
+  short: "Within 48 hours",
+  sentence: "I normally respond within 48 hours.",
 };

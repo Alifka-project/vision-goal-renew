@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import type { FieldErrors } from "./useFormSubmission";
 
@@ -24,13 +25,11 @@ export function ConsentCheckbox({
   text: string;
   tone?: "light" | "dark";
 }) {
+  const dark = tone === "dark";
   return (
-    <label
-      className={`flex items-start gap-3 text-body-sm ${
-        tone === "dark" ? "text-cream/85" : "text-slate"
-      }`}
-    >
+    <div className={`flex items-start gap-3 text-body-sm ${dark ? "text-cream/85" : "text-slate"}`}>
       <input
+        id="consent"
         type="checkbox"
         name="consent"
         value="true"
@@ -38,8 +37,25 @@ export function ConsentCheckbox({
         data-consent-text={text}
         className="mt-1 accent-[#B8924A]"
       />
-      <span>{text}</span>
-    </label>
+      {/*
+       * The label wraps only the text, not the link: nesting an anchor
+       * inside a <label> makes the click ambiguous — the browser toggles
+       * the checkbox instead of following the link. Keeping the Privacy
+       * Policy link as a sibling means it is genuinely clickable.
+       */}
+      <span>
+        <label htmlFor="consent">{text}</label>{" "}
+        <Link
+          href="/legal/privacy"
+          className={`underline underline-offset-2 ${
+            dark ? "text-cream hover:text-gold-hi" : "text-navy hover:text-gold"
+          } transition-colors duration-200`}
+        >
+          Privacy Policy
+        </Link>
+        <span aria-hidden="true">.</span>
+      </span>
+    </div>
   );
 }
 
@@ -57,10 +73,6 @@ const FIELD_LABELS: Record<string, string> = {
   cohort: "Preferred cohort",
   objective: "What you want from the week",
   contribution: "What you bring",
-  ref1Name: "First referee — name",
-  ref1Email: "First referee — email",
-  ref2Name: "Second referee — name",
-  ref2Email: "Second referee — email",
   topic: "What you would like to discuss",
   timing: "Preferred timing",
   audience: "Audience",

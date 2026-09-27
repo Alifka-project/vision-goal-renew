@@ -3,10 +3,10 @@ import type { ReactNode } from "react";
 import { pageMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = pageMetadata({
-  title: "Experiences",
+  title: "Privacy Policy",
   description:
-    "Indicative learning concepts currently being developed — applied finance and business learning connected with real Swiss operating environments. Express interest at any time.",
-  path: "/experiences",
+    "How Vision Goal GmbH collects, uses and retains personal data under the Swiss FADP and the EU GDPR — what the contact form collects, who processes it, and how to exercise your rights.",
+  path: "/legal/privacy",
 });
 
 export default function Layout({ children }: { children: ReactNode }) {

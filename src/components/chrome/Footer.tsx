@@ -42,7 +42,7 @@ export function Footer() {
 
   return (
     <footer className="bg-navy-deep text-cream/85">
-      {/* Direct contact band — visible to HNWI / institutional visitors who need a fast path */}
+      {/* Direct contact band — a fast path for anyone who would rather write or call than use the form */}
       <div className="border-b border-cream/10">
         <div className="container py-8 grid gap-6 md:grid-cols-4 items-start">
           <p className="text-eyebrow uppercase text-gold-hi md:col-span-1">{t.footer.contactEyebrow}</p>

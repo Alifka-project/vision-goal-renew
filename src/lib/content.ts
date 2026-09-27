@@ -33,7 +33,7 @@ export const programmes: Programme[] = [
     slug: "access",
     name: "Business Immersion Experience",
     tagline:
-      "An applied immersion in Swiss business — connecting operating culture, SME visits and considered peer dialogue.",
+      "An applied immersion in Swiss business, intended to connect operating culture, real business settings and peer discussion.",
     oneLineFor:
       "Entrepreneurs, executives and family principals who want practical, working exposure to Swiss business — not a lecture room.",
     outcome:
@@ -47,12 +47,12 @@ export const programmes: Programme[] = [
       {
         phase: "Before",
         title: "Structured preparation",
-        body: "A structured pre-experience briefing: curated reading, framing conversations, and a written brief on your specific access objectives. The room arrives ready.",
+        body: "The intended shape is a short preparation step — background reading, a framing conversation, and a written note on what you want out of it — so the group arrives ready.",
       },
       {
         phase: "Inside",
         title: "In the room",
-        body: "Working sessions inside Swiss businesses and operating environments, small-group dialogue with practitioners, and considered peer exchange. Not a lecture room — a working series of sessions inside Swiss business.",
+        body: "The intention is a working series of sessions set in real business environments, with small-group discussion and practitioner input, rather than a lecture room. Specific settings and contributors are confirmed for each experience.",
       },
       {
         phase: "After",
@@ -63,7 +63,7 @@ export const programmes: Programme[] = [
     faqs: [
       {
         q: "How is this different from an executive programme at a business school?",
-        a: "Vision Goal does not run a school or a course. The deliverable is applied learning and considered access — hosted by practitioners, in small rooms, with a working brief you can act on. There is no certificate; the room is the deliverable.",
+        a: "Vision Goal does not run a school or a course. The intended outcome is applied learning: financial and strategic thinking worked through against a real operating setting, with practitioner input. There is no certificate — what you take away is judgement you can use.",
       },
       {
         q: "Will participants be named publicly?",
@@ -115,7 +115,7 @@ export const programmes: Programme[] = [
     faqs: [
       {
         q: "Is this a school programme or a consulting engagement?",
-        a: "Neither. Vision Goal creates applied learning experiences — practitioner-grade conversation behind closed doors, and considered judgement you can bring back to your remit. There is no certificate and no deliverable; the room is the deliverable.",
+        a: "Neither. Vision Goal creates applied learning experiences — practitioner-level discussion of finance, wealth planning and governance questions, held in confidence, with judgement you can bring back to your own remit.",
       },
       {
         q: "What does discretion mean here?",
@@ -167,7 +167,7 @@ export const programmes: Programme[] = [
     faqs: [
       {
         q: "Is this a conference or a course?",
-        a: "Neither. It is a curated set of working sessions for senior contributors on a specific question. No plenary stage, no audience, no certificate — small rooms, host-led, applied.",
+        a: "Neither. It is a set of working sessions built for contributors around one specific question — no plenary stage and no audience, but discussion, practitioner input and an applied focus.",
       },
       {
         q: "How is the theme selected?",
@@ -219,9 +219,9 @@ export const hosts: Host[] = [
     role: "Founder & Curator · More than 30 years across finance, banking, insurance, governance and executive education",
     initials: "AS",
     expertise: ["Wealth planning", "Governance", "Executive education"],
-    bio: "Founder of Vision Goal (2022). More than 30 years across finance, banking, insurance, governance and executive education — including twelve years at Bank Julius Bär & Co. AG as Head of Wealth Planning, Life & Pension across Switzerland and Singapore, and earlier roles at UBS, Credit Suisse, and Zürcher Kantonalbank. FCCA, CFP®, Swiss Asset Manager licence, FINMA Insurance Broker authorisation; LL.M., MSc, DBA. Twelve peer-reviewed papers on banking, sustainable finance, ESG, and cross-border life insurance.",
+    bio: "Founder of Vision Goal (2022). More than 30 years across finance, banking, insurance, governance and executive education — including twelve years at Bank Julius Bär & Co. AG as Head of Wealth Planning, Life & Pension across Switzerland and Singapore, and earlier roles at UBS, Credit Suisse, and Zürcher Kantonalbank. FCCA, CFP®, FINMA-registered independent insurance intermediary; LL.M., MSc, DBA. Twelve peer-reviewed papers on banking, sustainable finance, ESG, and cross-border life insurance.",
     programmes: ["access", "banking", "topic"],
-    linkedin: "https://www.linkedin.com/",
+    linkedin: "https://www.linkedin.com/company/98380448/",
   },
 ];
 
@@ -419,7 +419,7 @@ export const featuredInsights: Insight[] = [
     body: [
       "The place a learning experience is held changes what it teaches. A closed-room finance session reads one way in a considered practitioner setting; the same conversation held in a plenary hall reads as performance.",
       "Vision Goal chooses environments for what they carry — the discretion of a chatham-house room, the operating context of a working business, the composure of a considered venue. Geography is part of the curriculum.",
-      "Cities and venues for specific formats are confirmed at the time each experience is announced. The principle stays the same: the room is the deliverable, and the room is chosen for the question.",
+      "Cities and venues for specific experiences are confirmed when each one is announced. The principle stays the same: the setting is chosen because it suits the question being explored.",
     ],
   },
   {

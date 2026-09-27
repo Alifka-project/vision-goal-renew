@@ -20,7 +20,7 @@ const outcomes = {
     eyebrow: "Subscription confirmed",
     headline: "You are on the list.",
     body: [
-      "Your address is confirmed and the next dispatch will reach you. We publish roughly two pieces a month and never anything promotional.",
+      "Your address is confirmed and the next dispatch will reach you. Dispatches are sent occasionally and never contain anything promotional.",
       "You can unsubscribe at any time using the link at the foot of every dispatch.",
     ],
   },

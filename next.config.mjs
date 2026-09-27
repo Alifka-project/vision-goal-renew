@@ -27,6 +27,10 @@ const nextConfig = {
       { source: "/programmes/:slug", destination: "/experiences/:slug", permanent: false },
       { source: "/apply", destination: "/contact", permanent: false },
       { source: "/apply/:path*", destination: "/contact", permanent: false },
+      // The dossier request form was withdrawn — there is no dossier to send
+      // while no programme is confirmed. Send the traffic to the contact form
+      // instead of returning a 404.
+      { source: "/request-dossier", destination: "/contact", permanent: false },
     ];
   },
 };

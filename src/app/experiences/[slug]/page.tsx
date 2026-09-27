@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/seo";
 import { notFound } from "next/navigation";
 import { programmes } from "@/lib/content";
 import { ProgrammePageClient } from "./ProgrammePageClient";
@@ -17,11 +18,11 @@ export async function generateMetadata({
   const { slug } = await params;
   const programme = programmes.find((p) => p.slug === slug);
   if (!programme) return {};
-  return {
+  return pageMetadata({
     title: programme.name,
     description: programme.tagline,
-    alternates: { canonical: `/experiences/${programme.slug}` },
-  };
+    path: `/experiences/${programme.slug}`,
+  });
 }
 
 // Pre-launch: no Offer / price / location JSON-LD is emitted — those become
