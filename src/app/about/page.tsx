@@ -9,11 +9,14 @@ import { Reveal } from "@/components/effects/Reveal";
 import { publications } from "@/lib/content";
 import { useT } from "@/i18n/I18nProvider";
 
-// Career timeline ported from visiongoal.ch — real institutions and dates.
-// The Q WEALTH AG line was removed at the client's request: nothing here
-// should present the founder as currently working for that firm.
+// Career timeline — real institutions and dates.
+// This is the Vision Goal site. It must not present the founder as currently
+// working for any other firm, so no open-ended third-party role appears here:
+// the Q WEALTH AG line was removed at the client's request, and the S&L
+// Management and Consulting (SLMC) line was removed for the same reason —
+// SLMC is a separate company and must not be conflated with Vision Goal.
+// His current role is Founder & Curator of Vision Goal, stated elsewhere.
 const career = [
-  { years: "2024 –", role: "Insurance Broker", institution: "S&L Management and Consulting GmbH" },
   { years: "02.2012 – 05.2024", role: "Head of Wealth Planning, Life & Pension", institution: "Bank Julius Bär & Co. AG · Switzerland / Singapore" },
   { years: "09.2009 – 03.2011", role: "Board Member", institution: "Liechtenstein Insurance Association, Vaduz" },
   { years: "04.2008 – 03.2011", role: "Managing Director / Head of Finance", institution: "Wealth Assurance AG, Vaduz / Schaan" },
