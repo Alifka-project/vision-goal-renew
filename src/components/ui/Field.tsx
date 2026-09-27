@@ -24,8 +24,12 @@ export function Field({ label, htmlFor, hint, required, children }: Props) {
   );
 }
 
+// Control borders are a darker stone than the decorative hairline (3.7:1 on
+// white), so the field boundary is visible; focus darkens it to navy and
+// keeps a real outline for keyboard users. min-h keeps the select the same
+// height as the text inputs beside it.
 const baseInput =
-  "w-full bg-white border hairline px-4 py-3 text-body text-navy placeholder:text-slate-2/60 focus:outline-none focus:border-gold/60 transition-colors duration-200";
+  "w-full min-h-[3.25rem] bg-white border border-[#8C8471] px-4 py-3 text-body text-navy placeholder:text-slate-2/70 focus:border-navy focus:outline-none focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-navy transition-colors duration-200";
 
 export function TextInput(props: React.InputHTMLAttributes<HTMLInputElement>) {
   return <input {...props} className={`${baseInput} ${props.className ?? ""}`} />;

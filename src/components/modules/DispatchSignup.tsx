@@ -12,8 +12,8 @@ export function DispatchSignup() {
 
   return (
     <section className="bg-navy text-cream py-section-y md:py-section-y-lg">
-      <div className="container max-w-3xl">
-        <Reveal duration={800}>
+      <div className="container">
+        <Reveal className="max-w-3xl" duration={800}>
           <Eyebrow tone="cream">{t.insights.dispatchEyebrow}</Eyebrow>
           <h2 className="mt-6 font-serif text-cream text-display-md md:text-[3rem] leading-[1.08] tracking-[-0.015em]">
             {t.insights.dispatchHeadline} <span className="text-gold-hi italic">{t.insights.dispatchHeadlineGold}</span>

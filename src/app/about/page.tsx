@@ -6,6 +6,7 @@ import { PageHero } from "@/components/modules/PageHero";
 import { CTABlock } from "@/components/modules/CTABlock";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { Reveal } from "@/components/effects/Reveal";
+import Link from "next/link";
 import { publications } from "@/lib/content";
 import { useT } from "@/i18n/I18nProvider";
 
@@ -99,11 +100,26 @@ export default function AboutPage() {
 
         <section className="bg-white py-section-y md:py-section-y-lg">
           <div className="container grid lg:grid-cols-12 gap-10 lg:gap-16">
-            <div className="lg:col-span-4">
-              <Reveal duration={800}>
-                <Eyebrow>{t.pages.about.eyebrow}</Eyebrow>
-              </Reveal>
-            </div>
+            {/* This column used to repeat the hero eyebrow ("About the
+                platform") a second time. It now gives the three places a
+                reader of this paragraph usually wants to go next. */}
+            <Reveal className="lg:col-span-4" duration={800}>
+              <Eyebrow>Explore</Eyebrow>
+              <ul className="mt-6 grid gap-3">
+                {[
+                  { label: "The learning concepts", href: "/experiences" },
+                  { label: "Private Office", href: "/private-office" },
+                  { label: "The founder", href: "#founder" },
+                ].map((l) => (
+                  <li key={l.href}>
+                    <Link href={l.href} className="group inline-flex items-center gap-3 text-body text-navy">
+                      <span className="link-underline link-underline-out">{l.label}</span>
+                      <span aria-hidden="true" className="text-gold transition-transform duration-300 ease-editorial group-hover:translate-x-1">→</span>
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </Reveal>
             <div className="lg:col-span-8">
               <Reveal duration={800}>
                 <p className="dropcap font-serif text-2xl lg:text-3xl text-navy leading-[1.4] max-w-prose">
@@ -115,7 +131,7 @@ export default function AboutPage() {
           </div>
         </section>
 
-        <section className="bg-cream py-section-y md:py-section-y-lg border-y hairline">
+        <section id="how-we-operate" className="scroll-mt-28 bg-cream py-section-y md:py-section-y-lg border-y hairline">
           <div className="container">
             <Reveal duration={800}>
               <Eyebrow>{t.pages.about.standardsEyebrow}</Eyebrow>
@@ -134,70 +150,25 @@ export default function AboutPage() {
           </div>
         </section>
 
-        <section className="bg-white py-section-y md:py-section-y-lg">
-          <div className="container">
-            <Reveal duration={800}>
-              <Eyebrow>{t.pages.about.pressEyebrow}</Eyebrow>
-              <h2 className="mt-6 font-serif text-display-md md:text-[2.5rem] text-navy leading-[1.1] tracking-[-0.015em] max-w-prose">
-                {t.pages.about.pressHeadline}
-              </h2>
-            </Reveal>
-            <ul className="mt-10 max-w-4xl border-t hairline">
-              {publications.map((p, i) => (
-                <Reveal as="li" key={p.href} duration={700} delay={i * 30}>
-                  <a
-                    href={p.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="group grid grid-cols-1 md:grid-cols-12 gap-y-2 md:gap-x-6 py-6 border-b hairline hover:bg-cream-2 transition-colors duration-300"
-                  >
-                    <p className="md:col-span-1 text-eyebrow uppercase text-gold tabular">
-                      {p.year}
-                    </p>
-                    <p className="md:col-span-8 font-serif text-navy text-lg leading-snug">
-                      {p.title}
-                      <span
-                        aria-hidden="true"
-                        className="ml-2 inline-block text-gold transition-transform duration-300 ease-editorial group-hover:translate-x-0.5"
-                      >
-                        ↗
-                      </span>
-                    </p>
-                    <p className="md:col-span-3 text-body-sm text-slate italic leading-snug">
-                      {p.journal}
-                    </p>
-                  </a>
-                </Reveal>
-              ))}
-            </ul>
-            <Reveal duration={700}>
-              <p className="mt-8 max-w-prose text-body-sm text-slate-2">
-                Each entry links to the peer-reviewed source on Academia.edu. Public press coverage will
-                be added here once it is real and linkable.
-              </p>
-            </Reveal>
-          </div>
-        </section>
-
         {/* Founder & Curator — named, ported from visiongoal.ch */}
-        <section className="bg-cream-2 py-section-y md:py-section-y-lg border-t hairline">
+        <section id="founder" className="scroll-mt-28 bg-cream-2 py-section-y md:py-section-y-lg border-t hairline">
           <div className="container grid lg:grid-cols-12 gap-10 lg:gap-16">
-            <Reveal className="lg:col-span-4 flex justify-center lg:justify-start" duration={700}>
-              <div className="aspect-square w-44 lg:w-56 bg-navy text-cream flex items-center justify-center font-serif text-5xl lg:text-6xl tracking-tight">
+            {/* items-start stops the flex wrapper stretching the monogram to
+                the height of the bio beside it: flex stretch overrides
+                aspect-square, which turned a 224px square into a 224×522
+                navy slab. */}
+            <Reveal className="lg:col-span-4 flex items-start justify-start" duration={700}>
+              <div aria-hidden="true" className="aspect-square w-28 md:w-40 lg:w-56 shrink-0 bg-navy text-cream flex items-center justify-center font-serif text-5xl lg:text-6xl tracking-tight">
                 AS
               </div>
             </Reveal>
             <div className="lg:col-span-8">
               <Reveal duration={800}>
-                <Eyebrow>{t.pages.about.curatorEyebrow}</Eyebrow>
+                <Eyebrow>Founder & Curator</Eyebrow>
                 <h2 className="mt-6 font-serif text-display-md md:text-[2.75rem] text-navy leading-[1.08] tracking-[-0.015em]">
                   Andreas Svoboda
                 </h2>
-                <p className="mt-3 text-body-lg text-slate">
-                  Founder & Curator · More than 30 years across finance, banking, insurance,
-                  governance and executive education
-                </p>
-                <p className="mt-8 font-serif text-xl lg:text-2xl text-navy leading-[1.4] max-w-prose">
+                <p className="mt-6 font-serif text-xl lg:text-2xl text-navy leading-[1.4] max-w-prose">
                   Andreas Svoboda founded Vision Goal in 2022 after more than 30 years across
                   finance, banking, insurance, governance and executive education. Twelve years at
                   Bank Julius Bär & Co. AG as Head of Wealth Planning, Life & Pension across
@@ -229,7 +200,7 @@ export default function AboutPage() {
             <Reveal duration={800}>
               <Eyebrow>Career</Eyebrow>
               <h2 className="mt-6 font-serif text-display-md md:text-[2.75rem] text-navy leading-[1.08] tracking-[-0.015em] max-w-prose">
-                Three decades on three Swiss balance sheets.
+                Three decades inside Swiss and Liechtenstein finance.
               </h2>
             </Reveal>
             <ol className="mt-12 max-w-4xl border-t hairline">
@@ -275,6 +246,59 @@ export default function AboutPage() {
                 principals introduced through Vision Goal’s network. Programme content is not regulated
                 financial, tax, or legal advice.
               </p>
+            </Reveal>
+          </div>
+        </section>
+
+        {/* Selected papers — after the founder and his credentials, so the
+            work has an author by the time it is listed. Five here; the full
+            list lives on /insights#research. */}
+        <section className="bg-white py-section-y md:py-section-y-lg border-t hairline">
+          <div className="container">
+            <Reveal duration={800}>
+              <Eyebrow>{t.pages.about.pressEyebrow}</Eyebrow>
+              <h2 className="mt-6 font-serif text-display-md md:text-[2.5rem] text-navy leading-[1.1] tracking-[-0.015em] max-w-prose">
+                {t.pages.about.pressHeadline}
+              </h2>
+            </Reveal>
+            <ul className="mt-10 max-w-4xl border-t hairline">
+              {publications.slice(0, 5).map((p, i) => (
+                <Reveal as="li" key={p.href} duration={700} delay={i * 30}>
+                  <a
+                    href={p.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group grid grid-cols-1 md:grid-cols-12 gap-y-2 md:gap-x-6 py-6 border-b hairline hover:bg-cream-2 transition-colors duration-300"
+                  >
+                    <p className="md:col-span-1 text-eyebrow uppercase text-gold tabular">
+                      {p.year}
+                    </p>
+                    <p className="md:col-span-8 font-serif text-navy text-lg leading-snug">
+                      {p.title}
+                      <span
+                        aria-hidden="true"
+                        className="ml-2 inline-block text-gold transition-transform duration-300 ease-editorial group-hover:translate-x-0.5"
+                      >
+                        ↗
+                      </span>
+                    </p>
+                    <p className="md:col-span-3 text-body-sm text-slate italic leading-snug">
+                      {p.journal}
+                    </p>
+                  </a>
+                </Reveal>
+              ))}
+            </ul>
+            <Reveal duration={700}>
+              <div className="mt-8 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 max-w-4xl">
+                <p className="text-body-sm text-slate-2">
+                  Each entry links to the peer-reviewed source on Academia.edu.
+                </p>
+                <Link href="/insights#research" className="group inline-flex items-center gap-3 text-sm text-navy font-medium">
+                  <span className="link-underline link-underline-out">All {publications.length} papers</span>
+                  <span aria-hidden="true" className="transition-transform duration-300 ease-editorial group-hover:translate-x-1">→</span>
+                </Link>
+              </div>
             </Reveal>
           </div>
         </section>

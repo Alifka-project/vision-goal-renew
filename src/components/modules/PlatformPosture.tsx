@@ -16,9 +16,8 @@ export function PlatformPosture() {
     <section className="bg-white py-section-y border-b hairline">
       <div className="container">
         <Reveal duration={800}>
-          <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-4 mb-10">
+          <div className="mb-8 lg:mb-10">
             <Eyebrow>{t.posture.eyebrow}</Eyebrow>
-            <p className="text-[0.78rem] uppercase tracking-[0.18em] text-slate-2">{t.posture.sub}</p>
           </div>
         </Reveal>
 
@@ -29,7 +28,7 @@ export function PlatformPosture() {
                 <span className="font-serif text-gold text-3xl tabular leading-none pt-1">{p.n}</span>
                 <div>
                   <h3 className="font-serif text-xl lg:text-2xl text-navy leading-tight">{p.label}.</h3>
-                  <p className="mt-2 text-body-sm text-slate-2 uppercase tracking-[0.14em]">{p.line}</p>
+                  <p className="mt-2 text-body text-slate leading-snug">{p.line}</p>
                 </div>
               </div>
             </Reveal>

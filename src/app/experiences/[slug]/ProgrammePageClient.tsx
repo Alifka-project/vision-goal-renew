@@ -18,19 +18,19 @@ import { useT } from "@/i18n/I18nProvider";
 // what it is for, how it is architected (Before / Inside / After), the
 // outcomes it aims at, and answers to the common questions. Reintroduce
 // fee / format / cohort blocks once real cohorts are ratified.
-// Vertical focal point for each hero. The banking concept now uses a real
-// portrait photograph, so its band is pulled up to keep the subject's head in
-// frame; the stock images keep the default centre.
-const programmeFocus: Record<string, string> = {
-  access: "object-center",
-  banking: "object-[50%_28%]",
-  topic: "object-center",
-};
-
+// Full-bleed hero image for each concept page. Banking deliberately differs
+// from its homepage card: the card's portrait photograph is too small to
+// stretch across a 1440px hero, and a recognisable face behind the concept
+// title would read as that programme's host or contributor.
 const programmeImages: Record<string, string> = {
   access: images.programmeAccess,
-  banking: images.programmeBanking,
+  banking: images.programmeBankingHero,
   topic: images.programmeTopic,
+};
+const programmeFocus: Record<string, string> = {
+  access: "object-center",
+  banking: "object-center",
+  topic: "object-[50%_60%]",
 };
 
 export function ProgrammePageClient({ slug }: { slug: Programme["slug"] }) {
@@ -63,7 +63,7 @@ export function ProgrammePageClient({ slug }: { slug: Programme["slug"] }) {
             />
           </div>
           <div className="container relative py-section-y md:py-section-y-lg">
-            <Reveal duration={800}>
+            <div className="fade-in-soft">
               <div className="flex items-center gap-4">
                 <span aria-hidden="true" className="block h-px w-10 bg-gold" />
                 <span className="text-eyebrow uppercase text-cream/85">
@@ -90,7 +90,7 @@ export function ProgrammePageClient({ slug }: { slug: Programme["slug"] }) {
                   {t.cta.allExperiences}
                 </Button>
               </div>
-            </Reveal>
+            </div>
           </div>
         </section>
 

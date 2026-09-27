@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { Header } from "@/components/chrome/Header";
 import { Footer } from "@/components/chrome/Footer";
 import { PageHero } from "@/components/modules/PageHero";
@@ -45,17 +46,47 @@ export default function WhatWeDoPage() {
               <span className="text-gold italic">connected to practice.</span>
             </>
           }
-          lede="Vision Goal designs executive learning experiences that connect financial and strategic thinking with real operating environments, professional dialogue and peer exchange."
+          lede="Vision Goal designs finance and business learning for entrepreneurs, executives and international professionals — built around real questions, worked through with practitioners, in Swiss settings where the subject can be seen at work."
         />
 
+        {/* Two things Vision Goal does, side by side. This section used to
+            hold only the Learning in Practice line, restating the hero lede
+            beside an empty half-screen, and the page never mentioned the
+            Private Office or linked to the concepts. Learning leads; the
+            Private Office is presented as complementary. */}
         <section className="bg-white py-section-y md:py-section-y-lg">
-          <div className="container">
-            <Reveal duration={800}>
+          <div className="container grid lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+            <Reveal className="lg:col-span-7" duration={800}>
               <Eyebrow>{lip.eyebrow}</Eyebrow>
               <h2 className="mt-6 font-serif text-display-md md:text-[2.75rem] text-navy leading-[1.1] tracking-[-0.015em] max-w-prose">
                 {lip.headline}
               </h2>
-              <p className="mt-8 text-body-lg text-slate max-w-prose">{lip.body}</p>
+              <p className="mt-6 text-body-lg text-slate max-w-prose">{lip.body}</p>
+              <Link
+                href="/experiences"
+                className="group mt-8 inline-flex items-center gap-3 text-sm text-navy font-medium"
+              >
+                <span className="link-underline link-underline-out">See the learning concepts</span>
+                <span aria-hidden="true" className="inline-block transition-transform duration-300 ease-editorial group-hover:translate-x-1">→</span>
+              </Link>
+            </Reveal>
+            <Reveal className="lg:col-span-5 lg:border-l lg:border-hairline lg:pl-12" duration={800} delay={100}>
+              <Eyebrow>Alongside the learning</Eyebrow>
+              <h3 className="mt-6 font-serif text-2xl lg:text-[1.75rem] text-navy leading-[1.2]">
+                Private Office
+              </h3>
+              <p className="mt-4 text-body text-slate max-w-prose">
+                For individuals, families and business owners, Vision Goal can also help clarify
+                objectives and arrange considered introductions to relevant Swiss specialists. Any
+                regulated advice comes from the specialist, not from Vision Goal.
+              </p>
+              <Link
+                href="/private-office"
+                className="group mt-6 inline-flex items-center gap-3 text-sm text-navy font-medium"
+              >
+                <span className="link-underline link-underline-out">About the Private Office</span>
+                <span aria-hidden="true" className="inline-block transition-transform duration-300 ease-editorial group-hover:translate-x-1">→</span>
+              </Link>
             </Reveal>
           </div>
         </section>
@@ -126,7 +157,7 @@ export default function WhatWeDoPage() {
           </div>
         </section>
 
-        <CTABlock />
+        <CTABlock secondary={{ label: t.cta.seeConcepts, href: "/experiences" }} />
       </main>
       <Footer />
     </>

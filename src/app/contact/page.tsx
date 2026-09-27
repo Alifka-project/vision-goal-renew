@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect, useRef } from "react";
 import { Header } from "@/components/chrome/Header";
 import { Footer } from "@/components/chrome/Footer";
 import { Eyebrow } from "@/components/ui/Eyebrow";
@@ -21,6 +22,15 @@ export default function ContactPage() {
   const t = useT();
   const { submit, status, error, fieldErrors, isSubmitting, isSuccess } =
     useFormSubmission("contact");
+  // On success the long form collapses into a short panel; on a phone that
+  // left the visitor looking at the footer. Bring the confirmation into view
+  // and give it focus so screen readers announce it too.
+  const successRef = useRef<HTMLDivElement>(null);
+  useEffect(() => {
+    if (!isSuccess) return;
+    successRef.current?.scrollIntoView({ block: "start" });
+    successRef.current?.focus();
+  }, [isSuccess]);
 
   const consentText =
     "I agree that Vision Goal may store the details above in order to respond to this enquiry, as described in the";
@@ -36,16 +46,16 @@ export default function ContactPage() {
       <main>
         <section className="bg-cream-2 border-b hairline">
           <div className="container py-section-y md:py-section-y-lg">
-            <Reveal duration={800}>
+            <div className="fade-in-soft">
               <Eyebrow>{t.pages.contact.eyebrow}</Eyebrow>
-              <h1 className="mt-6 font-serif text-display-md md:text-[3.5rem] lg:text-[4.25rem] text-navy leading-[1.05] tracking-[-0.015em] max-w-[20ch]">
+              <h1 className="mt-6 font-serif text-[2.25rem] font-bold md:text-[3.5rem] lg:text-[4.25rem] text-navy leading-[1.05] tracking-[-0.015em] max-w-[20ch]">
                 Discuss an <span className="text-gold italic">Experience.</span>
               </h1>
               <p className="mt-8 max-w-prose text-body-lg text-slate">
                 Tell us what you are working on and what you would want from a learning experience.
                 A short conversation is the first step — there is no application process.
               </p>
-            </Reveal>
+            </div>
           </div>
         </section>
 
@@ -55,16 +65,18 @@ export default function ContactPage() {
               {isSuccess ? (
                 <Reveal duration={800}>
                   <div
+                    ref={successRef}
+                    tabIndex={-1}
                     role="status"
                     aria-live="polite"
-                    className="border hairline p-10 lg:p-14 bg-cream-2"
+                    className="scroll-mt-28 focus:outline-none border hairline p-8 lg:p-14 bg-cream-2"
                   >
                     <Eyebrow>Message sent</Eyebrow>
                     <h2 className="mt-6 font-serif text-3xl lg:text-4xl text-navy leading-tight">
                       Thank you — your message has been received.
                     </h2>
                     <p className="mt-6 text-body text-slate max-w-prose">
-                      We read every enquiry personally and will come back to you shortly. If it is
+                      Every enquiry is read personally. I normally respond within 48 hours. If it is
                       easier, you can also write directly to{" "}
                       <a href={`mailto:${organisation.email.general}`} className="text-navy underline">
                         {organisation.email.general}
@@ -136,7 +148,7 @@ export default function ContactPage() {
                   <FormError error={error} fieldErrors={fieldErrors} />
 
                   <div>
-                    <ButtonAction type="submit" variant="primary" disabled={isSubmitting}>
+                    <ButtonAction type="submit" variant="primary" disabled={isSubmitting} className="w-full sm:w-auto">
                       {isSubmitting ? "Sending…" : t.cta.submitEnquiry}
                     </ButtonAction>
                   </div>
@@ -144,7 +156,7 @@ export default function ContactPage() {
               )}
             </div>
 
-            <aside className="lg:col-span-5 lg:pl-10 lg:border-l lg:border-hairline">
+            <aside className="hidden lg:block lg:col-span-5 lg:pl-10 lg:border-l lg:border-hairline">
               <Reveal duration={800}>
                 <Eyebrow>{t.pages.contact.officeEyebrow}</Eyebrow>
                 <dl className="mt-8 grid gap-7">
@@ -165,7 +177,7 @@ export default function ContactPage() {
                     <dt className="text-[0.7rem] uppercase tracking-[0.16em] text-slate-2">
                       {t.pages.contact.responseLabel}
                     </dt>
-                    <dd className="mt-1 text-body text-slate">{t.pages.contact.responseValue}</dd>
+                    <dd className="mt-1 text-body-sm text-slate">{t.pages.contact.responseValue}</dd>
                   </div>
                 </dl>
               </Reveal>

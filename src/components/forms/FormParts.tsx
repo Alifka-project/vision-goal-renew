@@ -35,7 +35,7 @@ export function ConsentCheckbox({
         value="true"
         required
         data-consent-text={text}
-        className="mt-1 accent-[#B8924A]"
+        className={`mt-0.5 h-5 w-5 shrink-0 ${dark ? "accent-[#D4B26A]" : "accent-[#0A1F44]"}`}
       />
       {/*
        * The label wraps only the text, not the link: nesting an anchor

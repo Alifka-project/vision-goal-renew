@@ -8,7 +8,9 @@ type Props = {
 
 const tones = {
   navy: "text-navy",
-  gold: "text-gold",
+  // Deeper gold so 11px labels are legible on light surfaces; inside navy
+  // bands globals.css switches it to gold-hi.
+  gold: "text-gold-ink",
   cream: "text-cream/80",
 } as const;
 

@@ -18,7 +18,10 @@ export function TrustStrip() {
               <p className="font-serif text-navy text-4xl lg:text-5xl tabular leading-none">
                 {stat.value}
               </p>
-              <p className="mt-3 text-[0.78rem] uppercase tracking-[0.14em] text-slate-2 leading-relaxed">
+              {/* Sentence case, not tiny letter-spaced capitals: these labels
+                  are real content (a degree, a qualification), and small caps
+                  with wide tracking made them hard to read. */}
+              <p className="mt-3 text-body-sm text-slate leading-snug max-w-[26ch]">
                 {stat.label}
               </p>
             </Reveal>

@@ -362,7 +362,7 @@ export const featuredInsights: Insight[] = [
     excerpt:
       "The signals that matter inside a Swiss SME — what is read in the first meeting, and what is read in the third.",
     authorName: "Vision Goal",
-    readingTime: "7 min",
+    readingTime: "1 min",
     href: "/insights/swiss-sme-evaluation",
     imageKey: "insightAccess",
     body: [
@@ -379,7 +379,7 @@ export const featuredInsights: Insight[] = [
     excerpt:
       "Why the discretion that defines Swiss private banking is read as a stance, not a feature — and what that means for the room.",
     authorName: "Vision Goal",
-    readingTime: "9 min",
+    readingTime: "1 min",
     href: "/insights/discretion-as-posture",
     imageKey: "insightBanking",
     body: [
@@ -396,7 +396,7 @@ export const featuredInsights: Insight[] = [
     excerpt:
       "Group dynamics, attention, and the calibre of what is said — the case for the small room.",
     authorName: "Vision Goal",
-    readingTime: "5 min",
+    readingTime: "1 min",
     href: "/insights/small-rooms",
     imageKey: "insightMethodology",
     body: [
@@ -413,7 +413,7 @@ export const featuredInsights: Insight[] = [
     excerpt:
       "Where a learning experience happens is part of what is being taught, not a logistical afterthought.",
     authorName: "Vision Goal",
-    readingTime: "4 min",
+    readingTime: "1 min",
     href: "/insights/geography-is-curatorial",
     imageKey: "insightCities",
     body: [
@@ -429,7 +429,7 @@ export const featuredInsights: Insight[] = [
     excerpt:
       "Why every engagement with Vision Goal starts with a conversation — and what a short conversation surfaces that a form never will.",
     authorName: "Vision Goal",
-    readingTime: "3 min",
+    readingTime: "1 min",
     href: "/insights/a-conversation-not-a-sale",
     imageKey: "insightApplication",
     body: [
@@ -446,7 +446,7 @@ export const featuredInsights: Insight[] = [
     excerpt:
       "The platform is defined as much by its refusals as by its offers. A short list of the things we will not do.",
     authorName: "Vision Goal",
-    readingTime: "4 min",
+    readingTime: "1 min",
     href: "/insights/what-we-do-not-do",
     imageKey: "insightRefusal",
     body: [

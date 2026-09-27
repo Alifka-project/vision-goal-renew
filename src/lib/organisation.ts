@@ -61,10 +61,9 @@ export const postalAddressLines = [
 export const postalAddressInline = `${organisation.address.line1}, ${organisation.address.postalCode} ${organisation.address.city}, ${organisation.address.country}`;
 
 // A single response standard, applied to every form, every page, and every
-// automated acknowledgement. Previously the site quoted 48 hours, five business
-// days, and ten business days on different pages.
-export const RESPONSE_STANDARD_DAYS = 5;
+// automated acknowledgement. The client specified one sentence, used
+// verbatim everywhere, so there is no shorter variant.
 export const responseStandard = {
-  short: "Within 48 hours",
+  short: "I normally respond within 48 hours.",
   sentence: "I normally respond within 48 hours.",
 };

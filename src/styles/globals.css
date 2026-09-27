@@ -40,8 +40,12 @@
     text-wrap: balance;
   }
 
-  p {
-    text-wrap: pretty;
+  /* Balanced last lines on wider screens only: in narrow phone columns
+     Chrome's "pretty" rewrap left visibly jagged right edges on cards. */
+  @media (min-width: 768px) {
+    p {
+      text-wrap: pretty;
+    }
   }
 
   /* Tabular numerals on any number-bearing context (calendars, fees, dates) */
@@ -52,20 +56,27 @@
     font-feature-settings: "tnum";
   }
 
-  /* Visible focus on every interactive element (WCAG 2.2 AA) */
+  /* Visible focus on every interactive element (WCAG 2.2 AA). Navy on the
+     light surfaces (gold was under 3:1 on white and cream); gold-hi on the
+     navy surfaces, where it is well above 3:1. scroll-margin keeps a focused
+     element clear of the sticky header when tabbing backwards. */
   :focus-visible {
-    outline: 2px solid var(--color-gold);
+    outline: 2px solid var(--color-navy);
     outline-offset: 3px;
     border-radius: 2px;
+    scroll-margin-top: 6rem;
+  }
+  :is(header, footer, #mobile-menu, .bg-navy, .bg-navy-deep) :focus-visible {
+    outline-color: var(--color-gold-hi);
   }
 
-  @media (prefers-reduced-motion: no-preference) {
-  [data-reveal]:not([data-visible]) {
-    opacity: 0;
+  /* An eyebrow left on its default tone inside a navy band would be too
+     dark there; use the light gold instead. */
+  :is(.bg-navy, .bg-navy-deep) .text-gold-ink {
+    color: var(--color-gold-hi);
   }
-}
 
-@media (prefers-reduced-motion: reduce) {
+  @media (prefers-reduced-motion: reduce) {
     *,
     *::before,
     *::after {
@@ -272,9 +283,21 @@
   }
 }
 
+/* Reveal content starts hidden until React marks it visible. If JavaScript
+   never runs (blocked on locked-down corporate browsers) or a chunk fails to
+   load, the failsafe animation shows it anyway after 2s, so no page can stay
+   blank. layout.tsx adds a <noscript> rule that shows it immediately. */
 @media (prefers-reduced-motion: no-preference) {
   [data-reveal]:not([data-visible]) {
     opacity: 0;
+    animation: vg-reveal-failsafe 0s 2s forwards;
+  }
+}
+
+@keyframes vg-reveal-failsafe {
+  to {
+    opacity: 1;
+    transform: none;
   }
 }
 

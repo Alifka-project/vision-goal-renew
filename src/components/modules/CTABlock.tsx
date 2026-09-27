@@ -7,8 +7,11 @@ import { Reveal } from "@/components/effects/Reveal";
 import { images } from "@/lib/images";
 import { useT } from "@/i18n/I18nProvider";
 
-export function CTABlock() {
+// `secondary` overrides the client-specified "Discover Vision Goal" link,
+// which goes to /what-we-do — on that page itself it would only reload it.
+export function CTABlock({ secondary }: { secondary?: { label: string; href: string } } = {}) {
   const t = useT();
+  const second = secondary ?? { label: t.cta.requestConsult, href: "/what-we-do" };
   return (
     <section className="relative bg-navy-deep text-cream overflow-hidden">
       <div className="absolute inset-0">
@@ -32,17 +35,17 @@ export function CTABlock() {
       <div className="container relative py-section-y md:py-section-y-lg">
         <Reveal className="max-w-4xl" duration={800}>
           <Eyebrow tone="cream">{t.ctaBlock.eyebrow}</Eyebrow>
-          <h2 className="mt-6 font-serif text-cream text-display-md md:text-[4rem] lg:text-[5.25rem] leading-[1.04] tracking-[-0.02em]">
+          <h2 className="mt-6 font-serif text-cream text-display-md md:text-[3rem] lg:text-[3.75rem] leading-[1.08] tracking-[-0.02em]">
             {t.ctaBlock.line1}
             <br />
             <span className="text-gold-hi italic">{t.ctaBlock.line2}</span>
           </h2>
-          <div className="mt-12 flex flex-col sm:flex-row gap-3 sm:gap-5">
+          <div className="mt-10 flex flex-col sm:flex-row gap-3 sm:gap-5">
             <Button href="/contact" variant="on-dark">
               {t.cta.applyNext}
             </Button>
-            <Button href="/what-we-do" variant="ghost-on-dark">
-              {t.cta.requestConsult}
+            <Button href={second.href} variant="ghost-on-dark">
+              {second.label}
             </Button>
           </div>
         </Reveal>

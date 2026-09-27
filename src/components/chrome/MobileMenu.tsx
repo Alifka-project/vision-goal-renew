@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Button } from "@/components/ui/Button";
 import { useT, useI18n } from "@/i18n/I18nProvider";
 import { localeLabels, visibleLocales, hasLocaleChoice, type Locale } from "@/i18n/config";
@@ -14,6 +14,18 @@ export function MobileMenu({ navItems }: Props) {
   const t = useT();
   const { locale, setLocale } = useI18n();
   const [open, setOpen] = useState(false);
+  const toggleRef = useRef<HTMLButtonElement>(null);
+  const closeRef = useRef<HTMLButtonElement>(null);
+  const wasOpen = useRef(false);
+
+  // Move focus into the drawer when it opens, and back to the menu button
+  // when it closes (by button, backdrop, link or Escape), so keyboard users
+  // are never left on an element that has just become inert.
+  useEffect(() => {
+    if (open) closeRef.current?.focus();
+    else if (wasOpen.current) toggleRef.current?.focus();
+    wasOpen.current = open;
+  }, [open]);
 
   // Lock body scroll while the drawer is open.
   useEffect(() => {
@@ -38,12 +50,13 @@ export function MobileMenu({ navItems }: Props) {
   return (
     <>
       <button
+        ref={toggleRef}
         type="button"
         aria-label={open ? "Close menu" : "Open menu"}
         aria-expanded={open}
         aria-controls="mobile-menu"
         onClick={() => setOpen((v) => !v)}
-        className="lg:hidden inline-flex items-center justify-center w-10 h-10 -mr-2 text-cream hover:text-gold-hi transition-colors duration-200"
+        className="lg:hidden inline-flex items-center justify-center w-11 h-11 -mr-2.5 text-cream hover:text-gold-hi transition-colors duration-200"
       >
         <span className="sr-only">{open ? "Close" : "Menu"}</span>
         <svg
@@ -80,13 +93,24 @@ export function MobileMenu({ navItems }: Props) {
         }`}
       />
 
-      {/* Drawer */}
+      {/* Drawer
+          Closed, the drawer sits just off the right edge. Two things must
+          not leak from there: its shadow (a 60px blur was spilling ~30px
+          back into the page as a grey band down the right edge of every
+          screen) and its links (they stayed focusable and readable by
+          screen readers while invisible). The shadow is applied only when
+          open, and the closed drawer is `invisible` + `inert`. Visibility is
+          in the transition list so it flips to hidden only AFTER the slide
+          out finishes, and to visible before the slide in starts. */}
       <aside
         id="mobile-menu"
         aria-label={t.nav.primaryNav}
         aria-hidden={!open}
-        className={`lg:hidden fixed top-0 right-0 bottom-0 z-50 w-[88%] max-w-sm bg-navy-deep text-cream shadow-[0_30px_60px_-30px_rgba(0,0,0,0.7)] transform transition-transform duration-300 ease-editorial ${
-          open ? "translate-x-0" : "translate-x-full"
+        inert={!open ? true : undefined}
+        className={`lg:hidden fixed top-0 right-0 bottom-0 z-50 w-[88%] max-w-sm bg-navy-deep text-cream transform transition-[transform,visibility,box-shadow] duration-300 ease-editorial ${
+          open
+            ? "visible translate-x-0 shadow-[0_30px_60px_-30px_rgba(0,0,0,0.7)]"
+            : "invisible translate-x-full shadow-none"
         }`}
       >
         <div className="flex items-center justify-between px-6 py-5 border-b border-cream/10">
@@ -94,6 +118,7 @@ export function MobileMenu({ navItems }: Props) {
             Vision <span className="text-gold-hi">Goal</span>
           </span>
           <button
+            ref={closeRef}
             type="button"
             aria-label="Close menu"
             onClick={() => setOpen(false)}

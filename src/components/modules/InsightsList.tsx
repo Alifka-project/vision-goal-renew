@@ -15,7 +15,7 @@ export function InsightsList() {
   return (
     <section className="bg-white py-section-y md:py-section-y-lg">
       <div className="container">
-        <Reveal className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-14" duration={800}>
+        <Reveal className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-10 lg:mb-12" duration={800}>
           <div>
             <Eyebrow>{t.insights.eyebrow}</Eyebrow>
             <h2 className="mt-6 font-serif text-display-md md:text-[3rem] lg:text-[3.5rem] text-navy leading-[1.05] tracking-[-0.015em] max-w-prose">
@@ -37,7 +37,7 @@ export function InsightsList() {
                     src={images[insight.imageKey]}
                     alt=""
                     fill
-                    sizes="(max-width: 768px) 100vw, 33vw"
+                    sizes="(max-width: 768px) calc(100vw - 3rem), 33vw"
                     className="object-cover transition-transform duration-[900ms] ease-editorial group-hover:scale-[1.05]"
                   />
                   <div
@@ -48,26 +48,27 @@ export function InsightsList() {
                         "linear-gradient(180deg, rgba(6,20,58,0.0) 50%, rgba(6,20,58,0.35) 100%)",
                     }}
                   />
-                  <div className="absolute top-5 left-5 right-5 flex items-center justify-between text-eyebrow uppercase text-cream">
-                    <span>{insight.category}</span>
-                    <span className="tabular text-cream/85">{insight.readingTime}</span>
-                  </div>
                 </div>
 
-                <div className="pt-6">
+                {/* Category and reading time sit under the photo, in place of
+                    the "Vision Goal" byline every card repeated. Set on the
+                    photo they vanished on bright skies and white walls. */}
+                <div className="pt-6 flex flex-1 flex-col">
                   <h3 className="font-serif text-xl lg:text-[1.5rem] text-navy leading-[1.2]">
                     {insight.title}
                   </h3>
-                  <div className="mt-5 pt-5 border-t hairline flex items-center justify-between">
-                    <p className="text-[0.78rem] uppercase tracking-[0.14em] text-slate-2">
-                      {insight.authorName}
-                    </p>
-                    <span
-                      aria-hidden="true"
-                      className="text-gold transition-transform duration-300 ease-editorial group-hover:translate-x-1"
-                    >
-                      →
-                    </span>
+                  <div className="mt-auto pt-6">
+                    <div className="pt-5 border-t hairline flex items-center justify-between">
+                      <p className="text-[0.78rem] uppercase tracking-[0.14em] text-slate-2">
+                        {insight.category} · <span className="tabular">{insight.readingTime}</span>
+                      </p>
+                      <span
+                        aria-hidden="true"
+                        className="text-gold transition-transform duration-300 ease-editorial group-hover:translate-x-1"
+                      >
+                        →
+                      </span>
+                    </div>
                   </div>
                 </div>
               </Link>

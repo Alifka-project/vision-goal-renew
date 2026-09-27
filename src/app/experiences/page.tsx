@@ -34,7 +34,7 @@ export default function ExperiencesIndexPage() {
           lede={t.pages.programmes.lede}
         />
 
-        <ThreeProgrammesBlock />
+        <ThreeProgrammesBlock showHeader={false} />
 
         {/* Photo 4 — premium retail environment, landscape. Illustrates the
             link between finance and pricing, margins, operations, customer
@@ -93,15 +93,19 @@ export default function ExperiencesIndexPage() {
             framed as an exclusively senior executive cohort. */}
         <section className="bg-white py-section-y md:py-section-y-lg">
           <div className="container grid lg:grid-cols-12 gap-10 lg:gap-16 items-center">
-            <Reveal className="lg:col-span-5" duration={800}>
+            {/* Supporting image only: a 4:3 crop on the faces keeps it smaller
+                than the text beside it and visibly different from the
+                homepage group photograph (same portico and sign). On phones
+                the text comes first. */}
+            <Reveal className="lg:col-span-5 order-last lg:order-none" duration={800}>
               <figure>
-                <div className="relative aspect-[665/900] overflow-hidden bg-navy">
+                <div className="relative aspect-[4/3] overflow-hidden bg-navy">
                   <Image
                     src={photos.orsiniMixedGroup}
                     alt="A group gathered on the steps of a Zurich restaurant after a learning session."
                     fill
                     sizes="(max-width: 1024px) 100vw, 40vw"
-                    className="object-cover object-top"
+                    className="object-cover object-[50%_44%]"
                   />
                 </div>
                 <figcaption className="mt-4 text-body-sm text-slate-2">
@@ -123,8 +127,8 @@ export default function ExperiencesIndexPage() {
                   it, not from a single seniority band.
                 </p>
                 <p className="mt-6 text-body text-slate max-w-prose">
-                  Specific formats, audiences and settings are confirmed for each experience. Start
-                  with a conversation and we will tell you what is genuinely relevant.
+                  Formats, audiences and settings will be confirmed for each experience once it is
+                  scheduled. Start with a conversation and we will tell you what is genuinely relevant.
                 </p>
               </Reveal>
             </div>

@@ -70,7 +70,7 @@ export function HeroEditorial() {
             {t.hero.subjects}
           </p>
 
-          <div className="mt-8 flex flex-col sm:flex-row gap-3 sm:gap-5 items-start sm:items-center fade-in-soft">
+          <div className="mt-8 flex flex-col sm:flex-row gap-3 sm:gap-5 items-stretch sm:items-center fade-in-soft">
             <Button href="/contact" variant="on-dark">
               {t.cta.applyNext}
             </Button>

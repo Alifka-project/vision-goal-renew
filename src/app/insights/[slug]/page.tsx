@@ -39,7 +39,7 @@ export async function generateMetadata({
           url: "/og-default.jpg",
           width: 1200,
           height: 630,
-          alt: "A premium Swiss retail environment during a Vision Goal learning experience.",
+          alt: "A premium Swiss retail food hall.",
         },
       ],
     },

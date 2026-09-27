@@ -26,41 +26,42 @@ export const photos = {
   hotelLounge: "/photos/hotel-lounge.jpg",
 } as const;
 
+// Unsplash frames still in use. Each comment states what the picture
+// actually shows and where — the earlier comments described intent ("lake
+// geneva", "european cityscape") and hid a Canadian lake, a Romanian ridge
+// and a Paris bridge on a Swiss site. None of these shows an identifiable
+// venue, bank or firm, so nothing implies a confirmed venue or partner.
 export const images = {
-  // Hero — dramatic alpine vista
-  heroAlpine: u("photo-1527668752968-14dc70a27c95", 2200, 75),
+  heroAlpine: u("photo-1527668752968-14dc70a27c95", 2200, 75), // Hero — alpine pasture and snow peaks above a small lake — landscape
 
-  // Programme moods
-  programmeAccess: u("photo-1497366216548-37526070297c", 1200), // warm modern interior
-  // Real photography, replacing a generic stock portrait (a person holding a
-  // coffee mug against a brick wall) that the old comment mislabelled as
-  // "classical architecture".
+  // Concept cards (and the full-bleed hero on each concept page)
+  programmeAccess: u("photo-1781478424318-2169641b44b2", 2200), // Bern old-town street, arcades and Münster spire — landscape
+  // Real photography on the Finance & Wealth card only. The concept page
+  // hero uses programmeBankingHero instead: a 724px portrait stretched to a
+  // 1440px hero was soft, and a face behind the concept title read as the
+  // programme's host.
   programmeBanking: "/photos/executive-desk.jpg",
-  programmeTopic: u("photo-1481627834876-b7833e8f5570", 1200), // library / study
+  programmeBankingHero: u("photo-1563644734741-7382a8584739", 2200), // Lake Geneva from the Dent de Jaman above Montreux — wide landscape
+  programmeTopic: u("photo-1779542394057-f38de1382830", 2200), // Lucerne riverside seen through a stone archway — portrait
 
-  // Venue / visual statements
-  venueZurich: u("photo-1518998053901-5348d3961a04", 1400), // european cityscape architecture
-  venueGeneva: u("photo-1502786129293-79981df4e689", 1400), // lake geneva
-  venueAlps: u("photo-1469474968028-56623f02e42e", 1400), // mountain forest
-  // Real photography, replacing a stock tropical resort with palm trees that
-  // the old comment mislabelled as "editorial interior" — off-brand for a
-  // Swiss platform. The 3:4 tile matches this ~0.72 portrait almost exactly.
+  // Homepage "Learning settings" tiles
+  venueZurich: u("photo-1649790247375-3bd1db87721d", 1400), // St. Peter clock tower over the Limmat, Zurich — portrait
+  venueGeneva: u("photo-1663616842575-c24b40700e0a", 1400), // Lavaux vineyard village above Lake Geneva, Vaud — landscape
+  venueAlps: u("photo-1709023401550-6b5f0f1c2f59", 1400), // Peaks above a sea of cloud near St. Moritz — portrait
+  // Real photography (hotel lounge), ~3:4 portrait.
   venueInterior: "/photos/hotel-lounge.jpg",
 
-  // Alumni context
-  alumniRoom: u("photo-1517248135467-4c7edcad34c4", 1600), // moody dining / cohort-dinner room
-
-  // Private office — dedicated, distinct from programmeBanking
-  privateOffice: u("photo-1524758631624-e2822e304c36", 1400), // refined private lounge
+  // Private Office hero
+  privateOffice: u("photo-1744563331347-f1175dbb5500", 2200), // Brunngasse arcades, Bern old town, black and white — landscape
 
   // Insights — one image per article so no two insight pages share a hero
-  insightAccess: u("photo-1464822759023-fed622ff2c3b", 1100), // swiss-sme-evaluation
-  insightBanking: u("photo-1521295121783-8a321d551ad2", 1100), // discretion-as-posture (globe in study)
-  insightMethodology: u("photo-1542037104857-ffbb0b9155fb", 1100), // small-rooms (alpine sea of clouds)
-  insightApplication: u("photo-1499856871958-5b9627545d1a", 1100), // an-application-not-a-sale (european bridge at dusk)
-  insightCities: u("photo-1501785888041-af3ef285b470", 1100), // geneva-and-zurich (alpine lake with rowboat)
-  insightRefusal: u("photo-1577140917170-285929fb55b7", 1100), // what-we-do-not-do (minimal room — visual restraint)
+  insightAccess: u("photo-1728402077556-7c2d3787e44f", 1800), // Basel Münster and old town above the Rhine — landscape
+  insightBanking: u("photo-1766781075588-05a0a1206e1d", 1800), // Carved wooden door in a sandstone arch, Basel old town — portrait
+  insightMethodology: u("photo-1566475955255-404134a79aeb", 1800), // Alpage huts in Val d'Hérens, Valais — landscape
+  // Not the Zurich night view: St. Peter already appears in the homepage tiles.
+  insightApplication: u("photo-1634042493368-4fd212a8bb0f", 1800), // St. Pierre Cathedral above the lakefront at night, Geneva — landscape
+  insightCities: u("photo-1643981670720-eef07ebdb179", 1800), // Zurich old town, Limmat and lake from above, morning — landscape
+  insightRefusal: u("photo-1577140917170-285929fb55b7", 1800), // Minimal, sparsely furnished room — landscape
 
-  // CTA
-  ctaAlps: u("photo-1506905925346-21bda4d32df4", 2000, 75),
+  ctaAlps: u("photo-1506905925346-21bda4d32df4", 2000, 75), // Closing CTA — alpine peaks above a sea of cloud at dusk — landscape
 };

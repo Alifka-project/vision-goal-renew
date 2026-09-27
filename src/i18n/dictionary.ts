@@ -51,6 +51,7 @@ export type Dict = {
     allExperiences: string;
     sending: string;
     expressInterest: string;
+    seeConcepts: string;
   };
   dispatch: {
     label: string;
@@ -304,13 +305,14 @@ const en: Dict = {
     allExperiences: "All experiences",
     sending: "Sending…",
     expressInterest: "Express interest",
+    seeConcepts: "See the learning concepts →",
   },
   dispatch: {
     label: "Dispatch",
     items: [
-      "Applied learning · Small rooms · Practitioner-led",
+      "Applied learning · Real settings · Practitioner-led",
       "Expressions of interest welcome · A short conversation follows",
-      "Curated Swiss executive experiences",
+      "Four learning concepts in development",
     ],
   },
   hero: {
@@ -401,15 +403,15 @@ const en: Dict = {
     cta: "About the network",
   },
   editorial: {
-    eyebrow: "The rooms",
-    headline: "Editorial. Restrained.",
-    headlineGold: "Swiss.",
-    side: "Curated environments. Small on purpose. Discretion by default.",
+    eyebrow: "Learning settings",
+    headline: "Chosen for",
+    headlineGold: "the question.",
+    side: "Each experience is held where its subject can be seen at work. Specific venues are confirmed only once an experience is scheduled.",
     tiles: [
-      { label: "Considered venues", caption: "In residence" },
-      { label: "Chatham-house", caption: "Closed rooms" },
-      { label: "Alpine settings", caption: "Quiet rooms" },
-      { label: "Curated salons", caption: "Small rooms" },
+      { label: "Considered venues", caption: "Chosen per experience" },
+      { label: "Chatham House Rule", caption: "Nothing attributed" },
+      { label: "Alpine settings", caption: "Away from the office" },
+      { label: "Private salons", caption: "Small groups" },
     ],
   },
   alumni: {
@@ -428,8 +430,8 @@ const en: Dict = {
     practitionerNotes: "Practitioner notes.",
     featuredLabel: "Featured",
     dispatchEyebrow: "Dispatch",
-    dispatchHeadline: "Occasional, never promotional.",
-    dispatchHeadlineGold: "No promotion.",
+    dispatchHeadline: "Occasional notes.",
+    dispatchHeadlineGold: "Never promotional.",
     dispatchHelp: "Double opt-in. Ask to be removed at any time.",
     dispatchOk:
       "Thank you. Confirm your email via the double opt-in we’ve sent and the next dispatch will arrive in your inbox.",
@@ -443,14 +445,16 @@ const en: Dict = {
   },
   ctaBlock: {
     eyebrow: "Start a conversation",
-    line1: "The rooms are small.",
-    line2: "The conversation comes first.",
+    line1: "Tell us what you want to understand.",
+    line2: "A short conversation follows.",
   },
   trust: {
-    eyebrow: "The platform in numbers",
+    eyebrow: "The founder behind Vision Goal",
     stats: [
       { value: "30+", label: "Years across finance, banking, insurance & governance" },
       { value: "12", label: "Peer-reviewed publications" },
+      { value: "DBA", label: "Doctorate in business administration, plus LL.M. and MSc" },
+      { value: "CFP®", label: "Certified financial planner and FCCA chartered accountant" },
     ],
   },
   enrich: {
@@ -459,7 +463,7 @@ const en: Dict = {
     programmesUnitedItems: [
       {
         title: "Hosted, not lectured",
-        body: "Sessions are designed to be hosted rather than lectured — led by someone who can answer the next question, not a stage speaker. Contributors are confirmed for each experience.",
+        body: "Sessions are designed to be hosted rather than lectured — led by someone who can answer the next question, not a stage speaker. Contributors will be named once an experience is confirmed.",
       },
       {
         title: "Small, not scaled",
@@ -479,7 +483,7 @@ const en: Dict = {
       },
       {
         title: "Discreet posture",
-        body: "Hosts who speak in stages are rarely the right hosts for a chatham-house room. We invite practitioners who reserve their best for closed conversation.",
+        body: "Hosts who speak in stages are rarely the right hosts for a Chatham House room. We invite practitioners who reserve their best for closed conversation.",
       },
       {
         title: "Time for the cohort",
@@ -487,43 +491,23 @@ const en: Dict = {
       },
     ],
     insightsCategoriesEyebrow: "Editorial categories",
-    insightsCategoriesHeadline: "Five places we publish.",
+    insightsCategoriesHeadline: "Four places we publish.",
     insightsCategoriesItems: [
-      {
-        name: "Swiss Access",
-        body: "Notes on operating culture, SME evaluation, and the bridges that work between Switzerland and the rest of the world.",
-      },
-      {
-        name: "Private Banking",
-        body: "Practitioner-grade dispatches on the Swiss private-banking landscape — discretion, regulation, and the questions held in the closed room.",
-      },
-      {
-        name: "Markets",
-        body: "Macro framings and Swiss capital-market commentary, written from a practitioner\u2019s vantage point.",
-      },
-      {
-        name: "Methodology",
-        body: "Why the experiences are shaped the way they are — the case for a small group, and what discretion is for.",
-      },
-      {
-        name: "Dispatches",
-        body: "Short notes on what a session surfaced: the questions that came up, and what is worth returning to.",
-      },
+      { name: "Swiss Access", body: "Notes on operating culture, SME evaluation, and the bridges that work between Switzerland and the rest of the world." },
+      { name: "Private Banking", body: "Practitioner-grade dispatches on the Swiss private-banking landscape — discretion, regulation, and the questions held in the closed room." },
+      { name: "Methodology", body: "Why the experiences are shaped the way they are — the case for a small group, and what discretion is for." },
+      { name: "Dispatches", body: "Short notes on what a session surfaced: the questions that came up, and what is worth returning to." },
     ],
     aboutPrinciplesEyebrow: "Operating principles",
-    aboutPrinciplesHeadline: "Five rules we hold to.",
+    aboutPrinciplesHeadline: "Four rules we hold to.",
     aboutPrinciplesItems: [
       {
         title: "Curation over volume",
-        body: "We would rather run a smaller cohort with the right room than a larger cohort with the wrong one.",
+        body: "A smaller, well-matched group is worth more than a larger one.",
       },
       {
         title: "Practitioner over performer",
         body: "Hosts are present in their personal capacity, not on a marketing roster. The platform is curatorial, not promotional.",
-      },
-      {
-        title: "Discretion as default",
-        body: "Cohort proceedings are not recorded; participant names are not published without consent; press coverage is the exception.",
       },
       {
         title: "Specificity over ceremony",
@@ -531,7 +515,7 @@ const en: Dict = {
       },
       {
         title: "Premium scope, clearly stated",
-        body: "Vision Goal sells curated access, considered introductions, and Swiss business know-how — not a course and not a consulting engagement. The regulated work, when it is needed, is delivered by the principals we introduce.",
+        body: "Vision Goal offers executive learning and, through the Private Office, considered introductions — not a course catalogue and not a consulting engagement. Regulated work, when it is needed, is delivered by the specialists introduced.",
       },
     ],
   },
@@ -573,21 +557,21 @@ const en: Dict = {
     },
     about: {
       eyebrow: "About the platform",
-      titlePart1: "Curated Swiss",
-      titleGold: "executive access.",
+      titlePart1: "Swiss executive learning,",
+      titleGold: "built by a practitioner.",
       lede:
-        "Vision Goal creates curated Swiss executive learning experiences for entrepreneurs, executives, and international professionals who want practical access to Swiss finance, business culture, and premium networks.",
+        "Vision Goal creates finance and business learning experiences for entrepreneurs, executives and international professionals who want a practical understanding of Swiss finance, business culture and how Swiss companies make decisions.",
       statement:
-        "Vision Goal designs curated executive learning experiences in a small number of formats — an immersive format, a focused intensive, and themed sessions — supplemented by a Private Office for individual principals who want curated introductions rather than a seat in a room.",
+        "Vision Goal designs executive learning experiences in a small number of formats — an immersive format, a focused intensive, themed sessions and bespoke experiences. Alongside the learning, a Private Office helps individuals, families and business owners arrange considered introductions to Swiss specialists.",
       statement2:
-        "The platform is deliberately small. Curation is the product; the rooms, introductions, and experiences are the deliverables. You are not buying a course or a consulting engagement — you are buying access, insight, and Swiss business know-how that is difficult to assemble any other way.",
+        "The platform is deliberately small. It is not a course catalogue and not a consulting engagement: each experience starts from a real question and works through it with practitioners, in settings where the subject can be seen at work.",
       standardsEyebrow: "Standards & ethics",
       standardsHeadline: "How we operate.",
       pressEyebrow: "Research & publications",
       pressHeadline: "Selected peer-reviewed work.",
       curatorEyebrow: "A note from the curator",
       curatorNote:
-        "The platform exists for the rooms. Everything else — the website, the dispatch, the editorial — is in service of what happens when a small room sits down under chatham-house rules with a host who has nothing to sell them. If we keep the rooms honest, the rest takes care of itself.",
+        "The platform exists for the rooms. Everything else — the website, the dispatch, the editorial — is in service of what happens when a small room sits down under Chatham House rules with a host who has nothing to sell them. If we keep the rooms honest, the rest takes care of itself.",
       curatorAttribution: "Vision Goal · Zurich",
     },
     contact: {
@@ -599,7 +583,7 @@ const en: Dict = {
       officeEyebrow: "Office",
       emailLabel: "Email",
       responseLabel: "Response time",
-      responseValue: "Within 48 hours",
+      responseValue: "I normally respond within 48 hours.",
       linkedinLabel: "LinkedIn",
     },
     legalSidebar: "Legal",
@@ -673,7 +657,7 @@ const en: Dict = {
   footer: {
     blurb:
       "A curated Swiss platform for applied executive learning — small rooms, practitioner-led, connected to real operating environments.",
-    sectionProgrammes: "Programmes",
+    sectionProgrammes: "Learning",
     sectionPlatform: "Platform",
     sectionApply: "Contact",
     linkApplication: "Application",
@@ -736,13 +720,14 @@ const de: Dict = {
     allExperiences: "Alle Erfahrungen",
     sending: "Wird gesendet…",
     expressInterest: "Interesse bekunden",
+    seeConcepts: "Die Lernkonzepte ansehen →",
   },
   dispatch: {
     label: "Dispatch",
     items: [
-      "Angewandtes Lernen · Kleine Räume · Von Praktikern geleitet",
+      "Angewandtes Lernen · Reale Umgebungen · Von Praktikern geleitet",
       "Interessensbekundungen willkommen · Ein kurzes Gespräch folgt",
-      "Kuratierte Schweizer Executive-Erfahrungen",
+      "Vier Lernkonzepte in Entwicklung",
     ],
   },
   hero: {
@@ -833,15 +818,15 @@ const de: Dict = {
     cta: "Über das Netzwerk",
   },
   editorial: {
-    eyebrow: "Die Räume",
-    headline: "Redaktionell. Zurückhaltend.",
-    headlineGold: "Schweizerisch.",
-    side: "Kuratierte Umgebungen. Bewusst klein. Diskretion als Standard.",
+    eyebrow: "Lernorte",
+    headline: "Gewählt für",
+    headlineGold: "die Fragestellung.",
+    side: "Jede Erfahrung findet dort statt, wo ihr Thema in der Praxis sichtbar wird. Konkrete Orte werden erst bestätigt, wenn eine Erfahrung terminiert ist.",
     tiles: [
-      { label: "Überlegte Orte", caption: "Vor Ort" },
-      { label: "Chatham-House", caption: "Geschlossene Räume" },
-      { label: "Alpiner Rückzug", caption: "Stille Räume" },
-      { label: "Kuratierte Salons", caption: "Kleine Räume" },
+      { label: "Überlegte Orte", caption: "Je Erfahrung gewählt" },
+      { label: "Chatham-House-Regel", caption: "Nichts wird zugeschrieben" },
+      { label: "Alpine Umgebung", caption: "Abseits des Büros" },
+      { label: "Private Salons", caption: "Kleine Gruppen" },
     ],
   },
   alumni: {
@@ -860,8 +845,8 @@ const de: Dict = {
     practitionerNotes: "Notizen aus der Praxis.",
     featuredLabel: "Hervorgehoben",
     dispatchEyebrow: "Dispatch",
-    dispatchHeadline: "Gelegentlich, niemals werblich.",
-    dispatchHeadlineGold: "Keine Werbung.",
+    dispatchHeadline: "Gelegentliche Notizen.",
+    dispatchHeadlineGold: "Niemals werblich.",
     dispatchHelp: "Doppeltes Opt-In. Abmeldung jederzeit auf Anfrage.",
     dispatchOk:
       "Vielen Dank. Bitte bestätigen Sie Ihre E-Mail über das Doppelte Opt-In; der nächste Dispatch trifft dann in Ihrem Posteingang ein.",
@@ -875,14 +860,16 @@ const de: Dict = {
   },
   ctaBlock: {
     eyebrow: "Ins Gespräch kommen",
-    line1: "Die Räume sind klein.",
-    line2: "Das Gespräch steht am Anfang.",
+    line1: "Sagen Sie uns, was Sie verstehen möchten.",
+    line2: "Ein kurzes Gespräch folgt.",
   },
   trust: {
-    eyebrow: "Die Plattform in Zahlen",
+    eyebrow: "Der Gründer hinter Vision Goal",
     stats: [
       { value: "30+", label: "Jahre in Finanzwesen, Banking, Versicherung & Governance" },
       { value: "12", label: "Peer-reviewte Publikationen" },
+      { value: "DBA", label: "Doktorat in Betriebswirtschaft, dazu LL.M. und MSc" },
+      { value: "CFP®", label: "Certified Financial Planner und FCCA Chartered Certified Accountant" },
     ],
   },
   enrich: {
@@ -891,7 +878,7 @@ const de: Dict = {
     programmesUnitedItems: [
       {
         title: "Gastgeber, kein Vortrag",
-        body: "Sessions sind auf Begleitung statt Vortrag ausgelegt — geführt von jemandem, der die nächste Frage beantworten kann, nicht von einem Bühnenredner. Beitragende werden pro Erfahrung bestätigt.",
+        body: "Sessions sind auf Begleitung statt Vortrag ausgelegt — geführt von jemandem, der die nächste Frage beantworten kann, nicht von einem Bühnenredner. Beitragende werden genannt, sobald eine Erfahrung bestätigt ist.",
       },
       {
         title: "Klein, nicht skaliert",
@@ -919,43 +906,23 @@ const de: Dict = {
       },
     ],
     insightsCategoriesEyebrow: "Redaktionelle Kategorien",
-    insightsCategoriesHeadline: "Fünf Orte, an denen wir publizieren.",
+    insightsCategoriesHeadline: "Vier Orte, an denen wir publizieren.",
     insightsCategoriesItems: [
-      {
-        name: "Swiss Access",
-        body: "Notizen zu Geschäftskultur, KMU-Bewertung und den Brücken, die zwischen der Schweiz und der Welt funktionieren.",
-      },
-      {
-        name: "Private Banking",
-        body: "Praktiker-Dispatches zur Schweizer Privatbanking-Landschaft — Diskretion, Regulierung und die Fragen, die im geschlossenen Raum bleiben.",
-      },
-      {
-        name: "Markets",
-        body: "Makro-Einordnungen und Schweizer Kapitalmarkt-Kommentare von Praktikern mit operativem Anteil an der Frage.",
-      },
-      {
-        name: "Methodology",
-        body: "Warum wir Kohorten so führen, wie wir sie führen — die Kleinkohorten-Begründung, die Chatham-House-Haltung, das Kurationsprinzip.",
-      },
-      {
-        name: "Dispatches",
-        body: "Kurze Notizen dazu, was eine Session zutage gefördert hat: welche Fragen aufkamen und worauf zurückzukommen lohnt.",
-      },
+      { name: "Swiss Access", body: "Notizen zu Geschäftskultur, KMU-Bewertung und den Brücken, die zwischen der Schweiz und der Welt funktionieren." },
+      { name: "Private Banking", body: "Praktiker-Dispatches zur Schweizer Privatbanking-Landschaft — Diskretion, Regulierung und die Fragen, die im geschlossenen Raum bleiben." },
+      { name: "Methodology", body: "Warum die Erfahrungen so gestaltet sind, wie sie sind — das Argument für die kleine Gruppe und wofür Diskretion da ist." },
+      { name: "Dispatches", body: "Kurze Notizen dazu, was eine Session zutage gefördert hat: welche Fragen aufkamen und worauf zurückzukommen lohnt." },
     ],
     aboutPrinciplesEyebrow: "Operative Grundsätze",
-    aboutPrinciplesHeadline: "Fünf Regeln, an denen wir festhalten.",
+    aboutPrinciplesHeadline: "Vier Regeln, an denen wir festhalten.",
     aboutPrinciplesItems: [
       {
         title: "Kuration vor Volumen",
-        body: "Lieber eine kleinere Kohorte mit dem richtigen Raum als eine grössere mit dem falschen.",
+        body: "Eine kleinere, gut zusammengesetzte Gruppe ist mehr wert als eine grössere.",
       },
       {
         title: "Praktiker vor Performer",
         body: "Gastgeber sind in persönlicher Funktion anwesend, nicht auf einer Marketingliste. Die Plattform ist kuratorisch, nicht werblich.",
-      },
-      {
-        title: "Diskretion als Standard",
-        body: "Kohortensitzungen werden nicht aufgezeichnet; Teilnehmernamen werden nicht ohne Einwilligung veröffentlicht; Pressberichterstattung ist die Ausnahme.",
       },
       {
         title: "Spezifität vor Zeremonie",
@@ -963,7 +930,7 @@ const de: Dict = {
       },
       {
         title: "Premium-Umfang, klar definiert",
-        body: "Vision Goal verkauft kuratierten Zugang, überlegte Vorstellungen und Schweizer Geschäftsexpertise — weder einen Kurs noch ein Beratungsmandat. Die regulierten Leistungen, sofern erforderlich, erbringen die von uns eingeführten Principals.",
+        body: "Vision Goal bietet Executive-Lernen und, über das Private Office, überlegte Kontakte — keinen Kurskatalog und kein Beratungsmandat. Regulierte Leistungen erbringen, wo nötig, die vorgestellten Spezialisten.",
       },
     ],
   },
@@ -1005,14 +972,14 @@ const de: Dict = {
     },
     about: {
       eyebrow: "Über die Plattform",
-      titlePart1: "Kuratierter Schweizer",
-      titleGold: "Executive-Zugang.",
+      titlePart1: "Schweizer Executive-Lernen,",
+      titleGold: "von einem Praktiker gestaltet.",
       lede:
-        "Vision Goal schafft kuratierte Schweizer Executive-Lernerlebnisse für Unternehmer, Führungspersönlichkeiten und internationale Professionals, die praktischen Zugang zu Schweizer Finanzwesen, Geschäftskultur und Premium-Netzwerken suchen.",
+        "Vision Goal schafft Lernerfahrungen zu Finanzen und Wirtschaft für Unternehmer, Führungskräfte und internationale Professionals, die Schweizer Finanzwesen, Geschäftskultur und die Entscheidungswege Schweizer Unternehmen praktisch verstehen wollen.",
       statement:
-        "Vision Goal gestaltet kuratierte Executive-Lernerfahrungen in einigen wenigen Formaten — ein immersives Format, ein fokussiertes Intensiv und themenbezogene Sitzungen — ergänzt durch ein Private Office für einzelne Principals, die kuratierte Vorstellungen statt eines Platzes im Raum suchen.",
+        "Vision Goal gestaltet Executive-Lernerfahrungen in wenigen Formaten — ein immersives Format, ein fokussiertes Intensiv, themenbezogene Sitzungen und massgeschneiderte Erfahrungen. Ergänzend unterstützt ein Private Office Einzelpersonen, Familien und Unternehmer dabei, überlegte Kontakte zu Schweizer Spezialisten herzustellen.",
       statement2:
-        "Die Plattform ist bewusst klein. Kuration ist das Produkt; die Räume, Vorstellungen und Erlebnisse sind die Lieferergebnisse. Sie kaufen weder einen Kurs noch ein Beratungsmandat — Sie kaufen Zugang, Einsicht und Schweizer Geschäftsexpertise, die anderswo schwer zu beschaffen sind.",
+        "Die Plattform ist bewusst klein. Sie ist weder ein Kurskatalog noch ein Beratungsmandat: Jede Erfahrung geht von einer echten Frage aus und bearbeitet sie mit Praktikern — dort, wo das Thema in der Praxis sichtbar wird.",
       standardsEyebrow: "Standards & Ethik",
       standardsHeadline: "Wie wir arbeiten.",
       pressEyebrow: "Forschung & Publikationen",
@@ -1031,7 +998,7 @@ const de: Dict = {
       officeEyebrow: "Büro",
       emailLabel: "E-Mail",
       responseLabel: "Antwortzeit",
-      responseValue: "Innerhalb von 48 Stunden",
+      responseValue: "Ich antworte in der Regel innerhalb von 48 Stunden.",
       linkedinLabel: "LinkedIn",
     },
     legalSidebar: "Rechtliches",
@@ -1170,13 +1137,14 @@ const fr: Dict = {
     allExperiences: "Toutes les expériences",
     sending: "Envoi…",
     expressInterest: "Manifester son intérêt",
+    seeConcepts: "Voir les concepts d’apprentissage →",
   },
   dispatch: {
     label: "Dispatch",
     items: [
-      "Apprentissage appliqué · Petites salles · Animé par des praticiens",
+      "Apprentissage appliqué · Cadres réels · Animé par des praticiens",
       "Manifestations d’intérêt bienvenues · Une courte conversation suit",
-      "Expériences exécutives suisses curatées",
+      "Quatre concepts d’apprentissage en développement",
     ],
   },
   hero: {
@@ -1267,15 +1235,15 @@ const fr: Dict = {
     cta: "À propos du réseau",
   },
   editorial: {
-    eyebrow: "Les salles",
-    headline: "Éditorial. Mesuré.",
-    headlineGold: "Suisse.",
-    side: "Environnements curatés. Restreints par choix. Discrétion par défaut.",
+    eyebrow: "Lieux d’apprentissage",
+    headline: "Choisis pour",
+    headlineGold: "la question.",
+    side: "Chaque expérience se tient là où son sujet se voit à l’œuvre. Les lieux précis ne sont confirmés qu’une fois l’expérience programmée.",
     tiles: [
-      { label: "Lieux réfléchis", caption: "En résidence" },
-      { label: "Chatham house", caption: "Salles fermées" },
-      { label: "Retraite alpine", caption: "Salles silencieuses" },
-      { label: "Salons curatés", caption: "Petites salles" },
+      { label: "Lieux réfléchis", caption: "Choisis pour chaque expérience" },
+      { label: "Règle de Chatham House", caption: "Rien n’est attribué" },
+      { label: "Cadres alpins", caption: "Loin du bureau" },
+      { label: "Salons privés", caption: "Petits groupes" },
     ],
   },
   alumni: {
@@ -1294,8 +1262,8 @@ const fr: Dict = {
     practitionerNotes: "Notes de praticiens.",
     featuredLabel: "À la une",
     dispatchEyebrow: "Dispatch",
-    dispatchHeadline: "Occasionnel, jamais promotionnel.",
-    dispatchHeadlineGold: "Aucune promotion.",
+    dispatchHeadline: "Notes occasionnelles.",
+    dispatchHeadlineGold: "Jamais promotionnelles.",
     dispatchHelp: "Double opt-in. Retrait sur simple demande.",
     dispatchOk:
       "Merci. Confirmez votre e-mail via le double opt-in que nous avons envoyé ; le prochain dispatch arrivera dans votre boîte.",
@@ -1309,14 +1277,16 @@ const fr: Dict = {
   },
   ctaBlock: {
     eyebrow: "Engager la conversation",
-    line1: "Les salles sont petites.",
-    line2: "La conversation vient d’abord.",
+    line1: "Dites-nous ce que vous souhaitez comprendre.",
+    line2: "Une courte conversation suit.",
   },
   trust: {
-    eyebrow: "La plateforme en chiffres",
+    eyebrow: "Le fondateur derrière Vision Goal",
     stats: [
       { value: "30+", label: "Années en finance, banque, assurance & gouvernance" },
       { value: "12", label: "Publications à comité de lecture" },
+      { value: "DBA", label: "Doctorat en administration des affaires, ainsi qu’un LL.M. et un MSc" },
+      { value: "CFP®", label: "Certified Financial Planner et expert-comptable FCCA" },
     ],
   },
   enrich: {
@@ -1325,7 +1295,7 @@ const fr: Dict = {
     programmesUnitedItems: [
       {
         title: "Animé, non donné",
-        body: "Les sessions sont conçues pour être animées et non déclamées — menées par quelqu’un capable de répondre à la question suivante, pas par un orateur de scène. Les intervenants sont confirmés pour chaque expérience.",
+        body: "Les sessions sont conçues pour être animées et non déclamées — menées par quelqu’un capable de répondre à la question suivante, pas par un orateur de scène. Les intervenants seront nommés une fois l’expérience confirmée.",
       },
       {
         title: "Petit, pas mis à l’échelle",
@@ -1353,43 +1323,23 @@ const fr: Dict = {
       },
     ],
     insightsCategoriesEyebrow: "Catégories éditoriales",
-    insightsCategoriesHeadline: "Cinq lieux où nous publions.",
+    insightsCategoriesHeadline: "Quatre lieux où nous publions.",
     insightsCategoriesItems: [
-      {
-        name: "Swiss Access",
-        body: "Notes sur la culture opérationnelle, l’évaluation des PME et les ponts qui fonctionnent entre la Suisse et le reste du monde.",
-      },
-      {
-        name: "Private Banking",
-        body: "Dispatches de praticiens sur le paysage suisse de la banque privée — discrétion, régulation et questions tenues dans la salle fermée.",
-      },
-      {
-        name: "Markets",
-        body: "Cadrages macro et commentaires des marchés suisses signés par des praticiens engagés dans la question.",
-      },
-      {
-        name: "Methodology",
-        body: "Pourquoi nous opérons les cohortes ainsi — la justification de la petite cohorte, la posture chatham house, le principe de curation.",
-      },
-      {
-        name: "Dispatches",
-        body: "Notes courtes sur ce qu’une session a fait émerger : les questions soulevées, et ce sur quoi il vaut la peine de revenir.",
-      },
+      { name: "Swiss Access", body: "Notes sur la culture opérationnelle, l’évaluation des PME et les ponts qui fonctionnent entre la Suisse et le reste du monde." },
+      { name: "Private Banking", body: "Dispatches de praticiens sur le paysage suisse de la banque privée — discrétion, régulation et questions tenues dans la salle fermée." },
+      { name: "Methodology", body: "Pourquoi les expériences sont conçues ainsi — le choix du petit groupe, et à quoi sert la discrétion." },
+      { name: "Dispatches", body: "Notes courtes sur ce qu’une session a fait émerger : les questions soulevées, et ce sur quoi il vaut la peine de revenir." },
     ],
     aboutPrinciplesEyebrow: "Principes opérationnels",
-    aboutPrinciplesHeadline: "Cinq règles auxquelles nous tenons.",
+    aboutPrinciplesHeadline: "Quatre règles auxquelles nous tenons.",
     aboutPrinciplesItems: [
       {
         title: "Curation plutôt que volume",
-        body: "Nous préférons une cohorte plus petite avec la bonne salle qu’une cohorte plus grande avec la mauvaise.",
+        body: "Un groupe plus restreint et bien composé vaut davantage qu’un groupe plus large.",
       },
       {
         title: "Praticien plutôt que performeur",
         body: "Les animateurs sont présents à titre personnel, pas dans une liste marketing. La plateforme est curatoriale, pas promotionnelle.",
-      },
-      {
-        title: "Discrétion par défaut",
-        body: "Les sessions ne sont pas enregistrées ; les noms ne sont pas publiés sans consentement ; la presse est l’exception.",
       },
       {
         title: "Spécificité plutôt que cérémonie",
@@ -1397,7 +1347,7 @@ const fr: Dict = {
       },
       {
         title: "Périmètre premium, clairement énoncé",
-        body: "Vision Goal vend de l’accès curaté, des introductions réfléchies et un savoir-faire business suisse — pas un cours, pas une mission de conseil. Les services régulés, lorsqu’ils sont nécessaires, sont assurés par les principals que nous présentons.",
+        body: "Vision Goal propose de l’apprentissage exécutif et, via le Private Office, des introductions réfléchies — ni catalogue de cours, ni mission de conseil. Le travail réglementé, lorsqu’il est nécessaire, est assuré par les spécialistes présentés.",
       },
     ],
   },
@@ -1439,14 +1389,14 @@ const fr: Dict = {
     },
     about: {
       eyebrow: "À propos de la plateforme",
-      titlePart1: "Accès exécutif",
-      titleGold: "suisse curaté.",
+      titlePart1: "Apprentissage exécutif suisse,",
+      titleGold: "conçu par un praticien.",
       lede:
-        "Vision Goal crée des expériences exécutives suisses curatées pour entrepreneurs, dirigeants et professionnels internationaux qui recherchent un accès pratique à la finance, à la culture business et aux réseaux suisses premium.",
+        "Vision Goal crée des expériences d’apprentissage en finance et en affaires pour entrepreneurs, dirigeants et professionnels internationaux qui veulent comprendre concrètement la finance suisse, la culture d’entreprise et la manière dont les entreprises suisses décident.",
       statement:
-        "Vision Goal conçoit des expériences d’apprentissage exécutif curatées en quelques formats — un format immersif, un intensif ciblé et des sessions thématiques — complétés par un Private Office pour les principals qui préfèrent des introductions curatées à une place dans une salle.",
+        "Vision Goal conçoit des expériences d’apprentissage exécutif en quelques formats — un format immersif, un intensif ciblé, des sessions thématiques et des expériences sur mesure. En complément, un Private Office aide particuliers, familles et chefs d’entreprise à organiser des introductions réfléchies auprès de spécialistes suisses.",
       statement2:
-        "La plateforme est volontairement petite. La curation est le produit ; les salles, les introductions et les expériences en sont les livrables. Vous n’achetez ni un cours ni une mission de conseil — vous achetez de l’accès, de l’insight et un savoir-faire business suisse difficile à assembler autrement.",
+        "La plateforme est volontairement petite. Ce n’est ni un catalogue de cours ni une mission de conseil : chaque expérience part d’une vraie question et la travaille avec des praticiens, là où le sujet se voit à l’œuvre.",
       standardsEyebrow: "Standards & éthique",
       standardsHeadline: "Comment nous opérons.",
       pressEyebrow: "Recherche & publications",
@@ -1465,7 +1415,7 @@ const fr: Dict = {
       officeEyebrow: "Bureau",
       emailLabel: "E-mail",
       responseLabel: "Délai de réponse",
-      responseValue: "Sous 48 heures",
+      responseValue: "Je réponds normalement sous 48 heures.",
       linkedinLabel: "LinkedIn",
     },
     legalSidebar: "Mentions légales",
@@ -1604,13 +1554,14 @@ const es: Dict = {
     allExperiences: "Todas las experiencias",
     sending: "Enviando…",
     expressInterest: "Expresar interés",
+    seeConcepts: "Ver los conceptos de aprendizaje →",
   },
   dispatch: {
     label: "Dispatch",
     items: [
-      "Aprendizaje aplicado · Salas reducidas · Conducido por practicantes",
+      "Aprendizaje aplicado · Entornos reales · Conducido por practicantes",
       "Expresiones de interés bienvenidas · Sigue una breve conversación",
-      "Experiencias ejecutivas suizas curadas",
+      "Cuatro conceptos de aprendizaje en desarrollo",
     ],
   },
   hero: {
@@ -1701,15 +1652,15 @@ const es: Dict = {
     cta: "Sobre la red",
   },
   editorial: {
-    eyebrow: "Las salas",
-    headline: "Editorial. Mesurado.",
-    headlineGold: "Suizo.",
-    side: "Entornos curados. Reducidos por elección. Discreción por defecto.",
+    eyebrow: "Entornos de aprendizaje",
+    headline: "Elegidos para",
+    headlineGold: "la pregunta.",
+    side: "Cada experiencia se celebra donde su tema puede verse en funcionamiento. Las sedes concretas solo se confirman cuando una experiencia se programa.",
     tiles: [
-      { label: "Sedes consideradas", caption: "En residencia" },
-      { label: "Chatham house", caption: "Salas cerradas" },
-      { label: "Retiro alpino", caption: "Salas silenciosas" },
-      { label: "Salones curados", caption: "Salas reducidas" },
+      { label: "Sedes consideradas", caption: "Elegidas para cada experiencia" },
+      { label: "Regla de Chatham House", caption: "Nada se atribuye" },
+      { label: "Entornos alpinos", caption: "Lejos de la oficina" },
+      { label: "Salones privados", caption: "Grupos reducidos" },
     ],
   },
   alumni: {
@@ -1728,8 +1679,8 @@ const es: Dict = {
     practitionerNotes: "Notas de practicantes.",
     featuredLabel: "Destacado",
     dispatchEyebrow: "Dispatch",
-    dispatchHeadline: "Ocasional, nunca promocional.",
-    dispatchHeadlineGold: "Sin promoción.",
+    dispatchHeadline: "Notas ocasionales.",
+    dispatchHeadlineGold: "Nunca promocionales.",
     dispatchHelp: "Doble opt-in. Baja a petición en cualquier momento.",
     dispatchOk:
       "Gracias. Confirme su correo a través del doble opt-in que enviamos; el próximo dispatch llegará a su bandeja de entrada.",
@@ -1743,14 +1694,16 @@ const es: Dict = {
   },
   ctaBlock: {
     eyebrow: "Iniciar una conversación",
-    line1: "Las salas son pequeñas.",
-    line2: "La conversación va primero.",
+    line1: "Díganos qué quiere entender.",
+    line2: "Le seguirá una breve conversación.",
   },
   trust: {
-    eyebrow: "La plataforma en cifras",
+    eyebrow: "El fundador detrás de Vision Goal",
     stats: [
       { value: "30+", label: "Años en finanzas, banca, seguros y gobernanza" },
       { value: "12", label: "Publicaciones revisadas por pares" },
+      { value: "DBA", label: "Doctorado en administración de empresas, además de LL.M. y MSc" },
+      { value: "CFP®", label: "Certified Financial Planner y contador colegiado FCCA" },
     ],
   },
   enrich: {
@@ -1759,7 +1712,7 @@ const es: Dict = {
     programmesUnitedItems: [
       {
         title: "Conducido, no expuesto",
-        body: "Las sesiones están diseñadas para ser conducidas, no dictadas — guiadas por alguien que pueda responder la siguiente pregunta, no por un orador de escenario. Los contribuyentes se confirman para cada experiencia.",
+        body: "Las sesiones están diseñadas para ser conducidas, no dictadas — guiadas por alguien que pueda responder la siguiente pregunta, no por un orador de escenario. Los contribuyentes se nombrarán cuando una experiencia esté confirmada.",
       },
       {
         title: "Reducido, no escalado",
@@ -1787,43 +1740,23 @@ const es: Dict = {
       },
     ],
     insightsCategoriesEyebrow: "Categorías editoriales",
-    insightsCategoriesHeadline: "Cinco lugares donde publicamos.",
+    insightsCategoriesHeadline: "Cuatro lugares donde publicamos.",
     insightsCategoriesItems: [
-      {
-        name: "Swiss Access",
-        body: "Notas sobre cultura operativa, evaluación de PYMES y los puentes que funcionan entre Suiza y el resto del mundo.",
-      },
-      {
-        name: "Private Banking",
-        body: "Dispatches de practicantes sobre el panorama suizo de banca privada — discreción, regulación y las preguntas que permanecen en la sala cerrada.",
-      },
-      {
-        name: "Markets",
-        body: "Encuadres macro y comentario del mercado suizo de capitales escritos por practicantes con interés operativo en la pregunta.",
-      },
-      {
-        name: "Methodology",
-        body: "Por qué operamos las cohortes así — el caso de la cohorte pequeña, la postura chatham house, el principio de curaduría.",
-      },
-      {
-        name: "Dispatches",
-        body: "Notas breves sobre lo que una sesión sacó a la luz: las preguntas que surgieron y lo que merece releerse.",
-      },
+      { name: "Swiss Access", body: "Notas sobre cultura operativa, evaluación de PYMES y los puentes que funcionan entre Suiza y el resto del mundo." },
+      { name: "Private Banking", body: "Dispatches de practicantes sobre el panorama suizo de banca privada — discreción, regulación y las preguntas que permanecen en la sala cerrada." },
+      { name: "Methodology", body: "Por qué las experiencias tienen la forma que tienen — el argumento a favor del grupo reducido y para qué sirve la discreción." },
+      { name: "Dispatches", body: "Notas breves sobre lo que una sesión sacó a la luz: las preguntas que surgieron y lo que merece releerse." },
     ],
     aboutPrinciplesEyebrow: "Principios operativos",
-    aboutPrinciplesHeadline: "Cinco reglas que sostenemos.",
+    aboutPrinciplesHeadline: "Cuatro reglas que sostenemos.",
     aboutPrinciplesItems: [
       {
         title: "Curaduría sobre volumen",
-        body: "Preferimos una cohorte más pequeña con la sala correcta que una más grande con la incorrecta.",
+        body: "Un grupo más reducido y bien compuesto vale más que uno más grande.",
       },
       {
         title: "Practicante sobre performer",
         body: "Los anfitriones están presentes a título personal, no en una lista de marketing. La plataforma es curatorial, no promocional.",
-      },
-      {
-        title: "Discreción por defecto",
-        body: "Las sesiones no se graban; los nombres no se publican sin consentimiento; la cobertura de prensa es la excepción.",
       },
       {
         title: "Especificidad sobre ceremonia",
@@ -1831,7 +1764,7 @@ const es: Dict = {
       },
       {
         title: "Alcance premium, claramente enunciado",
-        body: "Vision Goal vende acceso curado, introducciones consideradas y know-how empresarial suizo — no un curso, no un encargo de consultoría. El trabajo regulado, cuando es necesario, lo entregan los principals que presentamos.",
+        body: "Vision Goal ofrece aprendizaje ejecutivo y, a través del Private Office, presentaciones cuidadas — no un catálogo de cursos ni un encargo de consultoría. El trabajo regulado, cuando es necesario, lo prestan los especialistas presentados.",
       },
     ],
   },
@@ -1873,14 +1806,14 @@ const es: Dict = {
     },
     about: {
       eyebrow: "Acerca de la plataforma",
-      titlePart1: "Acceso ejecutivo",
-      titleGold: "suizo curado.",
+      titlePart1: "Aprendizaje ejecutivo suizo,",
+      titleGold: "creado por un profesional.",
       lede:
-        "Vision Goal crea experiencias ejecutivas suizas curadas para emprendedores, directivos y profesionales internacionales que buscan acceso práctico a las finanzas, la cultura empresarial y las redes premium suizas.",
+        "Vision Goal crea experiencias de aprendizaje en finanzas y negocios para emprendedores, directivos y profesionales internacionales que quieren comprender de forma práctica las finanzas suizas, la cultura empresarial y cómo deciden las empresas suizas.",
       statement:
-        "Vision Goal diseña experiencias curadas de aprendizaje ejecutivo en unos pocos formatos — un formato inmersivo, un intensivo enfocado y sesiones temáticas — complementados por un Private Office para principals que prefieren introducciones curadas en lugar de una plaza en una sala.",
+        "Vision Goal diseña experiencias de aprendizaje ejecutivo en unos pocos formatos — un formato inmersivo, un intensivo enfocado, sesiones temáticas y experiencias a medida. Como complemento, un Private Office ayuda a particulares, familias y empresarios a concertar presentaciones cuidadas con especialistas suizos.",
       statement2:
-        "La plataforma es deliberadamente pequeña. La curaduría es el producto; las salas, introducciones y experiencias son los entregables. No compra un curso ni un encargo de consultoría — compra acceso, perspectiva y know-how empresarial suizo difícil de armar de otro modo.",
+        "La plataforma es deliberadamente pequeña. No es un catálogo de cursos ni un encargo de consultoría: cada experiencia parte de una pregunta real y la trabaja con profesionales, en entornos donde el tema puede verse en funcionamiento.",
       standardsEyebrow: "Estándares y ética",
       standardsHeadline: "Cómo operamos.",
       pressEyebrow: "Investigación y publicaciones",
@@ -1899,7 +1832,7 @@ const es: Dict = {
       officeEyebrow: "Oficina",
       emailLabel: "Correo",
       responseLabel: "Tiempo de respuesta",
-      responseValue: "En un plazo de 48 horas",
+      responseValue: "Normalmente respondo en un plazo de 48 horas.",
       linkedinLabel: "LinkedIn",
     },
     legalSidebar: "Legal",
@@ -2038,13 +1971,14 @@ const zh: Dict = {
     allExperiences: "全部体验",
     sending: "发送中…",
     expressInterest: "表达兴趣",
+    seeConcepts: "查看学习概念 →",
   },
   dispatch: {
     label: "速递",
     items: [
-      "应用式学习 · 小型场景 · 资深从业者主持",
+      "应用式学习 · 真实场景 · 资深从业者主持",
       "欢迎表达兴趣 · 随后进行简短对话",
-      "精心策展的瑞士高管体验",
+      "四个学习概念正在开发中",
     ],
   },
   hero: {
@@ -2135,15 +2069,15 @@ const zh: Dict = {
     cta: "关于网络",
   },
   editorial: {
-    eyebrow: "场所",
-    headline: "克制。编辑式。",
-    headlineGold: "瑞士风格。",
-    side: "精选场地。刻意保持精简。审慎为常态。",
+    eyebrow: "学习场景",
+    headline: "为问题",
+    headlineGold: "而选。",
+    side: "每项体验都安排在能看到其主题实际运作的地方。具体场地仅在体验排期后确认。",
     tiles: [
-      { label: "精选场地", caption: "驻地" },
-      { label: "查塔姆守则", caption: "闭门场景" },
-      { label: "阿尔卑斯静修", caption: "静室" },
-      { label: "精选沙龙", caption: "小型场景" },
+      { label: "精选场地", caption: "按体验选定" },
+      { label: "查塔姆守则", caption: "不作归属" },
+      { label: "阿尔卑斯场景", caption: "远离办公室" },
+      { label: "私人沙龙", caption: "小型团体" },
     ],
   },
   alumni: {
@@ -2162,8 +2096,8 @@ const zh: Dict = {
     practitionerNotes: "从业者札记。",
     featuredLabel: "精选",
     dispatchEyebrow: "速递",
-    dispatchHeadline: "不定期发送, 从不促销。",
-    dispatchHeadlineGold: "无促销。",
+    dispatchHeadline: "不定期的札记。",
+    dispatchHeadlineGold: "从不促销。",
     dispatchHelp: "双重确认订阅。可随时来信退订。",
     dispatchOk:
       "感谢。请通过我们发送的双重确认邮件完成订阅, 下一期速递将寄送至您的邮箱。",
@@ -2177,14 +2111,16 @@ const zh: Dict = {
   },
   ctaBlock: {
     eyebrow: "开启对话",
-    line1: "场地保持精简。",
-    line2: "对话是第一步。",
+    line1: "告诉我们您想了解什么。",
+    line2: "随后是一次简短的交流。",
   },
   trust: {
-    eyebrow: "平台数据",
+    eyebrow: "Vision Goal 背后的创始人",
     stats: [
       { value: "30+", label: "横跨金融、银行、保险与治理的从业年资" },
       { value: "12", label: "同行评审论文" },
+      { value: "DBA", label: "工商管理博士, 另持 LL.M. 与 MSc" },
+      { value: "CFP®", label: "国际认证理财规划师与 FCCA 特许公认会计师" },
     ],
   },
   enrich: {
@@ -2193,7 +2129,7 @@ const zh: Dict = {
     programmesUnitedItems: [
       {
         title: "主持, 而非授课",
-        body: "每场学习都以引导而非讲授为设计 —— 由能回答下一个问题的人带领, 而非舞台讲者。贡献者将为每项体验逐一确认。",
+        body: "每场学习都以引导而非讲授为设计 —— 由能回答下一个问题的人带领, 而非舞台讲者。贡献者将在体验确认后公布。",
       },
       {
         title: "精简, 而非规模化",
@@ -2221,43 +2157,23 @@ const zh: Dict = {
       },
     ],
     insightsCategoriesEyebrow: "编辑版块",
-    insightsCategoriesHeadline: "我们发表的五个版面。",
+    insightsCategoriesHeadline: "我们发表的四个版面。",
     insightsCategoriesItems: [
-      {
-        name: "Swiss Access",
-        body: "关于运营文化、瑞士中小企业评估, 以及瑞士与世界之间真正可行的桥梁的札记。",
-      },
-      {
-        name: "Private Banking",
-        body: "面向瑞士私人银行格局的从业者札记 —— 审慎、监管, 以及只在闭门时才会讨论的问题。",
-      },
-      {
-        name: "Markets",
-        body: "由具有实务利益的从业者撰写的宏观框架与瑞士资本市场评注。",
-      },
-      {
-        name: "Methodology",
-        body: "我们为何如此运行群体 —— 小群体的理由、查塔姆守则的姿态、以及策划原则。",
-      },
-      {
-        name: "Dispatches",
-        body: "关于一场学习所引出的简短札记: 出现了哪些问题, 以及哪些值得再回头细读。",
-      },
+      { name: "Swiss Access", body: "关于运营文化、瑞士中小企业评估, 以及瑞士与世界之间真正可行的桥梁的札记。" },
+      { name: "Private Banking", body: "面向瑞士私人银行格局的从业者札记 —— 审慎、监管, 以及只在闭门时才会讨论的问题。" },
+      { name: "Methodology", body: "为何体验以这种方式设计 —— 小型团体的理由, 以及审慎的意义。" },
+      { name: "Dispatches", body: "关于一场学习所引出的简短札记: 出现了哪些问题, 以及哪些值得再回头细读。" },
     ],
     aboutPrinciplesEyebrow: "运营原则",
-    aboutPrinciplesHeadline: "我们恪守的五条规矩。",
+    aboutPrinciplesHeadline: "我们恪守的四条规矩。",
     aboutPrinciplesItems: [
       {
         title: "策划胜于体量",
-        body: "我们宁愿组一支正确的小群体, 也不愿组一支错位的大群体。",
+        body: "一个规模较小、组成得当的团体, 胜过规模更大的团体。",
       },
       {
         title: "从业者胜于演员",
         body: "主持人以个人身份出席, 而非营销名册的一员。平台为策划, 而非推广。",
-      },
-      {
-        title: "审慎为常态",
-        body: "群体不录音; 未经同意不公布参与者姓名; 媒体报道为例外。",
       },
       {
         title: "具体胜于仪式",
@@ -2265,7 +2181,7 @@ const zh: Dict = {
       },
       {
         title: "高端范围, 清楚界定",
-        body: "Vision Goal 售卖的, 是精选通道、审慎引荐与瑞士商业素养 —— 既非课程, 也非咨询合约。在确有需要时, 受监管的工作由我们引荐的 Principal 承担。",
+        body: "Vision Goal 提供高管学习, 并通过私人办公室提供审慎引荐 —— 不是课程目录, 也不是咨询合约。如需受监管的服务, 由所引荐的专业人士提供。",
       },
     ],
   },
@@ -2307,14 +2223,14 @@ const zh: Dict = {
     },
     about: {
       eyebrow: "关于平台",
-      titlePart1: "瑞士高管",
-      titleGold: "精选通道。",
+      titlePart1: "瑞士高管学习,",
+      titleGold: "由实践者打造。",
       lede:
-        "Vision Goal 为企业家、高管与跨国资深人士打造精选的瑞士高管学习体验, 让您切实接触瑞士金融、商业文化与高端网络。",
+        "Vision Goal 为企业家、高管与跨国专业人士打造金融与商业学习体验, 帮助他们切实理解瑞士金融、商业文化以及瑞士企业如何决策。",
       statement:
-        "Vision Goal 以少数几种形式设计精选的高管学习体验 —— 浸入式形式、聚焦集训与主题会话 —— 并辅以为希望获得精选引荐、而非席位的个人 Principal 设立的私人办公室。",
+        "Vision Goal 以少数几种形式设计高管学习体验 —— 浸入式形式、聚焦集训、主题会话与定制体验。作为补充, 私人办公室协助个人、家族与企业主安排与瑞士专业人士的审慎引荐。",
       statement2:
-        "平台刻意精简。策划即产品; 房间、引荐与体验则是交付。您所得到的不是一门课程, 也不是一份咨询合约 —— 而是难以从他处汇集的瑞士商业通道、洞察与专业素养。",
+        "平台刻意精简。它既不是课程目录, 也不是咨询合约: 每项体验都从一个真实问题出发, 与实践者一起在能看到主题实际运作的场景中展开。",
       standardsEyebrow: "标准与伦理",
       standardsHeadline: "我们如何运营。",
       pressEyebrow: "研究与发表",
@@ -2333,7 +2249,7 @@ const zh: Dict = {
       officeEyebrow: "办公室",
       emailLabel: "邮箱",
       responseLabel: "回复时间",
-      responseValue: "48 小时内",
+      responseValue: "我通常在 48 小时内回复。",
       linkedinLabel: "LinkedIn",
     },
     legalSidebar: "法律",

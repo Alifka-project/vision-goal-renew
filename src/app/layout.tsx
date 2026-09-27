@@ -47,7 +47,7 @@ export const metadata: Metadata = {
         url: "/og-default.jpg",
         width: 1200,
         height: 630,
-        alt: "A premium Swiss retail environment during a Vision Goal learning experience.",
+        alt: "A premium Swiss retail food hall.",
       },
     ],
   },
@@ -149,6 +149,12 @@ export default function RootLayout({
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }}
+        />
+        {/* Without JavaScript, Reveal never marks content visible: show it. */}
+        <noscript
+          dangerouslySetInnerHTML={{
+            __html: "<style>[data-reveal]{opacity:1!important;transform:none!important}</style>",
+          }}
         />
       </head>
       <body>

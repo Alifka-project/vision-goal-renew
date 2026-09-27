@@ -114,7 +114,7 @@ export default function PrivateOfficePage() {
             />
           </div>
           <div className="container relative py-section-y md:py-section-y-lg">
-            <Reveal duration={800}>
+            <div className="fade-in-soft">
               <div className="flex items-center gap-4">
                 <span aria-hidden="true" className="block h-px w-10 bg-gold" />
                 <span className="text-eyebrow uppercase text-cream/85">
@@ -134,11 +134,11 @@ export default function PrivateOfficePage() {
                 <Button href="/contact" variant="on-dark">
                   Start a conversation
                 </Button>
-                <Button href="/about" variant="ghost-on-dark">
+                <Button href="/about#how-we-operate" variant="ghost-on-dark">
                   How we operate →
                 </Button>
               </div>
-            </Reveal>
+            </div>
           </div>
         </section>
 
@@ -203,9 +203,9 @@ export default function PrivateOfficePage() {
                 enquiries need one; others need several working together.
               </p>
             </Reveal>
-            <ul className="mt-12 grid sm:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-5 max-w-5xl">
+            <ul className="mt-12 grid sm:grid-cols-2 lg:grid-cols-5 gap-4 lg:gap-5">
               {providerTypes.map((type, i) => (
-                <Reveal as="li" key={type} duration={700} delay={i * 60}>
+                <Reveal as="li" key={type} duration={700} delay={i * 60} className="sm:last:col-span-2 lg:last:col-span-1">
                   <div className="h-full border hairline bg-cream-2 px-6 py-7">
                     <p className="text-eyebrow uppercase text-gold tabular">0{i + 1}</p>
                     <p className="mt-3 font-serif text-navy text-xl leading-snug">{type}</p>
@@ -239,7 +239,7 @@ export default function PrivateOfficePage() {
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-y-1 md:gap-x-6 py-6 border-b hairline">
                   <dt className="text-eyebrow uppercase text-slate-2">Curated shortlist</dt>
                   <dd className="md:col-span-2 text-body text-navy">
-                    A small number of named principals · a short written rationale for each
+                    A small number of named specialists · a short written rationale for each
                   </dd>
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-y-1 md:gap-x-6 py-6 border-b hairline">
@@ -305,8 +305,8 @@ export default function PrivateOfficePage() {
 
         {/* CTA */}
         <section className="bg-navy text-cream py-section-y md:py-section-y-lg">
-          <div className="container max-w-4xl">
-            <Reveal duration={800}>
+          <div className="container">
+            <Reveal className="max-w-4xl" duration={800}>
               <Eyebrow tone="cream">A short note</Eyebrow>
               <h2 className="mt-6 font-serif text-cream text-display-md md:text-[3.5rem] leading-[1.05] tracking-[-0.015em]">
                 Start with a conversation.{" "}
@@ -318,7 +318,7 @@ export default function PrivateOfficePage() {
                 </Button>
                 <Link
                   href="mailto:office@visiongoal.ch"
-                  className="inline-flex items-center gap-3 px-6 py-3 text-sm font-medium text-cream/85 hover:text-gold-hi transition-colors duration-200"
+                  className="inline-flex items-center justify-center sm:justify-start gap-3 px-6 py-3 text-sm font-medium text-cream/85 hover:text-gold-hi transition-colors duration-200"
                 >
                   <span className="link-underline link-underline-out">Or write directly</span>
                   <span aria-hidden="true">→</span>

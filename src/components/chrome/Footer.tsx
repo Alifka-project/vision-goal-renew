@@ -79,8 +79,8 @@ export function Footer() {
         </div>
       </div>
 
-      <div className="container py-20">
-        <div className="grid gap-12 md:grid-cols-12">
+      <div className="container py-14 md:py-20">
+        <div className="grid gap-10 md:gap-12 md:grid-cols-12">
           <div className="md:col-span-4">
             <Link href="/" className="font-serif text-cream text-2xl tracking-tight">
               Vision <span className="text-gold-hi">Goal</span>
@@ -89,25 +89,23 @@ export function Footer() {
               {t.footer.blurb}
             </p>
             {/*
-             * Pre-launch language footprint. Only fully-reviewed locales
-             * appear here; DE / FR / ES / ZH are still translation drafts
-             * and will re-appear once each has been proofed.
+             * Language list removed while English is the only published
+             * locale: a lone "EN" offered no choice. DE / FR / ES / ZH are
+             * still translation drafts and will appear here (via
+             * visibleLocales) once each has been proofed.
              */}
-            <p className="mt-6 text-[0.7rem] uppercase tracking-[0.18em] text-cream/55">
-              EN
-            </p>
           </div>
 
-          <div className="md:col-span-8 grid gap-10 sm:grid-cols-3">
+          <div className="md:col-span-8 grid grid-cols-2 gap-x-6 gap-y-8 sm:grid-cols-3 sm:gap-10">
             {sections.map((section) => (
               <div key={section.title}>
-                <h3 className="text-eyebrow uppercase text-gold-hi">{section.title}</h3>
-                <ul className="mt-4 space-y-2.5 text-body-sm">
+                <h3 className="font-sans text-eyebrow uppercase text-gold-hi">{section.title}</h3>
+                <ul className="mt-3 text-body-sm">
                   {section.links.map((link) => (
                     <li key={link.href}>
                       <Link
                         href={link.href}
-                        className="text-cream/85 hover:text-cream transition-colors duration-200"
+                        className="inline-block py-2 text-cream/85 hover:text-cream transition-colors duration-200"
                       >
                         {link.label}
                       </Link>
@@ -126,7 +124,7 @@ export function Footer() {
           <ul className="flex flex-wrap gap-x-6 gap-y-2">
             {legal.map((link) => (
               <li key={link.href}>
-                <Link href={link.href} className="hover:text-cream transition-colors duration-200">
+                <Link href={link.href} className="inline-block py-2 hover:text-cream transition-colors duration-200">
                   {link.label}
                 </Link>
               </li>

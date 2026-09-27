@@ -14,9 +14,13 @@ export function InsightPageClient({ slug }: { slug: Insight["slug"] }) {
   const t = useT();
   const insight = featuredInsights.find((i) => i.slug === slug)!;
   const author = insight.authorSlug ? hosts.find((h) => h.slug === insight.authorSlug) : null;
-  const related = featuredInsights
-    .filter((i) => i.slug !== insight.slug && i.category === insight.category)
-    .slice(0, 3);
+  // Always three: same-category notes first, then the rest. Most categories
+  // hold one or two notes, which left an empty slot (or no section at all).
+  const others = featuredInsights.filter((i) => i.slug !== insight.slug);
+  const related = [
+    ...others.filter((i) => i.category === insight.category),
+    ...others.filter((i) => i.category !== insight.category),
+  ].slice(0, 3);
   const moreFromAuthor = author
     ? featuredInsights.filter((i) => i.slug !== insight.slug && i.authorSlug === author.slug)
     : [];
@@ -125,9 +129,9 @@ export function InsightPageClient({ slug }: { slug: Insight["slug"] }) {
         {related.length > 0 ? (
           <section className="bg-cream-2 py-section-y md:py-section-y-lg border-t hairline">
             <div className="container">
-              <Eyebrow>Related</Eyebrow>
+              <Eyebrow>Keep reading</Eyebrow>
               <h2 className="mt-6 font-serif text-display-md md:text-[2.25rem] text-navy leading-[1.1] tracking-[-0.015em]">
-                {insight.category}
+                {t.insights.practitionerNotes}
               </h2>
               <ul className="mt-10 grid md:grid-cols-3 gap-6 lg:gap-8">
                 {related.map((r) => (
@@ -138,7 +142,7 @@ export function InsightPageClient({ slug }: { slug: Insight["slug"] }) {
                           src={images[r.imageKey]}
                           alt=""
                           fill
-                          sizes="(max-width: 768px) 100vw, 33vw"
+                          sizes="(max-width: 768px) calc(100vw - 3rem), 33vw"
                           className="object-cover transition-transform duration-[900ms] ease-editorial group-hover:scale-[1.05]"
                         />
                       </div>
@@ -146,7 +150,7 @@ export function InsightPageClient({ slug }: { slug: Insight["slug"] }) {
                         {r.title}
                       </h3>
                       <p className="mt-3 text-[0.78rem] uppercase tracking-[0.14em] text-slate-2">
-                        {r.authorName} · {r.readingTime}
+                        {r.category} · {r.readingTime}
                       </p>
                     </Link>
                   </li>
