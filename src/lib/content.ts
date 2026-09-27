@@ -221,7 +221,7 @@ export const hosts: Host[] = [
     expertise: ["Wealth planning", "Governance", "Executive education"],
     bio: "Founder of Vision Goal (2022). More than 30 years across finance, banking, insurance, governance and executive education — including twelve years at Bank Julius Bär & Co. AG as Head of Wealth Planning, Life & Pension across Switzerland and Singapore, and earlier roles at UBS, Credit Suisse, and Zürcher Kantonalbank. FCCA, CFP®, FINMA-registered independent insurance intermediary; LL.M., MSc, DBA. Twelve peer-reviewed papers on banking, sustainable finance, ESG, and cross-border life insurance.",
     programmes: ["access", "banking", "topic"],
-    linkedin: "https://www.linkedin.com/company/98380448/",
+    linkedin: "https://www.linkedin.com/company/visiongoal/",
   },
 ];
 

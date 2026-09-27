@@ -95,14 +95,15 @@ const orgJsonLd = {
     "@type": "PostalAddress",
     addressCountry: "CH",
   },
-  sameAs: ["https://www.linkedin.com/company/98380448/"],
+  sameAs: ["https://www.linkedin.com/company/visiongoal/"],
 };
 
-// The founder, as a Person, linked to the Organization he founded. `sameAs`
-// is intentionally omitted: the only LinkedIn URL supplied is the Vision Goal
-// company page (already on the Organization above), not a personal profile —
-// pointing a Person at a company page would be incorrect structured data.
-// Add his personal profile URL here as `sameAs` once it is available.
+// The founder, as a Person, linked to the Organization he founded.
+// `sameAs` is intentionally omitted. The LinkedIn URL we hold is the Vision
+// Goal COMPANY page, which belongs on the Organization above — asserting a
+// company page as a person's own profile would be incorrect structured data
+// and could merge the two identities in search. Add Andreas's personal
+// LinkedIn profile URL here as `sameAs` once it is available.
 const personJsonLd = {
   "@context": "https://schema.org",
   "@type": "Person",

@@ -45,7 +45,7 @@ export function HostProfileClient({ slug }: { slug: Host["slug"] }) {
                     href={host.linkedin}
                     target="_blank"
                     rel="noopener noreferrer"
-                    aria-label={`${host.name} on LinkedIn`}
+                    aria-label="Vision Goal on LinkedIn"
                     className="mt-8 inline-flex items-center gap-2 text-[0.78rem] uppercase tracking-[0.14em] text-slate-2 hover:text-navy transition-colors duration-200"
                   >
                     <span aria-hidden="true">in</span>

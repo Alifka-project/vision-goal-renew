@@ -206,7 +206,7 @@ export default function AboutPage() {
                   services, and cross-border life insurance. Fluent in German and English. Pfäffikon SZ.
                 </p>
                 <a
-                  href="https://www.linkedin.com/company/98380448/"
+                  href="https://www.linkedin.com/company/visiongoal/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="mt-8 inline-flex items-center gap-2 text-[0.78rem] uppercase tracking-[0.14em] text-slate-2 hover:text-navy transition-colors duration-200"

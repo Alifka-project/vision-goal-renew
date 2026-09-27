@@ -78,7 +78,7 @@ export default function PractitionerNetworkPage() {
                           rel="noopener noreferrer"
                           className="hover:text-navy transition-colors duration-200"
                         >
-                          <span className="link-underline link-underline-out">LinkedIn ↗</span>
+                          <span className="link-underline link-underline-out">Vision Goal on LinkedIn ↗</span>
                         </a>
                       ) : null}
                     </div>
