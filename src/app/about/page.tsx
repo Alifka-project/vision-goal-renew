@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { Header } from "@/components/chrome/Header";
 import { Footer } from "@/components/chrome/Footer";
 import { PageHero } from "@/components/modules/PageHero";
@@ -153,13 +154,19 @@ export default function AboutPage() {
         {/* Founder & Curator — named, ported from visiongoal.ch */}
         <section id="founder" className="scroll-mt-28 bg-cream-2 py-section-y md:py-section-y-lg border-t hairline">
           <div className="container grid lg:grid-cols-12 gap-10 lg:gap-16">
-            {/* items-start stops the flex wrapper stretching the monogram to
+            {/* items-start stops the flex wrapper stretching the portrait to
                 the height of the bio beside it: flex stretch overrides
                 aspect-square, which turned a 224px square into a 224×522
                 navy slab. */}
             <Reveal className="lg:col-span-4 flex items-start justify-start" duration={700}>
-              <div aria-hidden="true" className="aspect-square w-28 md:w-40 lg:w-56 shrink-0 bg-navy text-cream flex items-center justify-center font-serif text-5xl lg:text-6xl tracking-tight">
-                AS
+              <div className="relative w-40 md:w-52 lg:w-full lg:max-w-[18rem] aspect-[4/5] shrink-0 overflow-hidden bg-navy">
+                <Image
+                  src="/photos/andreas-svoboda.jpg"
+                  alt="Andreas Svoboda, founder of Vision Goal"
+                  fill
+                  sizes="(max-width: 1024px) 208px, 288px"
+                  className="object-cover object-top"
+                />
               </div>
             </Reveal>
             <div className="lg:col-span-8">

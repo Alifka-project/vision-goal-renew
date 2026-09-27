@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { Header } from "@/components/chrome/Header";
 import { Footer } from "@/components/chrome/Footer";
@@ -48,8 +49,8 @@ export default function PractitionerNetworkPage() {
             <Reveal duration={700} delay={120}>
               <article className="mt-12 max-w-4xl border hairline p-7 md:p-10 bg-white">
                 <div className="flex flex-col md:flex-row md:items-start gap-6 md:gap-8">
-                  <div className="shrink-0 w-20 h-20 md:w-24 md:h-24 bg-navy text-cream flex items-center justify-center font-serif text-2xl md:text-3xl tracking-wide">
-                    {founder.initials}
+                  <div className="relative shrink-0 w-20 md:w-24 aspect-[4/5] overflow-hidden bg-navy">
+                    <Image src={founder.portrait!} alt="" fill sizes="96px" className="object-cover object-top" />
                   </div>
                   <div className="min-w-0">
                     <p className="font-serif text-navy text-2xl md:text-3xl leading-tight">

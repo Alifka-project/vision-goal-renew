@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { Reveal } from "@/components/effects/Reveal";
@@ -11,7 +12,7 @@ import { useT } from "@/i18n/I18nProvider";
 // introduced here in brief and in full on /about. No named external
 // contributors appear anywhere until their participation is agreed.
 //
-// Kept deliberately compact: the monogram sits beside the name instead of
+// Kept deliberately compact: the portrait sits beside the name instead of
 // floating alone in a wide column (which left ~half the band empty), and
 // the body says why the founder matters rather than repeating the Learning
 // in Practice sentence a few screens above. No former employers are named
@@ -24,11 +25,10 @@ export function FounderNote() {
     <section className="bg-cream py-section-y border-y hairline">
       <Reveal className="container grid lg:grid-cols-12 gap-8 lg:gap-12 items-center" duration={800}>
         <div className="lg:col-span-5 flex items-center gap-5 lg:gap-7">
-          <div
-            aria-hidden="true"
-            className="aspect-square w-20 lg:w-28 shrink-0 bg-navy text-cream flex items-center justify-center font-serif text-2xl lg:text-4xl tracking-tight"
-          >
-            {founder.initials}
+          {/* Founder portrait. alt is empty because his name is the heading
+              right beside it. */}
+          <div className="relative w-20 lg:w-28 aspect-[4/5] shrink-0 overflow-hidden bg-navy">
+            <Image src={founder.portrait!} alt="" fill sizes="112px" className="object-cover object-top" />
           </div>
           <div>
             <Eyebrow>Founder & Curator</Eyebrow>

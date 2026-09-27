@@ -195,6 +195,8 @@ export type Host = {
   slug: string;
   role: string;
   initials: string;
+  // Portrait photograph supplied by the founder (768×1150, portrait).
+  portrait?: string;
   expertise: string[];
   bio: string;
   programmes: ("access" | "banking" | "topic")[];
@@ -218,6 +220,7 @@ export const hosts: Host[] = [
     slug: "andreas-svoboda",
     role: "Founder & Curator · More than 30 years across finance, banking, insurance, governance and executive education",
     initials: "AS",
+    portrait: "/photos/andreas-svoboda.jpg",
     expertise: ["Wealth planning", "Governance", "Executive education"],
     bio: "Founder of Vision Goal (2022). More than 30 years across finance, banking, insurance, governance and executive education — including twelve years at Bank Julius Bär & Co. AG as Head of Wealth Planning, Life & Pension across Switzerland and Singapore, and earlier roles at UBS, Credit Suisse, and Zürcher Kantonalbank. FCCA, CFP®, FINMA-registered independent insurance intermediary; LL.M., MSc, DBA. Twelve peer-reviewed papers on banking, sustainable finance, ESG, and cross-border life insurance.",
     programmes: ["access", "banking", "topic"],

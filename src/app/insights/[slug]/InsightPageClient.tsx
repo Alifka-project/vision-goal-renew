@@ -78,9 +78,15 @@ export function InsightPageClient({ slug }: { slug: Insight["slug"] }) {
                   href={`/hosts/${author.slug}`}
                   className="card-lift mt-6 flex items-start gap-5 p-6 border hairline bg-cream-2 hover:border-gold/40"
                 >
-                  <div className="shrink-0 w-16 h-16 bg-navy text-cream flex items-center justify-center font-serif text-xl tracking-wide">
-                    {author.initials}
-                  </div>
+                  {author.portrait ? (
+                    <div className="relative shrink-0 w-16 aspect-[4/5] overflow-hidden bg-navy">
+                      <Image src={author.portrait} alt="" fill sizes="64px" className="object-cover object-top" />
+                    </div>
+                  ) : (
+                    <div className="shrink-0 w-16 h-16 bg-navy text-cream flex items-center justify-center font-serif text-xl tracking-wide">
+                      {author.initials}
+                    </div>
+                  )}
                   <div>
                     <p className="font-serif text-navy text-lg">{author.name}</p>
                     <p className="text-[0.78rem] text-slate-2">{author.role}</p>

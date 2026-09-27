@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { Header } from "@/components/chrome/Header";
 import { Footer } from "@/components/chrome/Footer";
@@ -22,9 +23,15 @@ export function HostProfileClient({ slug }: { slug: Host["slug"] }) {
         <section className="bg-cream-2 border-b hairline">
           <div className="container py-section-y md:py-section-y-lg grid lg:grid-cols-12 gap-10 items-center">
             <Reveal className="lg:col-span-4 flex justify-center" duration={700}>
-              <div className="aspect-square w-44 lg:w-56 bg-navy text-cream flex items-center justify-center font-serif text-5xl lg:text-6xl tracking-tight">
-                {host.initials}
-              </div>
+              {host.portrait ? (
+                <div className="relative w-44 lg:w-56 aspect-[4/5] overflow-hidden bg-navy">
+                  <Image src={host.portrait} alt={host.name} fill sizes="224px" className="object-cover object-top" />
+                </div>
+              ) : (
+                <div className="aspect-square w-44 lg:w-56 bg-navy text-cream flex items-center justify-center font-serif text-5xl lg:text-6xl tracking-tight">
+                  {host.initials}
+                </div>
+              )}
             </Reveal>
             <div className="lg:col-span-8">
               <Reveal duration={800}>
