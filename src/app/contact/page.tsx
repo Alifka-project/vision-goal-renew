@@ -6,7 +6,7 @@ import { Eyebrow } from "@/components/ui/Eyebrow";
 import { ButtonAction } from "@/components/ui/Button";
 import { Reveal } from "@/components/effects/Reveal";
 import { Field, TextInput, Textarea, Select } from "@/components/ui/Field";
-import { ConsentCheckbox, FormError, Honeypot } from "@/components/forms/FormParts";
+import { ConsentCheckbox, FormError, Honeypot, Turnstile } from "@/components/forms/FormParts";
 import { useFormSubmission } from "@/components/forms/useFormSubmission";
 import { AREAS_OF_INTEREST } from "@/lib/forms/schemas";
 import { organisation } from "@/lib/organisation";
@@ -122,6 +122,16 @@ export default function ContactPage() {
                   </Field>
 
                   <ConsentCheckbox text={consentText} />
+
+                  {/*
+                   * /api/submit verifies a Turnstile token for every
+                   * submission kind. Without this the contact form would be
+                   * rejected with "Spam verification failed" as soon as
+                   * TURNSTILE_SECRET_KEY is set — and reloading, which the
+                   * error tells the visitor to do, would never render a
+                   * challenge. Renders nothing when no site key is configured.
+                   */}
+                  <Turnstile />
 
                   <FormError error={error} fieldErrors={fieldErrors} />
 

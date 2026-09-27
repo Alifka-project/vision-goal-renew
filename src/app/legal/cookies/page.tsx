@@ -19,7 +19,7 @@ const cookies = [
     provider: "Cloudflare, Inc.",
     category: "Strictly necessary",
     purpose:
-      "Set only on pages carrying a form, to run the Turnstile challenge that distinguishes people from automated submitters. Contains no advertising identifier.",
+      "Set only on pages carrying a form — the contact form and the dispatch sign-up — and only when the Turnstile challenge is configured, to distinguish people from automated submitters. Contains no advertising identifier.",
     duration: "Session to 30 minutes",
   },
 ];
@@ -73,9 +73,8 @@ export default function CookiesPage() {
           <p>
             Under the Swiss Telecommunications Act and the ePrivacy rules applied in the EEA, consent
             is required for cookies that are not strictly necessary to deliver a service you have
-            requested. Both cookies above are strictly necessary — one records a preference you set
-            yourself, the other protects our forms from automated abuse — so no consent is sought and
-            none is stored. If we ever introduce analytics or any non-essential cookie, a consent
+            requested. The one cookie above is strictly necessary — it protects our forms from automated
+            abuse — so no consent is sought and none is stored. If we ever introduce analytics or any non-essential cookie, a consent
             banner will appear before that cookie is set and this table will be updated at the same
             time.
           </p>

@@ -430,7 +430,7 @@ const en: Dict = {
     dispatchEyebrow: "Dispatch",
     dispatchHeadline: "Occasional, never promotional.",
     dispatchHeadlineGold: "No promotion.",
-    dispatchHelp: "Double opt-in. Unsubscribe at any time.",
+    dispatchHelp: "Double opt-in. Ask to be removed at any time.",
     dispatchOk:
       "Thank you. Confirm your email via the double opt-in we’ve sent and the next dispatch will arrive in your inbox.",
     emailPlaceholder: "Your email",
@@ -455,11 +455,11 @@ const en: Dict = {
   },
   enrich: {
     programmesUnitedEyebrow: "What unites them",
-    programmesUnitedHeadline: "Three programmes. One posture.",
+    programmesUnitedHeadline: "Four concepts. One approach.",
     programmesUnitedItems: [
       {
         title: "Hosted, not lectured",
-        body: "Every session has a named practitioner in the room. We do not bring stage speakers; we bring people who can answer the next question.",
+        body: "Sessions are designed to be hosted rather than lectured — led by someone who can answer the next question, not a stage speaker. Contributors are confirmed for each experience.",
       },
       {
         title: "Small, not scaled",
@@ -499,15 +499,15 @@ const en: Dict = {
       },
       {
         name: "Markets",
-        body: "Macro framings and Swiss capital-market commentary written by practitioners with a working stake in the question.",
+        body: "Macro framings and Swiss capital-market commentary, written from a practitioner\u2019s vantage point.",
       },
       {
         name: "Methodology",
-        body: "Why we run cohorts the way we do — the small-cohort case, the chatham-house posture, the curation principle.",
+        body: "Why the experiences are shaped the way they are — the case for a small group, and what discretion is for.",
       },
       {
         name: "Dispatches",
-        body: "Short post-cohort notes from inside a room: what was said, what was not, and what the cohort will read again next month.",
+        body: "Short notes on what a session surfaced: the questions that came up, and what is worth returning to.",
       },
     ],
     aboutPrinciplesEyebrow: "Operating principles",
@@ -527,7 +527,7 @@ const en: Dict = {
       },
       {
         title: "Specificity over ceremony",
-        body: "Application questions look for specificity. Programme architecture commits to phases, not slogans. Fees are listed, not negotiated.",
+        body: "A short conversation looks for specificity. Each concept commits to phases, not slogans. What is not yet confirmed is said plainly.",
       },
       {
         title: "Premium scope, clearly stated",
@@ -604,8 +604,8 @@ const en: Dict = {
     },
     legalSidebar: "Legal",
     programmeDetail: {
-      outcomesEyebrow: "What you leave with",
-      outcomesHeadline: "Three deliverables — not slogans.",
+      outcomesEyebrow: "What this is intended to give you",
+      outcomesHeadline: "The intended outcomes.",
       architectureEyebrow: "Programme architecture",
       architectureHeadline: "How the programme runs.",
       cohortsEyebrow: "Next cohorts",
@@ -688,8 +688,8 @@ const en: Dict = {
     contactEyebrow: "Direct line",
     contactPhoneLabel: "Phone",
     contactEmailLabel: "Email",
-    contactResponseLabel: "Response window",
-    contactResponseValue: "I normally respond within 48 hours",
+    contactResponseLabel: "Response time",
+    contactResponseValue: "I normally respond within 48 hours.",
     contactPhone: "+41 78 728 09 33",
     contactEmail: "office@visiongoal.ch",
   },
@@ -862,7 +862,7 @@ const de: Dict = {
     dispatchEyebrow: "Dispatch",
     dispatchHeadline: "Gelegentlich, niemals werblich.",
     dispatchHeadlineGold: "Keine Werbung.",
-    dispatchHelp: "Doppeltes Opt-In. Jederzeit abbestellbar.",
+    dispatchHelp: "Doppeltes Opt-In. Abmeldung jederzeit auf Anfrage.",
     dispatchOk:
       "Vielen Dank. Bitte bestätigen Sie Ihre E-Mail über das Doppelte Opt-In; der nächste Dispatch trifft dann in Ihrem Posteingang ein.",
     emailPlaceholder: "Ihre E-Mail",
@@ -887,11 +887,11 @@ const de: Dict = {
   },
   enrich: {
     programmesUnitedEyebrow: "Was sie verbindet",
-    programmesUnitedHeadline: "Drei Programme. Eine Haltung.",
+    programmesUnitedHeadline: "Vier Konzepte. Ein Ansatz.",
     programmesUnitedItems: [
       {
         title: "Gastgeber, kein Vortrag",
-        body: "In jeder Sitzung ist ein namentlich genannter Praktiker im Raum. Wir buchen keine Bühnenredner; wir bringen Menschen, die die nächste Frage beantworten können.",
+        body: "Sessions sind auf Begleitung statt Vortrag ausgelegt — geführt von jemandem, der die nächste Frage beantworten kann, nicht von einem Bühnenredner. Beitragende werden pro Erfahrung bestätigt.",
       },
       {
         title: "Klein, nicht skaliert",
@@ -939,7 +939,7 @@ const de: Dict = {
       },
       {
         name: "Dispatches",
-        body: "Kurze Post-Kohorten-Notizen aus dem Raum: Was gesagt wurde, was nicht und was die Kohorte im nächsten Monat erneut lesen wird.",
+        body: "Kurze Notizen dazu, was eine Session zutage gefördert hat: welche Fragen aufkamen und worauf zurückzukommen lohnt.",
       },
     ],
     aboutPrinciplesEyebrow: "Operative Grundsätze",
@@ -959,7 +959,7 @@ const de: Dict = {
       },
       {
         title: "Spezifität vor Zeremonie",
-        body: "Bewerbungsfragen suchen Spezifität. Programmaufbau verpflichtet sich auf Phasen, nicht auf Slogans. Gebühren werden ausgewiesen, nicht verhandelt.",
+        body: "Ein kurzes Gespräch sucht Spezifität. Jedes Konzept verpflichtet sich auf Phasen, nicht auf Slogans. Was noch nicht bestätigt ist, wird klar benannt.",
       },
       {
         title: "Premium-Umfang, klar definiert",
@@ -1036,8 +1036,8 @@ const de: Dict = {
     },
     legalSidebar: "Rechtliches",
     programmeDetail: {
-      outcomesEyebrow: "Was Sie mitnehmen",
-      outcomesHeadline: "Drei Lieferergebnisse — keine Slogans.",
+      outcomesEyebrow: "Was diese Erfahrung vermitteln soll",
+      outcomesHeadline: "Die angestrebten Ergebnisse.",
       architectureEyebrow: "Programmaufbau",
       architectureHeadline: "Wie das Programm abläuft.",
       cohortsEyebrow: "Nächste Kohorten",
@@ -1122,8 +1122,8 @@ const de: Dict = {
     contactEyebrow: "Direkter Draht",
     contactPhoneLabel: "Telefon",
     contactEmailLabel: "E-Mail",
-    contactResponseLabel: "Antwortfenster",
-    contactResponseValue: "Ich antworte in der Regel innerhalb von 48 Stunden",
+    contactResponseLabel: "Antwortzeit",
+    contactResponseValue: "Ich antworte in der Regel innerhalb von 48 Stunden.",
     contactPhone: "+41 78 728 09 33",
     contactEmail: "office@visiongoal.ch",
   },
@@ -1296,7 +1296,7 @@ const fr: Dict = {
     dispatchEyebrow: "Dispatch",
     dispatchHeadline: "Occasionnel, jamais promotionnel.",
     dispatchHeadlineGold: "Aucune promotion.",
-    dispatchHelp: "Double opt-in. Désinscription possible à tout moment.",
+    dispatchHelp: "Double opt-in. Retrait sur simple demande.",
     dispatchOk:
       "Merci. Confirmez votre e-mail via le double opt-in que nous avons envoyé ; le prochain dispatch arrivera dans votre boîte.",
     emailPlaceholder: "Votre e-mail",
@@ -1321,11 +1321,11 @@ const fr: Dict = {
   },
   enrich: {
     programmesUnitedEyebrow: "Ce qui les unit",
-    programmesUnitedHeadline: "Trois programmes. Une posture.",
+    programmesUnitedHeadline: "Quatre concepts. Une approche.",
     programmesUnitedItems: [
       {
         title: "Animé, non donné",
-        body: "Chaque session a un praticien nommé dans la salle. Nous n’invitons pas d’orateurs de scène ; nous invitons des personnes capables de répondre à la question suivante.",
+        body: "Les sessions sont conçues pour être animées et non déclamées — menées par quelqu’un capable de répondre à la question suivante, pas par un orateur de scène. Les intervenants sont confirmés pour chaque expérience.",
       },
       {
         title: "Petit, pas mis à l’échelle",
@@ -1373,7 +1373,7 @@ const fr: Dict = {
       },
       {
         name: "Dispatches",
-        body: "Notes courtes après cohorte : ce qui s’est dit, ce qui ne s’est pas dit, et ce que la cohorte relira le mois suivant.",
+        body: "Notes courtes sur ce qu’une session a fait émerger : les questions soulevées, et ce sur quoi il vaut la peine de revenir.",
       },
     ],
     aboutPrinciplesEyebrow: "Principes opérationnels",
@@ -1393,7 +1393,7 @@ const fr: Dict = {
       },
       {
         title: "Spécificité plutôt que cérémonie",
-        body: "Les questions de candidature cherchent la spécificité. L’architecture s’engage sur des phases, pas des slogans. Les frais sont affichés, pas négociés.",
+        body: "Une courte conversation cherche la spécificité. Chaque concept s’engage sur des phases, pas des slogans. Ce qui n’est pas encore confirmé est dit clairement.",
       },
       {
         title: "Périmètre premium, clairement énoncé",
@@ -1407,7 +1407,7 @@ const fr: Dict = {
       titlePart1: "Concepts d’apprentissage indicatifs,",
       titleGold: "actuellement en développement.",
       lede:
-        "Chaque programme est une salle curatée : petite, animée par des praticiens nommés, et menée avec une seule posture — la mesure plutôt que le volume, la preuve plutôt que la déclaration, le jugement plutôt que la performance.",
+        "Ces concepts décrivent ce que chaque expérience vise à enseigner et la forme qu’elle est susceptible de prendre. Dates, lieux, intervenants et activités ne sont pas encore confirmés. Vous pouvez manifester votre intérêt pour l’un d’eux — une courte conversation permet ensuite d’établir si cela conviendrait.",
     },
     hosts: {
       eyebrow: "Réseau de praticiens",
@@ -1470,8 +1470,8 @@ const fr: Dict = {
     },
     legalSidebar: "Mentions légales",
     programmeDetail: {
-      outcomesEyebrow: "Ce que vous emportez",
-      outcomesHeadline: "Trois livrables — pas des slogans.",
+      outcomesEyebrow: "Ce que cette expérience vise à apporter",
+      outcomesHeadline: "Les résultats visés.",
       architectureEyebrow: "Architecture du programme",
       architectureHeadline: "Comment se déroule le programme.",
       cohortsEyebrow: "Prochaines cohortes",
@@ -1557,7 +1557,7 @@ const fr: Dict = {
     contactPhoneLabel: "Téléphone",
     contactEmailLabel: "E-mail",
     contactResponseLabel: "Délai de réponse",
-    contactResponseValue: "Je réponds normalement sous 48 heures",
+    contactResponseValue: "Je réponds normalement sous 48 heures.",
     contactPhone: "+41 78 728 09 33",
     contactEmail: "office@visiongoal.ch",
   },
@@ -1730,7 +1730,7 @@ const es: Dict = {
     dispatchEyebrow: "Dispatch",
     dispatchHeadline: "Ocasional, nunca promocional.",
     dispatchHeadlineGold: "Sin promoción.",
-    dispatchHelp: "Doble opt-in. Cancele cuando quiera.",
+    dispatchHelp: "Doble opt-in. Baja a petición en cualquier momento.",
     dispatchOk:
       "Gracias. Confirme su correo a través del doble opt-in que enviamos; el próximo dispatch llegará a su bandeja de entrada.",
     emailPlaceholder: "Su correo",
@@ -1755,11 +1755,11 @@ const es: Dict = {
   },
   enrich: {
     programmesUnitedEyebrow: "Lo que los une",
-    programmesUnitedHeadline: "Tres programas. Una postura.",
+    programmesUnitedHeadline: "Cuatro conceptos. Un enfoque.",
     programmesUnitedItems: [
       {
         title: "Conducido, no expuesto",
-        body: "Cada sesión tiene un practicante nombrado en la sala. No traemos oradores de escenario; traemos personas capaces de responder la siguiente pregunta.",
+        body: "Las sesiones están diseñadas para ser conducidas, no dictadas — guiadas por alguien que pueda responder la siguiente pregunta, no por un orador de escenario. Los contribuyentes se confirman para cada experiencia.",
       },
       {
         title: "Reducido, no escalado",
@@ -1807,7 +1807,7 @@ const es: Dict = {
       },
       {
         name: "Dispatches",
-        body: "Notas cortas tras la cohorte: lo que se dijo, lo que no, y lo que la cohorte volverá a leer el mes siguiente.",
+        body: "Notas breves sobre lo que una sesión sacó a la luz: las preguntas que surgieron y lo que merece releerse.",
       },
     ],
     aboutPrinciplesEyebrow: "Principios operativos",
@@ -1827,7 +1827,7 @@ const es: Dict = {
       },
       {
         title: "Especificidad sobre ceremonia",
-        body: "Las preguntas de candidatura buscan especificidad. La arquitectura se compromete con fases, no eslóganes. Las tarifas se publican, no se negocian.",
+        body: "Una breve conversación busca especificidad. Cada concepto se compromete con fases, no eslóganes. Lo que aún no está confirmado se dice con claridad.",
       },
       {
         title: "Alcance premium, claramente enunciado",
@@ -1841,7 +1841,7 @@ const es: Dict = {
       titlePart1: "Conceptos de aprendizaje indicativos,",
       titleGold: "actualmente en desarrollo.",
       lede:
-        "Cada programa es una sala curada: pequeña, conducida por practicantes nombrados y dirigida con una sola postura — la mesura sobre el volumen, la prueba sobre la afirmación, el juicio sobre la actuación.",
+        "Estos conceptos describen lo que cada experiencia pretende enseñar y la forma que probablemente adopte. Fechas, sedes, contribuyentes y actividades aún no están confirmados. Puede expresar su interés en cualquiera de ellos — una breve conversación establece después si encajaría.",
     },
     hosts: {
       eyebrow: "Red de profesionales",
@@ -1904,8 +1904,8 @@ const es: Dict = {
     },
     legalSidebar: "Legal",
     programmeDetail: {
-      outcomesEyebrow: "Lo que se lleva",
-      outcomesHeadline: "Tres entregables — no eslóganes.",
+      outcomesEyebrow: "Lo que esta experiencia busca aportar",
+      outcomesHeadline: "Los resultados previstos.",
       architectureEyebrow: "Arquitectura del programa",
       architectureHeadline: "Cómo se desarrolla el programa.",
       cohortsEyebrow: "Próximas cohortes",
@@ -1990,8 +1990,8 @@ const es: Dict = {
     contactEyebrow: "Línea directa",
     contactPhoneLabel: "Teléfono",
     contactEmailLabel: "Correo",
-    contactResponseLabel: "Ventana de respuesta",
-    contactResponseValue: "Normalmente respondo en un plazo de 48 horas",
+    contactResponseLabel: "Tiempo de respuesta",
+    contactResponseValue: "Normalmente respondo en un plazo de 48 horas.",
     contactPhone: "+41 78 728 09 33",
     contactEmail: "office@visiongoal.ch",
   },
@@ -2164,7 +2164,7 @@ const zh: Dict = {
     dispatchEyebrow: "速递",
     dispatchHeadline: "不定期发送, 从不促销。",
     dispatchHeadlineGold: "无促销。",
-    dispatchHelp: "双重确认订阅。可随时退订。",
+    dispatchHelp: "双重确认订阅。可随时来信退订。",
     dispatchOk:
       "感谢。请通过我们发送的双重确认邮件完成订阅, 下一期速递将寄送至您的邮箱。",
     emailPlaceholder: "您的邮箱",
@@ -2189,11 +2189,11 @@ const zh: Dict = {
   },
   enrich: {
     programmesUnitedEyebrow: "三者之共通",
-    programmesUnitedHeadline: "三个项目。一种姿态。",
+    programmesUnitedHeadline: "四种概念。同一方法。",
     programmesUnitedItems: [
       {
         title: "主持, 而非授课",
-        body: "每节课都有具名从业者在场。我们不安排登台演讲, 我们带来能回答下一个问题的人。",
+        body: "每场学习都以引导而非讲授为设计 —— 由能回答下一个问题的人带领, 而非舞台讲者。贡献者将为每项体验逐一确认。",
       },
       {
         title: "精简, 而非规模化",
@@ -2241,7 +2241,7 @@ const zh: Dict = {
       },
       {
         name: "Dispatches",
-        body: "群体结束后的短札记: 哪些说了, 哪些未说, 以及群体下个月会再读哪一段。",
+        body: "关于一场学习所引出的简短札记: 出现了哪些问题, 以及哪些值得再回头细读。",
       },
     ],
     aboutPrinciplesEyebrow: "运营原则",
@@ -2261,7 +2261,7 @@ const zh: Dict = {
       },
       {
         title: "具体胜于仪式",
-        body: "申请问题考察具体性。项目架构以阶段承诺, 而非以口号。费用明示, 不议价。",
+        body: "一次简短的对话考察具体性。每个概念以阶段承诺, 而非以口号。尚未确认之事, 会如实说明。",
       },
       {
         title: "高端范围, 清楚界定",
@@ -2338,8 +2338,8 @@ const zh: Dict = {
     },
     legalSidebar: "法律",
     programmeDetail: {
-      outcomesEyebrow: "您将带走的",
-      outcomesHeadline: "三项交付 —— 而非口号。",
+      outcomesEyebrow: "这项体验意在带来什么",
+      outcomesHeadline: "预期的成果。",
       architectureEyebrow: "项目架构",
       architectureHeadline: "项目如何展开。",
       cohortsEyebrow: "下一期群体",
@@ -2422,7 +2422,7 @@ const zh: Dict = {
     contactPhoneLabel: "电话",
     contactEmailLabel: "邮箱",
     contactResponseLabel: "回复时间",
-    contactResponseValue: "我通常在 48 小时内回复",
+    contactResponseValue: "我通常在 48 小时内回复。",
     contactPhone: "+41 78 728 09 33",
     contactEmail: "office@visiongoal.ch",
   },

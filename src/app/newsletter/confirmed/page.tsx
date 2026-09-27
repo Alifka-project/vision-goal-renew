@@ -7,8 +7,11 @@ import { Reveal } from "@/components/effects/Reveal";
 import { organisation } from "@/lib/organisation";
 
 export const metadata: Metadata = {
-  title: "Dispatch subscription — Vision Goal",
+  // Must NOT end in "Vision Goal": the root layout appends "· Vision Goal",
+  // which would render "... Vision Goal · Vision Goal".
+  title: "Dispatch subscription",
   description: "Confirmation of your Vision Goal dispatch subscription.",
+  alternates: { canonical: "/newsletter/confirmed" },
   robots: { index: false, follow: false },
 };
 
@@ -21,7 +24,7 @@ const outcomes = {
     headline: "You are on the list.",
     body: [
       "Your address is confirmed and the next dispatch will reach you. Dispatches are sent occasionally and never contain anything promotional.",
-      "You can unsubscribe at any time using the link at the foot of every dispatch.",
+      `You can unsubscribe at any time by writing to ${organisation.email.general} — we will remove you on the same day.`,
     ],
   },
   expired: {

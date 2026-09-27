@@ -41,6 +41,12 @@ export async function generateMetadata({
         },
       ],
     },
+    twitter: {
+      card: "summary_large_image",
+      title: `${insight.title} · Vision Goal`,
+      description: insight.excerpt,
+      images: ["/og-default.jpg"],
+    },
   };
 }
 

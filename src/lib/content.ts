@@ -42,7 +42,7 @@ export const programmes: Programme[] = [
     whoFor:
       "Entrepreneurs, senior executives, family principals and corporate decision-makers engaging with Switzerland — by expansion, partnership or capital deployment. Considered seniority; specific objectives.",
     notFor:
-      "Open enrolment, generic networking circuits, or professionals building a CV. The rooms are small on purpose.",
+      "Generic networking circuits, or anyone looking for a certificate rather than applied understanding. Groups are kept small so the discussion stays useful.",
     architecture: [
       {
         phase: "Before",
@@ -52,7 +52,7 @@ export const programmes: Programme[] = [
       {
         phase: "Inside",
         title: "In the room",
-        body: "The intention is a working series of sessions set in real business environments, with small-group discussion and practitioner input, rather than a lecture room. Specific settings and contributors are confirmed for each experience.",
+        body: "The intention is a working series of sessions set in real business environments, with small-group discussion and practitioner input, rather than a lecture room. Specific settings and contributors are confirmed at the time each experience is announced.",
       },
       {
         phase: "After",
@@ -156,7 +156,7 @@ export const programmes: Programme[] = [
       {
         phase: "Inside",
         title: "In the room",
-        body: "Curated sessions built around a specific question, each hosted by a practitioner with working judgement on it. The format ends with a synthesis conversation.",
+        body: "The intention is a set of sessions built around a specific question, each hosted by someone with working judgement on it, closing with a synthesis discussion. Hosts are confirmed for each session.",
       },
       {
         phase: "After",
@@ -185,7 +185,7 @@ export const programmes: Programme[] = [
     outcomes: [
       "A working synthesis of the question in play — drawn from sessions designed for contributors with operational stake, not audience.",
       "A post-session synthesis — shared with those in the room — capturing divergences and follow-on questions.",
-      "Considered follow-on where useful — named introductions to other contributors on request.",
+      "Considered follow-on where useful, including introductions to other participants where that would help.",
     ],
   },
 ];
@@ -403,7 +403,7 @@ export const featuredInsights: Insight[] = [
       "We are asked, often, to run bigger rooms. We do not.",
       "Kept small, the room is a single conversation. Every participant is present to every other, every question is heard, and every contribution is observable. The host can read the room and adjust it in real time.",
       "Scaled up, the room becomes an audience. Some voices recede; the dialogue becomes a sequence of presentations. The host reverts to lecturing rather than hosting. Calibre drops, and so does what participants are willing to say in front of each other.",
-      "The economic argument for a bigger room is that it covers its cost more easily. The argument for a small one is that the small room is what the product is. Open enrolment platforms can scale. We cannot — because we are not selling seats; we are convening rooms.",
+      "The economic argument for a bigger room is that it covers its cost more easily. The argument for a small one is that the size is what makes the learning work. Platforms that scale can fill a hall. We would rather convene a group where every question gets answered.",
     ],
   },
   {
@@ -450,7 +450,7 @@ export const featuredInsights: Insight[] = [
     href: "/insights/what-we-do-not-do",
     imageKey: "insightRefusal",
     body: [
-      "We do not run open enrolment. Engagement starts with a conversation; rooms shape themselves through curation, not transaction.",
+      "Expressions of interest are welcome. A short conversation helps establish whether the experience and the participant group are mutually suitable — the group shapes itself through that, not through a transaction.",
       "We do not deliver coaching, advisory, or any regulated financial service. The platform is curatorial — practitioners speak in their own capacity, not as advisors.",
       "We do not record sessions. We do not publish participant names without consent. We do not stage photography for marketing.",
       "We do not scale the room. Its size is a structural choice, not a soft cap.",

@@ -96,7 +96,7 @@ export default function PrivacyPage() {
           <h2 className="font-serif text-2xl text-navy mt-6">Retention</h2>
           <p>
             Enquiry and contact correspondence is kept for twenty-four months from the last exchange.
-            Dispatch subscriber records are kept until you unsubscribe, and the consent record for a
+            Dispatch subscriber records are kept until you ask to be removed, and the consent record for a
             further twelve months as proof that consent was given. Records forming part of a
             contractual relationship are retained for ten years in accordance with the Swiss Code of
             Obligations. Server logs are retained for a maximum of ninety days.
