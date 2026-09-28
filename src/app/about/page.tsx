@@ -35,7 +35,9 @@ const career = [
 const credentials = [
   {
     title: "FINMA-registered independent insurance intermediary",
-    body: "Registered with the Swiss Financial Market Supervisory Authority as an independent insurance intermediary — supervised, transparent, and bound by regulator standards.",
+    // "Supervised" was removed at the client's request: the accurate status
+    // is registration, stated in these exact words.
+    body: "A FINMA-registered independent insurance intermediary (Swiss Financial Market Supervisory Authority) — transparent, and bound by regulator standards.",
   },
   {
     title: "Chartered Certified Accountant (FCCA)",
